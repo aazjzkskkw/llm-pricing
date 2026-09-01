@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>厂商活动 & 平台优惠 — LLM 价格对比</title>
+<style>
+  :root { --bg:#f5f7fa; --card:#ffffff; --fg:#1c2128; --dim:#6b7280; --line:#e4e8ee;
+          --accent:#2563eb; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:14px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif; }
+  header { padding:28px 20px 4px; max-width:1200px; margin:0 auto; }
+  h1 { font-size:24px; margin:0 0 4px; }
+  .meta { color:var(--dim); font-size:13px; }
+  .meta a { color:var(--accent); text-decoration:none; }
+  h2 { max-width:1200px; margin:28px auto 4px; padding:0 20px; font-size:17px; }
+  .grid { max-width:1200px; margin:8px auto 8px; padding:0 20px;
+          display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:14px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
+          padding:16px 18px; box-shadow:0 1px 3px rgba(0,0,0,.05);
+          display:flex; flex-direction:column; gap:6px; }
+  .card:hover { box-shadow:0 3px 10px rgba(0,0,0,.08); }
+  .card .name { font-weight:600; font-size:15px; }
+  .card .desc { color:var(--dim); font-size:13px; flex:1; }
+  .card a { color:var(--accent); font-size:13px; text-decoration:none; font-weight:500; }
+  .card a:hover { text-decoration:underline; }
+  .note { max-width:1200px; margin:10px auto 40px; padding:0 20px; color:var(--dim); font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🎁 厂商活动 &amp; 平台优惠</h1>
+  <div class="meta">各厂商及聚合平台的免费额度 / 优惠入口。<a href="index.html">← 返回价格对比</a></div>
+</header>
+<h2>厂商官方活动</h2>
+<div class="grid" id="official"></div>
+<h2>聚合平台优惠</h2>
+<div class="grid" id="agg"></div>
+<p class="note">活动与额度随时可能变动，以各官网实际说明为准。想补充活动？编辑本页中的 PROMOS 数组提交 PR 即可。</p>
+
+<script>
+// 活动数据：直接改这个数组即可增删，无需动样式
+const PROMOS = [
+  // —— 厂商官方 ——
+  { section: 'official', name: 'Google AI Studio', desc: 'Gemini 系列提供免费额度，适合个人开发调试。', url: 'https://aistudio.google.com/' },
+  { section: 'official', name: '智谱开放平台', desc: 'GLM 系列新用户赠送资源，部分 Flash 模型免费。', url: 'https://open.bigmodel.cn/' },
+  { section: 'official', name: '阿里云百炼', desc: '通义千问系列新用户每款模型赠送百万级 token。', url: 'https://www.aliyun.com/product/bailian' },
+  { section: 'official', name: '火山方舟（豆包）', desc: '豆包系列新用户赠送 token 额度。', url: 'https://console.volcengine.com/ark' },
+  { section: 'official', name: 'DeepSeek 开放平台', desc: '注册即赠送额度，价格长期保持行业低位。', url: 'https://platform.deepseek.com/' },
+  { section: 'official', name: 'Moonshot 开放平台', desc: 'Kimi 系列注册赠送体验金。', url: 'https://platform.moonshot.cn/' },
+  { section: 'official', name: 'MiniMax 开放平台', desc: '新用户赠送额度。', url: 'https://platform.minimaxi.com/' },
+  { section: 'official', name: '腾讯混元', desc: '新用户免费体验额度。', url: 'https://cloud.tencent.com/product/hunyuan' },
+  { section: 'official', name: '阶跃星辰', desc: 'Step 系列注册赠送额度。', url: 'https://platform.stepfun.com/' },
+  { section: 'official', name: 'Anthropic Console', desc: 'Claude 系列注册赠送少量体验额度。', url: 'https://console.anthropic.com/' },
+  { section: 'official', name: 'xAI Console', desc: 'Grok 系列不定期赠送免费额度。', url: 'https://console.x.ai/' },
+  { section: 'official', name: 'OpenAI Platform', desc: '部分模型提供免费档（free tier）。', url: 'https://platform.openai.com/' },
+  // —— 聚合平台 ——
+  { section: 'agg', name: 'OpenRouter 免费模型', desc: '带 :free 后缀的模型免费调用，每天有次数限制。', url: 'https://openrouter.ai/models?max_price=0' },
+  { section: 'agg', name: 'Groq', desc: '免费档可调用 Llama 等开源模型，速度极快。', url: 'https://console.groq.com/' },
+  { section: 'agg', name: 'Cerebras', desc: '免费档开放多款开源模型。', url: 'https://cloud.cerebras.ai/' },
+  { section: 'agg', name: 'GitHub Models', desc: 'GitHub 账号即可免费体验主流模型。', url: 'https://github.com/marketplace/models' },
+  { section: 'agg', name: 'Cloudflare Workers AI', desc: '每天固定免费额度。', url: 'https://developers.cloudflare.com/workers-ai/' },
+  { section: 'agg', name: 'NVIDIA NIM', desc: '注册送积分，可调用 NIM 托管模型。', url: 'https://build.nvidia.com/' },
+];
+
+for (const p of PROMOS) {
+  document.getElementById(p.section).insertAdjacentHTML('beforeend', `
+    <div class="card"><div class="name">${p.name}</div>
+    <div class="desc">${p.desc}</div>
+    <a href="${p.url}" target="_blank" rel="noopener">前往查看 →</a></div>`);
+}
+</script>
+</body>
+</html>
