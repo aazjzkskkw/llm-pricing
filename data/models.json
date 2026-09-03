@@ -1,7 +1,27 @@
 {
- "updated_at": "2026-09-03 02:40 UTC",
- "source": "https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json",
- "source_new": "https://openrouter.ai/api/v1/models",
+ "updated_at": "2026-09-03 03:37 UTC",
+ "sources": [
+  {
+   "name": "LiteLLM",
+   "role": "主源",
+   "url": "https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json"
+  },
+  {
+   "name": "OpenRouter",
+   "role": "补最新模型",
+   "url": "https://openrouter.ai/api/v1/models"
+  },
+  {
+   "name": "genai-prices",
+   "role": "价格对账",
+   "url": "https://github.com/pydantic/genai-prices"
+  },
+  {
+   "name": "llm-prices",
+   "role": "价格对账",
+   "url": "https://www.llm-prices.com/"
+  }
+ ],
  "cutoff": "2024-09-03",
  "pricing_pages": {
   "OpenAI": "https://platform.openai.com/docs/pricing",
@@ -7486,7 +7506,13 @@
    "vision": true,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 3.0
+    }
+   ]
   },
   {
    "model": "vertex_ai/claude-3-5-haiku",
@@ -17208,7 +17234,17 @@
    "vision": false,
    "reasoning": true,
    "tool_call": false,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 0.55
+    },
+    {
+     "src": "llm-prices",
+     "input": 0.55
+    }
+   ]
   },
   {
    "model": "deepseek-v4-flash",
@@ -17226,7 +17262,17 @@
    "vision": false,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 0.14
+    },
+    {
+     "src": "genai-prices",
+     "input": 0.14
+    }
+   ]
   },
   {
    "model": "deepseek-v4-flash-vision-exp",
@@ -17262,7 +17308,17 @@
    "vision": false,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 0.435
+    },
+    {
+     "src": "genai-prices",
+     "input": 1.74
+    }
+   ]
   },
   {
    "model": "deepseek/deepseek-chat",
@@ -17280,7 +17336,13 @@
    "vision": false,
    "reasoning": false,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 0.38
+    }
+   ]
   },
   {
    "model": "deepseek/deepseek-chat-v3-0324",
@@ -17354,7 +17416,13 @@
    "vision": false,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 4.0
+    }
+   ]
   },
   {
    "model": "deepseek/deepseek-r1",
@@ -17447,7 +17515,13 @@
    "vision": false,
    "reasoning": false,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 0.89
+    }
+   ]
   },
   {
    "model": "deepseek/deepseek-v3.1-terminus",
@@ -17521,7 +17595,13 @@
    "vision": false,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 0.098
+    }
+   ]
   },
   {
    "model": "deepseek/deepseek-v4-flash-0731",
@@ -17595,7 +17675,13 @@
    "vision": false,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 0.435
+    }
+   ]
   },
   {
    "model": "deepseek/deepseek-v4-pro-0813",
@@ -25139,7 +25225,13 @@
    "vision": true,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 1.5
+    }
+   ]
   },
   {
    "model": "gemini-3.7-flash",
@@ -28158,7 +28250,13 @@
    "vision": false,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 0.15
+    }
+   ]
   },
   {
    "model": "minimax/MiniMax-M2.5-lightning",
@@ -34828,7 +34926,13 @@
    "vision": false,
    "reasoning": false,
    "tool_call": false,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 0.6
+    }
+   ]
   },
   {
    "model": "gpt-4o-mini-tts-2025-12-15",
@@ -35494,7 +35598,13 @@
    "vision": true,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "genai-prices",
+     "input": 1.0
+    }
+   ]
   },
   {
    "model": "gpt-5.6-sol",
@@ -35638,7 +35748,13 @@
    "vision": false,
    "reasoning": false,
    "tool_call": false,
-   "new": false
+   "new": false,
+   "xref": [
+    {
+     "src": "llm-prices",
+     "input": 10.0
+    }
+   ]
   },
   {
    "model": "gpt-image-1-mini",

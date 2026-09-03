@@ -15,6 +15,10 @@ from pathlib import Path
 SRC = "https://cdn.jsdelivr.net/gh/BerriAI/litellm@main/model_prices_and_context_window.json"
 # 第二数据源：OpenRouter 上新最快，用于补充 LiteLLM 还没收录的最新模型
 SRC_NEW = "https://openrouter.ai/api/v1/models"
+# 第三、第四数据源：只用来交叉核对官方直营价，对不上的在页面上标出来
+SRC_PYDANTIC = ("https://cdn.jsdelivr.net/gh/ENTERPILOT/ai-model-price-list@main"
+                "/sources/pydantic_genai_prices.json")
+SRC_LLMPRICES = "https://www.llm-prices.com/current-v1.json"
 
 OUT = Path(__file__).resolve().parent.parent / "data" / "models.json"
 
@@ -266,8 +270,69 @@ def suspect(price: float | None, mode: str | None) -> bool:
     return price is not None and price > SANE_MAX.get(mode or "", 500)
 
 
+def _mtok(v) -> float | None:
+    """genai-prices 的单价可能是数字，也可能是 {base, tiers} 的分档结构，取基础价。"""
+    if isinstance(v, (int, float)):
+        return float(v)
+    if isinstance(v, dict) and isinstance(v.get("base"), (int, float)):
+        return float(v["base"])
+    return None
+
+
+def _price_block(model: dict) -> dict:
+    """prices 有时是一组带生效条件的变体，取最后一个（一般是当前生效的那档）。"""
+    p = model.get("prices")
+    if isinstance(p, list):
+        for item in reversed(p):
+            if isinstance(item, dict) and isinstance(item.get("prices"), dict):
+                return item["prices"]
+        return {}
+    return p if isinstance(p, dict) else {}
+
+
+def xref_prices() -> dict[str, list[tuple[str, float, float | None]]]:
+    """另外两个价格库的官方直营价，用来跟 LiteLLM 对账。
+    返回 归一化模型名 -> [(来源, 输入价, 输出价)]，单位都是 美元/百万 token。"""
+    out: dict[str, list] = {}
+
+    def add(name: str, src: str, inp, outp) -> None:
+        if inp is None or not name:
+            return
+        out.setdefault(norm_name(name), []).append(
+            (src, float(inp), float(outp) if outp is not None else None))
+
+    try:
+        for p in fetch(SRC_PYDANTIC):
+            for m in p.get("models") or []:
+                pr = _price_block(m)
+                add(m.get("id", ""), "genai-prices",
+                    _mtok(pr.get("input_mtok")), _mtok(pr.get("output_mtok")))
+    except Exception as e:                       # 对账源挂了不该拖垮主流程
+        print(f"   genai-prices 拉取失败，跳过对账：{e}")
+    try:
+        for m in fetch(SRC_LLMPRICES).get("prices") or []:
+            add(m.get("id", ""), "llm-prices", m.get("input"), m.get("output"))
+    except Exception as e:
+        print(f"   llm-prices 拉取失败，跳过对账：{e}")
+    return out
+
+
+def price_check(row: dict, xref: dict) -> list[dict] | None:
+    """跟别的源对一下输入价。差 20% 以内算正常（各家口径、分档不同），
+    差得多就把别人的报价带上，页面里标出来让人自己判断。"""
+    if not row["official"] or row["input"] in (None, 0):
+        return None
+    others = xref.get(norm_name(row["model"]))
+    if not others:
+        return None
+    bad = [(s, i) for s, i, _ in others
+           if i > 0 and abs(i - row["input"]) / max(i, row["input"]) > 0.2]
+    if not bad:
+        return None
+    return [{"src": s, "input": round(i, 3)} for s, i in bad[:2]]
+
+
 def or_release_dates(raw: dict) -> dict[str, str]:
-    """OpenRouter 的 created 时间戳是现成的发布日期，拿来给 LiteLLM 那边的模型标年龄。"""
     dates = {}
     for m in raw.get("data", []):
         ts, mid = m.get("created"), m.get("id", "")
@@ -337,11 +402,26 @@ def main() -> None:
         r["new"] = False
     rows += new_rows
     rows.sort(key=lambda r: (r["vendor_name"], r["model"]))
+
+    xref = xref_prices()
+    for r in rows:
+        diff = price_check(r, xref)
+        if diff:
+            r["xref"] = diff
     n_priced = sum(1 for r in rows if r["input"] is not None)
+    n_diff = sum(1 for r in rows if r.get("xref"))
     OUT.write_text(json.dumps({
         "updated_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
-        "source": "https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json",
-        "source_new": "https://openrouter.ai/api/v1/models",
+        "sources": [
+            {"name": "LiteLLM", "role": "主源",
+             "url": "https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json"},
+            {"name": "OpenRouter", "role": "补最新模型",
+             "url": "https://openrouter.ai/api/v1/models"},
+            {"name": "genai-prices", "role": "价格对账",
+             "url": "https://github.com/pydantic/genai-prices"},
+            {"name": "llm-prices", "role": "价格对账",
+             "url": "https://www.llm-prices.com/"},
+        ],
         "cutoff": AGE_CUTOFF,
         "pricing_pages": PRICING_PAGES,
         "count": len(rows),
@@ -350,7 +430,8 @@ def main() -> None:
     print(f"OK: {len(rows)} models ({n_priced} with prices, "
           f"{len(new_rows)} new from OpenRouter, "
           f"{sum(1 for r in rows if not r['official'])} on aggregators, "
-          f"{sum(1 for r in rows if r['suspect'])} suspect) -> {OUT}")
+          f"{sum(1 for r in rows if r['suspect'])} suspect, "
+          f"{n_diff} 与其他源报价不一致) -> {OUT}")
 
 
 if __name__ == "__main__":
