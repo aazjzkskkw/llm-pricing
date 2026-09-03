@@ -24,7 +24,7 @@
 <body>
 <header>
   <h1>按厂商看</h1>
-  <div class="meta">每家一张卡片，列出该厂商最主力的对话模型和价格区间。更新：<span id="updated">…</span></div>
+  <div class="meta">按厂商归类，含各家对话模型的价格区间与最近发布情况。数据更新：<span id="updated">…</span></div>
 </header>
 <nav>
   <a href="index.html">价格总表</a>
@@ -41,15 +41,15 @@
     <option value="0">仅聚合平台</option>
   </select>
   <select id="sort">
-    <option value="new">按最新发布排</option>
-    <option value="cheap">按最低价排</option>
-    <option value="count">按模型数排</option>
-    <option value="name">按名称排</option>
+    <option value="new">按最近发布排序</option>
+    <option value="cheap">按最低价排序</option>
+    <option value="count">按模型数排序</option>
+    <option value="name">按名称排序</option>
   </select>
 </div>
 <p class="count" id="count"></p>
 <div class="grid" id="grid"></div>
-<p class="note">价格为美元 / 100 万 token。卡片里默认按发布时间倒序，先看到的是这家最新的模型。已官宣退役和两年前发布的对话模型不收录。</p>
+<p class="note">价格单位为美元 / 100 万 token，卡片内按模型发布时间倒序。已排除厂商标注退役及发布超两年的对话模型。</p>
 
 <script>
 let models = [], pages = {};

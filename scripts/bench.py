@@ -32,23 +32,23 @@ AGE_CUTOFF = f"{int(TODAY[:4]) - 2}{TODAY[4:]}"
 # (文件名, 展示名, 说明) —— 分数列和量纲从 benchmark_metadata.csv 里读，不写死。
 EPOCH_BOARDS = [
     ("epoch_capabilities_index.csv", "ECI 综合能力指数",
-     "Epoch AI 把几十个 benchmark 的成绩拟合成一个综合分，用来跨代际比模型总体能力，"
-     "分数没有上限、越高越强。想一眼看谁最强就看这个。"),
+     "Epoch AI 依据数十个基准的成绩拟合出的综合能力指数，无固定上限，"
+     "用于跨代际比较模型的整体能力水平。"),
     ("gpqa_diamond.csv", "GPQA Diamond · 科学推理",
-     "博士级物理、化学、生物选择题，网上搜不到答案的那种。随机猜是 25%。"),
+     "研究生级物理、化学、生物多选题，题目经过防检索设计。随机作答基准为 25%。"),
     ("swe_bench_verified.csv", "SWE-Bench Verified · 真实修 bug",
-     "500 个从 GitHub 真实 issue 里人工筛出来的 Python bug，改完要跑过项目自己的测试。"),
+     "500 个经人工核验的真实 GitHub issue，模型提交的补丁需通过项目自带测试。"),
     ("terminalbench_external.csv", "Terminal-Bench · 终端 Agent",
-     "把模型丢进真终端里干活：装环境、跑脚本、调试。考的是 agent 能力不是单轮问答，"
-     "所以同一个模型换不同 agent 框架分数会差很多。"),
+     "在真实终端环境中完成配置、执行与调试任务，考察 Agent 能力而非单轮问答。"
+     "同一模型搭配不同 Agent 框架，成绩差异较大。"),
     ("frontiermath_tiers_1_3_v2.csv", "FrontierMath · 前沿数学",
-     "Epoch 自己攒的未公开数学题，难度从奥赛到研究生科研级，专门防训练集污染。"),
+     "Epoch AI 自建的未公开数学题库，难度覆盖竞赛级至科研级，用于规避训练集污染。"),
     ("simpleqa_verified.csv", "SimpleQA Verified · 事实准确率",
-     "短事实问答，考的是模型知不知道、以及不知道时会不会硬编。"),
+     "短事实问答，考察模型的知识准确性及在不确定时是否编造答案。"),
     ("arc_agi_2_external.csv", "ARC-AGI-2 · 抽象推理",
-     "看几个图形变换例子推规律，人类容易机器难，纯考归纳推理不考知识量。"),
+     "依据少量图形变换示例归纳规则，考察抽象归纳推理能力，不依赖知识储备。"),
     ("simplebench_external.csv", "SimpleBench · 常识陷阱",
-     "人类觉得简单、模型容易翻车的常识和时空推理题，普通人平均分远高于多数模型。"),
+     "面向人类直觉简单但模型易错的常识与时空推理题，人类平均分高于多数模型。"),
 ]
 
 # 分数列的候选名，按优先级找（Epoch 各 benchmark 的列名不统一）
@@ -188,7 +188,7 @@ def main() -> None:
 
     boards.append({
         "id": "hallucination", "name": "Vectara · 幻觉率",
-        "desc": "让模型给同一批文档写摘要，再用事实一致性模型判断有没有编造内容。幻觉率越低越好。",
+        "desc": "对同一批文档生成摘要，由事实一致性模型判定是否存在编造内容。幻觉率越低越好。",
         "source": "Vectara",
         "url": "https://github.com/vectara/hallucination-leaderboard",
         "cols": [

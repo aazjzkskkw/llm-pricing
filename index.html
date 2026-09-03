@@ -9,7 +9,7 @@
 <body>
 <header>
   <h1>LLM 价格对比</h1>
-  <div class="meta">数据来自 <a href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" target="_blank">LiteLLM 价格库</a>，最新模型由 <a href="https://openrouter.ai/docs" target="_blank">OpenRouter</a> 补充，单位：美元 / 100 万 token。更新：<span id="updated">…</span></div>
+  <div class="meta">数据来自 <a href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" target="_blank">LiteLLM 价格库</a>，最新模型由 <a href="https://openrouter.ai/docs" target="_blank">OpenRouter</a> 补充。单位：美元 / 100 万 token。数据更新：<span id="updated">…</span></div>
 </header>
 <nav>
   <a href="index.html" class="on">价格总表</a>
@@ -43,7 +43,7 @@
     <option value="input">按输入价从低到高</option>
   </select>
 </div>
-<p class="count" id="count">已剔除官宣退役和两年前发布的对话模型。<span id="official-hint"></span></p>
+<p class="count" id="count">已排除厂商标注退役及发布超两年的对话模型。<span id="official-hint"></span></p>
 <table id="tbl">
   <thead><tr>
     <th data-k="vendor_name">厂商</th>
@@ -123,7 +123,7 @@ function rows() {
 function render() {
   const rs = rows();
   document.getElementById('official-hint').textContent =
-    `当前 ${rs.length} 个模型，点列头可排序；按价格排能看出同一模型在各平台的差价。`;
+    `当前 ${rs.length} 个模型。点击列头排序，按价格列排序可对比同一模型在各平台的定价差异。`;
   document.querySelector('#tbl tbody').innerHTML = rs.map(m =>
     `<tr><td>${m.vendor_name}${
       m.via ? `<span class="tag orange">经 ${m.via}</span>`
@@ -133,7 +133,7 @@ function render() {
       m.reasoning ? '<span class="tag blue">推理</span>' : ''}${
       m.tool_call ? '<span class="tag blue">工具</span>' : ''}</td>
     <td class="num">${fmt$(m.input)}${m.suspect
-      ? '<span class="tag red" title="这个价格和同类模型差了上千倍，基本可以确定是上游数据库把「每千 token」填进了「每 token」字段，别当真">?</span>'
+      ? '<span class="tag red" title="价格量级异常，疑为上游数据源单位填写错误（每千 token 误填为每 token），请以厂商官方价格为准">?</span>'
       : ''}</td>
     <td class="num">${fmt$(m.output)}</td>
     <td class="num">${fmt$(m.cache_read)}</td>

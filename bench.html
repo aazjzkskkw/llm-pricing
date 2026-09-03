@@ -23,7 +23,7 @@
 <body>
 <header>
   <h1>模型评测</h1>
-  <div class="meta">榜单数据取自开源评测项目的公开结果，不是我自己跑的。主源是 <a href="https://epoch.ai/benchmarks" target="_blank">Epoch AI 的 AI Benchmarking Hub</a>（CC-BY 4.0），每天更新。抓取时间：<span id="updated">…</span></div>
+  <div class="meta">榜单数据取自开源评测项目公开发布的结果，非本站自行测评。主要来源：<a href="https://epoch.ai/benchmarks" target="_blank">Epoch AI · AI Benchmarking Hub</a>（CC-BY 4.0，每日更新）。抓取时间：<span id="updated">…</span></div>
 </header>
 <nav>
   <a href="index.html">价格总表</a>
@@ -37,13 +37,13 @@
 <div class="bar">
   <input id="q" type="search" placeholder="搜模型名…">
   <select id="age">
-    <option value="1">只看近两年的模型</option>
-    <option value="">全部（含老模型）</option>
+    <option value="1">仅近两年发布的模型</option>
+    <option value="">全部（含早期模型）</option>
   </select>
 </div>
 <p class="count" id="count"></p>
 <table id="tbl"><thead><tr id="head"></tr></thead><tbody></tbody></table>
-<p class="note">这些榜单的题目、评分方式、跑分时用的 agent 框架都不一样，跨榜单的分数不能直接比。同一个模型有多档推理强度（high / max 这些）时只留了最高分。数据来源：Epoch AI「AI Benchmarking Hub」(<a href="https://epoch.ai/benchmarks" target="_blank">epoch.ai/benchmarks</a>, CC-BY 4.0) 和 <a href="https://github.com/vectara/hallucination-leaderboard" target="_blank">Vectara 幻觉榜</a>。</p>
+<p class="note">各榜单的题目、评分方式与所用 Agent 框架不同，分数不可跨榜单直接比较。同一模型存在多档推理强度（high / max 等）时，仅保留最高分。数据来源：Epoch AI「AI Benchmarking Hub」(<a href="https://epoch.ai/benchmarks" target="_blank">epoch.ai/benchmarks</a>, CC-BY 4.0)、<a href="https://github.com/vectara/hallucination-leaderboard" target="_blank">Vectara Hallucination Leaderboard</a>。</p>
 
 <script>
 let boards = [], cur = 0, sortKey = null, sortAsc = false;
@@ -69,9 +69,9 @@ function render() {
     btn.classList.toggle('on', i === cur));
   document.getElementById('about').innerHTML = `${b.desc}
     来源：<a href="${b.url}" target="_blank">${b.source}</a>
-    · 榜单里最新上榜的模型发布于 <b>${b.latest || '未知'}</b>`;
+    · 榜单内最新模型发布于 <b>${b.latest || '未知'}</b>`;
 
-  // 默认按榜单第一列排（幻觉率那种越低越好的标了 asc）
+  // 默认按榜单主指标排序，幻觉率这类越低越好的在数据里标了 asc
   const main = b.cols[0];
   const key = sortKey || main.k;
   const asc = sortKey ? sortAsc : !!main.asc;
@@ -97,7 +97,7 @@ function render() {
 
   const hidden = b.rows.length - rs.length;
   document.getElementById('count').textContent =
-    `${rs.length} 个模型` + (hidden && hideOld ? `（隐藏了 ${hidden} 个两年前的老模型）` : '');
+    `${rs.length} 个模型` + (hidden && hideOld ? `，已隐藏 ${hidden} 个发布超两年的模型` : '');
   document.querySelector('#tbl tbody').innerHTML = rs.map((r, i) =>
     `<tr><td class="rank">${i + 1}</td><td>${r.model}</td>` +
     b.cols.map(c => {
