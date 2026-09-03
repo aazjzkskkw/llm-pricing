@@ -14,7 +14,9 @@
 
   各渠道给同一个模型起的名字五花八门 —— 智谱 GLM-5.3 在官方叫 `zai/glm-5.3`、OpenRouter 叫 `z-ai/glm-5.3`、Novita 叫 `zai-org/glm-5.3`、Bedrock 叫 `us.zai.glm-5-3`、Fireworks 写成 `glm-5p3`。`model_key()` 把命名空间、地域段、`4p6` 这类写法都归一掉，表格才排得到一起；搜索也会拿这个键匹配一次，所以搜 `glm-5.3` 能带出 Fireworks 那行
 - **按厂商看** — 每家一张卡片，默认按最近发布排，卡片里的模型也是新的在上面，带官方价格页链接方便自己复核
-- **模型评测** — 10 个榜单：ECI 综合能力指数、GPQA Diamond、SWE-Bench Verified、Terminal-Bench、FrontierMath、SimpleQA Verified、ARC-AGI-2、DeepSWE、SimpleBench、Vectara 幻觉率。每个榜标了「最新上榜模型」的发布时间，默认隐藏两年前的老模型。DeepSWE 那张带每题平均成本，能直接看性价比
+- **模型评测** — 19 个榜单，按综合 / 编程与 Agent / 数学与推理 / 知识与事实分四类摆。打开先看「总览 · 跨榜单对比」：一行一个模型，一列一张榜，默认按 ECI 综合分从强到弱排，谁强谁弱一眼看得出，空格表示没上那张榜。
+
+  单张榜有：ECI、METR 任务时长、GDPval、SWE-Bench Verified、DeepSWE、Terminal-Bench、Aider Polyglot、WebDev Arena、Cybench、FrontierMath、AIME、ARC-AGI-2、ARC-AGI-1、SimpleBench、GPQA Diamond、HLE、SimpleQA Verified、SciCode、Vectara 幻觉率。DeepSWE 那张带每题平均成本，能直接看性价比
 - **订阅与渠道** — Cursor、Copilot、Claude、Kiro、Trae、Zed、Augment、v0、Cline 的订阅档位（逐个核对过官网标价），加上 15 个聚合平台的模型数和价格区间（这部分从价格总表实时算，不手工维护）
 - **活动与优惠** — 分成长期免费 / 赠送额度 / 其他优惠三档
 - **公益站** — 社区公益及半公益中转站名单，按可用状态分档，另附官方免费额度对照和使用风险提示。名单同步自 [公益中转分享](https://ytzzjx.github.io/)，脚本会去掉里面的邀请参数

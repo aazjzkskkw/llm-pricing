@@ -13,6 +13,10 @@
             font-family:inherit; }
   .boards button:hover { border-color:var(--accent); color:var(--accent); }
   .boards button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .boards { flex-direction:column; align-items:stretch; gap:6px; }
+  .catrow { display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+  .catrow .eyebrow { min-width:76px; letter-spacing:.06em; }
+  .boards button.wide { font-weight:700; }
   .about { max-width:var(--max); margin:14px auto 0; padding:0 20px;
            color:var(--dim); font-size:13px; }
   .about a { text-decoration:none; }
@@ -51,8 +55,15 @@ new ResizeObserver(() => document.documentElement.style
 fetch('data/bench.json').then(r => r.json()).then(d => {
   boards = d.boards;
   document.getElementById('updated').textContent = d.updated_at;
-  document.getElementById('boards').innerHTML = boards.map((b, i) =>
-    `<button data-i="${i}">${b.name}</button>`).join('');
+  // 榜单多了，按分类分行摆，不然一排按钮糊成一片
+  const ovi = boards.findIndex(b => b.id === 'overview');
+  const cats = [...new Set(boards.filter(b => b.id !== 'overview').map(b => b.cat || '其他'))];
+  document.getElementById('boards').innerHTML =
+    (ovi >= 0 ? `<div class="catrow"><span class="eyebrow">一眼看强弱</span>
+       <button data-i="${ovi}" class="wide">${boards[ovi].name}</button></div>` : '') +
+    cats.map(c => `<div class="catrow"><span class="eyebrow">${c}</span>` +
+      boards.map((b, i) => b.id === 'overview' || (b.cat || '其他') !== c ? ''
+        : `<button data-i="${i}">${b.name}</button>`).join('') + '</div>').join('');
   document.querySelectorAll('.boards button').forEach(btn =>
     btn.onclick = () => { cur = +btn.dataset.i; sortKey = null; render(); });
   render();
@@ -61,8 +72,8 @@ fetch('data/bench.json').then(r => r.json()).then(d => {
 
 function render() {
   const b = boards[cur];
-  document.querySelectorAll('.boards button').forEach((btn, i) =>
-    btn.classList.toggle('on', i === cur));
+  document.querySelectorAll('.boards button').forEach(btn =>
+    btn.classList.toggle('on', +btn.dataset.i === cur));
   document.getElementById('about').innerHTML = `${b.desc}
     来源：<a href="${b.url}" target="_blank">${b.source}</a>
     · 榜单内最新模型发布于 <b>${b.latest || '未知'}</b>`;
@@ -98,7 +109,7 @@ function render() {
     `<tr><td class="rank${i < 3 ? ' top' : ''}">${i + 1}</td><td>${r.model}</td>` +
     b.cols.map(c => {
       const v = r[c.k];
-      if (v == null || v === '') return '<td class="na">-</td>';
+      if (v == null || v === '') return '<td class="na">·</td>';
       return `<td class="${c.num ? 'num' : 'v'}">${v}</td>`;
     }).join('') +
     `<td class="v">${r.released || '<span class="na">-</span>'}</td></tr>`).join('');
