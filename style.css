@@ -192,7 +192,9 @@ td.sbar { background:linear-gradient(to right,
            gap:6px; min-width:96px; height:22px; }
 .barwrap::before { content:""; position:absolute; inset:0; border-radius:5px;
                    background:#eef1f6; }
-.barfill { position:absolute; left:0; top:0; bottom:0; width:var(--p); border-radius:5px;
+/* 柱子最多占 82%，右边留给数字标签，不然满格时标签压在柱子上看不清 */
+.barfill { position:absolute; left:0; top:0; bottom:0; border-radius:5px;
+           width:calc(var(--p) * .82); max-width:82%;
            background:linear-gradient(90deg, #93b4ff, var(--accent)); }
 .barfill.r1 { background:linear-gradient(90deg,#ffd27a,#f59e0b); }
 .barfill.r2 { background:linear-gradient(90deg,#c7d2fe,#818cf8); }

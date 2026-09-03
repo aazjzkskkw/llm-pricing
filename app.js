@@ -89,11 +89,15 @@ async function markFlagships(models) {
     for (const r of board?.rows || []) eci.set(benchKey(r.model), r.score);
   } catch { /* 榜单拉不到就只靠价格 */ }
 
-  const best = new Map();          // vendor -> [{key, score}]
+  const best = new Map();          // 品牌 -> [[key, score]]
   for (const m of models) {
     if (m.mode !== 'chat' || m.aged) continue;
     m.eci = eci.get(m.key) ?? null;
-    const score = m.eci ?? (m.input ?? 0) / 1e4;   // 没分就用价格当弱代理
+    // 旗舰是「品牌的旗舰」。托管平台的行里 vendor_name 是平台名（Groq、Nebius
+    // 这些），它们上架的开源小模型不该被算成谁的旗舰，所以只认厂商直营和
+    // 带 via 的行（那两种 vendor_name 才是真品牌）
+    if (!m.official && !m.via) continue;
+    const score = m.eci ?? (m.input ?? 0) / 1e4;   // 没上 ECI 榜就用价格当弱代理
     const arr = best.get(m.vendor_name) || [];
     arr.push([m.key, score]);
     best.set(m.vendor_name, arr);
@@ -106,7 +110,7 @@ async function markFlagships(models) {
       .slice(0, 3).map(x => x[0])));
   }
   for (const m of models) m.flagship = !m.aged && m.mode === 'chat'
-    && (top.get(m.vendor_name)?.has(m.key) ?? false);
+    && (m.official || m.via) && (top.get(m.vendor_name)?.has(m.key) ?? false);
 }
 
 // ---- 图形化：横向柱子。所有页面共用同一套，不引图表库 ----

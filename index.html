@@ -75,7 +75,7 @@
   <tbody></tbody>
 </table>
 
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 <script>
 let models = [], sortKey = 'flagship', sortAsc = true;
 // 统一的「渠道」概念：补充行看 via，主源里平台自己就是渠道，其余算厂商直营
@@ -216,24 +216,44 @@ function priceCell(v, m, main) {
   return `<td class="num ${tier(v)}">${money(v)}${extra}</td>`;
 }
 
-// 旗舰模型的最低渠道价，一图看清各家旗舰要多少钱。价格跨几个量级，用对数刻度
+// 头部模型「多强、多少钱」一张图说完：按 ECI 综合能力分从强到弱排，
+// 柱长是它在所有渠道里的最低价（对数刻度，价格跨了几个数量级）
 function flagChart() {
-  const best = new Map();
+  // 品牌只能从厂商直营行或带 via 的行上取 —— 平台行的 vendor_name 是平台名，
+  // 拿它当品牌会出现「AWS Bedrock claude-fable-5」这种张冠李戴
+  const brand = new Map(), cheap = new Map();
+  const ok = m => m.mode === 'chat' && !m.aged && m.input > 0 && m.eci != null;
+  // 品牌优先取带 via 的行：那是各渠道 API 自己报的厂商 slug，最准。
+  // 上游偶尔把转售条目挂在别人名下（LiteLLM 里有 mistral/glm-5-2），
+  // 只认 official 会把 GLM 说成 Mistral 的。
+  for (const m of models) if (ok(m) && m.via && !brand.has(m.key))
+    brand.set(m.key, m.vendor_name);
+  for (const m of models) if (ok(m) && m.official && !brand.has(m.key))
+    brand.set(m.key, m.vendor_name);
   for (const m of models) {
-    if (!m.flagship || m.mode !== 'chat' || !(m.input > 0)) continue;
-    const cur = best.get(m.vendor_name);
-    if (!cur || m.input < cur.input) best.set(m.vendor_name, m);
+    if (!ok(m)) continue;
+    const c = cheap.get(m.key);
+    if (!c || m.input < c.input) cheap.set(m.key, m);
   }
-  const list = [...best.values()].sort((a, b) => a.input - b.input).slice(0, 14);
+  const all = [...cheap.values()].filter(m => brand.has(m.key))
+    .sort((x, y) => y.eci - x.eci);
+  const perBrand = new Map();          // 同品牌只留最强那款，免得一家占半张图
+  for (const m of all) {
+    const bn = brand.get(m.key);
+    if (!perBrand.has(bn)) perBrand.set(bn, m);
+  }
+  const list = [...perBrand.values()].slice(0, 14);
   if (!list.length) return;
-  const lo = list[0].input, hi = list[list.length - 1].input;
+  const ps = list.map(m => m.input), lo = Math.min(...ps), hi = Math.max(...ps);
   const el = document.getElementById('chart');
   el.style.display = '';
-  el.innerHTML = `<h3>各家旗舰的最低渠道价<small>对数刻度 · 越短越便宜 · 美元 / 1M 输入</small></h3>` +
-    list.map((m, i) => `<div class="row">
-      <span class="nm" title="${m.vendor_name} ${m.model}">${m.vendor_name}
-        <span class="dim">${m.model.split('/').pop()}</span></span>
-      ${bar(Math.max(logPct(m.input, lo, hi), 3), money(m.input), i)}</div>`).join('');
+  el.innerHTML = `<h3>头部模型：多强，多少钱<small>按 ECI 综合能力分排 ·
+      柱长为最低渠道价（对数刻度）· 美元 / 1M 输入</small></h3>` +
+    list.map(m => `<div class="row">
+      <span class="nm" title="${brand.get(m.key)} ${m.key}">
+        <b>${brand.get(m.key)}</b> <span class="dim">${m.key}</span></span>
+      ${bar(Math.max(logPct(m.input, lo, hi), 4),
+            `${money(m.input)} <span class="dim">${chanOf(m)}</span>`)}</div>`).join('');
 }
 
 function render() {
