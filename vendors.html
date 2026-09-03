@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>按厂商看 — LLM 价格对比</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .vcard { background:var(--card); border:1px solid var(--line); border-radius:14px;
+           padding:16px 18px; box-shadow:0 1px 3px rgba(0,0,0,.05); }
+  .vcard h3 { margin:0 0 2px; font-size:16px; display:flex; align-items:center; gap:6px; }
+  .vcard .sum { color:var(--dim); font-size:12px; margin-bottom:10px; }
+  .mlist { display:flex; flex-direction:column; gap:1px; }
+  .mrow { display:flex; justify-content:space-between; gap:10px; font-size:13px;
+          padding:3px 0; border-bottom:1px dashed var(--line); }
+  .mrow:last-child { border-bottom:none; }
+  .mrow span:first-child { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .mrow b { font-weight:500; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  .more { display:inline-block; margin-top:8px; font-size:12px; text-decoration:none; }
+  .more:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<header>
+  <h1>按厂商看</h1>
+  <div class="meta">每家一张卡片，列出该厂商最主力的对话模型和价格区间。更新：<span id="updated">…</span></div>
+</header>
+<nav>
+  <a href="index.html">价格总表</a>
+  <a href="vendors.html" class="on">按厂商看</a>
+  <a href="bench.html">模型评测</a>
+  <a href="promos.html" class="gift">🎁 活动与优惠</a>
+</nav>
+<div class="bar">
+  <input id="q" type="search" placeholder="搜厂商名，如 openai、智谱、通义…">
+  <select id="src">
+    <option value="1">仅厂商官方</option>
+    <option value="">全部（含聚合平台）</option>
+    <option value="0">仅聚合平台</option>
+  </select>
+  <select id="sort">
+    <option value="cheap">按最低价排</option>
+    <option value="count">按模型数排</option>
+    <option value="name">按名称排</option>
+  </select>
+</div>
+<p class="count" id="count"></p>
+<div class="grid" id="grid"></div>
+<p class="note">价格为美元 / 100 万 token，取该厂商 chat 类模型中的输入价。想看某家全部模型（含向量、语音等），点卡片里的链接跳到价格总表。</p>
+
+<script>
+let models = [];
+const fmt$ = v => v == null ? '未公布' : v === 0 ? '免费'
+  : v < 0.01 ? '$' + v.toFixed(4) : '$' + (+v.toFixed(2));
+
+const bar = document.querySelector('.bar');
+new ResizeObserver(() => document.documentElement.style
+  .setProperty('--th-top', bar.offsetHeight + 'px')).observe(bar);
+
+fetch('data/models.json').then(r => r.json()).then(d => {
+  document.getElementById('updated').textContent = d.updated_at;
+  // 只留有价格的 chat 模型：向量/语音的价格量纲不同，混一起算区间没意义
+  models = d.models.filter(m => m.mode === 'chat' && m.input != null);
+  render();
+});
+
+['q','src','sort'].forEach(id =>
+  document.getElementById(id).addEventListener('input', render));
+
+function render() {
+  const q = document.getElementById('q').value.toLowerCase();
+  const src = document.getElementById('src').value;
+  const by = document.getElementById('sort').value;
+
+  // 分组要在筛选之后做：同一个品牌下既有官方直营价也有平台转售价
+  const groups = new Map();
+  for (const m of models) {
+    if (src !== '' && String(+m.official) !== src) continue;
+    if (q && !m.vendor_name.toLowerCase().includes(q)) continue;
+    const g = groups.get(m.vendor_name)
+      || { name: m.vendor_name, chat: [], hasOfficial: false };
+    g.chat.push(m);
+    if (m.official) g.hasOfficial = true;
+    groups.set(m.vendor_name, g);
+  }
+  const vs = [...groups.values()];
+  for (const g of vs) {
+    g.chat.sort((a, b) => a.input - b.input);
+    g.min = g.chat[0].input;
+    g.max = g.chat[g.chat.length - 1].input;
+  }
+  vs.sort(by === 'count' ? (a, b) => b.chat.length - a.chat.length
+        : by === 'name' ? (a, b) => a.name.localeCompare(b.name)
+        : (a, b) => a.min - b.min);
+
+  document.getElementById('count').textContent = `共 ${vs.length} 家`;
+  document.getElementById('grid').innerHTML = vs.map(g => {
+    // 每家列最便宜的 6 个，够看出价格档位
+    const top = g.chat.slice(0, 6).map(m => `<div class="mrow">
+        <span title="${m.model}">${m.model.split('/').pop()}</span>
+        <b>${fmt$(m.input)} / ${fmt$(m.output)}</b></div>`).join('');
+    return `<div class="vcard">
+      <h3>${g.name}${g.hasOfficial ? '' : '<span class="tag blue">平台</span>'}</h3>
+      <div class="sum">${g.chat.length} 个对话模型 · 输入价 ${fmt$(g.min)} ~ ${fmt$(g.max)}</div>
+      <div class="mlist">${top}</div>
+      <a class="more" href="index.html?vendor=${encodeURIComponent(g.name)}">在总表里看这家 →</a>
+    </div>`;
+  }).join('');
+}
+</script>
+</body>
+</html>
