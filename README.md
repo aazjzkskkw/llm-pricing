@@ -10,7 +10,7 @@
 
 - **价格总表** — 搜模型、按厂商筛、按最新发布或价格排序。同一模型官方价和各平台价摆在一起看，差价一目了然。每个价格都标了来源：**官方直营**、平台转售，还是**经 OpenRouter**
 - **按厂商看** — 每家一张卡片，默认按最近发布排，卡片里的模型也是新的在上面，带官方价格页链接方便自己复核
-- **模型评测** — Aider Polyglot（代码编辑）和 Vectara 幻觉率两个开源榜，每个榜标了「最新上榜模型」的发布时间，默认隐藏两年前的老模型
+- **模型评测** — 9 个榜单：ECI 综合能力指数、GPQA Diamond、SWE-Bench Verified、Terminal-Bench、FrontierMath、SimpleQA Verified、ARC-AGI-2、SimpleBench、Vectara 幻觉率。每个榜标了「最新上榜模型」的发布时间，默认隐藏两年前的老模型
 - **活动与优惠** — 分成长期免费 / 送额度 / 其他优惠三档，能白嫖的排最前面
 
 国产厂商都是中文名：通义千问、智谱、Kimi、豆包这些。
@@ -26,12 +26,12 @@
 - [OpenRouter](https://openrouter.ai/api/v1/models)（补最新模型，页面标"新"；它的 `created` 字段还顺便当了全站的模型发布日期来源）
 
 **评测**
-- [Aider](https://aider.chat/docs/leaderboards/) polyglot 榜
-- [Vectara 幻觉榜](https://github.com/vectara/hallucination-leaderboard)
+- [Epoch AI · AI Benchmarking Hub](https://epoch.ai/benchmarks)（主源，一个 zip 打包几十个 benchmark 的原始成绩，每天更新，CC-BY 4.0，模型发布日期也是现成的）
+- [Vectara 幻觉榜](https://github.com/vectara/hallucination-leaderboard)（Epoch 没覆盖的维度）
 
 `scripts/update.py` 管价格，`scripts/bench.py` 管榜单，都归一成 `data/*.json`。GitHub Actions 每天自动跑一次，所以这页不用手动维护。
 
-价格以各家官网为准，每家的官方价格页链接在「按厂商看」的卡片里。开源榜单普遍滞后，想看刚发布几天的模型得去 Artificial Analysis 或 LMArena 那类闭源榜；不同榜单的题目和评分方式差别很大，跨榜单的分数不能直接比。
+价格以各家官网为准，每家的官方价格页链接在「按厂商看」的卡片里。评测那边跨榜单的分数不能直接比：题目、评分方式、跑分用的 agent 框架都不一样；同一模型有多档推理强度时只留了最高分。
 
 上游那份价格库是社区维护的，偶尔会有人把「每千 token」的价格填进「每 token」字段，价格就离谱 1000 倍（比如 Cohere 的 embed-multilingual-light 标成 $100/1M，实际是 $0.1）。这种明显超出同类模型上限的会打个红色 `?`，鼠标放上去有说明，不直接删是怕误伤真·天价模型（o1-pro 确实是 $150/1M）。
 
@@ -43,7 +43,7 @@ python scripts/bench.py       # 拉评测榜单（要先跑上面那条，它读
 python -m http.server 8000    # 打开 http://localhost:8000
 ```
 
-价格脚本纯标准库，榜单脚本要个 pyyaml（`pip install pyyaml`）。
+两个脚本都只用标准库，没有依赖要装。
 
 ## License
 

@@ -23,7 +23,7 @@
 <body>
 <header>
   <h1>模型评测</h1>
-  <div class="meta">榜单数据直接取自各开源评测项目的公开结果，不是我自己跑的。更新：<span id="updated">…</span></div>
+  <div class="meta">榜单数据取自开源评测项目的公开结果，不是我自己跑的。主源是 <a href="https://epoch.ai/benchmarks" target="_blank">Epoch AI 的 AI Benchmarking Hub</a>（CC-BY 4.0），每天更新。抓取时间：<span id="updated">…</span></div>
 </header>
 <nav>
   <a href="index.html">价格总表</a>
@@ -42,7 +42,7 @@
 </div>
 <p class="count" id="count"></p>
 <table id="tbl"><thead><tr id="head"></tr></thead><tbody></tbody></table>
-<p class="note">开源榜单都有滞后，上面每个榜单标了「最新上榜模型」的发布时间，看之前先瞄一眼。想看刚发布几天的模型，得去 <a href="https://artificialanalysis.ai/" target="_blank">Artificial Analysis</a> 或 <a href="https://lmarena.ai/" target="_blank">LMArena</a> 这类闭源榜。另外不同榜单的题目和评分方式差别很大，跨榜单的分数不能直接比。</p>
+<p class="note">这些榜单的题目、评分方式、跑分时用的 agent 框架都不一样，跨榜单的分数不能直接比。同一个模型有多档推理强度（high / max 这些）时只留了最高分。数据来源：Epoch AI「AI Benchmarking Hub」(<a href="https://epoch.ai/benchmarks" target="_blank">epoch.ai/benchmarks</a>, CC-BY 4.0) 和 <a href="https://github.com/vectara/hallucination-leaderboard" target="_blank">Vectara 幻觉榜</a>。</p>
 
 <script>
 let boards = [], cur = 0, sortKey = null, sortAsc = false;
