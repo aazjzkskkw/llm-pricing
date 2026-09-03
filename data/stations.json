@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03 03:23 UTC",
+ "updated_at": "2026-09-03 06:59 UTC",
  "credit": "https://ytzzjx.github.io/",
  "count": 31,
  "stations": [
@@ -45,13 +45,13 @@
   {
    "name": "Denxio",
    "url": "https://api.denxio.top/register",
-   "kind": "老站复活 / GPT",
-   "summary": "已复活的老站，主打 GPT。参加仙池活动每天可得 20 仙缘（仙缘与刀等值），签到另得 0.5-1 仙缘；注册需要先去 Telegram 领登仙令。",
-   "signup": "仙池活动每天 20 仙缘（与刀等值）",
-   "checkin": "0.5-1 仙缘",
-   "models": "GPT",
+   "kind": "公益服务已停 / 上游号池被封",
+   "summary": "上游号池全部被封，公益服务已经停了，排序已下调。原本主打 GPT，仙池活动每天 20 仙缘（仙缘与刀等值），签到另得 0.5-1 仙缘；注册需先去 Telegram 领登仙令。",
+   "signup": "原为仙池活动每天 20 仙缘（与刀等值）",
+   "checkin": "原为 0.5-1 仙缘",
+   "models": "原为 GPT",
    "entry": "注册链接已含邀请码；另需去 Telegram 频道 t.me/denxio_free 的登仙令分区向 @JieYin_bot 发送「登仙令」领取注册码。",
-   "caveat": "注册码（登仙令）必须去 Telegram 领，没有就注册不了。仙池最近每天开放，但是否长期每天开放没有保证，开放通知只发在 Telegram 频道和 QQ 群。刚复活，稳定性和额度规则都可能变，请以站内和群内公告为准。",
+   "caveat": "有人用这个站做涩情内容和蒸馏，把站方的上游 Pro 号全搞封了，公益服务已停，恢复情况请看 Telegram 频道和 QQ 群公告。原有门槛：注册码（登仙令）必须去 Telegram 领，没有就注册不了；仙池的开放通知也只发在 Telegram 频道和 QQ 群。",
    "updated": "2026-08-31",
    "status": "open"
   },
@@ -84,13 +84,13 @@
   {
    "name": "Nofx",
    "url": "https://nofx.one/zh-CN/sign-in",
-   "kind": "付费站 / 可用",
-   "summary": "付费站；注册链接可得 20 刀，加入 Discord 另送 5 刀，日签到 5 刀（上限 50），GPT-5.6-sol 0.6x。",
+   "kind": "公益区 / 未见充值入口",
+   "summary": "注册链接可得 20 刀，加入 Discord 另送 5 刀，日签到 5 刀（上限 50），GPT-5.6-sol 0.6x；站内没找到充值入口，已归到公益区。",
    "signup": "20 刀（+ Discord 5 刀）",
    "checkin": "5 刀（上限 50）",
    "models": "GPT-5.6-sol",
    "entry": "使用邀请注册链接注册；注册后加入 Discord 可再领 5 刀。",
-   "caveat": "付费站；请以站内公告和实际调用为准，签到上限与倍率可能调整。",
+   "caveat": "站内没找到充值入口，是否真的不支持充值以站内实际显示为准。签到上限与倍率可能调整，请以站内公告和实际调用为准。",
    "updated": "2026-08-28",
    "status": "open"
   },
@@ -105,6 +105,19 @@
    "entry": "Linux Do 二级账号，或 .edu.cn 教育邮箱注册。",
    "caveat": "模型范围、上下文规则和服务状态可能调整，请以站内实际说明为准。",
    "updated": "2026-08-26",
+   "status": "open"
+  },
+  {
+   "name": "Fate New API",
+   "url": "https://fatenewapi.xxxxo.bond/sign-up",
+   "kind": "NodeLoc 注册 / 需保持调用",
+   "summary": "通过 NodeLoc 注册，注册送 150 刀，有每日签到，支持全模型。注意：不使用好像会被删号，删了要重新注册，本人已经被删过两次。",
+   "signup": "150 刀",
+   "checkin": "有签到，金额待确认",
+   "models": "全模型",
+   "entry": "通过 NodeLoc 注册。被删号之后重新走一遍注册链接就能再注册。",
+   "caveat": "不使用好像会被删号——本人已经被删过两次，所以注册完记得保持调用。被删之后重新走注册链接可以再注册。签到金额、模型可用性、倍率和服务规则也可能调整，请以站内实际说明为准。",
+   "updated": "2026-08-24",
    "status": "open"
   },
   {
@@ -352,19 +365,6 @@
    "entry": "注册页仍可访问，但站方刚删光所有用户、正在修复，建议等结果出来再决定。原门槛为 GitHub 注册、主账号邮箱需为 Google 或 Microsoft 邮箱、账号注册时间超过 14 天，并需通过 Discord 认证。",
    "caveat": "站方于 2026-09-02 删除了所有用户账号，原因不明，正在修复，已有账号和额度能否恢复未知。另有实测注入：模型被限制成只能用英文回答，中文提问也回英文，说明请求在到达模型前被加了指令，其他改动无从判断。两件事叠加，不要用于需要结果可信或账号要长期留存的场景。站点已改名换域名，旧的 manus.space 地址不要再用。",
    "updated": "2026-08-26",
-   "status": "avoid"
-  },
-  {
-   "name": "Fate New API",
-   "url": "https://fatenewapi.xxxxo.bond/sign-up",
-   "kind": "NodeLoc 注册 / 有签到",
-   "summary": "通过 NodeLoc 注册，注册送 150 刀，有每日签到，支持全模型。",
-   "signup": "150 刀",
-   "checkin": "有签到，金额待确认",
-   "models": "全模型",
-   "entry": "通过 NodeLoc 注册。",
-   "caveat": "近期曾清理一批此前注册的账号；老账号可以再走一遍注册链接。签到金额、模型可用性、倍率和服务规则也可能调整，请以站内实际说明为准。",
-   "updated": "2026-08-24",
    "status": "avoid"
   },
   {
