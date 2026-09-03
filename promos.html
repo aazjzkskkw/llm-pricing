@@ -6,15 +6,20 @@
 <title>厂商活动 & 平台优惠 — LLM 价格对比</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  h2 { max-width:var(--max); margin:28px auto 4px; padding:0 20px; font-size:17px; }
+  h2 { max-width:var(--max); margin:26px auto 2px; padding:0 20px; font-size:17px; }
+  h2 small { font-weight:400; font-size:13px; color:var(--dim); margin-left:8px; }
   .card { display:flex; flex-direction:column; gap:4px; }
   .card .desc { flex:1; }
+  .card .kind { font-size:12px; font-weight:600; }
+  .k-free { color:#15803d; }
+  .k-credit { color:#c2410c; }
+  .k-trial { color:var(--accent); }
 </style>
 </head>
 <body>
 <header>
-  <h1>厂商活动 &amp; 平台优惠</h1>
-  <div class="meta">各厂商和聚合平台的免费额度入口，随手收的。</div>
+  <h1>活动与优惠</h1>
+  <div class="meta">各家的免费额度和优惠入口，能白嫖的排在前面。</div>
 </header>
 <nav>
   <a href="index.html">价格总表</a>
@@ -22,42 +27,51 @@
   <a href="bench.html">模型评测</a>
   <a href="promos.html" class="gift on">🎁 活动与优惠</a>
 </nav>
-<h2>厂商官方活动</h2>
-<div class="grid" id="official"></div>
-<h2>聚合平台优惠</h2>
-<div class="grid" id="agg"></div>
-<p class="note">活动与额度随时可能变动，以各官网实际说明为准。想补充活动？编辑本页中的 PROMOS 数组提交 PR 即可。</p>
+<h2>长期免费<small>不限时，注册就能一直用</small></h2>
+<div class="grid" id="free"></div>
+<h2>送额度<small>新用户赠送，用完为止</small></h2>
+<div class="grid" id="credit"></div>
+<h2>其他优惠<small>限时活动、批量折扣、缓存降价</small></h2>
+<div class="grid" id="trial"></div>
+<p class="note">活动和额度随时会变，点进去看官网说明为准。想补充或纠正，改本页 PROMOS 数组提交 PR 就行。</p>
 
 <script>
-// 活动数据：直接改这个数组即可增删，无需动样式
+// 改这个数组就行。kind: free=长期免费 / credit=送额度 / trial=其他优惠
 const PROMOS = [
-  // —— 厂商官方 ——
-  { section: 'official', name: 'Google AI Studio', desc: 'Gemini 系列提供免费额度，适合个人开发调试。', url: 'https://aistudio.google.com/' },
-  { section: 'official', name: '智谱开放平台', desc: 'GLM 系列新用户赠送资源，部分 Flash 模型免费。', url: 'https://open.bigmodel.cn/' },
-  { section: 'official', name: '阿里云百炼', desc: '通义千问系列新用户每款模型赠送百万级 token。', url: 'https://www.aliyun.com/product/bailian' },
-  { section: 'official', name: '火山方舟（豆包）', desc: '豆包系列新用户赠送 token 额度。', url: 'https://console.volcengine.com/ark' },
-  { section: 'official', name: 'DeepSeek 开放平台', desc: '注册即赠送额度，价格长期保持行业低位。', url: 'https://platform.deepseek.com/' },
-  { section: 'official', name: 'Moonshot 开放平台', desc: 'Kimi 系列注册赠送体验金。', url: 'https://platform.moonshot.cn/' },
-  { section: 'official', name: 'MiniMax 开放平台', desc: '新用户赠送额度。', url: 'https://platform.minimaxi.com/' },
-  { section: 'official', name: '腾讯混元', desc: '新用户免费体验额度。', url: 'https://cloud.tencent.com/product/hunyuan' },
-  { section: 'official', name: '阶跃星辰', desc: 'Step 系列注册赠送额度。', url: 'https://platform.stepfun.com/' },
-  { section: 'official', name: 'Anthropic Console', desc: 'Claude 系列注册赠送少量体验额度。', url: 'https://console.anthropic.com/' },
-  { section: 'official', name: 'xAI Console', desc: 'Grok 系列不定期赠送免费额度。', url: 'https://console.x.ai/' },
-  { section: 'official', name: 'OpenAI Platform', desc: '部分模型提供免费档（free tier）。', url: 'https://platform.openai.com/' },
-  // —— 聚合平台 ——
-  { section: 'agg', name: 'OpenRouter 免费模型', desc: '带 :free 后缀的模型免费调用，每天有次数限制。', url: 'https://openrouter.ai/models?max_price=0' },
-  { section: 'agg', name: 'Groq', desc: '免费档可调用 Llama 等开源模型，速度极快。', url: 'https://console.groq.com/' },
-  { section: 'agg', name: 'Cerebras', desc: '免费档开放多款开源模型。', url: 'https://cloud.cerebras.ai/' },
-  { section: 'agg', name: 'GitHub Models', desc: 'GitHub 账号即可免费体验主流模型。', url: 'https://github.com/marketplace/models' },
-  { section: 'agg', name: 'Cloudflare Workers AI', desc: '每天固定免费额度。', url: 'https://developers.cloudflare.com/workers-ai/' },
-  { section: 'agg', name: 'NVIDIA NIM', desc: '注册送积分，可调用 NIM 托管模型。', url: 'https://build.nvidia.com/' },
+  // —— 长期免费 ——
+  { kind: 'free', name: 'OpenRouter 免费模型', who: '聚合平台', desc: '带 :free 后缀的模型免费调用，每天限次数，不要钱不要卡。', url: 'https://openrouter.ai/models?max_price=0' },
+  { kind: 'free', name: 'Groq', who: '聚合平台', desc: '免费档能跑 Llama、GLM 等开源模型，推理速度是它的招牌。', url: 'https://console.groq.com/' },
+  { kind: 'free', name: 'Cerebras', who: '聚合平台', desc: '免费档开放多款开源模型，同样主打速度。', url: 'https://cloud.cerebras.ai/' },
+  { kind: 'free', name: 'GitHub Models', who: '聚合平台', desc: '有 GitHub 账号就能免费试主流闭源模型，有速率限制。', url: 'https://github.com/marketplace/models' },
+  { kind: 'free', name: 'Cloudflare Workers AI', who: '聚合平台', desc: '每天给固定免费额度，跟 Workers 一起用很顺。', url: 'https://developers.cloudflare.com/workers-ai/' },
+  { kind: 'free', name: '智谱 GLM Flash 系列', who: '智谱', desc: 'GLM-4.5-Flash 这类 Flash 型号官方标价 0，价格总表里也能看到。', url: 'https://open.bigmodel.cn/pricing' },
+  { kind: 'free', name: 'Google AI Studio', who: 'Google', desc: 'Gemini 有免费档，网页里直接用，个人调试够了。', url: 'https://aistudio.google.com/' },
+  // —— 送额度 ——
+  { kind: 'credit', name: '阿里云百炼', who: '阿里', desc: '通义千问新用户每款模型送百万级 token，覆盖模型多。', url: 'https://bailian.console.aliyun.com/' },
+  { kind: 'credit', name: '火山方舟（豆包）', who: '字节', desc: '豆包系列新用户送 token 额度，常有活动加码。', url: 'https://console.volcengine.com/ark' },
+  { kind: 'credit', name: 'Moonshot 开放平台', who: '月之暗面', desc: 'Kimi 注册送体验金。', url: 'https://platform.moonshot.cn/' },
+  { kind: 'credit', name: 'MiniMax 开放平台', who: 'MiniMax', desc: '注册送额度。', url: 'https://platform.minimaxi.com/' },
+  { kind: 'credit', name: '腾讯混元', who: '腾讯', desc: '新用户免费额度，混元系列。', url: 'https://cloud.tencent.com/product/hunyuan' },
+  { kind: 'credit', name: '阶跃星辰', who: '阶跃', desc: 'Step 系列注册送额度。', url: 'https://platform.stepfun.com/' },
+  { kind: 'credit', name: 'DeepSeek 开放平台', who: 'DeepSeek', desc: '注册送额度，而且本身就是全表最便宜的一档。', url: 'https://platform.deepseek.com/' },
+  { kind: 'credit', name: 'NVIDIA NIM', who: '聚合平台', desc: '注册送积分，可调 NIM 上托管的一堆模型。', url: 'https://build.nvidia.com/' },
+  // —— 其他优惠 ——
+  { kind: 'trial', name: 'OpenAI Batch API', who: 'OpenAI', desc: '批量接口五折，不着急的离线任务直接省一半。', url: 'https://platform.openai.com/docs/guides/batch' },
+  { kind: 'trial', name: 'Anthropic 提示缓存', who: 'Anthropic', desc: '命中缓存的输入只要一折，长系统提示词的场景省得最多。', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching' },
+  { kind: 'trial', name: 'DeepSeek 缓存命中价', who: 'DeepSeek', desc: '缓存命中的输入价约为原价一折，价格总表「缓存读」那列可以对比。', url: 'https://api-docs.deepseek.com/quick_start/pricing' },
+  { kind: 'trial', name: 'Gemini Batch', who: 'Google', desc: '批量模式五折。', url: 'https://ai.google.dev/gemini-api/docs/batch-mode' },
+  { kind: 'trial', name: 'Anthropic Console', who: 'Anthropic', desc: '注册有少量体验额度，主要还是靠充值。', url: 'https://console.anthropic.com/' },
+  { kind: 'trial', name: 'xAI Console', who: 'xAI', desc: 'Grok 不定期发免费额度，看当期公告。', url: 'https://console.x.ai/' },
 ];
 
+const LABEL = { free: '长期免费', credit: '送额度', trial: '优惠' };
 for (const p of PROMOS) {
-  document.getElementById(p.section).insertAdjacentHTML('beforeend', `
-    <div class="card"><div class="name">${p.name}</div>
-    <div class="desc">${p.desc}</div>
-    <a href="${p.url}" target="_blank" rel="noopener">前往查看 →</a></div>`);
+  document.getElementById(p.kind).insertAdjacentHTML('beforeend', `
+    <div class="card">
+      <div class="kind k-${p.kind}">${LABEL[p.kind]} · <span class="v">${p.who}</span></div>
+      <div class="name">${p.name}</div>
+      <div class="desc">${p.desc}</div>
+      <a href="${p.url}" target="_blank" rel="noopener">前往查看 →</a></div>`);
 }
 </script>
 </body>
