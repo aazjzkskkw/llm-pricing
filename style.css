@@ -1,71 +1,115 @@
-:root { --bg:#f5f7fa; --card:#fff; --fg:#1c2128; --dim:#6b7280; --line:#e4e8ee;
-        --accent:#2563eb; --accent-bg:#eff4ff; --max:1400px; }
+:root { --bg:#f4f6fa; --card:#fff; --fg:#161b22; --dim:#6b7280; --line:#e3e8ef;
+        --accent:#2f6bff; --accent-bg:#eef3ff; --ok:#0f9d58; --warn:#c2410c;
+        --bad:#d1342f; --max:1400px; }
 * { box-sizing:border-box; }
 body { margin:0; background:var(--bg); color:var(--fg);
-       font:14px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif; }
+       font:14px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
+       -webkit-font-smoothing:antialiased; }
 a { color:var(--accent); }
+
+/* 顶部 */
 header { padding:26px 20px 0; max-width:var(--max); margin:0 auto; }
-h1 { font-size:24px; margin:0 0 4px; }
-.meta { color:var(--dim); font-size:13px; }
+.eyebrow { font-size:11px; font-weight:700; letter-spacing:.14em; color:var(--accent);
+           text-transform:uppercase; }
+h1 { font-size:25px; margin:2px 0 4px; letter-spacing:-.01em; }
+.meta { color:var(--dim); font-size:13px; max-width:900px; }
 .meta a { text-decoration:none; }
 .meta a:hover { text-decoration:underline; }
 
-/* 顶部导航 */
-nav { max-width:var(--max); margin:0 auto; padding:12px 20px 0; display:flex; gap:8px; flex-wrap:wrap; }
-nav a { padding:6px 14px; border-radius:20px; text-decoration:none; font-size:13px;
-        background:var(--card); border:1px solid var(--line); color:var(--fg); }
+/* 导航 */
+nav { max-width:var(--max); margin:0 auto; padding:14px 20px 0;
+      display:flex; gap:8px; flex-wrap:wrap; }
+nav a { padding:6px 14px; border-radius:8px; text-decoration:none; font-size:13px;
+        background:var(--card); border:1px solid var(--line); color:var(--fg);
+        transition:.15s; }
 nav a:hover { border-color:var(--accent); color:var(--accent); }
-nav a.on { background:var(--accent); border-color:var(--accent); color:#fff; }
-nav a.gift { background:linear-gradient(90deg,#eff4ff,#fef4e6); border-color:#fde0c3; color:#c2410c; }
+nav a.on { background:var(--fg); border-color:var(--fg); color:#fff; font-weight:600; }
+
+/* 概览数字 */
+.stats { max-width:var(--max); margin:16px auto 0; padding:0 20px;
+         display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; }
+.stat { background:var(--card); border:1px solid var(--line); border-radius:12px;
+        padding:12px 16px; }
+.stat .k { font-size:11px; font-weight:700; letter-spacing:.1em; color:var(--dim);
+           text-transform:uppercase; }
+.stat .n { font-size:22px; font-weight:700; font-variant-numeric:tabular-nums;
+           letter-spacing:-.02em; margin-top:2px; }
+.stat .s { font-size:12px; color:var(--dim); }
+
+/* 区块标题 */
+h2.sec { max-width:var(--max); margin:30px auto 2px; padding:0 20px; font-size:18px;
+         display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; }
+h2.sec .eyebrow { flex:0 0 auto; }
+h2.sec small { font-weight:400; font-size:13px; color:var(--dim); }
+.lead { max-width:var(--max); margin:4px auto 8px; padding:0 20px;
+        color:var(--dim); font-size:13px; }
 
 /* 筛选条 */
 .bar { max-width:var(--max); margin:14px auto 0; padding:0 20px 12px;
        display:flex; gap:10px; flex-wrap:wrap; position:sticky; top:0;
-       background:var(--bg); z-index:6; }
+       background:linear-gradient(var(--bg) 78%, transparent); z-index:6; }
 input, select { background:var(--card); color:var(--fg); border:1px solid var(--line);
-       border-radius:10px; padding:8px 12px; font-size:14px; font-family:inherit; }
-input { flex:1; min-width:220px; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+       border-radius:9px; padding:8px 12px; font-size:14px; font-family:inherit; }
+input { flex:1; min-width:220px; box-shadow:0 1px 2px rgba(16,24,40,.04); }
 input:focus, select:focus { outline:2px solid var(--accent-bg); border-color:var(--accent); }
 
-/* 表格。注意别在这里用 overflow:hidden 做圆角裁剪，那会让表头的 sticky 失效，
-   圆角改成给四个角上的单元格加，效果一样 */
+/* 表格。别在 table 上用 overflow:hidden 裁圆角，那会让表头 sticky 失效 */
 table { width:100%; max-width:var(--max); margin:0 auto 40px; border-collapse:separate;
         border-spacing:0; background:var(--card); border:1px solid var(--line);
-        border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,.05); }
-th, td { padding:9px 14px; border-bottom:1px solid var(--line); text-align:left; white-space:nowrap; }
-th { color:var(--dim); font-weight:600; font-size:13px; cursor:pointer; user-select:none;
+        border-radius:12px; box-shadow:0 1px 3px rgba(16,24,40,.05); }
+th, td { padding:9px 14px; border-bottom:1px solid var(--line); text-align:left;
+         white-space:nowrap; }
+th { color:var(--dim); font-weight:700; font-size:11px; letter-spacing:.08em;
+     text-transform:uppercase; cursor:pointer; user-select:none;
      position:sticky; top:var(--th-top,58px); background:var(--card); z-index:4;
-     box-shadow:inset 0 -1px 0 var(--line), 0 5px 8px -7px rgba(0,0,0,.4); }
+     box-shadow:inset 0 -1px 0 var(--line), 0 5px 8px -7px rgba(16,24,40,.4); }
 thead th:first-child { border-top-left-radius:12px; }
 thead th:last-child { border-top-right-radius:12px; }
 tbody tr:last-child td:first-child { border-bottom-left-radius:12px; }
 tbody tr:last-child td:last-child { border-bottom-right-radius:12px; }
 th.num, td.num { text-align:right; font-variant-numeric:tabular-nums; }
-tr:last-child td { border-bottom:none; }
-tr:hover td { background:#f7f9fc; }
-.rank { color:var(--dim); width:44px; }
+tbody tr:last-child td { border-bottom:none; }
+tbody tr:hover td { background:#f7f9fd; }
+.rank { color:var(--dim); width:46px; font-variant-numeric:tabular-nums; }
+.rank.top { color:var(--accent); font-weight:700; }
+
+/* 价格分档配色 */
+.t0 { color:var(--ok); font-weight:700; }
+.t1 { color:#0f766e; }
+.t3 { color:#b45309; }
+.t4 { color:var(--bad); font-weight:600; }
+.unit { color:var(--dim); font-size:11px; }
+.free { color:var(--ok); font-weight:700; }
+.na { color:#aeb6c2; }
+.v, .dim { color:var(--dim); }
 
 /* 标签 */
-.tag { display:inline-block; font-size:11px; border-radius:4px; padding:0 6px;
-       margin-left:5px; line-height:18px; vertical-align:1px; }
+.tag { display:inline-block; font-size:11px; border-radius:5px; padding:0 6px;
+       margin-left:5px; line-height:18px; vertical-align:1px; font-weight:600; }
 .tag.blue { color:var(--accent); background:var(--accent-bg); }
-.tag.green { color:#15803d; background:#e9f9ef; }
-.tag.orange { color:#c2410c; background:#fff3e8; }
-.tag.red { color:#b91c1c; background:#fdeaea; cursor:help; font-weight:600; }
-.free { color:#15803d; font-weight:600; }
-.na { color:#b0b7c3; }
-.v { color:var(--dim); }
-.count { color:var(--dim); font-size:13px; margin:0 20px 8px; max-width:var(--max); }
+.tag.ok, .tag.green { color:#0b7a44; background:#e7f7ee; }
+.tag.orange { color:var(--warn); background:#fff2e6; }
+.tag.red { color:var(--bad); background:#fdeaea; cursor:help; }
+.tag.gray { color:var(--dim); background:#eef1f6; font-weight:500; }
 
-/* 卡片网格 */
+/* 卡片 */
 .grid { max-width:var(--max); margin:8px auto; padding:0 20px;
-        display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+        display:grid; grid-template-columns:repeat(auto-fill,minmax(288px,1fr)); gap:14px; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
-        padding:16px 18px; box-shadow:0 1px 3px rgba(0,0,0,.05); }
-.card:hover { box-shadow:0 3px 10px rgba(0,0,0,.08); }
-.card .name { font-weight:600; font-size:15px; }
-.card .desc { color:var(--dim); font-size:13px; margin:4px 0; }
-.card a { font-size:13px; text-decoration:none; font-weight:500; }
+        padding:15px 17px; box-shadow:0 1px 3px rgba(16,24,40,.05);
+        display:flex; flex-direction:column; gap:3px; transition:.15s; }
+.card:hover { box-shadow:0 6px 18px rgba(16,24,40,.09); transform:translateY(-1px); }
+.card .name { font-weight:700; font-size:15px; }
+.card .desc { color:var(--dim); font-size:13px; }
+.card a { font-size:12.5px; text-decoration:none; font-weight:600; margin-top:6px;
+          margin-right:12px; display:inline-block; }
 .card a:hover { text-decoration:underline; }
+.card .kv { font-size:12.5px; margin-top:1px; }
+.card .kv b { font-variant-numeric:tabular-nums; }
+.logo { width:30px; height:30px; border-radius:8px; background:var(--c,#888);
+        color:#fff; font-weight:700; font-size:15px; display:flex;
+        align-items:center; justify-content:center; margin-bottom:5px; }
+.count { color:var(--dim); font-size:13px; margin:0 20px 8px; max-width:var(--max);
+         padding:0 0 0 0; }
 .note { max-width:var(--max); margin:10px auto 40px; padding:0 20px;
-        color:var(--dim); font-size:12px; }
+        color:var(--dim); font-size:12px; line-height:1.8; }

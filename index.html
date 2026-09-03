@@ -8,16 +8,14 @@
 </head>
 <body>
 <header>
+  <div class="eyebrow">MODEL PRICING</div>
   <h1>LLM 价格对比</h1>
-  <div class="meta">数据来自 <a href="https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json" target="_blank">LiteLLM 价格库</a>，最新模型由 <a href="https://openrouter.ai/docs" target="_blank">OpenRouter</a> 补充。单位：美元 / 100 万 token。数据更新：<span id="updated">…</span></div>
+  <div class="meta">厂商官方直营价与聚合平台转售价并列，单位为美元 / 100 万 token。数据源：<span id="srcs">…</span>。更新于 <b id="updated">…</b></div>
 </header>
-<nav>
-  <a href="index.html" class="on">价格总表</a>
-  <a href="vendors.html">按厂商看</a>
-  <a href="bench.html">模型评测</a>
-  <a href="promos.html" class="gift">🎁 活动与优惠</a>
-  <a href="free.html">公益站</a>
-</nav>
+<nav></nav>
+
+<div class="stats" id="stats"></div>
+
 <div class="bar">
   <input id="q" type="search" placeholder="搜索模型名，如 gpt、claude、deepseek、qwen…">
   <select id="official">
@@ -39,11 +37,11 @@
   </select>
   <select id="sortsel">
     <option value="vendor_name">默认按厂商</option>
-    <option value="released">按最新发布</option>
+    <option value="released">按最近发布</option>
     <option value="input">按输入价从低到高</option>
   </select>
 </div>
-<p class="count" id="count">已排除厂商标注退役及发布超两年的对话模型。<span id="official-hint"></span></p>
+<p class="count" id="count"></p>
 <table id="tbl">
   <thead><tr>
     <th data-k="vendor_name">厂商</th>
@@ -53,21 +51,18 @@
     <th data-k="cache_read" class="num">缓存读 $/1M</th>
     <th data-k="context" class="num">上下文</th>
     <th data-k="released">发布</th>
-    <th>特性</th>
+    <th>类型</th>
   </tr></thead>
   <tbody></tbody>
 </table>
 
+<script src="app.js"></script>
 <script>
 let models = [], sortKey = 'vendor_name', sortAsc = true;
-
-const fmt$ = v => v == null ? '<span class="na">未公布</span>'
-  : v === 0 ? '<span class="free">免费</span>'
-  : v < 0.01 ? '$' + v.toFixed(4) : '$' + (+v.toFixed(2));
 const fmtN = v => v == null ? '<span class="na">-</span>' : v.toLocaleString();
 const vendorSel = document.getElementById('vendor');
 
-// 表头 sticky 的位置要跟着筛选条实际高度走，窄屏筛选条换行时才不会互相压住
+// 表头 sticky 位置跟着筛选条实际高度走，窄屏筛选条换行时才不会互相压住
 const bar = document.querySelector('.bar');
 new ResizeObserver(() => document.documentElement.style
   .setProperty('--th-top', bar.offsetHeight + 'px')).observe(bar);
@@ -75,16 +70,38 @@ new ResizeObserver(() => document.documentElement.style
 fetch('data/models.json').then(r => r.json()).then(d => {
   models = d.models;
   document.getElementById('updated').textContent = d.updated_at;
+  document.getElementById('srcs').innerHTML = (d.sources || [])
+    .map(s => `<a href="${s.url}" target="_blank">${s.name}</a><span class="dim">（${s.role}）</span>`)
+    .join('、');
   const vs = [...new Set(models.map(m => m.vendor_name))].sort();
   vendorSel.innerHTML += vs.map(v => `<option>${v}</option>`).join('');
   const preset = new URLSearchParams(location.search).get('vendor');
   if (preset && vs.includes(preset)) vendorSel.value = preset;
+  stats(d, vs.length);
   render();
 });
 
+function stats(d, vendors) {
+  const chat = models.filter(m => m.mode === 'chat' && m.input != null);
+  const freeN = chat.filter(m => m.input === 0).length;
+  const newest = models.filter(m => m.released)
+    .sort((a, b) => b.released.localeCompare(a.released))[0];
+  // 上游偶尔把生图模型标成 chat，卡个上下文门槛把它们排掉，免得「最低价」是张图
+  const cheapest = chat.filter(m => m.input > 0 && (m.context || 0) >= 16000)
+    .sort((a, b) => a.input - b.input)[0];
+  const diff = models.filter(m => m.xref).length;
+  document.getElementById('stats').innerHTML = [
+    ['收录模型', d.count.toLocaleString(), `${vendors} 家厂商与平台`],
+    ['免费档', freeN, '对话模型标价 0'],
+    ['最低付费价', money(cheapest.input), cheapest.model.split('/').pop()],
+    ['最新发布', newest.released, newest.model.split('/').pop()],
+    ['多源对账', diff, diff ? '条报价与其他源不一致' : '全部一致'],
+  ].map(([k, n, s]) => `<div class="stat"><div class="k">${k}</div>
+      <div class="n">${n}</div><div class="s">${s}</div></div>`).join('');
+}
+
 ['q','vendor','mode','priced','official'].forEach(id =>
   document.getElementById(id).addEventListener('input', render));
-// 排序下拉和点列头是同一套状态：发布日期和价格默认都想看「最新/最便宜」在前
 document.getElementById('sortsel').addEventListener('input', e => {
   sortKey = e.target.value;
   sortAsc = sortKey !== 'released';
@@ -105,7 +122,7 @@ function rows() {
   const v = vendorSel.value, mode = document.getElementById('mode').value;
   const priced = document.getElementById('priced').value;
   const official = document.getElementById('official').value;
-  let rs = models.filter(m =>
+  const rs = models.filter(m =>
     (!q || m.model.toLowerCase().includes(q) || m.vendor_name.toLowerCase().includes(q)) &&
     (!v || m.vendor_name === v) &&
     (!mode || m.mode === mode) &&
@@ -120,10 +137,20 @@ function rows() {
   return rs;
 }
 
+function priceCell(v, m, main) {
+  let extra = '';
+  if (main && m.suspect)
+    extra += '<span class="tag red" title="价格量级异常，疑为上游数据源单位填写错误（每千 token 误填为每 token），请以厂商官方价格为准">异常</span>';
+  if (main && m.xref)
+    extra += `<span class="tag orange" title="其他价格库报价：${
+      m.xref.map(x => x.src + ' $' + x.input).join('，')}。计价口径或分档可能不同，以厂商官网为准">对账不一致</span>`;
+  return `<td class="num ${tier(v)}">${money(v)}${extra}</td>`;
+}
+
 function render() {
   const rs = rows();
-  document.getElementById('official-hint').textContent =
-    `当前 ${rs.length} 个模型。点击列头排序，按价格列排序可对比同一模型在各平台的定价差异。`;
+  document.getElementById('count').innerHTML =
+    `已排除厂商标注退役及发布超两年的对话模型。当前 <b>${rs.length}</b> 个模型，点击列头排序。`;
   document.querySelector('#tbl tbody').innerHTML = rs.map(m =>
     `<tr><td>${m.vendor_name}${
       m.via ? `<span class="tag orange">经 ${m.via}</span>`
@@ -132,11 +159,9 @@ function render() {
       m.vision ? '<span class="tag blue">视觉</span>' : ''}${
       m.reasoning ? '<span class="tag blue">推理</span>' : ''}${
       m.tool_call ? '<span class="tag blue">工具</span>' : ''}</td>
-    <td class="num">${fmt$(m.input)}${m.suspect
-      ? '<span class="tag red" title="价格量级异常，疑为上游数据源单位填写错误（每千 token 误填为每 token），请以厂商官方价格为准">?</span>'
-      : ''}</td>
-    <td class="num">${fmt$(m.output)}</td>
-    <td class="num">${fmt$(m.cache_read)}</td>
+    ${priceCell(m.input, m, true)}
+    ${priceCell(m.output, m, false)}
+    ${priceCell(m.cache_read, m, false)}
     <td class="num">${fmtN(m.context)}</td>
     <td class="v">${m.released || '<span class="na">-</span>'}</td>
     <td class="v">${m.mode || ''}</td></tr>`).join('');

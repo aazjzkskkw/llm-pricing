@@ -22,16 +22,11 @@
 </head>
 <body>
 <header>
+  <div class="eyebrow">BENCHMARKS</div>
   <h1>模型评测</h1>
   <div class="meta">榜单数据取自开源评测项目公开发布的结果，非本站自行测评。主要来源：<a href="https://epoch.ai/benchmarks" target="_blank">Epoch AI · AI Benchmarking Hub</a>（CC-BY 4.0，每日更新）。抓取时间：<span id="updated">…</span></div>
 </header>
-<nav>
-  <a href="index.html">价格总表</a>
-  <a href="vendors.html">按厂商看</a>
-  <a href="bench.html" class="on">模型评测</a>
-  <a href="promos.html" class="gift">🎁 活动与优惠</a>
-  <a href="free.html">公益站</a>
-</nav>
+<nav></nav>
 <div class="boards" id="boards"></div>
 <p class="about" id="about"></p>
 <div class="bar">
@@ -45,6 +40,7 @@
 <table id="tbl"><thead><tr id="head"></tr></thead><tbody></tbody></table>
 <p class="note">各榜单的题目、评分方式与所用 Agent 框架不同，分数不可跨榜单直接比较。同一模型存在多档推理强度（high / max 等）时，仅保留最高分。数据来源：Epoch AI「AI Benchmarking Hub」(<a href="https://epoch.ai/benchmarks" target="_blank">epoch.ai/benchmarks</a>, CC-BY 4.0)、<a href="https://github.com/vectara/hallucination-leaderboard" target="_blank">Vectara Hallucination Leaderboard</a>。</p>
 
+<script src="app.js"></script>
 <script>
 let boards = [], cur = 0, sortKey = null, sortAsc = false;
 
@@ -99,7 +95,7 @@ function render() {
   document.getElementById('count').textContent =
     `${rs.length} 个模型` + (hidden && hideOld ? `，已隐藏 ${hidden} 个发布超两年的模型` : '');
   document.querySelector('#tbl tbody').innerHTML = rs.map((r, i) =>
-    `<tr><td class="rank">${i + 1}</td><td>${r.model}</td>` +
+    `<tr><td class="rank${i < 3 ? ' top' : ''}">${i + 1}</td><td>${r.model}</td>` +
     b.cols.map(c => {
       const v = r[c.k];
       if (v == null || v === '') return '<td class="na">-</td>';

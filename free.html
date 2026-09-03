@@ -28,16 +28,11 @@
 </head>
 <body>
 <header>
+  <div class="eyebrow">FREE RELAYS</div>
   <h1>公益站</h1>
   <div class="meta">社区公益 / 半公益中转站名单，含官方免费额度对照。名单同步自 <a href="https://ytzzjx.github.io/" target="_blank" rel="noopener">公益中转分享</a>，已去除其中的邀请参数。同步时间：<span id="updated">…</span></div>
 </header>
-<nav>
-  <a href="index.html">价格总表</a>
-  <a href="vendors.html">按厂商看</a>
-  <a href="bench.html">模型评测</a>
-  <a href="promos.html" class="gift">🎁 活动与优惠</a>
-  <a href="free.html" class="on">公益站</a>
-</nav>
+<nav></nav>
 
 <div class="warn">
   <b>使用第三方中转前请注意</b>：请求经由站点服务器转发，站方可读取、留存和修改传输内容；
@@ -63,12 +58,13 @@
 <p class="count" id="count"></p>
 <div class="grid" id="stations"></div>
 
-<h2>官方免费额度<small>厂商与平台自有免费档，无第三方转发</small></h2>
+<h2 class="sec">官方免费额度<small>厂商与平台自有免费档，无第三方转发</small></h2>
 <p class="lead">额度与速率限制以各站点说明为准。</p>
 <div class="grid" id="official"></div>
 
 <p class="note">本页不为任何第三方站点背书，不含推广参数，链接均为站点入口。名单由 <a href="https://ytzzjx.github.io/" target="_blank" rel="noopener">公益中转分享</a> 维护，状态分类由本站脚本按其描述自动归类，可能与实际情况有偏差，以站内公告为准。</p>
 
+<script src="app.js"></script>
 <script>
 let stations = [];
 const ST = { open: ['当前开放', 'open'], watch: ['观察中', 'watch'],
@@ -102,6 +98,7 @@ function render() {
       s.entry && `注册方式 <span>${s.entry}</span>`,
     ].filter(Boolean).map(x => `<div class="kv">${x}</div>`).join('');
     return `<div class="card">
+      ${logo('', s.name)}
       <div class="st st-${cls}">${label} · <span class="v">更新 ${s.updated}</span></div>
       <div class="name">${s.name}</div>
       ${s.summary ? `<div class="desc">${s.summary}</div>` : ''}
@@ -123,6 +120,7 @@ const OFFICIAL_FREE = [
 ];
 document.getElementById('official').innerHTML = OFFICIAL_FREE.map(p => `
   <div class="card">
+    ${logo('', p.name)}
     <div class="st st-open">官方免费</div>
     <div class="name">${p.name}</div>
     <div class="desc">${p.desc}</div>

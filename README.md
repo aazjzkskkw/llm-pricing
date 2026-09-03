@@ -11,6 +11,7 @@
 - **价格总表** — 搜模型、按厂商筛、按最新发布或价格排序。同一模型官方价和各平台价摆在一起看，差价一目了然。每个价格都标了来源：**官方直营**、平台转售，还是**经 OpenRouter**
 - **按厂商看** — 每家一张卡片，默认按最近发布排，卡片里的模型也是新的在上面，带官方价格页链接方便自己复核
 - **模型评测** — 9 个榜单：ECI 综合能力指数、GPQA Diamond、SWE-Bench Verified、Terminal-Bench、FrontierMath、SimpleQA Verified、ARC-AGI-2、SimpleBench、Vectara 幻觉率。每个榜标了「最新上榜模型」的发布时间，默认隐藏两年前的老模型
+- **订阅与渠道** — Cursor、Copilot、Claude、Kiro、Trae、Zed、Augment、v0、Cline 的订阅档位（逐个核对过官网标价），加上 15 个聚合平台的模型数和价格区间（这部分从价格总表实时算，不手工维护）
 - **活动与优惠** — 分成长期免费 / 赠送额度 / 其他优惠三档
 - **公益站** — 社区公益及半公益中转站名单，按可用状态分档，另附官方免费额度对照和使用风险提示。名单同步自 [公益中转分享](https://ytzzjx.github.io/)，脚本会去掉里面的邀请参数
 
@@ -25,6 +26,7 @@
 **价格**
 - [LiteLLM 价格库](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json)（主力，各家官网公开定价）
 - [OpenRouter](https://openrouter.ai/api/v1/models)（补最新模型，页面标"新"；它的 `created` 字段还顺便当了全站的模型发布日期来源）
+- [pydantic/genai-prices](https://github.com/pydantic/genai-prices) 和 [llm-prices.com](https://www.llm-prices.com/)（只用来对账：同一个模型三家报价差超 20% 就在页面上标「对账不一致」，把别人的报价一并列出来）
 
 **评测**
 - [Epoch AI · AI Benchmarking Hub](https://epoch.ai/benchmarks)（主源，一个 zip 打包几十个 benchmark 的原始成绩，每天更新，CC-BY 4.0，模型发布日期也是现成的）
@@ -36,6 +38,8 @@
 三个脚本：`scripts/update.py` 管价格，`scripts/bench.py` 管榜单，`scripts/stations.py` 管公益站名单，都归一成 `data/*.json`。GitHub Actions 每天自动跑一次，所以这页不用手动维护。
 
 价格以各家官网为准，每家的官方价格页链接在「按厂商看」的卡片里。评测那边跨榜单的分数不能直接比：题目、评分方式、跑分用的 agent 框架都不一样；同一模型有多档推理强度时只留了最高分。
+
+价格对账那块解释一下：三个源的口径不完全一样（有的按基础档、有的把分层价折算过），所以差异不等于谁错，标出来是让你自己去官网确认。实测抽查过 claude-sonnet-5，LiteLLM 报 $2 和 Anthropic 官网一致，genai-prices 的 $3 是旧价。
 
 上游那份价格库是社区维护的，偶尔会有人把「每千 token」的价格填进「每 token」字段，价格就离谱 1000 倍（比如 Cohere 的 embed-multilingual-light 标成 $100/1M，实际是 $0.1）。这种明显超出同类模型上限的会打个红色 `?`，鼠标放上去有说明，不直接删是怕误伤真·天价模型（o1-pro 确实是 $150/1M）。
 

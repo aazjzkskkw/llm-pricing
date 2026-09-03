@@ -18,24 +18,20 @@
 </head>
 <body>
 <header>
+  <div class="eyebrow">PROMOTIONS</div>
   <h1>活动与优惠</h1>
   <div class="meta">厂商与平台的免费额度及优惠入口，按优惠力度排列。</div>
 </header>
-<nav>
-  <a href="index.html">价格总表</a>
-  <a href="vendors.html">按厂商看</a>
-  <a href="bench.html">模型评测</a>
-  <a href="promos.html" class="gift on">🎁 活动与优惠</a>
-  <a href="free.html">公益站</a>
-</nav>
-<h2>长期免费<small>长期有效，注册即可使用</small></h2>
+<nav></nav>
+<h2 class="sec">长期免费<small>长期有效，注册即可使用</small></h2>
 <div class="grid" id="free"></div>
-<h2>赠送额度<small>新用户一次性赠送，用完即止</small></h2>
+<h2 class="sec">赠送额度<small>新用户一次性赠送，用完即止</small></h2>
 <div class="grid" id="credit"></div>
-<h2>其他优惠<small>批量接口折扣、提示缓存降价、限时活动</small></h2>
+<h2 class="sec">其他优惠<small>批量接口折扣、提示缓存降价、限时活动</small></h2>
 <div class="grid" id="trial"></div>
 <p class="note">活动与额度可能随时调整，以各站点公告为准。补充或纠正请编辑本页 PROMOS 数组并提交 PR。</p>
 
+<script src="app.js"></script>
 <script>
 // 增删活动改这个数组。kind: free=长期免费 / credit=赠送额度 / trial=其他优惠
 const PROMOS = [
@@ -69,6 +65,7 @@ const LABEL = { free: '长期免费', credit: '赠送额度', trial: '优惠' };
 for (const p of PROMOS) {
   document.getElementById(p.kind).insertAdjacentHTML('beforeend', `
     <div class="card">
+      ${logo('', p.name)}
       <div class="kind k-${p.kind}">${LABEL[p.kind]} · <span class="v">${p.who}</span></div>
       <div class="name">${p.name}</div>
       <div class="desc">${p.desc}</div>

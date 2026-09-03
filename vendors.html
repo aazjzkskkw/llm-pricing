@@ -23,16 +23,11 @@
 </head>
 <body>
 <header>
+  <div class="eyebrow">VENDORS</div>
   <h1>按厂商看</h1>
   <div class="meta">按厂商归类，含各家对话模型的价格区间与最近发布情况。数据更新：<span id="updated">…</span></div>
 </header>
-<nav>
-  <a href="index.html">价格总表</a>
-  <a href="vendors.html" class="on">按厂商看</a>
-  <a href="bench.html">模型评测</a>
-  <a href="promos.html" class="gift">🎁 活动与优惠</a>
-  <a href="free.html">公益站</a>
-</nav>
+<nav></nav>
 <div class="bar">
   <input id="q" type="search" placeholder="搜厂商名，如 openai、智谱、通义…">
   <select id="src">
@@ -51,10 +46,10 @@
 <div class="grid" id="grid"></div>
 <p class="note">价格单位为美元 / 100 万 token，卡片内按模型发布时间倒序。已排除厂商标注退役及发布超两年的对话模型。</p>
 
+<script src="app.js"></script>
 <script>
 let models = [], pages = {};
-const fmt$ = v => v == null ? '未公布' : v === 0 ? '免费'
-  : v < 0.01 ? '$' + v.toFixed(4) : '$' + (+v.toFixed(2));
+const fmt$ = money;   // app.js
 
 const bar = document.querySelector('.bar');
 new ResizeObserver(() => document.documentElement.style
@@ -105,9 +100,11 @@ function render() {
     const top = g.chat.slice(0, 6).map(m => `<div class="mrow">
         <span title="${m.model}">${m.model.split('/').pop()}${
           m.released ? `<i>${m.released.slice(0, 7)}</i>` : ''}</span>
-        <b>${fmt$(m.input)} / ${fmt$(m.output)}</b></div>`).join('');
+        <b class="${tier(m.input)}">${fmt$(m.input)}</b> <span class="unit">/</span>
+        <b class="${tier(m.output)}">${fmt$(m.output)}</b></div>`).join('');
     const page = pages[g.name];
     return `<div class="vcard">
+      ${logo('', g.name)}
       <h3>${g.name}${g.hasOfficial ? '' : '<span class="tag blue">平台</span>'}</h3>
       <div class="sum">${g.chat.length} 个对话模型 · 输入价 ${fmt$(g.min)} ~ ${fmt$(g.max)}${
         g.latest ? ` · 最近更新 ${g.latest}` : ''}</div>
