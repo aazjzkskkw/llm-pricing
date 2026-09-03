@@ -18,21 +18,21 @@
 <header>
   <div class="eyebrow">SUBSCRIPTIONS &amp; CHANNELS</div>
   <h1>订阅与渠道</h1>
-  <div class="meta">AI 编程工具的订阅档位，以及各聚合平台的模型数量与价格区间。平台数据由价格总表实时算出，订阅价为人工核对的官网标价。</div>
+  <div class="meta">编程工具订阅档位（逐个核对过官网）与聚合平台规模 · 平台数据由价格总表实时算出</div>
 </header>
 <nav></nav>
 
 <h2 class="sec"><span class="eyebrow">CODING TOOLS</span>AI 编程工具订阅<small>月费与包含额度，按月付标价</small></h2>
-<p class="lead">额度单位各家不同（credits / 美元额度 / 请求数），超出后基本都转按量计费。价格核对于 2026-09-03，以官网为准。</p>
+<p class="lead">柱长按最贵档缩放，跨产品可横比。额度单位各家不同，超出后基本转按量计费。</p>
 <div class="grid" id="tools"></div>
 
 <h2 class="sec"><span class="eyebrow">AGGREGATORS</span>聚合平台<small>同一批模型的转售渠道，按模型数排序</small></h2>
-<p class="lead">下列数据从价格总表统计得出：该平台上架的对话模型数量、输入价区间、是否有 0 元档。</p>
+<p class="lead">灰条为全站价格范围，实色段是该平台的区间。</p>
 <div class="grid" id="aggs"></div>
 
 <p class="note">订阅制工具的额度换算口径不统一，跨产品比较仅供参考。聚合平台价格为其转售价，与厂商官方直营价可能有差异，可在<a href="index.html">价格总表</a>按模型名搜索逐一对比。</p>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=5"></script>
 <script>
 // 订阅档位：2026-09-03 逐个核对官网标价。改这里增删产品。
 const TOOLS = [
@@ -56,14 +56,18 @@ const TOOLS = [
     plans: [['自带 Key', 0, '开源，按厂商原价计费'], ['ClinePass', null, '官方托管额度，见官网']] },
 ];
 
-const fmtPlan = ([name, price, note]) => `<span class="plan${price === 0 ? ' free' : ''}">${name}
-  <b>${price === null ? '—' : price === 0 ? '免费' : '$' + price}</b>${note ? `<span class="inc"> · ${note}</span>` : ''}</span>`;
+// 所有工具里最贵的档，柱子按它缩放，跨产品也能横着比
+const PMAX = Math.max(...TOOLS.flatMap(t => t.plans.map(p => p[1] || 0)), 1);
+const planRow = ([name, price, note]) => `<div class="row">
+  <span class="nm">${name}${note ? `<span class="inc"> ${note}</span>` : ''}</span>
+  ${bar(price ? price / PMAX * 100 : 1.5,
+        price === null ? '按量' : price === 0 ? '免费' : '$' + price)}</div>`;
 
 document.getElementById('tools').innerHTML = TOOLS.map(t => `
   <div class="card">
     ${logo(t.icon, t.name)}
     <div class="name">${t.name}<span class="tag gray">${t.vendor}</span></div>
-    <div class="plans">${t.plans.map(fmtPlan).join('')}</div>
+    ${t.plans.map(planRow).join('')}
     <a href="${t.url}" target="_blank" rel="noopener">官方定价页 →</a>
   </div>`).join('');
 
@@ -84,14 +88,19 @@ fetch('data/models.json').then(r => r.json()).then(d => {
   }
   const gs = [...by.values()].filter(g => g.prices.length >= 3)
     .sort((a, b) => b.prices.length - a.prices.length);
+  // 柱子和区间柱都要同一把尺子
+  const nmax = Math.max(...gs.map(g => g.prices.length), 1);
+  const amin = Math.min(...gs.flatMap(g => g.prices).filter(v => v > 0), 0.01);
+  const amax = Math.max(...gs.flatMap(g => g.prices), 1);
   document.getElementById('aggs').innerHTML = gs.map(g => {
     const min = Math.min(...g.prices), max = Math.max(...g.prices);
     return `<div class="card">
       ${logo('', g.name)}
-      <div class="name">${g.name}</div>
-      <div class="kv"><b>${g.prices.length}</b> 个对话模型${g.free ? `<span class="tag ok">${g.free} 个 0 元档</span>` : ''}</div>
-      <div class="kv">输入价 <b>${money(min)}</b> ~ <b>${money(max)}</b> <span class="unit">/ 1M</span></div>
-      ${g.latest ? `<div class="kv dim">最近上架 ${g.latest}</div>` : ''}
+      <div class="name">${g.name}${g.free ? `<span class="tag ok">${g.free} 个 0 元档</span>` : ''}</div>
+      <div class="row"><span class="nm">上架模型</span>${bar(g.prices.length / nmax * 100, g.prices.length)}</div>
+      ${rangeBar(logPct(min, amin, amax), logPct(max, amin, amax), 0, 100)}
+      <div class="kv"><b>${money(min)}</b> ~ <b>${money(max)}</b> <span class="unit">/ 1M 输入</span>${
+        g.latest ? `　<span class="dim">最近 ${g.latest}</span>` : ''}</div>
       <a href="index.html?vendor=${encodeURIComponent(g.name)}">在总表里看 →</a>
       ${pages[g.name] ? `<a href="${pages[g.name]}" target="_blank" rel="noopener">官方定价页 ↗</a>` : ''}
     </div>`;

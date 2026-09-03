@@ -25,7 +25,7 @@
 <header>
   <div class="eyebrow">VENDORS</div>
   <h1>按厂商看</h1>
-  <div class="meta">按厂商归类，含各家对话模型的价格区间与最近发布情况。数据更新：<span id="updated">…</span></div>
+  <div class="meta">每家的价格区间与最新模型 · 灰条是全站价格范围，实色段是这家的位置 · 更新于 <span id="updated">…</span></div>
 </header>
 <nav></nav>
 <div class="bar">
@@ -44,9 +44,9 @@
 </div>
 <p class="count" id="count"></p>
 <div class="grid" id="grid"></div>
-<p class="note">价格单位为美元 / 100 万 token，卡片内按模型发布时间倒序。已排除厂商标注退役及发布超两年的对话模型。</p>
+<p class="note">美元 / 100 万 token，卡片内按发布时间倒序。</p>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=5"></script>
 <script>
 let models = [], pages = {};
 const fmt$ = money;   // app.js
@@ -87,6 +87,9 @@ function render() {
     const prices = g.chat.map(m => m.input);
     g.min = Math.min(...prices); g.max = Math.max(...prices);
   }
+  // 区间柱要在同一把尺子上比，先取所有厂商的价格上下限
+  const gmin = Math.min(...vs.map(g => g.min), Infinity) || 0.01;
+  const gmax = Math.max(...vs.map(g => g.max), 1);
   vs.sort(by === 'count' ? (a, b) => b.chat.length - a.chat.length
         : by === 'name' ? (a, b) => a.name.localeCompare(b.name)
         : by === 'cheap' ? (a, b) => a.min - b.min
@@ -103,8 +106,10 @@ function render() {
     return `<div class="vcard">
       ${logo('', g.name)}
       <h3>${g.name}${g.hasOfficial ? '' : '<span class="tag blue">平台</span>'}</h3>
-      <div class="sum">${g.chat.length} 个对话模型 · 输入价 ${fmt$(g.min)} ~ ${fmt$(g.max)}${
-        g.latest ? ` · 最近更新 ${g.latest}` : ''}</div>
+      <div class="sum">${g.chat.length} 个模型${g.latest ? ` · 最近 ${g.latest}` : ''}</div>
+      ${rangeBar(logPct(g.min, gmin, gmax), logPct(g.max, gmin, gmax), 0, 100)}
+      <div class="sum"><b>${fmt$(g.min)}</b> ~ <b>${fmt$(g.max)}</b>
+        <span class="unit">/ 1M 输入</span></div>
       <div class="mlist">${top}</div>
       <a class="more" href="index.html?vendor=${encodeURIComponent(g.name)}">在总表里看这家 →</a>
       ${page ? `<a class="more" href="${page}" target="_blank" rel="noopener">官方价格页 ↗</a>` : ''}

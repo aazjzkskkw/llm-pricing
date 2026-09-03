@@ -10,11 +10,14 @@
 <header>
   <div class="eyebrow">MODEL PRICING</div>
   <h1>LLM 价格对比</h1>
-  <div class="meta">厂商官方直营价与聚合平台转售价并列，单位为美元 / 100 万 token。数据源：<span id="srcs">…</span>。更新于 <b id="updated">…</b></div>
+  <div class="meta">官方直营价与各渠道转售价并列 · 美元 / 100 万 token · 更新于 <b id="updated">…</b>
+  <br><span class="dim" id="srcs">…</span></div>
 </header>
 <nav></nav>
 
 <div class="stats" id="stats"></div>
+
+<div class="chart" id="chart" style="display:none"></div>
 
 <div class="bar">
   <input id="q" type="search" placeholder="搜索模型名，如 gpt、claude、deepseek、qwen…">
@@ -72,7 +75,7 @@
   <tbody></tbody>
 </table>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=5"></script>
 <script>
 let models = [], sortKey = 'flagship', sortAsc = true;
 // 统一的「渠道」概念：补充行看 via，主源里平台自己就是渠道，其余算厂商直营
@@ -97,6 +100,7 @@ fetch('data/models.json').then(r => r.json()).then(async d => {
   if (qs.get('range') === 'all') document.getElementById('range').value = 'all';
   await markFlagships(models);       // app.js：拿 ECI 榜单标旗舰
   stats(d, vs.length);
+  flagChart();
   render();
 });
 
@@ -212,13 +216,32 @@ function priceCell(v, m, main) {
   return `<td class="num ${tier(v)}">${money(v)}${extra}</td>`;
 }
 
+// 旗舰模型的最低渠道价，一图看清各家旗舰要多少钱。价格跨几个量级，用对数刻度
+function flagChart() {
+  const best = new Map();
+  for (const m of models) {
+    if (!m.flagship || m.mode !== 'chat' || !(m.input > 0)) continue;
+    const cur = best.get(m.vendor_name);
+    if (!cur || m.input < cur.input) best.set(m.vendor_name, m);
+  }
+  const list = [...best.values()].sort((a, b) => a.input - b.input).slice(0, 14);
+  if (!list.length) return;
+  const lo = list[0].input, hi = list[list.length - 1].input;
+  const el = document.getElementById('chart');
+  el.style.display = '';
+  el.innerHTML = `<h3>各家旗舰的最低渠道价<small>对数刻度 · 越短越便宜 · 美元 / 1M 输入</small></h3>` +
+    list.map((m, i) => `<div class="row">
+      <span class="nm" title="${m.vendor_name} ${m.model}">${m.vendor_name}
+        <span class="dim">${m.model.split('/').pop()}</span></span>
+      ${bar(Math.max(logPct(m.input, lo, hi), 3), money(m.input), i)}</div>`).join('');
+}
+
 function render() {
   const [rs, groups] = rows();
   const grouped = sortKey === 'key' && !document.getElementById('dedup').value;
   const multi = [...groups.values()].filter(g => g.n > 1).length;
   document.getElementById('count').innerHTML =
-    `默认只看近一年发布的对话模型，更早的切「全部」查看。当前 <b>${rs.length}</b> 行，
-     归为 <b>${groups.size}</b> 个模型，其中 <b>${multi}</b> 个有两个以上渠道可比价。`;
+    `<b>${rs.length}</b> 行 · <b>${groups.size}</b> 个模型 · <b>${multi}</b> 个可跨渠道比价 · 默认近一年`;
   let prev = null;
   document.querySelector('#tbl tbody').innerHTML = rs.map(m => {
     const g = groups.get(m.key);

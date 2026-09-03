@@ -186,3 +186,36 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 td.sbar { background:linear-gradient(to right,
     color-mix(in srgb, var(--accent) 14%, transparent) var(--w,0%),
     transparent var(--w,0%)); }
+
+/* ---- 柱状图。纯 CSS，宽度由 --p 控制 ---- */
+.barwrap { position:relative; display:flex; align-items:center; justify-content:flex-end;
+           gap:6px; min-width:96px; height:22px; }
+.barwrap::before { content:""; position:absolute; inset:0; border-radius:5px;
+                   background:#eef1f6; }
+.barfill { position:absolute; left:0; top:0; bottom:0; width:var(--p); border-radius:5px;
+           background:linear-gradient(90deg, #93b4ff, var(--accent)); }
+.barfill.r1 { background:linear-gradient(90deg,#ffd27a,#f59e0b); }
+.barfill.r2 { background:linear-gradient(90deg,#c7d2fe,#818cf8); }
+.barfill.r3 { background:linear-gradient(90deg,#bbf7d0,#34d399); }
+.barval { position:relative; padding-right:6px; font-variant-numeric:tabular-nums;
+          font-weight:600; font-size:12.5px; }
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes wide { from { width:0; } }
+  .barfill { animation:wide .6s cubic-bezier(.16,.8,.28,1) both .1s; }
+}
+
+/* 区间柱：整条是全局范围，实色段是这家自己的价格区间 */
+.rangewrap { position:relative; height:8px; border-radius:4px; background:#eef1f6;
+             margin:6px 0 2px; }
+.rangefill { position:absolute; top:0; bottom:0; left:var(--l); width:var(--w);
+             border-radius:4px; background:linear-gradient(90deg,#34d399,var(--accent)); }
+
+/* 图表区块 */
+.chart { max-width:var(--max); margin:8px auto 0; padding:14px 18px; background:var(--card);
+         border:1px solid var(--line); border-radius:14px;
+         box-shadow:0 1px 3px rgba(16,24,40,.05); }
+.chart .row { display:grid; grid-template-columns:minmax(120px,220px) 1fr;
+              gap:12px; align-items:center; padding:3px 0; font-size:13px; }
+.chart .row .nm { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.chart h3 { margin:0 0 8px; font-size:14px; display:flex; gap:8px; align-items:baseline; }
+.chart h3 small { color:var(--dim); font-weight:400; font-size:12px; }

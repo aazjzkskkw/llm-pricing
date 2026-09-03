@@ -108,3 +108,28 @@ async function markFlagships(models) {
   for (const m of models) m.flagship = !m.aged && m.mode === 'chat'
     && (top.get(m.vendor_name)?.has(m.key) ?? false);
 }
+
+// ---- 图形化：横向柱子。所有页面共用同一套，不引图表库 ----
+
+// 一个格子里的柱子：p 是占比 0~100，label 是显示的数字，rank 用来给前三上色
+function bar(p, label, rank) {
+  const w = Math.max(0, Math.min(100, p));
+  const cls = rank === 0 ? ' r1' : rank === 1 ? ' r2' : rank === 2 ? ' r3' : '';
+  return `<div class="barwrap"><div class="barfill${cls}" style="--p:${w}%"></div>
+    <span class="barval">${label}</span></div>`;
+}
+
+// 区间柱：在 lo~hi 的整体范围里画出 a~b 这一段，用来表示价格区间
+function rangeBar(a, b, lo, hi) {
+  const span = Math.max(hi - lo, 1e-9);
+  const l = ((a - lo) / span) * 100, r = ((b - lo) / span) * 100;
+  return `<div class="rangewrap"><div class="rangefill"
+    style="--l:${l.toFixed(2)}%;--w:${Math.max(r - l, 1.5).toFixed(2)}%"></div></div>`;
+}
+
+// 价格跨几个数量级，线性柱子会全挤在左边，所以用对数刻度
+function logPct(v, min, max) {
+  if (!(v > 0)) return 2;
+  const lo = Math.log10(Math.max(min, 1e-4)), hi = Math.log10(Math.max(max, 1e-3));
+  return ((Math.log10(v) - lo) / Math.max(hi - lo, 1e-9)) * 100;
+}
