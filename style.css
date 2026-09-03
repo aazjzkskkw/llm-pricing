@@ -125,17 +125,37 @@ tbody tr.gstart:first-child td { border-top:none; }
 /* ---- 动画。纯 CSS，不引库；开了系统「减少动态效果」就整体关掉 ---- */
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior:smooth; }
-  @keyframes rise { from { opacity:0; transform:translateY(10px); } }
+  @keyframes rise { from { opacity:0; transform:translateY(16px); } }
 
   /* 只给静态容器做入场，动态列表（表格行、卡片）不做 ——
      它们每次筛选都重渲染，一动就成了闪屏 */
   header, nav, .stats, .bar, .grid, table, .warn, .lead, .note, .boards {
-    animation:rise .4s cubic-bezier(.2,.7,.3,1) both;
+    animation:rise .55s cubic-bezier(.16,.8,.28,1) both;
   }
-  nav { animation-delay:.05s; }
-  .stats, .boards { animation-delay:.1s; }
-  .bar, .warn { animation-delay:.15s; }
-  .grid, table, .lead { animation-delay:.2s; }
+  nav { animation-delay:.08s; }
+  .stats, .boards { animation-delay:.16s; }
+  .bar, .warn { animation-delay:.24s; }
+  .grid, table, .lead { animation-delay:.32s; }
+
+  /* 概览那几张卡一张一张冒出来，最容易被看见的就是这段 */
+  .stat { animation:rise .5s cubic-bezier(.16,.8,.28,1) both; }
+  .stat:nth-child(1) { animation-delay:.18s; }
+  .stat:nth-child(2) { animation-delay:.26s; }
+  .stat:nth-child(3) { animation-delay:.34s; }
+  .stat:nth-child(4) { animation-delay:.42s; }
+  .stat:nth-child(5) { animation-delay:.50s; }
+  .stat:nth-child(6) { animation-delay:.58s; }
+
+  /* 分类按钮逐行滑入 */
+  .catrow:nth-child(2) { animation:rise .45s ease both .2s; }
+  .catrow:nth-child(3) { animation:rise .45s ease both .26s; }
+  .catrow:nth-child(4) { animation:rise .45s ease both .32s; }
+  .catrow:nth-child(5) { animation:rise .45s ease both .38s; }
+
+  /* 评测页的分数底纹条从左往右长出来 */
+  @keyframes grow { from { background-size:0 100%; } }
+  td.sbar { background-repeat:no-repeat; background-size:100% 100%;
+            animation:grow .7s cubic-bezier(.16,.8,.28,1) both .35s; }
 
   .stat, .card, .vcard, .logo, nav a, .boards button, th, .tag {
     transition:transform .18s cubic-bezier(.2,.7,.3,1),
