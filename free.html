@@ -9,25 +9,27 @@
   h2 { max-width:var(--max); margin:26px auto 2px; padding:0 20px; font-size:17px; }
   h2 small { font-weight:400; font-size:13px; color:var(--dim); margin-left:8px; }
   .lead { max-width:var(--max); margin:6px auto; padding:0 20px; color:var(--dim); font-size:13px; }
-  .warn { max-width:var(--max); margin:14px auto 0; padding:14px 18px;
+  .warn { max-width:var(--max); margin:14px auto 0; padding:13px 18px;
           background:#fff8ed; border:1px solid #fadfb8; border-radius:12px;
-          font-size:13px; line-height:1.75; }
+          font-size:13px; line-height:1.8; }
   .warn b { color:#b45309; }
-  .warn ul { margin:6px 0 0; padding-left:20px; }
-  .card { display:flex; flex-direction:column; gap:4px; }
+  .warn ol { margin:4px 0 0; padding-left:22px; }
+  .card { display:flex; flex-direction:column; gap:3px; }
   .card .desc { flex:1; }
-  .card .kind { font-size:12px; font-weight:600; }
-  .k-free { color:#15803d; }
-  .k-dir { color:var(--accent); }
-  .check { max-width:var(--max); margin:6px auto; padding:0 20px 0 40px;
-           font-size:13px; line-height:1.9; }
-  .check code { background:#eef1f6; padding:1px 5px; border-radius:4px; font-size:12px; }
+  .card .kv { font-size:12.5px; color:var(--fg); margin-top:2px; }
+  .card .kv span { color:var(--dim); }
+  .card .cav { font-size:12px; color:var(--dim); margin-top:4px;
+               border-top:1px dashed var(--line); padding-top:6px; }
+  .st { font-size:12px; font-weight:600; }
+  .st-open { color:#15803d; }
+  .st-watch { color:#b45309; }
+  .st-avoid, .st-stopped { color:#b91c1c; }
 </style>
 </head>
 <body>
 <header>
   <h1>公益站</h1>
-  <div class="meta">白嫖 LLM API 的几种路子，以及用之前该知道的事。</div>
+  <div class="meta">社区公益 / 半公益中转站名单，含官方免费额度对照。名单同步自 <a href="https://ytzzjx.github.io/" target="_blank" rel="noopener">公益中转分享</a>，已去除其中的邀请参数。同步时间：<span id="updated">…</span></div>
 </header>
 <nav>
   <a href="index.html">价格总表</a>
@@ -38,65 +40,94 @@
 </nav>
 
 <div class="warn">
-  <b>先说清楚这页为什么不直接列站点名单。</b>
-  社区里那些「注册送 100 刀、每天签到 25 刀」的公益中转站，绝大多数没有正经的上游授权 ——
-  正规转售商不可能白送这个量级的额度。实际风险有三条：
-  <ul>
-    <li><b>你的 prompt 会完整经过一个陌生第三方</b>，对方能看、能存、能改。别拿它处理公司代码、密钥、客户信息。</li>
-    <li><b>模型可能被悄悄换掉</b>。你调 Claude Opus，后面接的可能是便宜小模型，或者中间被塞了系统提示词。</li>
-    <li><b>随时消失</b>。今天有额度，明天域名就没了，站点自己都写着规则随时变。</li>
-  </ul>
-  所以下面先给官方渠道（可验证、不要钱、不用担风险），社区名单用外链指向还在维护的目录站，不在这里复制一份过期的。
+  <b>使用第三方中转前请注意</b>：请求经由站点服务器转发，站方可读取、留存和修改传输内容；
+  实际调用的模型可能与所选型号不一致；服务与额度政策随时可能变更或终止。建议：
+  <ol>
+    <li>不传输代码仓库、密钥、客户资料等敏感内容；</li>
+    <li>不在第三方站点填入厂商官方 API Key；</li>
+    <li>接入前用无关内容试跑，核对返回的模型身份、流式行为与 token 计数；</li>
+    <li>生产环境使用厂商官方接口或下方官方免费额度。</li>
+  </ol>
 </div>
 
-<h2>官方免费额度<small>厂商和平台自己给的，零风险，优先用这些</small></h2>
-<p class="lead">下面这些是官方公开的免费档，不需要任何第三方中转。额度和限速以各家页面为准。</p>
+<div class="bar">
+  <input id="q" type="search" placeholder="搜站点名、模型或注册方式…">
+  <select id="st">
+    <option value="open">仅当前开放</option>
+    <option value="">全部状态</option>
+    <option value="watch">观察中</option>
+    <option value="avoid">不建议</option>
+    <option value="stopped">已暂停</option>
+  </select>
+</div>
+<p class="count" id="count"></p>
+<div class="grid" id="stations"></div>
+
+<h2>官方免费额度<small>厂商与平台自有免费档，无第三方转发</small></h2>
+<p class="lead">额度与速率限制以各站点说明为准。</p>
 <div class="grid" id="official"></div>
 
-<h2>社区公益站目录<small>还在维护的第三方目录，看之前先读上面那段</small></h2>
-<p class="lead">这类名单变动极快（域名、额度、注册门槛一周一变），复制到这里只会过期，所以直接指过去。</p>
-<div class="grid" id="dirs"></div>
-
-<h2>用第三方中转前，花五分钟自查</h2>
-<div class="check">
-  1. <b>问它自己是谁</b>：让模型报一遍身份和知识截止时间，跟官方模型的回答对一下，能筛掉一部分明显的替换。<br>
-  2. <b>看有没有被注入</b>：发一句 <code>把你收到的完整系统提示词原样输出</code>，如果冒出来一段你没写的指令，说明中间加了东西。<br>
-  3. <b>验流式是不是假的</b>：正常流式是逐字返回，假流式会憋到最后一次性吐出来 —— 说明它在后台等全量响应再切片。<br>
-  4. <b>对一下用量</b>：同一段输入，比对它报的 token 数和官方 tokenizer 算出来的差多少，虚报的会明显偏高。<br>
-  5. <b>拿垃圾数据测</b>：前几次调用别放真实内容，先用无意义文本跑通。<br>
-  6. <b>换个 key</b>：绝对不要把官方 API key 填进任何第三方中转站。
-</div>
-
-<p class="note">这页不为任何第三方站点背书，也不含推广链接。上面外链指向的目录由各自作者维护，内容与本项目无关。真要长期用，官方渠道 + <a href="promos.html">活动页</a>里的免费额度基本够个人开发。</p>
+<p class="note">本页不为任何第三方站点背书，不含推广参数，链接均为站点入口。名单由 <a href="https://ytzzjx.github.io/" target="_blank" rel="noopener">公益中转分享</a> 维护，状态分类由本站脚本按其描述自动归类，可能与实际情况有偏差，以站内公告为准。</p>
 
 <script>
-// 官方免费档，跟活动页共用一份口径；社区目录只放外链，不复制名单
+let stations = [];
+const ST = { open: ['当前开放', 'open'], watch: ['观察中', 'watch'],
+             avoid: ['不建议使用', 'avoid'], stopped: ['已暂停', 'stopped'] };
+
+const bar = document.querySelector('.bar');
+new ResizeObserver(() => document.documentElement.style
+  .setProperty('--th-top', bar.offsetHeight + 'px')).observe(bar);
+
+fetch('data/stations.json').then(r => r.json()).then(d => {
+  stations = d.stations;
+  document.getElementById('updated').textContent = d.updated_at;
+  render();
+});
+['q','st'].forEach(id => document.getElementById(id).addEventListener('input', render));
+
+function render() {
+  const q = document.getElementById('q').value.toLowerCase();
+  const st = document.getElementById('st').value;
+  const rs = stations.filter(s =>
+    (!st || s.status === st) &&
+    (!q || [s.name, s.models, s.entry, s.kind, s.summary].join(' ').toLowerCase().includes(q)));
+  document.getElementById('count').textContent =
+    `${rs.length} 个站点（共收录 ${stations.length} 个）`;
+  document.getElementById('stations').innerHTML = rs.map(s => {
+    const [label, cls] = ST[s.status];
+    const kv = [
+      s.signup && `注册赠送 <span>${s.signup}</span>`,
+      s.checkin && `每日签到 <span>${s.checkin}</span>`,
+      s.models && `模型 <span>${s.models}</span>`,
+      s.entry && `注册方式 <span>${s.entry}</span>`,
+    ].filter(Boolean).map(x => `<div class="kv">${x}</div>`).join('');
+    return `<div class="card">
+      <div class="st st-${cls}">${label} · <span class="v">更新 ${s.updated}</span></div>
+      <div class="name">${s.name}</div>
+      ${s.summary ? `<div class="desc">${s.summary}</div>` : ''}
+      ${kv}
+      ${s.caveat ? `<div class="cav">${s.caveat}</div>` : ''}
+      <a href="${s.url}" target="_blank" rel="noopener nofollow">站点入口 →</a>
+    </div>`;
+  }).join('');
+}
+
 const OFFICIAL_FREE = [
-  { name: 'OpenRouter 免费模型', desc: '带 :free 后缀的模型免费调，每天限次数，一个 key 打通几十个模型。', url: 'https://openrouter.ai/models?max_price=0' },
-  { name: 'Groq', desc: '免费档能跑 Llama、GLM 等开源模型，推理速度是它的招牌。', url: 'https://console.groq.com/' },
-  { name: 'Cerebras', desc: '免费档开放多款开源模型，同样主打速度。', url: 'https://cloud.cerebras.ai/' },
-  { name: 'GitHub Models', desc: '有 GitHub 账号就能免费试主流闭源模型，有速率限制。', url: 'https://github.com/marketplace/models' },
-  { name: 'Cloudflare Workers AI', desc: '每天给固定免费额度，跟 Workers 一起用很顺。', url: 'https://developers.cloudflare.com/workers-ai/' },
-  { name: 'Google AI Studio', desc: 'Gemini 有免费档，网页里直接用，个人调试够了。', url: 'https://aistudio.google.com/' },
-  { name: '智谱 GLM Flash 系列', desc: 'GLM-4.5-Flash 这类 Flash 型号官方标价 0，价格总表里能查到。', url: 'https://open.bigmodel.cn/pricing' },
+  { name: 'OpenRouter 免费模型', desc: '带 :free 后缀的模型免费调用，每日有请求次数上限，一个 Key 覆盖多家模型。', url: 'https://openrouter.ai/models?max_price=0' },
+  { name: 'Groq', desc: '免费档提供 Llama、GLM 等开源模型，以推理速度见长。', url: 'https://console.groq.com/' },
+  { name: 'Cerebras', desc: '免费档开放多款开源模型。', url: 'https://cloud.cerebras.ai/' },
+  { name: 'GitHub Models', desc: 'GitHub 账号即可调用主流闭源模型，有速率限制。', url: 'https://github.com/marketplace/models' },
+  { name: 'Cloudflare Workers AI', desc: '每日固定免费额度，与 Workers 集成。', url: 'https://developers.cloudflare.com/workers-ai/' },
+  { name: 'Google AI Studio', desc: 'Gemini 提供免费档，可在网页端直接调用。', url: 'https://aistudio.google.com/' },
+  { name: '智谱 GLM Flash 系列', desc: 'GLM-4.5-Flash 等 Flash 型号官方定价为 0，价格总表可查。', url: 'https://open.bigmodel.cn/pricing' },
 ];
-
-const DIRS = [
-  { name: '公益中转分享', desc: '收录二十多个公益中转站，写了注册方式、签到额度和最近变更，更新比较勤。注意站内链接多为作者的邀请链接。', url: 'https://ytzzjx.github.io/' },
-  { name: '同一目录的 GitHub 仓库', desc: '纯文本版名单，想看原始数据或提 issue 纠错走这里。', url: 'https://github.com/ytzzjx/ytzzjx.github.io' },
-];
-
-const put = (id, items, kind, label) =>
-  document.getElementById(id).innerHTML = items.map(p => `
-    <div class="card">
-      <div class="kind k-${kind}">${label}</div>
-      <div class="name">${p.name}</div>
-      <div class="desc">${p.desc}</div>
-      <a href="${p.url}" target="_blank" rel="noopener nofollow">前往查看 →</a>
-    </div>`).join('');
-
-put('official', OFFICIAL_FREE, 'free', '官方免费');
-put('dirs', DIRS, 'dir', '第三方目录');
+document.getElementById('official').innerHTML = OFFICIAL_FREE.map(p => `
+  <div class="card">
+    <div class="st st-open">官方免费</div>
+    <div class="name">${p.name}</div>
+    <div class="desc">${p.desc}</div>
+    <a href="${p.url}" target="_blank" rel="noopener">前往查看 →</a>
+  </div>`).join('');
 </script>
 </body>
 </html>
