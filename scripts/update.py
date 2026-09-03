@@ -163,6 +163,11 @@ AGGREGATORS = {
     "github_copilot", "nvidia_nim", "novita", "nebius", "lambda_ai",
     "sambanova", "cerebras", "featherless_ai", "ppio", "infinity", "groq",
     "huggingface",
+    # 这些也是托管/推理平台而不是模型厂商，早先漏标了
+    "anyscale", "baseten", "friendliai", "hyperbolic", "nscale", "ovhcloud",
+    "replicate", "fal_ai",
+    # Vertex 上架的第三方模型同样是转售，不是厂商直营
+    "vertex_ai-anthropic_models", "vertex_ai-mistral_models",
 }
 
 
@@ -242,6 +247,7 @@ def norm(raw: dict, or_dates: dict[str, str]) -> list[dict]:
             "context": m.get("max_input_tokens") or m.get("max_tokens"),
             "max_output": m.get("max_output_tokens"),
             "mode": mode,  # chat / embedding / audio / image ...
+            "key": model_key(name),
             "released": released,
             "official": provider not in AGGREGATORS,
             "suspect": suspect(in_price, mode),
@@ -256,6 +262,39 @@ def norm(raw: dict, or_dates: dict[str, str]) -> list[dict]:
 
 def norm_name(s: str) -> str:
     return s.lower().replace(":", "-").replace("_", "-").replace(".", "-").strip()
+
+
+# 各渠道给同一个模型起的名字前缀五花八门：智谱的 GLM-5.3 在 OpenRouter 叫
+# z-ai/glm-5.3、官方叫 zai/glm-5.3、Novita 叫 zai-org/glm-5.3、Bedrock 叫
+# us.zai.glm-5-3。把这些前缀和地域段剥掉，剩下的当作「同一个模型」的分组键，
+# 表格才能把各渠道的同款排到一起比价。
+PREFIX_RE = re.compile(
+    r"^(?:accounts/[^/]+/models/|[a-z0-9_-]+/)*"          # a/b/c 形式的路径前缀
+    r"(?:(?:us|eu|apac|global|jp|au|ca|sa)\.)*"            # Bedrock 的地域段
+    # 只在后面跟 / 或 . 时才当成命名空间剥掉；用 - 连接的是模型名本身
+    # （gemini-3.8-flash 的 gemini 不能剥）
+    r"(?:openai|anthropic|google|deepseek|zai|z-ai|zai-org|qwen|alibaba"
+    r"|moonshot(?:ai)?|minimax(?:ai)?|bytedance|tencent|stepfun(?:-ai)?|xai"
+    r"|meta(?:-llama)?|mistralai?|cohere|perplexity|amazon|nvidia|ibm-granite"
+    r"|xiaomi(?:mimo)?|kwaipilot|inclusionai|arcee-ai|nousresearch)[./]",
+    re.I)
+# 批量档、免费档是不同产品，保留在键里；只把版本号后缀里的噪音去掉
+SUFFIX_TRIM = re.compile(r"-(?:v\d+:0|v\d+)$", re.I)
+# Fireworks 用 4p6 表示 4.6，统一成小数点写法才能跟别家对上
+P_VERSION = re.compile(r"(\d)p(\d)")
+
+
+def model_key(name: str) -> str:
+    """跨渠道识别同一个模型用的分组键。"""
+    s = name
+    for _ in range(3):                    # 前缀可能叠几层，剥到不动为止
+        t = PREFIX_RE.sub("", s, count=1)
+        if t == s or not t:
+            break
+        s = t
+    s = s.split("/")[-1]
+    s = SUFFIX_TRIM.sub("", s)
+    return P_VERSION.sub(r"\1-\2", norm_name(s))
 
 
 TODAY = time.strftime("%Y-%m-%d")
@@ -384,6 +423,7 @@ def _row(mid: str, vendor: str, channel: str, prov: str, inp: float | None,
         return None
     return {
         "model": mid,
+        "key": model_key(mid),
         "vendor": prov,
         "vendor_name": vendor,          # 模型品牌
         "input": round(inp, 3),

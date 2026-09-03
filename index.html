@@ -37,9 +37,14 @@
     <option value="1">仅已公布价格</option>
   </select>
   <select id="sortsel">
-    <option value="vendor_name">默认按厂商</option>
+    <option value="key">按模型分组（跨渠道比价）</option>
+    <option value="vendor_name">按厂商</option>
     <option value="released">按最近发布</option>
     <option value="input">按输入价从低到高</option>
+  </select>
+  <select id="dedup">
+    <option value="">显示每个渠道</option>
+    <option value="1">每个模型只留最便宜渠道</option>
   </select>
 </div>
 <p class="count" id="count"></p>
@@ -47,6 +52,7 @@
   <thead><tr>
     <th data-k="vendor_name">厂商</th>
     <th data-k="model">模型</th>
+    <th data-k="channel">渠道</th>
     <th data-k="input" class="num">输入 $/1M</th>
     <th data-k="output" class="num">输出 $/1M</th>
     <th data-k="cache_read" class="num">缓存读 $/1M</th>
@@ -59,7 +65,9 @@
 
 <script src="app.js"></script>
 <script>
-let models = [], sortKey = 'vendor_name', sortAsc = true;
+let models = [], sortKey = 'key', sortAsc = true;
+// 统一的「渠道」概念：补充行看 via，主源里平台自己就是渠道，其余算厂商直营
+const chanOf = m => m.via || (m.official ? '官方直营' : m.vendor_name);
 const fmtN = v => v == null ? '<span class="na">-</span>' : v.toLocaleString();
 const vendorSel = document.getElementById('vendor');
 
@@ -76,8 +84,9 @@ fetch('data/models.json').then(r => r.json()).then(d => {
     .join('、');
   const vs = [...new Set(models.map(m => m.vendor_name))].sort();
   vendorSel.innerHTML += vs.map(v => `<option>${v}</option>`).join('');
+  const chans = [...new Set(models.map(chanOf))].sort();
   document.getElementById('channel').innerHTML +=
-    (d.channels || []).map(c => `<option>${c}</option>`).join('');
+    chans.map(c => `<option>${c}</option>`).join('');
   const preset = new URLSearchParams(location.search).get('vendor');
   if (preset && vs.includes(preset)) vendorSel.value = preset;
   stats(d, vs.length);
@@ -104,7 +113,7 @@ function stats(d, vendors) {
       <div class="n">${n}</div><div class="s">${s}</div></div>`).join('');
 }
 
-['q','vendor','mode','priced','official','channel'].forEach(id =>
+['q','vendor','mode','priced','official','channel','dedup'].forEach(id =>
   document.getElementById(id).addEventListener('input', render));
 document.getElementById('sortsel').addEventListener('input', e => {
   sortKey = e.target.value;
@@ -117,30 +126,54 @@ document.querySelectorAll('th[data-k]').forEach(th =>
     sortAsc = sortKey === k ? !sortAsc : k !== 'released';
     sortKey = k;
     document.getElementById('sortsel').value =
-      ['vendor_name','released','input'].includes(k) ? k : 'vendor_name';
+      ['key','vendor_name','released','input'].includes(k) ? k : 'vendor_name';
     render();
   });
 
 function rows() {
   const q = document.getElementById('q').value.toLowerCase();
+  const qk = q.replace(/[:._]/g, '-');
   const v = vendorSel.value, mode = document.getElementById('mode').value;
   const priced = document.getElementById('priced').value;
   const official = document.getElementById('official').value;
   const ch = document.getElementById('channel').value;
-  const rs = models.filter(m =>
-    (!ch || m.via === ch) &&
-    (!q || m.model.toLowerCase().includes(q) || m.vendor_name.toLowerCase().includes(q)) &&
+  const dedup = document.getElementById('dedup').value;
+  let rs = models.filter(m =>
+    (!ch || chanOf(m) === ch) &&
+    // 也拿分组键匹配一次：搜 glm-5.3 才能带出 Fireworks 那种 glm-5p3 的写法
+    (!q || m.model.toLowerCase().includes(q) || m.vendor_name.toLowerCase().includes(q)
+        || (m.key || '').includes(qk)) &&
     (!v || m.vendor_name === v) &&
     (!mode || m.mode === mode) &&
     (!priced || m.input != null) &&
     (official === '' || String(+m.official) === official));
+
+  // 同一个模型统计有几个渠道、最低价多少，分组视图和「最便宜」标记都用它
+  const groups = new Map();
+  for (const m of rs) {
+    const g = groups.get(m.key) || { n: 0, min: Infinity };
+    g.n++;
+    if (m.input != null && m.input < g.min) g.min = m.input;
+    groups.set(m.key, g);
+  }
+  if (dedup) {                       // 每个模型只留最便宜的那一行
+    const kept = new Set();
+    rs = rs.filter(m => m.input != null && m.input === groups.get(m.key).min
+                     && !kept.has(m.key) && kept.add(m.key));
+  }
   rs.sort((a, b) => {
+    if (sortKey === 'key') {         // 分组视图：同模型排在一起，组内按价格升序
+      const c = String(a.key).localeCompare(String(b.key));
+      if (c) return sortAsc ? c : -c;
+      return (a.input ?? 9e9) - (b.input ?? 9e9);
+    }
     let x = a[sortKey], y = b[sortKey];
+    if (sortKey === 'channel') { x = chanOf(a); y = chanOf(b); }
     if (x == null) return 1; if (y == null) return -1;   // 未公布排最后
     if (typeof x === 'number') return sortAsc ? x - y : y - x;
     return sortAsc ? String(x).localeCompare(y) : String(y).localeCompare(x);
   });
-  return rs;
+  return [rs, groups];
 }
 
 function priceCell(v, m, main) {
@@ -154,23 +187,36 @@ function priceCell(v, m, main) {
 }
 
 function render() {
-  const rs = rows();
+  const [rs, groups] = rows();
+  const grouped = sortKey === 'key' && !document.getElementById('dedup').value;
+  const multi = [...groups.values()].filter(g => g.n > 1).length;
   document.getElementById('count').innerHTML =
-    `已排除厂商标注退役及发布超两年的对话模型。当前 <b>${rs.length}</b> 个模型，点击列头排序。`;
-  document.querySelector('#tbl tbody').innerHTML = rs.map(m =>
-    `<tr><td>${m.vendor_name}${
-      m.via ? `<span class="tag orange">经 ${m.via}</span>`
-            : m.official ? '' : '<span class="tag blue">平台</span>'}</td><td>${m.model}${
+    `已排除厂商标注退役及发布超两年的对话模型。当前 <b>${rs.length}</b> 行，
+     归为 <b>${groups.size}</b> 个模型，其中 <b>${multi}</b> 个有两个以上渠道可比价。`;
+  let prev = null;
+  document.querySelector('#tbl tbody').innerHTML = rs.map(m => {
+    const g = groups.get(m.key);
+    const head = grouped && m.key !== prev;        // 每组第一行加分隔线和渠道数
+    prev = m.key;
+    const cheapest = g.n > 1 && m.input != null && m.input === g.min;
+    return `<tr${head ? ' class="gstart"' : ''}><td>${m.vendor_name}</td>
+    <td>${m.model}${
+      g.n > 1 && head ? `<span class="tag gray">${g.n} 个渠道</span>` : ''}${
+      cheapest ? '<span class="tag ok">最低价</span>' : ''}${
       m.new ? '<span class="tag green">新</span>' : ''}${
       m.vision ? '<span class="tag blue">视觉</span>' : ''}${
       m.reasoning ? '<span class="tag blue">推理</span>' : ''}${
       m.tool_call ? '<span class="tag blue">工具</span>' : ''}</td>
+    <td class="v">${m.via ? `<span class="tag orange">经 ${m.via}</span>`
+      : m.official ? '<span class="tag ok">官方直营</span>'
+      : `<span class="tag blue">${m.vendor_name}</span>`}</td>
     ${priceCell(m.input, m, true)}
     ${priceCell(m.output, m, false)}
     ${priceCell(m.cache_read, m, false)}
     <td class="num">${fmtN(m.context)}</td>
     <td class="v">${m.released || '<span class="na">-</span>'}</td>
-    <td class="v">${m.mode || ''}</td></tr>`).join('');
+    <td class="v">${m.mode || ''}</td></tr>`;
+  }).join('');
 }
 </script>
 </body>

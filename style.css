@@ -113,3 +113,7 @@ tbody tr:hover td { background:#f7f9fd; }
          padding:0 0 0 0; }
 .note { max-width:var(--max); margin:10px auto 40px; padding:0 20px;
         color:var(--dim); font-size:12px; line-height:1.8; }
+
+/* 分组视图：同一个模型的各渠道排在一起，组间画一道深一点的线 */
+tbody tr.gstart td { border-top:2px solid #d7deea; }
+tbody tr.gstart:first-child td { border-top:none; }
