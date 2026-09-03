@@ -46,6 +46,27 @@ def clean_url(url: str) -> str:
     return url.rstrip("?&")
 
 
+# 公益站的定义是「不能充钱，只有免费额度」，中转站是「可以充钱」。
+# 上游只有自然语言，所以先认它自己打的标签（纯付费站 / 半公益站 / 公益区 这些
+# 是作者刻意写的），标签里看不出来的再从正文找充值线索；注意「未见充值入口」
+# 这种否定句要先剔掉，不然会被当成可充值。
+CHARITY_TAG = re.compile(r"公益")
+PAID_TAG = re.compile(r"付费|中转|自用|羊毛")
+NEG_PAY = re.compile(r"(?:未见|没有|不能|不支持|暂无|无)\s*(?:充值|付费)")
+PAY_WORD = re.compile(r"充值|付费|1:1|按量计费|套餐|自费|买|下单")
+
+
+def kind_of(name: str, kind: str, body: str) -> str:
+    tag = f"{name} {kind}"
+    if CHARITY_TAG.search(tag):
+        return "charity"
+    if PAID_TAG.search(tag):
+        return "paid"
+    if NEG_PAY.search(body):
+        return "charity"
+    return "paid" if PAY_WORD.search(body) else "unknown"
+
+
 def status_of(text: str) -> str:
     for name, pat in STATUS_RULES:
         if re.search(pat, text):
@@ -71,6 +92,8 @@ def parse(js: str) -> list[dict]:
             "caveat": r["caveat"],
             "updated": r["publishedAt"][:10],
             "status": status_of(f"{r['kind']} {r['caveat']}"),
+            "type": kind_of(r["name"], r["kind"],
+                            f"{r['summary']} {r['caveat']} {r['registration']}"),
         })
     order = {"open": 0, "watch": 1, "avoid": 2, "stopped": 3}
     rows.sort(key=lambda x: (order[x["status"]], x["updated"]), reverse=False)
@@ -89,10 +112,11 @@ def main() -> None:
         "count": len(rows),
         "stations": rows,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
-    n = {}
+    n, t = {}, {}
     for r in rows:
         n[r["status"]] = n.get(r["status"], 0) + 1
-    print(f"OK: {len(rows)} 个站点 {n} -> {OUT}")
+        t[r["type"]] = t.get(r["type"], 0) + 1
+    print(f"OK: {len(rows)} 个站点 状态{n} 类型{t} -> {OUT}")
 
 
 if __name__ == "__main__":

@@ -19,7 +19,10 @@
   单张榜有：ECI、METR 任务时长、GDPval、SWE-Bench Verified、DeepSWE、Terminal-Bench、Aider Polyglot、WebDev Arena、Cybench、FrontierMath、AIME、ARC-AGI-2、ARC-AGI-1、SimpleBench、GPQA Diamond、HLE、SimpleQA Verified、SciCode、Vectara 幻觉率。DeepSWE 那张带每题平均成本，能直接看性价比
 - **订阅与渠道** — Cursor、Copilot、Claude、Kiro、Trae、Zed、Augment、v0、Cline 的订阅档位（逐个核对过官网标价），加上 15 个聚合平台的模型数和价格区间（这部分从价格总表实时算，不手工维护）
 - **活动与优惠** — 分成长期免费 / 赠送额度 / 其他优惠三档
-- **公益站** — 社区公益及半公益中转站名单，按可用状态分档，另附官方免费额度对照和使用风险提示。名单同步自 [公益中转分享](https://ytzzjx.github.io/)，脚本会去掉里面的邀请参数
+- **中转站** — 可充值的第三方 API 中转站，20 家。卡片标了可用状态和充值情况，另附有官方授权的正规聚合平台入口
+- **公益站** — 只收不能充钱、只发免费额度的站（含半公益），11 家，另附官方免费额度对照
+
+  两页共用一份数据（`scripts/stations.py` 同步自 [公益中转分享](https://ytzzjx.github.io/)，脚本会去掉里面的邀请参数）。分类按「能不能充钱」判：先认上游自己打的标签（纯付费站 / 半公益站 / 公益区 这些是作者刻意写的），标签看不出来的再从正文找充值线索——注意得先剔掉「未见充值入口」这类否定句，不然 Nofx 会被判成可充值。判不出来的标「充值情况未标注」，不瞎猜
 
 国产厂商都是中文名：通义千问、智谱、Kimi、豆包这些。
 

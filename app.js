@@ -6,6 +6,7 @@ const PAGES = [
   ['bench.html', '模型评测'],
   ['tools.html', '订阅与渠道'],
   ['promos.html', '活动与优惠'],
+  ['relays.html', '中转站'],
   ['free.html', '公益站'],
 ];
 
