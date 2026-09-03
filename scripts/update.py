@@ -233,6 +233,8 @@ def norm(raw: dict, or_dates: dict[str, str]) -> list[dict]:
         mode = m.get("mode")
         in_price = round(in_cost * 1e6, 3) if in_cost is not None else None
         out_price = round(out_cost * 1e6, 3) if out_cost is not None else None
+        if (in_price or 0) < 0 or (out_price or 0) < 0:
+            continue                       # 负价一律当没有价格，别显示出去
         # 向量/重排模型没有输出 token，上游填 0，显示成「免费」会误导
         if mode in ("embedding", "rerank") and out_price == 0:
             out_price = None
@@ -250,6 +252,7 @@ def norm(raw: dict, or_dates: dict[str, str]) -> list[dict]:
             "mode": mode,  # chat / embedding / audio / image ...
             "key": model_key(name),
             "released": released,
+            "aged": bool(released and released < FRESH_CUTOFF and mode in AGED_MODES),
             "official": provider not in AGGREGATORS,
             "suspect": suspect(in_price, mode),
             "vision": bool(m.get("supports_vision")),
@@ -299,8 +302,9 @@ def model_key(name: str) -> str:
 
 
 TODAY = time.strftime("%Y-%m-%d")
-# 对话模型迭代快，两年前发布的基本没人用了（gpt-4、gpt-3.5-turbo 这些）；
-# 向量/语音模型寿命长得多（text-embedding-3 至今还是主力），所以只对对话类做年龄筛。
+# 对话模型迭代快：一年内的进主表，一到两年的降级成「扩展」（页面上要主动勾才看得到），
+# 两年前的直接不收。向量/语音模型寿命长得多（text-embedding-3 至今还是主力），不按年龄筛。
+FRESH_CUTOFF = f"{int(TODAY[:4]) - 1}{TODAY[4:]}"
 AGE_CUTOFF = f"{int(TODAY[:4]) - 2}{TODAY[4:]}"
 AGED_MODES = {"chat", "responses", "completion"}
 DATE_RE = re.compile(r"(20\d{2})-?(\d{2})-?(\d{2})")
@@ -444,13 +448,16 @@ def _row(mid: str, vendor: str, channel: str, prov: str, inp: float | None,
          outp: float | None, ctx, released: str | None,
          vision=False, tools=False) -> dict | None:
     """渠道补充行的统一构造。inp/outp 单位已经是 美元/百万 token。"""
-    if inp is None or LEGACY_RE.search(mid):
+    # OpenRouter 的路由型模型（auto / fusion / pareto-code）价格填 -1，
+    # 意思是「按实际路由到的模型计费」，不是负价。这种进不了比价表。
+    if inp is None or inp < 0 or LEGACY_RE.search(mid):
         return None
     if released and released < AGE_CUTOFF:
         return None
     return {
         "model": mid,
         "key": model_key(mid),
+        "aged": bool(released and released < FRESH_CUTOFF),
         "vendor": prov,
         "vendor_name": vendor,          # 模型品牌
         "input": round(inp, 3),
@@ -640,11 +647,13 @@ def main() -> None:
         ],
         "channels": channels,
         "cutoff": AGE_CUTOFF,
+        "fresh_cutoff": FRESH_CUTOFF,
         "pricing_pages": PRICING_PAGES,
         "count": len(rows),
         "models": rows,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"OK: {len(rows)} models ({n_priced} with prices, "
+    print(f"OK: {len(rows)} models ({sum(1 for r in rows if r.get('aged'))} 归入扩展, "
+          f"{n_priced} with prices, "
           f"{len(new_rows)} 来自渠道补充, "
           f"{sum(1 for r in rows if not r['official'])} on aggregators, "
           f"{sum(1 for r in rows if r['suspect'])} suspect, "
