@@ -1,0 +1,4 @@
+{
+ "_readme": "手工维护的第三方中转站名单。中转站 = 把官方 API 或别人的反代聚合到自己手里、自行定价再卖，多数基于 new-api / sub2api。这里只放确认过域名可访问的，别照抄论坛帖子里的死链。字段：name 站名，url 站点入口（去掉邀请参数），stack 底座（new-api / sub2api / 自研），note 一句话说明，checked 核对日期。",
+ "stations": []
+}

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03 07:09 UTC",
+ "updated_at": "2026-09-03 07:25 UTC",
  "credit": "https://ytzzjx.github.io/",
  "count": 31,
  "stations": [
@@ -85,7 +85,7 @@
    "caveat": "站点类型已换成 sub2api，此前的额度和签到数据都不能参考，需要重新注册；当前注册送 10,000 但可能被改回去，换型后的模型范围与计费规则也尚未核实。",
    "updated": "2026-08-28",
    "status": "open",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "Nofx",
@@ -113,7 +113,7 @@
    "caveat": "模型范围、上下文规则和服务状态可能调整，请以站内实际说明为准。",
    "updated": "2026-08-26",
    "status": "open",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "Fate New API",
@@ -127,7 +127,7 @@
    "caveat": "不使用好像会被删号——本人已经被删过两次，所以注册完记得保持调用。被删之后重新走注册链接可以再注册。签到金额、模型可用性、倍率和服务规则也可能调整，请以站内实际说明为准。",
    "updated": "2026-08-24",
    "status": "open",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "北执半公益站",
@@ -169,7 +169,7 @@
    "caveat": "生成图片会不定时删除，请尽快下载；当前免费能力可能调整，请勿滥用。",
    "updated": "2026-08-21",
    "status": "open",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "TabiToken",
@@ -183,7 +183,7 @@
    "caveat": "注册窗口可能随时关闭；已注册用户请尽快调用，否则有封号风险。",
    "updated": "2026-08-20",
    "status": "open",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "JustWoker 公益站",
@@ -225,7 +225,7 @@
    "caveat": "近期稳定性下降，建议留一个备用线路，不要作为唯一依赖；注册窗口可能随时关闭；已注册用户请尽快调用，否则有封号风险。",
    "updated": "2026-08-19",
    "status": "open",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "True SOTA",
@@ -281,7 +281,7 @@
    "caveat": "只能用 GitHub、Linux Do 或 Discord 注册，三者都没有就没法注册。注册开放状态可能再次收紧，以注册页面实际结果为准；不要批量测活，可能会被拉黑 IP。签到为随机奖励，数额不固定。",
    "updated": "2026-08-17",
    "status": "open",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "Hubway",
@@ -309,7 +309,7 @@
    "caveat": "GPT 倍率 2.5x，比标准计费贵，赠送额度的实际可用量要按倍率折算。目前的赠送力度来自百亿补贴阶段，属于阶段性政策，随时可能调整。注册时邮件系统有问题，可能收不到验证邮件，请查看垃圾箱。",
    "updated": "2026-08-31",
    "status": "watch",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "BaaaAI 公益站",
@@ -337,7 +337,7 @@
    "caveat": "Claude Code CLI 的请求头会被站点 CF 拦截并报错，curl 调 /v1/messages 正常，请改用 Claude Desktop。新站上线时间不长，额度、签到与模型规则可能调整；注册有 GitHub 限制，具体门槛以注册页为准。",
    "updated": "2026-08-28",
    "status": "watch",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "AgentRouter 国内入口",
@@ -351,7 +351,7 @@
    "caveat": "Claude 倍率已上调、GPT-5.6-sol 倍率已下调，具体倍率以站内显示为准；签到需退出账号后重新登录才会生效。正常使用奖励机制仍待确认。",
    "updated": "2026-08-26",
    "status": "watch",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "AgentRouter",
@@ -365,7 +365,7 @@
    "caveat": "Claude 倍率已上调、GPT-5.6-sol 倍率已下调，具体倍率以站内显示为准；签到需退出账号后重新登录才会生效。正常使用奖励机制仍待确认。",
    "updated": "2026-08-26",
    "status": "watch",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "AIHub",
@@ -393,7 +393,7 @@
    "caveat": "站方于 2026-09-02 删除了所有用户账号，原因不明，正在修复，已有账号和额度能否恢复未知。另有实测注入：模型被限制成只能用英文回答，中文提问也回英文，说明请求在到达模型前被加了指令，其他改动无从判断。两件事叠加，不要用于需要结果可信或账号要长期留存的场景。站点已改名换域名，旧的 manus.space 地址不要再用。",
    "updated": "2026-08-26",
    "status": "avoid",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "SeekAI",
@@ -407,7 +407,7 @@
    "caveat": "目前仅支持 DeepSeek；工具调用可能异常，稳定性和输出质量也有波动，建议仅作备用。",
    "updated": "2026-08-13",
    "status": "avoid",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "ArityFlow",
@@ -421,7 +421,7 @@
    "caveat": "注册已关闭，恢复时间未知；签到依赖 QQ 群内发放的签到码。严查除 coding 分组以外的编程行为，违规可能封号。",
    "updated": "2026-08-19",
    "status": "stopped",
-   "type": "unknown"
+   "type": "charity"
   },
   {
    "name": "Sulmate 半公益站",

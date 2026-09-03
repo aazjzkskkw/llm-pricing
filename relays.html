@@ -30,9 +30,16 @@
 <header>
   <div class="eyebrow">API RELAYS</div>
   <h1>中转站</h1>
-  <div class="meta">第三方 API 中转站名单（可充值 / 充值情况未标注），名单同步自 <a href="https://ytzzjx.github.io/" target="_blank" rel="noopener">公益中转分享</a>，已去除邀请参数。公益站在<a href="free.html">另一页</a>。同步时间：<span id="updated">…</span></div>
+  <div class="meta">同一个模型能从四种地方买到，价格和风险差很多。同步时间：<span id="updated">…</span></div>
 </header>
 <nav></nav>
+
+<div class="tiers">
+  <div class="tier t-a"><b>① 官方直营</b>厂商自己的 API，定价即官网价<a href="index.html?range=fresh">看价格 →</a></div>
+  <div class="tier t-b"><b>② 官方认可的聚合平台</b>有授权、能开票，自己定价但受厂商约束<a href="tools.html">看规模 →</a></div>
+  <div class="tier t-c"><b>③ 第三方中转站</b>把官方 API 或别人的反代聚合到自己手里再定价，多数基于 new-api / sub2api，通常比官方便宜</div>
+  <div class="tier t-d"><b>④ 公益站</b>不能充钱，只有注册赠送和签到额度<a href="free.html">看名单 →</a></div>
+</div>
 
 <div class="warn">
   <b>使用第三方中转前请注意</b>：请求经由站点服务器转发，站方可读取、留存和修改传输内容；
@@ -55,10 +62,12 @@
     <option value="stopped">已暂停</option>
   </select>
 </div>
+<h2 class="sec">第三方中转站<small>可充值、自行定价 · 上面第 ③ 类</small></h2>
+<div class="grid" id="manual"></div>
 <p class="count" id="count"></p>
 <div class="grid" id="stations"></div>
 
-<h2 class="sec">正规聚合平台<small>有官方授权、可开发票，长期用建议走这些</small></h2>
+<h2 class="sec">官方认可的聚合平台<small>上面第 ② 类 · 模型数与价格区间见订阅与渠道页</small></h2>
 <p class="lead">规模与价格区间见<a href="tools.html">订阅与渠道</a>页，那里的数据由价格总表实时算出。</p>
 <div class="grid" id="official"></div>
 
@@ -70,6 +79,18 @@ let stations = [];
 const ST = { open: ['当前开放', 'open'], watch: ['观察中', 'watch'],
              avoid: ['不建议使用', 'avoid'], stopped: ['已暂停', 'stopped'] };
 
+
+// data/relays_manual.json 里可以手工补中转站（目录站没收的）。渲染在自动名单前面。
+fetch('data/relays_manual.json').then(r => r.json()).then(d => {
+  const list = d.stations || [];
+  if (!list.length) return;
+  document.getElementById('manual').innerHTML = list.map(x => `
+    <div class="card">${logo('', x.name)}
+      <div class="st st-open">手工核对 · ${x.checked || ''}</div>
+      <div class="name">${x.name}${x.stack ? `<span class="tag gray">${x.stack}</span>` : ''}</div>
+      ${x.note ? `<div class="desc">${x.note}</div>` : ''}
+      <a href="${x.url}" target="_blank" rel="noopener nofollow">站点入口 →</a></div>`).join('');
+}).catch(() => {});
 
 fetch('data/stations.json').then(r => r.json()).then(d => {
   stations = d.stations;
