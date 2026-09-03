@@ -138,3 +138,22 @@ function logPct(v, min, max) {
   const lo = Math.log10(Math.max(min, 1e-4)), hi = Math.log10(Math.max(max, 1e-3));
   return ((Math.log10(v) - lo) / Math.max(hi - lo, 1e-9)) * 100;
 }
+
+// 每页一个主色：给 body 打上页面标记，配色在 style.css 里按标记切换
+document.body.dataset.page =
+  (location.pathname.split('/').pop() || 'index.html').replace('.html', '');
+
+// 价格分布直方图：按 10 倍一档分桶，柱子高低就是这档有多少个模型。
+// 用 CSS 画，不引图表库。
+function priceHist(values, title) {
+  const buckets = [[0, 0, '免费'], [0.001, 0.1, '<$0.1'], [0.1, 0.5, '$0.1-0.5'],
+                   [0.5, 2, '$0.5-2'], [2, 10, '$2-10'], [10, 1e9, '>$10']];
+  const counts = buckets.map(([lo, hi]) =>
+    values.filter(v => (lo === 0 && hi === 0) ? v === 0 : v > lo && v <= hi).length);
+  const max = Math.max(...counts, 1);
+  return `<div class="hist"><div class="ht">${title}</div><div class="hb">` +
+    counts.map((n, i) => `<div class="hcol" title="${buckets[i][2]}：${n} 个">
+      <span class="hn">${n}</span>
+      <i style="--h:${(n / max * 100).toFixed(1)}%"></i>
+      <span class="hl">${buckets[i][2]}</span></div>`).join('') + '</div></div>';
+}
