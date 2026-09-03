@@ -46,14 +46,16 @@ def clean_url(url: str) -> str:
     return url.rstrip("?&")
 
 
-# 公益站的定义是「不能充钱，只有免费额度」，中转站是「可以充钱」。
-# 上游只有自然语言，所以先认它自己打的标签（纯付费站 / 半公益站 / 公益区 这些
-# 是作者刻意写的），标签里看不出来的再从正文找充值线索；注意「未见充值入口」
-# 这种否定句要先剔掉，不然会被当成可充值。
+# 分类口径（用户定义）：
+#   公益站 = 不能充钱，只有注册赠送和签到额度
+#   中转站 = 能充钱的第三方反代，多数基于 new-api / sub2api，卖得比官方便宜
+# 上游那份目录本身就是「公益中转分享」，绝大多数是公益/羊毛站，所以
+# 默认按公益算，只有出现明确的付费证据才归到中转 —— 反过来默认会把
+# AnyRouter 这种只能签到、不能充值的误判成中转。
 CHARITY_TAG = re.compile(r"公益")
-PAID_TAG = re.compile(r"付费|中转|自用|羊毛")
+PAID_TAG = re.compile(r"付费|老牌中转|多上游聚合|一分钱")
 NEG_PAY = re.compile(r"(?:未见|没有|不能|不支持|暂无|无)\s*(?:充值|付费)")
-PAY_WORD = re.compile(r"充值|付费|1:1|按量计费|套餐|自费|买|下单")
+PAY_WORD = re.compile(r"充值\s*1\s*:\s*1|可充值|充值入口|按量计费|自费|购买额度|下单")
 
 
 def kind_of(name: str, kind: str, body: str) -> str:
@@ -64,7 +66,7 @@ def kind_of(name: str, kind: str, body: str) -> str:
         return "paid"
     if NEG_PAY.search(body):
         return "charity"
-    return "paid" if PAY_WORD.search(body) else "unknown"
+    return "paid" if PAY_WORD.search(body) else "charity"
 
 
 def status_of(text: str) -> str:

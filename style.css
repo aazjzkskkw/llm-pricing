@@ -221,3 +221,15 @@ td.sbar { background:linear-gradient(to right,
 .chart .row .nm { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 .chart h3 { margin:0 0 8px; font-size:14px; display:flex; gap:8px; align-items:baseline; }
 .chart h3 small { color:var(--dim); font-weight:400; font-size:12px; }
+
+/* 四层来源说明条：把「官方 / 授权平台 / 中转 / 公益」的界限一次说清 */
+.tiers { max-width:var(--max); margin:12px auto 0; padding:0 20px;
+         display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:10px; }
+.tier { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--c);
+        border-radius:12px; padding:10px 14px; font-size:12.5px; color:var(--dim);
+        box-shadow:0 1px 3px rgba(16,24,40,.05); }
+.tier b { display:block; font-size:13.5px; color:var(--fg); margin-bottom:2px; }
+.tier a { display:inline-block; margin-top:5px; font-size:12px;
+          text-decoration:none; font-weight:600; }
+.tier.t-a { --c:#0f9d58; } .tier.t-b { --c:#2f6bff; }
+.tier.t-c { --c:#c2410c; } .tier.t-d { --c:#8b5cf6; }
