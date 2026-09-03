@@ -23,6 +23,7 @@
     <option value="1">仅官方直营</option>
     <option value="0">仅聚合平台</option>
   </select>
+  <select id="channel"><option value="">全部渠道</option></select>
   <select id="vendor"><option value="">全部厂商</option></select>
   <select id="mode">
     <option value="">全部类型</option>
@@ -75,6 +76,8 @@ fetch('data/models.json').then(r => r.json()).then(d => {
     .join('、');
   const vs = [...new Set(models.map(m => m.vendor_name))].sort();
   vendorSel.innerHTML += vs.map(v => `<option>${v}</option>`).join('');
+  document.getElementById('channel').innerHTML +=
+    (d.channels || []).map(c => `<option>${c}</option>`).join('');
   const preset = new URLSearchParams(location.search).get('vendor');
   if (preset && vs.includes(preset)) vendorSel.value = preset;
   stats(d, vs.length);
@@ -95,12 +98,13 @@ function stats(d, vendors) {
     ['免费档', freeN, '对话模型标价 0'],
     ['最低付费价', money(cheapest.input), cheapest.model.split('/').pop()],
     ['最新发布', newest.released, newest.model.split('/').pop()],
+    ['补充渠道', (d.channels || []).length, '同一模型可跨渠道比价'],
     ['多源对账', diff, diff ? '条报价与其他源不一致' : '全部一致'],
   ].map(([k, n, s]) => `<div class="stat"><div class="k">${k}</div>
       <div class="n">${n}</div><div class="s">${s}</div></div>`).join('');
 }
 
-['q','vendor','mode','priced','official'].forEach(id =>
+['q','vendor','mode','priced','official','channel'].forEach(id =>
   document.getElementById(id).addEventListener('input', render));
 document.getElementById('sortsel').addEventListener('input', e => {
   sortKey = e.target.value;
@@ -122,7 +126,9 @@ function rows() {
   const v = vendorSel.value, mode = document.getElementById('mode').value;
   const priced = document.getElementById('priced').value;
   const official = document.getElementById('official').value;
+  const ch = document.getElementById('channel').value;
   const rs = models.filter(m =>
+    (!ch || m.via === ch) &&
     (!q || m.model.toLowerCase().includes(q) || m.vendor_name.toLowerCase().includes(q)) &&
     (!v || m.vendor_name === v) &&
     (!mode || m.mode === mode) &&

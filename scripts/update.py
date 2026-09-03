@@ -19,6 +19,10 @@ SRC_NEW = "https://openrouter.ai/api/v1/models"
 SRC_PYDANTIC = ("https://cdn.jsdelivr.net/gh/ENTERPILOT/ai-model-price-list@main"
                 "/sources/pydantic_genai_prices.json")
 SRC_LLMPRICES = "https://www.llm-prices.com/current-v1.json"
+# 其余公开渠道，都带自家报价，用来给同一个模型凑出多个可比渠道
+SRC_VERCEL = "https://ai-gateway.vercel.sh/v1/models"
+SRC_NOVITA = "https://api.novita.ai/v3/openai/models"
+SRC_DEEPINFRA = "https://api.deepinfra.com/models/list"
 
 OUT = Path(__file__).resolve().parent.parent / "data" / "models.json"
 
@@ -102,27 +106,53 @@ VENDOR_NAMES = {
     "huggingface": "HuggingFace",
 }
 
-# OpenRouter 的厂商 slug -> 展示名；只收录主流厂商，避免长尾噪音
-OR_VENDORS = {
+# 各渠道用来标厂商的 slug -> 展示名。写法各家不一样（openrouter 用 z-ai、
+# vercel 用 zai、novita 用 zai-org），都收进来，认不出的丢掉免得长尾噪音。
+VENDOR_SLUGS = {
     "openai": "OpenAI",
     "anthropic": "Anthropic",
     "google": "Google",
     "deepseek": "DeepSeek",
+    "deepseek-ai": "DeepSeek",
     "moonshotai": "月之暗面 Kimi",
+    "moonshot": "月之暗面 Kimi",
     "z-ai": "智谱 Z.ai",
+    "zai": "智谱 Z.ai",
+    "zai-org": "智谱 Z.ai",
     "qwen": "阿里通义千问(国际)",
+    "alibaba": "阿里通义千问(国际)",
     "minimax": "MiniMax",
+    "minimaxai": "MiniMax",
     "xai": "xAI",
+    "spacexai": "xAI",
     "meta-llama": "Meta",
+    "meta": "Meta",
     "mistralai": "Mistral",
+    "mistral": "Mistral",
     "cohere": "Cohere",
     "perplexity": "Perplexity",
     "baidu": "百度文心",
     "bytedance": "字节豆包",
     "tencent": "腾讯混元",
     "stepfun-ai": "阶跃星辰",
+    "stepfun": "阶跃星辰",
+    "xiaomi": "小米 MiMo",
+    "xiaomimimo": "小米 MiMo",
+    "kwaipilot": "快手 KwaiCoder",
+    "inclusionai": "蚂蚁 Ling",
     "microsoft": "Microsoft",
     "amazon-nova": "Amazon",
+    "amazon": "Amazon",
+    "nvidia": "NVIDIA",
+    "arcee-ai": "Arcee",
+    "inception": "Inception",
+    "morph": "Morph",
+    "ibm-granite": "IBM Granite",
+    "nousresearch": "Nous Research",
+    "openrouter": "OpenRouter",
+    "thinkingmachines": "Thinking Machines",
+    "poolside": "Poolside",
+    "sakana": "Sakana",
 }
 
 # 平台上架的是原厂商模型的转售价，非厂商官网直营定价 —— 这是本项目对比的重点
@@ -344,62 +374,171 @@ def or_release_dates(raw: dict) -> dict[str, str]:
     return dates
 
 
-def fetch_new(raw: dict, known: set[str]) -> list[dict]:
-    """OpenRouter 补充最新模型：只取主流厂商、且 LiteLLM 还未收录的。"""
-    rows = []
+def _row(mid: str, vendor: str, channel: str, prov: str, inp: float | None,
+         outp: float | None, ctx, released: str | None,
+         vision=False, tools=False) -> dict | None:
+    """渠道补充行的统一构造。inp/outp 单位已经是 美元/百万 token。"""
+    if inp is None or LEGACY_RE.search(mid):
+        return None
+    if released and released < AGE_CUTOFF:
+        return None
+    return {
+        "model": mid,
+        "vendor": prov,
+        "vendor_name": vendor,          # 模型品牌
+        "input": round(inp, 3),
+        "output": round(outp, 3) if outp is not None else None,
+        "cache_read": None,
+        "context": ctx if isinstance(ctx, int) and ctx > 0 else None,
+        "max_output": None,
+        "mode": "chat",
+        "released": released,
+        "official": False,
+        "via": channel,                 # 真正在收钱的渠道
+        "suspect": suspect(round(inp, 3), "chat"),
+        "new": True,
+        "vision": bool(vision),
+        "reasoning": False,
+        "tool_call": bool(tools),
+    }
+
+
+def _ts(v) -> str | None:
+    if isinstance(v, (int, float)) and v > 0:
+        return time.strftime("%Y-%m-%d", time.gmtime(v))
+    if isinstance(v, str) and DATE_RE.match(v):
+        return v[:10]
+    return None
+
+
+def ch_openrouter(raw: dict) -> list[dict]:
+    out = []
     for m in raw.get("data", []):
         mid = m.get("id", "")
-        slug, _, suffix = mid.partition("/")
-        vendor = OR_VENDORS.get(slug)
-        if not vendor or not suffix:
-            continue
-        # LiteLLM 已有同款（含 :free 变体除外）就跳过，避免重复
-        if norm_name(suffix) in known:
-            continue
-        if LEGACY_RE.search(mid):
-            continue
-        released = (time.strftime("%Y-%m-%d", time.gmtime(m["created"]))
-                    if m.get("created") else None)
-        if released and released < AGE_CUTOFF:
-            continue
+        vendor = VENDOR_SLUGS.get(mid.partition("/")[0])
         p = m.get("pricing") or {}
+        if not vendor:
+            continue
         try:
-            in_cost = float(p.get("prompt") or 0)
-            out_cost = float(p.get("completion") or 0)
+            inp, outp = float(p.get("prompt") or 0), float(p.get("completion") or 0)
         except ValueError:
             continue
-        ctx = m.get("context_length")
-        rows.append({
-            "model": mid,
-            "vendor": "openrouter",
-            "vendor_name": vendor,
-            "input": round(in_cost * 1e6, 3),
-            "output": round(out_cost * 1e6, 3),
-            "cache_read": None,
-            "context": ctx if isinstance(ctx, int) else None,
-            "max_output": None,
-            "mode": "chat",
-            "released": released,
-            "official": False,
-            "via": "OpenRouter",   # 品牌归 vendor_name，价格是 OpenRouter 的
-            "suspect": suspect(round(in_cost * 1e6, 3), "chat"),
-            "new": True,
-            "vision": bool(m.get("architecture", {}).get("input_modalities")
-                           and "image" in m["architecture"]["input_modalities"]),
-            "reasoning": False,
-            "tool_call": bool(m.get("supported_parameters")
-                              and "tools" in m["supported_parameters"]),
-        })
-    return rows
+        out.append(_row(mid, vendor, "OpenRouter", "openrouter", inp * 1e6, outp * 1e6,
+                        m.get("context_length"), _ts(m.get("created")),
+                        "image" in (m.get("architecture", {}).get("input_modalities") or []),
+                        "tools" in (m.get("supported_parameters") or [])))
+    return [r for r in out if r]
+
+
+def ch_vercel(raw: dict) -> list[dict]:
+    """Vercel AI Gateway：owned_by 就是上游厂商，覆盖国内厂商也全。"""
+    out = []
+    for m in raw.get("data", []):
+        if m.get("type") != "language":
+            continue
+        vendor = VENDOR_SLUGS.get(m.get("owned_by", ""))
+        p = m.get("pricing") or {}
+        if not vendor or p.get("input") is None:
+            continue
+        try:
+            inp, outp = float(p["input"]), float(p.get("output") or 0)
+        except ValueError:
+            continue
+        out.append(_row(m.get("id", ""), vendor, "Vercel AI Gateway", "vercel_ai_gateway",
+                        inp * 1e6, outp * 1e6, m.get("context_window"),
+                        _ts(m.get("released")),
+                        "image" in (m.get("modalities", {}).get("input") or []),
+                        "tools" in (m.get("supported_parameters") or [])))
+    return [r for r in out if r]
+
+
+def ch_novita(raw: dict) -> list[dict]:
+    """Novita：price_per_m 的单位是 1e-4 美元，decimal 字段直接就是美元。"""
+    out = []
+    for m in raw.get("data", []):
+        mid = m.get("id", "")
+        vendor = VENDOR_SLUGS.get(mid.partition("/")[0])
+        if not vendor:
+            continue
+        pr = m.get("pricing") or {}
+
+        def usd(side: str, fallback: str):
+            blk = pr.get(side) or {}
+            d = blk.get("price_per_m_decimal")
+            if d not in (None, ""):
+                try:
+                    return float(d)
+                except ValueError:
+                    pass
+            v = m.get(fallback)
+            return v / 1e4 if isinstance(v, (int, float)) else None
+
+        inp = usd("prompt", "input_token_price_per_m")
+        out.append(_row(mid, vendor, "Novita", "novita", inp,
+                        usd("completion", "output_token_price_per_m"),
+                        None, _ts(m.get("created")), False, False))
+    return [r for r in out if r]
+
+
+def ch_deepinfra(raw: list) -> list[dict]:
+    """DeepInfra：cents_per_*_token 是「美分 / token」，×1e4 得美元/百万。"""
+    out = []
+    for m in raw:
+        if m.get("type") != "text-generation" or m.get("deprecated"):
+            continue
+        mid = m.get("model_name", "")
+        vendor = VENDOR_SLUGS.get(mid.partition("/")[0])
+        p = m.get("pricing") or {}
+        if not vendor or p.get("cents_per_input_token") is None:
+            continue
+        out.append(_row(mid, vendor, "DeepInfra", "deepinfra",
+                        p["cents_per_input_token"] * 1e4,
+                        (p.get("cents_per_output_token") or 0) * 1e4,
+                        m.get("max_tokens"), _ts(m.get("create_ts"))))
+    return [r for r in out if r]
+
+
+# 除主源之外的渠道。每个渠道只在 LiteLLM 没收录该渠道的同名模型时才补，
+# 所以同一个模型会在表里出现多行 —— 那正是用来比价的。
+CHANNELS = [
+    ("OpenRouter", "openrouter", SRC_NEW, ch_openrouter),
+    ("Vercel AI Gateway", "vercel_ai_gateway", SRC_VERCEL, ch_vercel),
+    ("Novita", "novita", SRC_NOVITA, ch_novita),
+    ("DeepInfra", "deepinfra", SRC_DEEPINFRA, ch_deepinfra),
+]
+
+
+def supplement(base: list[dict]) -> list[dict]:
+    """按渠道补模型。同渠道内 LiteLLM 已有的跳过，避免一个渠道重复两行。"""
+    seen: dict[str, set[str]] = {}
+    for r in base:
+        seen.setdefault(r["vendor"], set()).add(norm_name(r["model"].split("/")[-1]))
+    added = []
+    for name, prov, url, parse in CHANNELS:
+        try:
+            rows = parse(fetch(url))
+        except Exception as e:
+            print(f"   渠道 {name} 拉取失败，跳过：{e}")
+            continue
+        have = seen.setdefault(prov, set())
+        n = 0
+        for r in rows:
+            key = norm_name(r["model"].split("/")[-1])
+            if key in have:
+                continue
+            have.add(key)
+            added.append(r)
+            n += 1
+        print(f"   渠道 {name}: 补充 {n} / 返回 {len(rows)}")
+    return added
 
 
 def main() -> None:
     openrouter = fetch(SRC_NEW)
     rows = norm(fetch(SRC), or_release_dates(openrouter))
-    known = {norm_name(r["model"]) for r in rows}
-    new_rows = fetch_new(openrouter, known)
     for r in rows:
         r["new"] = False
+    new_rows = supplement(rows)
     rows += new_rows
     rows.sort(key=lambda r: (r["vendor_name"], r["model"]))
 
@@ -410,25 +549,31 @@ def main() -> None:
             r["xref"] = diff
     n_priced = sum(1 for r in rows if r["input"] is not None)
     n_diff = sum(1 for r in rows if r.get("xref"))
+    channels = sorted({r["via"] for r in rows if r.get("via")})
     OUT.write_text(json.dumps({
         "updated_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
         "sources": [
             {"name": "LiteLLM", "role": "主源",
              "url": "https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json"},
-            {"name": "OpenRouter", "role": "补最新模型",
+            {"name": "OpenRouter", "role": "渠道",
              "url": "https://openrouter.ai/api/v1/models"},
+            {"name": "Vercel AI Gateway", "role": "渠道",
+             "url": "https://vercel.com/docs/ai-gateway"},
+            {"name": "Novita", "role": "渠道", "url": "https://novita.ai/pricing"},
+            {"name": "DeepInfra", "role": "渠道", "url": "https://deepinfra.com/pricing"},
             {"name": "genai-prices", "role": "价格对账",
              "url": "https://github.com/pydantic/genai-prices"},
             {"name": "llm-prices", "role": "价格对账",
              "url": "https://www.llm-prices.com/"},
         ],
+        "channels": channels,
         "cutoff": AGE_CUTOFF,
         "pricing_pages": PRICING_PAGES,
         "count": len(rows),
         "models": rows,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"OK: {len(rows)} models ({n_priced} with prices, "
-          f"{len(new_rows)} new from OpenRouter, "
+          f"{len(new_rows)} 来自渠道补充, "
           f"{sum(1 for r in rows if not r['official'])} on aggregators, "
           f"{sum(1 for r in rows if r['suspect'])} suspect, "
           f"{n_diff} 与其他源报价不一致) -> {OUT}")

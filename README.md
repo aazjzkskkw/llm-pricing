@@ -8,7 +8,7 @@
 
 四个页面：
 
-- **价格总表** — 搜模型、按厂商筛、按最新发布或价格排序。同一模型官方价和各平台价摆在一起看，差价一目了然。每个价格都标了来源：**官方直营**、平台转售，还是**经 OpenRouter**
+- **价格总表** — 搜模型、按厂商和渠道筛、按最新发布或价格排序。同一模型的官方价和各渠道转售价摆在一起，差价一目了然。每行都标了来源：**官方直营**、平台转售，或**经 OpenRouter / Vercel AI Gateway / Novita / DeepInfra**
 - **按厂商看** — 每家一张卡片，默认按最近发布排，卡片里的模型也是新的在上面，带官方价格页链接方便自己复核
 - **模型评测** — 9 个榜单：ECI 综合能力指数、GPQA Diamond、SWE-Bench Verified、Terminal-Bench、FrontierMath、SimpleQA Verified、ARC-AGI-2、SimpleBench、Vectara 幻觉率。每个榜标了「最新上榜模型」的发布时间，默认隐藏两年前的老模型
 - **订阅与渠道** — Cursor、Copilot、Claude、Kiro、Trae、Zed、Augment、v0、Cline 的订阅档位（逐个核对过官网标价），加上 15 个聚合平台的模型数和价格区间（这部分从价格总表实时算，不手工维护）
@@ -25,7 +25,7 @@
 
 **价格**
 - [LiteLLM 价格库](https://github.com/BerriAI/litellm/blob/main/model_prices_and_context_window.json)（主力，各家官网公开定价）
-- [OpenRouter](https://openrouter.ai/api/v1/models)（补最新模型，页面标"新"；它的 `created` 字段还顺便当了全站的模型发布日期来源）
+- 四个渠道的公开接口补最新模型（页面标"新"，厂商列会写「经 XX」）：[OpenRouter](https://openrouter.ai/api/v1/models)、[Vercel AI Gateway](https://ai-gateway.vercel.sh/v1/models)、[Novita](https://api.novita.ai/v3/openai/models)、[DeepInfra](https://api.deepinfra.com/models/list)。这四家的接口不用鉴权就能拿到型号和自家报价，所以同一个模型往往能凑出好几行，按输入价排一下就知道哪个渠道便宜。OpenRouter 的 `created` 字段还顺便当了全站的模型发布日期来源
 - [pydantic/genai-prices](https://github.com/pydantic/genai-prices) 和 [llm-prices.com](https://www.llm-prices.com/)（只用来对账：同一个模型三家报价差超 20% 就在页面上标「对账不一致」，把别人的报价一并列出来）
 
 **评测**
