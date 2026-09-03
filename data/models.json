@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03 05:22 UTC",
+ "updated_at": "2026-09-03 06:59 UTC",
  "sources": [
   {
    "name": "LiteLLM",
@@ -20175,8 +20175,8 @@
    "aged": false,
    "vendor": "openrouter",
    "vendor_name": "DeepSeek",
-   "input": 0.22,
-   "output": 0.66,
+   "input": 0.44,
+   "output": 1.32,
    "cache_read": null,
    "context": 1048576,
    "max_output": null,
