@@ -36,70 +36,69 @@ EPOCH_BOARDS = [
     {"f": "epoch_capabilities_index.csv", "name": "ECI 综合能力指数", "cat": "综合",
      "short": "ECI", "col": "ECI Score", "pct": False, "unit": "分", "ov": True,
      "desc": "Epoch AI 依据数十个基准的成绩拟合出的综合能力指数，无固定上限，"
-             "用于跨代际比较模型的整体能力水平。想一眼看排名先看这个。"},
+             "用于跨代际比较模型的整体能力水平。"},
     {"f": "metr_time_horizons_external.csv", "name": "METR 任务时长", "cat": "综合",
      "short": "METR", "col": "Time horizon", "pct": False, "unit": "分钟", "ov": True,
-     "desc": "METR 的时间视野指标：模型能以 50% 成功率完成的任务，人类专家要花多少分钟。"
-             "数字越大代表能独立干越久的活。"},
+     "desc": "时间视野指标：模型以 50% 成功率完成的任务，人类专家所需分钟数。"
+             "数值越大表示可独立完成的任务链越长。"},
     {"f": "gdpval_external.csv", "name": "GDPval 真实职业任务", "cat": "综合",
      "short": "GDPval", "col": "Win Rate (%)", "pct": True, "unit": "%", "ov": False,
-     "desc": "OpenAI 出的评测：44 个行业的真实工作交付物，请业内专家盲评模型产出与人类产出，"
-             "分数是模型胜出的比例。"},
+     "desc": "覆盖 44 个行业的真实工作交付物，由业内专家盲评模型产出与人类产出，分数为模型胜出比例。"},
 
     {"f": "swe_bench_verified.csv", "name": "SWE-Bench Verified", "cat": "编程与 Agent",
      "short": "SWE-B", "pct": True, "unit": "%", "ov": True,
      "desc": "500 个经人工核验的真实 GitHub issue，模型提交的补丁需通过项目自带测试。"},
     {"f": "deepswe_external.csv", "name": "DeepSWE · Agent 修 bug", "cat": "编程与 Agent",
      "short": "DeepSWE", "col": "Pass@1", "pct": True, "unit": "%", "ov": True,
-     "desc": "用 mini-swe-agent 这个极简框架跑真实软件工程任务，每题跑四次。Pass@1 是单次通过率，"
-             "Pass@4 是四次里至少成功一次。带每题平均花费，能直接看性价比。"},
+     "desc": "基于 mini-swe-agent 框架执行真实软件工程任务，每题运行四次。Pass@1 为单次通过率，"
+             "Pass@4 为四次中至少一次通过。含每题平均成本，可评估性价比。"},
     {"f": "terminalbench_external.csv", "name": "Terminal-Bench · 终端 Agent",
      "cat": "编程与 Agent", "short": "T-Bench", "col": "Accuracy mean", "pct": True,
      "unit": "%", "ov": True,
-     "desc": "在真实终端里完成配置、执行与调试任务，考 Agent 能力而非单轮问答。"
-             "同一模型换不同 Agent 框架，成绩差异很大。"},
+     "desc": "在真实终端环境中完成配置、执行与调试任务，考察 Agent 能力而非单轮问答。"
+             "同一模型搭配不同 Agent 框架，成绩差异较大。"},
     {"f": "aider_polyglot_external.csv", "name": "Aider Polyglot · 代码编辑",
      "cat": "编程与 Agent", "short": "Aider", "col": "Percent correct", "pct": False,
      "unit": "%", "ov": True,
-     "desc": "225 道 Exercism 多语言编程题，考模型改代码并让测试通过。上游更新较慢。"},
+     "desc": "225 道 Exercism 多语言编程题，考察修改代码并通过测试的能力。上游更新频率较低。"},
     {"f": "webdev_arena_external.csv", "name": "WebDev Arena · 前端对战",
      "cat": "编程与 Agent", "short": "WebDev", "col": "Arena Score", "pct": False,
      "unit": "Elo", "ov": True,
-     "desc": "让两个模型各写一版网页应用，真人投票选更好的那个，按 Elo 排名。"},
+     "desc": "两个模型分别生成网页应用，由真人投票比较优劣，按 Elo 排名。"},
     {"f": "cybench_external.csv", "name": "Cybench · 安全 CTF", "cat": "编程与 Agent",
      "short": "Cybench", "col": "Unguided % Solved", "pct": True, "unit": "%", "ov": False,
-     "desc": "无提示条件下独立解 CTF 题的比例，考渗透与漏洞利用的实际动手能力。"},
+     "desc": "无提示条件下独立解出 CTF 题目的比例，考察渗透与漏洞利用的实操能力。"},
 
     {"f": "frontiermath_tiers_1_3_v2.csv", "name": "FrontierMath · 前沿数学",
      "cat": "数学与推理", "short": "FMath", "pct": True, "unit": "%", "ov": True,
      "desc": "Epoch AI 自建的未公开数学题库，难度覆盖竞赛级至科研级，用于规避训练集污染。"},
     {"f": "otis_mock_aime_2024_2025.csv", "name": "AIME 模拟卷", "cat": "数学与推理",
      "short": "AIME", "pct": True, "unit": "%", "ov": True,
-     "desc": "OTIS 出的 AIME 模拟题，美国高中数学邀请赛难度，是目前最常被引用的数学基准之一。"},
+     "desc": "OTIS 编制的 AIME 模拟题，难度对应美国高中数学邀请赛，为常用数学基准之一。"},
     {"f": "arc_agi_2_external.csv", "name": "ARC-AGI-2 · 抽象推理",
      "cat": "数学与推理", "short": "ARC-2", "col": "Score", "pct": True, "unit": "%",
      "ov": True,
-     "desc": "依据少量图形变换示例归纳规则，考抽象归纳推理，不依赖知识储备。"},
+     "desc": "依据少量图形变换示例归纳规则，考察抽象归纳推理，不依赖知识储备。"},
     {"f": "arc_agi_external.csv", "name": "ARC-AGI-1", "cat": "数学与推理",
      "short": "ARC-1", "col": "Score", "pct": True, "unit": "%", "ov": False,
-     "desc": "ARC-AGI 第一版，多数前沿模型已接近饱和，看趋势用。"},
+     "desc": "ARC-AGI 第一版，多数前沿模型已接近饱和，可用于观察趋势。"},
     {"f": "simplebench_external.csv", "name": "SimpleBench · 常识陷阱",
      "cat": "数学与推理", "short": "Simple", "col": "Score (AVG@5)", "pct": False,
      "unit": "%", "ov": False,
-     "desc": "面向人类直觉简单但模型易错的常识与时空推理题，人类平均分高于多数模型。"},
+     "desc": "人类直觉简单但模型易错的常识与时空推理题，人类平均分高于多数模型。"},
 
     {"f": "gpqa_diamond.csv", "name": "GPQA Diamond · 科学推理", "cat": "知识与事实",
      "short": "GPQA", "pct": True, "unit": "%", "ov": True,
      "desc": "研究生级物理、化学、生物多选题，题目经过防检索设计。随机作答基准 25%。"},
     {"f": "hle_external.csv", "name": "HLE · 人类最后考试", "cat": "知识与事实",
      "short": "HLE", "col": "Accuracy", "pct": True, "unit": "%", "ov": True,
-     "desc": "Humanity's Last Exam：上百个学科的专家级难题，是当前最难的知识类基准之一。"},
+     "desc": "Humanity's Last Exam：覆盖上百个学科的专家级难题，为当前难度最高的知识类基准之一。"},
     {"f": "simpleqa_verified.csv", "name": "SimpleQA Verified · 事实准确率",
      "cat": "知识与事实", "short": "SimpleQA", "pct": True, "unit": "%", "ov": True,
-     "desc": "短事实问答，考知识准确性以及不确定时会不会编造答案。"},
+     "desc": "短事实问答，考察知识准确性及不确定时是否编造答案。"},
     {"f": "scicode_external.csv", "name": "SciCode · 科研代码", "cat": "知识与事实",
      "short": "SciCode", "col": "Score", "pct": True, "unit": "%", "ov": False,
-     "desc": "把科研论文里的方法实现成可运行代码，考科学理解加编程的结合。"},
+     "desc": "将科研论文中的方法实现为可运行代码，考察科学理解与编程能力的结合。"},
 ]
 
 # 分数列没指定时按这个顺序猜（Epoch 各 benchmark 列名不统一）
@@ -259,8 +258,8 @@ def overview(boards: list[dict]) -> dict:
     return {
         "id": "overview", "name": "总览 · 跨榜单对比", "cat": "综合",
         "short": "总览",
-        "desc": "把下面各张榜横过来拼在一起，一行一个模型。默认按 ECI 综合分排。"
-                "空格表示这个模型没上那张榜。列名点一下可以按单项成绩排。",
+        "desc": "各榜单横向汇总，一行一个模型，默认按 ECI 综合分排序。"
+                "空格表示该模型未上榜；点击列名可按单项成绩排序。",
         "source": "Epoch AI", "url": "https://epoch.ai/benchmarks",
         # 第一列是 ECI，前端默认按第一列排，这样打开就是按综合能力从强到弱
         "cols": ([{"k": b["short"], "t": f"{b['short']} {b['unit_short']}".strip(),

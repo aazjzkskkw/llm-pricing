@@ -11,7 +11,7 @@
 <header>
   <div class="eyebrow">MODEL PRICING</div>
   <h1>LLM <em>价格对比</em></h1>
-  <div class="meta">官方直营价与各渠道转售价并列 · 美元 / 100 万 token · 更新于 <b id="updated">…</b>
+  <div class="meta">厂商官方直营价与各渠道转售价并列 · 单位：美元 / 100 万 token · 更新于 <b id="updated">…</b>
   <br><span class="dim" id="srcs">…</span></div>
 </header>
 <nav></nav>
@@ -107,9 +107,9 @@ fetch('data/models.json').then(r => r.json()).then(async d => {
   const ins = models.filter(m => m.mode === 'chat' && !m.aged && m.input != null)
     .map(m => m.input);
   document.getElementById('viz').innerHTML =
-    priceHist(ins, `近一年 ${ins.length} 个对话模型的输入价分布`) +
+    priceHist(ins, `输入价分布 · 近一年 ${ins.length} 个对话模型`) +
     priceHist(models.filter(m => m.mode === 'chat' && !m.aged && m.output != null)
-      .map(m => m.output), '同一批模型的输出价分布');
+      .map(m => m.output), '输出价分布 · 同一批模型');
   flagChart();
   render();
 });
@@ -214,14 +214,14 @@ function rows() {
 function priceCell(v, m, main) {
   let extra = '';
   if (main && m.suspect)
-    extra += '<span class="tag red" title="价格量级异常，疑为上游数据源单位填写错误（每千 token 误填为每 token），请以厂商官方价格为准">异常</span>';
+    extra += '<span class="tag red" title="价格量级异常，疑为上游数据源单位填写有误（每千 token 误填为每 token），请以厂商官网为准">异常</span>';
   if (main && m.xref) {
     const x = m.xref, others = (x.others || []).map(o => `${o.src} $${o.input}`).join('，');
     if (x.verdict === 'ok')
       extra += `<span class="tag ok" title="${x.checked} 核对过官网：${x.note}${
         others ? ' ｜ 其他库报价：' + others : ''}">已核对官网</span>`;
     else
-      extra += `<span class="tag orange" title="其他价格库报价：${others}。多半是分档口径不同（高峰/低谷、缓存命中），也可能有一方过期。点厂商的官方价格页自己确认一下">待核对</span>`;
+      extra += `<span class="tag orange" title="其他价格库报价：${others}。差异多源于分档口径不同（高峰 / 低谷、缓存命中），亦可能有一方数据过期，建议核对厂商官方价格页">待核对</span>`;
   }
   return `<td class="num ${tier(v)}">${money(v)}${extra}</td>`;
 }
@@ -258,7 +258,7 @@ function flagChart() {
   const ps = list.map(m => m.input), lo = Math.min(...ps), hi = Math.max(...ps);
   const el = document.getElementById('chart');
   el.style.display = '';
-  el.innerHTML = `<h3>头部模型：多强，多少钱<small>按 ECI 综合能力分排 ·
+  el.innerHTML = `<h3>头部模型能力与官方定价<small>按 ECI 综合能力分排序 ·
       柱长为官方直营价（对数刻度）· 美元 / 1M 输入</small></h3>` +
     list.map(m => `<div class="row">
       <span class="nm" title="${brand.get(m.key)} ${m.key}">
@@ -271,7 +271,7 @@ function render() {
   const grouped = sortKey === 'key' && !document.getElementById('dedup').value;
   const multi = [...groups.values()].filter(g => g.n > 1).length;
   document.getElementById('count').innerHTML =
-    `<b>${rs.length}</b> 行 · <b>${groups.size}</b> 个模型 · <b>${multi}</b> 个可跨渠道比价 · 默认近一年`;
+    `<b>${rs.length}</b> 行 · <b>${groups.size}</b> 个模型 · 其中 <b>${multi}</b> 个可跨渠道比价`;
   let prev = null;
   document.querySelector('#tbl tbody').innerHTML = rs.map(m => {
     const g = groups.get(m.key);
