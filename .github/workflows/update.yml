@@ -16,12 +16,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: pip install pyyaml
       - name: Fetch latest prices
         run: python scripts/update.py
+      - name: Fetch benchmark leaderboards
+        run: python scripts/bench.py
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/models.json
+          git add data/
           git diff --cached --quiet || git commit -m "update prices"
           git push
