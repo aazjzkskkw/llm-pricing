@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-03 07:11 UTC",
- "cutoff": "2024-09-03",
+ "updated_at": "2026-09-04 00:51 UTC",
+ "cutoff": "2024-09-04",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -8,7 +8,7 @@
    "name": "总览 · 跨榜单对比",
    "cat": "综合",
    "short": "总览",
-   "desc": "把下面各张榜横过来拼在一起，一行一个模型。默认按 ECI 综合分排。空格表示这个模型没上那张榜。列名点一下可以按单项成绩排。",
+   "desc": "各榜单横向汇总，一行一个模型，默认按 ECI 综合分排序。空格表示该模型未上榜；点击列名可按单项成绩排序。",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
    "cols": [
@@ -102,11 +102,23 @@
    ],
    "rows": [
     {
+     "model": "GPT-6 Astra",
+     "org": "OpenAI",
+     "released": "2026-09-03",
+     "n": 5,
+     "ECI": 169.2,
+     "FMath": 93.7,
+     "AIME": 100.0,
+     "GPQA": 95.8,
+     "SimpleQA": 75.6,
+     "old": false
+    },
+    {
      "model": "Claude Fable 5",
      "org": "Anthropic",
      "released": "2026-06-09",
      "n": 8,
-     "ECI": 163.2,
+     "ECI": 162.9,
      "DeepSWE": 69.9,
      "WebDev": 1626.3,
      "FMath": 87.0,
@@ -121,7 +133,7 @@
      "org": "Anthropic",
      "released": "2026-09-01",
      "n": 6,
-     "ECI": 163.0,
+     "ECI": 162.9,
      "WebDev": 1765.4,
      "FMath": 90.2,
      "AIME": 100.0,
@@ -134,7 +146,7 @@
      "org": "Anthropic",
      "released": "2026-07-24",
      "n": 8,
-     "ECI": 162.4,
+     "ECI": 162.3,
      "DeepSWE": 73.6,
      "WebDev": 1690.6,
      "FMath": 85.6,
@@ -145,21 +157,11 @@
      "old": false
     },
     {
-     "model": "GPT-5.5 Pro",
-     "org": "OpenAI",
-     "released": "2026-04-23",
-     "n": 3,
-     "ECI": 162.1,
-     "FMath": 87.7,
-     "ARC-2": 84.6,
-     "old": false
-    },
-    {
      "model": "GPT-5.6 Sol",
      "org": "OpenAI",
      "released": "2026-07-09",
      "n": 8,
-     "ECI": 161.7,
+     "ECI": 162.0,
      "DeepSWE": 72.7,
      "WebDev": 1618.7,
      "FMath": 89.1,
@@ -174,9 +176,35 @@
      "org": "OpenAI",
      "released": "2026-07-09",
      "n": 3,
-     "ECI": 161.7,
+     "ECI": 162.0,
      "AIME": 68.9,
      "GPQA": 82.8,
+     "old": false
+    },
+    {
+     "model": "GPT-5.5 Pro",
+     "org": "OpenAI",
+     "released": "2026-04-23",
+     "n": 3,
+     "ECI": 162.0,
+     "FMath": 87.7,
+     "ARC-2": 84.6,
+     "old": false
+    },
+    {
+     "model": "GPT-5.5",
+     "org": "OpenAI",
+     "released": "2026-04-23",
+     "n": 9,
+     "ECI": 159.2,
+     "DeepSWE": 67.0,
+     "T-Bench": 84.7,
+     "WebDev": 1508.3,
+     "FMath": 85.3,
+     "AIME": 84.4,
+     "ARC-2": 85.0,
+     "GPQA": 90.7,
+     "SimpleQA": 63.0,
      "old": false
     },
     {
@@ -205,22 +233,6 @@
      "old": false
     },
     {
-     "model": "GPT-5.5",
-     "org": "OpenAI",
-     "released": "2026-04-23",
-     "n": 9,
-     "ECI": 159.1,
-     "DeepSWE": 67.0,
-     "T-Bench": 84.7,
-     "WebDev": 1508.3,
-     "FMath": 85.3,
-     "AIME": 84.4,
-     "ARC-2": 85.0,
-     "GPQA": 90.7,
-     "SimpleQA": 63.0,
-     "old": false
-    },
-    {
      "model": "GPT-5.4 Pro",
      "org": "OpenAI",
      "released": "2026-03-05",
@@ -235,7 +247,7 @@
      "org": "Anthropic",
      "released": "2026-05-28",
      "n": 8,
-     "ECI": 158.3,
+     "ECI": 158.2,
      "DeepSWE": 59.0,
      "WebDev": 1563.5,
      "FMath": 80.0,
@@ -250,7 +262,7 @@
      "org": "Moonshot",
      "released": "2026-07-16",
      "n": 8,
-     "ECI": 157.7,
+     "ECI": 157.6,
      "DeepSWE": 68.5,
      "WebDev": 1673.7,
      "FMath": 72.2,
@@ -354,23 +366,6 @@
      "old": false
     },
     {
-     "model": "Claude Opus 4.7",
-     "org": "Anthropic",
-     "released": "2026-04-16",
-     "n": 10,
-     "ECI": 156.2,
-     "SWE-B": 83.5,
-     "T-Bench": 80.2,
-     "WebDev": 1566.8,
-     "FMath": 70.2,
-     "AIME": 97.8,
-     "ARC-2": 75.8,
-     "GPQA": 90.2,
-     "HLE": 36.2,
-     "SimpleQA": 51.7,
-     "old": false
-    },
-    {
      "model": "Claude Sonnet 5",
      "org": "Anthropic",
      "released": "2026-06-30",
@@ -382,6 +377,23 @@
      "AIME": 94.7,
      "GPQA": 90.5,
      "SimpleQA": 33.7,
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.7",
+     "org": "Anthropic",
+     "released": "2026-04-16",
+     "n": 10,
+     "ECI": 156.1,
+     "SWE-B": 83.5,
+     "T-Bench": 80.2,
+     "WebDev": 1566.8,
+     "FMath": 70.2,
+     "AIME": 97.8,
+     "ARC-2": 75.8,
+     "GPQA": 90.2,
+     "HLE": 36.2,
+     "SimpleQA": 51.7,
      "old": false
     },
     {
@@ -410,22 +422,6 @@
      "old": false
     },
     {
-     "model": "Claude Opus 4.6",
-     "org": "Anthropic",
-     "released": "2026-02-05",
-     "n": 9,
-     "ECI": 155.3,
-     "METR": 718.8,
-     "SWE-B": 78.7,
-     "T-Bench": 79.8,
-     "WebDev": 1556.3,
-     "FMath": 66.0,
-     "AIME": 91.1,
-     "GPQA": 88.4,
-     "SimpleQA": 47.0,
-     "old": false
-    },
-    {
      "model": "GLM-5.3",
      "org": "Z.ai (Zhipu AI)",
      "released": "2026-08-14",
@@ -437,6 +433,22 @@
      "AIME": 91.1,
      "GPQA": 90.9,
      "SimpleQA": 41.0,
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.6",
+     "org": "Anthropic",
+     "released": "2026-02-05",
+     "n": 9,
+     "ECI": 155.2,
+     "METR": 718.8,
+     "SWE-B": 78.7,
+     "T-Bench": 79.8,
+     "WebDev": 1556.3,
+     "FMath": 66.0,
+     "AIME": 91.1,
+     "GPQA": 88.4,
+     "SimpleQA": 47.0,
      "old": false
     },
     {
@@ -457,22 +469,6 @@
      "old": false
     },
     {
-     "model": "Gemini 3.5 Flash",
-     "org": "Google DeepMind",
-     "released": "2026-05-19",
-     "n": 9,
-     "ECI": 154.7,
-     "SWE-B": 79.3,
-     "DeepSWE": 37.4,
-     "WebDev": 1506.4,
-     "FMath": 62.8,
-     "AIME": 95.6,
-     "ARC-2": 72.1,
-     "GPQA": 92.8,
-     "SimpleQA": 66.2,
-     "old": false
-    },
-    {
      "model": "Muse Spark 1.1",
      "org": "Meta AI",
      "released": "2026-07-09",
@@ -481,6 +477,22 @@
      "DeepSWE": 53.3,
      "WebDev": 1539.0,
      "SimpleQA": 57.8,
+     "old": false
+    },
+    {
+     "model": "Gemini 3.5 Flash",
+     "org": "Google DeepMind",
+     "released": "2026-05-19",
+     "n": 9,
+     "ECI": 154.6,
+     "SWE-B": 79.3,
+     "DeepSWE": 37.4,
+     "WebDev": 1506.4,
+     "FMath": 62.8,
+     "AIME": 95.6,
+     "ARC-2": 72.1,
+     "GPQA": 92.8,
+     "SimpleQA": 66.2,
      "old": false
     },
     {
@@ -801,6 +813,17 @@
      "old": false
     },
     {
+     "model": "Qwen3.6 27B",
+     "org": "Alibaba",
+     "released": "2026-04-22",
+     "n": 4,
+     "ECI": 146.5,
+     "FMath": 35.1,
+     "AIME": 91.1,
+     "GPQA": 85.9,
+     "old": false
+    },
+    {
      "model": "Minimax m2.5",
      "org": "MiniMax",
      "released": "2026-02-12",
@@ -809,17 +832,6 @@
      "T-Bench": 42.7,
      "WebDev": 1383.9,
      "ARC-2": 4.9,
-     "old": false
-    },
-    {
-     "model": "Qwen3.6 27B",
-     "org": "Alibaba",
-     "released": "2026-04-22",
-     "n": 4,
-     "ECI": 146.4,
-     "FMath": 35.1,
-     "AIME": 91.1,
-     "GPQA": 85.9,
      "old": false
     },
     {
@@ -2173,13 +2185,13 @@
      "old": false
     }
    ],
-   "latest": "2026-09-01",
+   "latest": "2026-09-03",
    "old_count": 9
   },
   {
    "id": "epoch_capabilities_index",
    "name": "ECI 综合能力指数",
-   "desc": "Epoch AI 依据数十个基准的成绩拟合出的综合能力指数，无固定上限，用于跨代际比较模型的整体能力水平。想一眼看排名先看这个。",
+   "desc": "Epoch AI 依据数十个基准的成绩拟合出的综合能力指数，无固定上限，用于跨代际比较模型的整体能力水平。",
    "cat": "综合",
    "short": "ECI",
    "unit": "分",
@@ -2200,18 +2212,28 @@
    ],
    "rows": [
     {
-     "model": "Claude Fable 5",
-     "score": 163.2,
-     "org": "Anthropic",
+     "model": "GPT-6 Astra",
+     "score": 169.2,
+     "org": "OpenAI",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-06-09",
+     "released": "2026-09-03",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Astra (none)",
+     "score": 169.2,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
      "old": false
     },
     {
      "model": "Claude Fable 5.1",
-     "score": 163.0,
+     "score": 162.9,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -2220,8 +2242,18 @@
      "old": false
     },
     {
+     "model": "Claude Fable 5",
+     "score": 162.9,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-06-09",
+     "old": false
+    },
+    {
      "model": "Claude Opus 5",
-     "score": 162.4,
+     "score": 162.3,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -2230,28 +2262,8 @@
      "old": false
     },
     {
-     "model": "GPT-5.5 Pro",
-     "score": 162.1,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-23",
-     "old": false
-    },
-    {
-     "model": "GPT-5.5 Pro (unknown thinking)",
-     "score": 162.1,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-23",
-     "old": false
-    },
-    {
      "model": "GPT-5.6 Sol",
-     "score": 161.7,
+     "score": 162.0,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -2261,7 +2273,7 @@
     },
     {
      "model": "GPT-5.6 Sol (none)",
-     "score": 161.7,
+     "score": 162.0,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -2271,17 +2283,27 @@
     },
     {
      "model": "GPT-5.6 Sol (pro,",
-     "score": 161.7,
+     "score": 162.0,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
      "cost": null,
      "released": "2026-07-09",
+     "old": false
+    },
+    {
+     "model": "GPT-5.5 Pro",
+     "score": 162.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-23",
      "old": false
     },
     {
      "model": "GPT-5.6 Sol (unknown thinking)",
-     "score": 161.7,
+     "score": 162.0,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -2290,13 +2312,33 @@
      "old": false
     },
     {
+     "model": "GPT-5.5 Pro (unknown thinking)",
+     "score": 162.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-23",
+     "old": false
+    },
+    {
      "model": "GPT-5.6 Sol (pro, unknown thinking)",
-     "score": 161.7,
+     "score": 162.0,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
      "cost": null,
      "released": "2026-07-09",
+     "old": false
+    },
+    {
+     "model": "GPT-5.5",
+     "score": 159.2,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-23",
      "old": false
     },
     {
@@ -2310,6 +2352,16 @@
      "old": false
     },
     {
+     "model": "GPT-5.5 (no thinking)",
+     "score": 159.2,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-23",
+     "old": false
+    },
+    {
      "model": "GPT-5.6 Terra (none)",
      "score": 159.2,
      "org": "OpenAI",
@@ -2320,6 +2372,16 @@
      "old": false
     },
     {
+     "model": "GPT-5.5 (unknown thinking)",
+     "score": 159.2,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-23",
+     "old": false
+    },
+    {
      "model": "GPT-5.6 Terra (unknown thinking)",
      "score": 159.2,
      "org": "OpenAI",
@@ -2327,36 +2389,6 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-09",
-     "old": false
-    },
-    {
-     "model": "GPT-5.5",
-     "score": 159.1,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-23",
-     "old": false
-    },
-    {
-     "model": "GPT-5.5 (no thinking)",
-     "score": 159.1,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-23",
-     "old": false
-    },
-    {
-     "model": "GPT-5.5 (unknown thinking)",
-     "score": 159.1,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-23",
      "old": false
     },
     {
@@ -2391,7 +2423,7 @@
     },
     {
      "model": "Claude Opus 4.8",
-     "score": 158.3,
+     "score": 158.2,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -2401,7 +2433,7 @@
     },
     {
      "model": "Claude Opus 4.8 (24k thinking)",
-     "score": 158.3,
+     "score": 158.2,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -2411,7 +2443,7 @@
     },
     {
      "model": "Kimi K3",
-     "score": 157.7,
+     "score": 157.6,
      "org": "Moonshot",
      "agent": null,
      "pass4": null,
@@ -2520,26 +2552,6 @@
      "old": false
     },
     {
-     "model": "Claude Opus 4.7",
-     "score": 156.2,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-16",
-     "old": false
-    },
-    {
-     "model": "Claude Opus 4.7 (no thinking)",
-     "score": 156.2,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-16",
-     "old": false
-    },
-    {
      "model": "Claude Sonnet 5 (no thinking)",
      "score": 156.2,
      "org": "Anthropic",
@@ -2567,6 +2579,26 @@
      "pass4": null,
      "cost": null,
      "released": "2026-06-30",
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.7",
+     "score": 156.1,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-16",
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.7 (no thinking)",
+     "score": 156.1,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-16",
      "old": false
     },
     {
@@ -2610,26 +2642,6 @@
      "old": false
     },
     {
-     "model": "Claude Opus 4.6",
-     "score": 155.3,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-02-05",
-     "old": false
-    },
-    {
-     "model": "Claude Opus 4.6 (no thinking)",
-     "score": 155.3,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-02-05",
-     "old": false
-    },
-    {
      "model": "GPT-5.2 Pro",
      "score": 155.3,
      "org": "OpenAI",
@@ -2637,36 +2649,6 @@
      "pass4": null,
      "cost": null,
      "released": "2025-12-11",
-     "old": false
-    },
-    {
-     "model": "Claude Opus 4.6 (120k thinking)",
-     "score": 155.3,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-02-05",
-     "old": false
-    },
-    {
-     "model": "Claude Opus 4.6 (64k thinking)",
-     "score": 155.3,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-02-05",
-     "old": false
-    },
-    {
-     "model": "Claude Opus 4.6 (32k thinking)",
-     "score": 155.3,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-02-05",
      "old": false
     },
     {
@@ -2680,8 +2662,18 @@
      "old": false
     },
     {
-     "model": "Claude Opus 4.6 (unknown thinking)",
+     "model": "GLM-5.3 (unknown thinking)",
      "score": 155.3,
+     "org": "Z.ai (Zhipu AI)",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-14",
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.6",
+     "score": 155.2,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -2690,13 +2682,53 @@
      "old": false
     },
     {
-     "model": "GLM-5.3 (unknown thinking)",
-     "score": 155.3,
-     "org": "Z.ai (Zhipu AI)",
+     "model": "Claude Opus 4.6 (no thinking)",
+     "score": 155.2,
+     "org": "Anthropic",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-08-14",
+     "released": "2026-02-05",
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.6 (120k thinking)",
+     "score": 155.2,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-05",
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.6 (64k thinking)",
+     "score": 155.2,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-05",
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.6 (32k thinking)",
+     "score": 155.2,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-05",
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.6 (unknown thinking)",
+     "score": 155.2,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-05",
      "old": false
     },
     {
@@ -2721,7 +2753,7 @@
     },
     {
      "model": "Gemini 3.5 Flash",
-     "score": 154.7,
+     "score": 154.6,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -3040,6 +3072,16 @@
      "old": false
     },
     {
+     "model": "Claude Opus 4.5 (unknown thinking)",
+     "score": 150.1,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-11-24",
+     "old": false
+    },
+    {
      "model": "Claude Opus 4.5",
      "score": 150.1,
      "org": "Anthropic",
@@ -3051,16 +3093,6 @@
     },
     {
      "model": "Claude Opus 4.5 (64k thinking)",
-     "score": 150.1,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-11-24",
-     "old": false
-    },
-    {
-     "model": "Claude Opus 4.5 (unknown thinking)",
      "score": 150.1,
      "org": "Anthropic",
      "agent": null,
@@ -3201,7 +3233,7 @@
     },
     {
      "model": "GPT-5.4 mini (none)",
-     "score": 149.0,
+     "score": 149.1,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3211,7 +3243,7 @@
     },
     {
      "model": "GPT-5.4 mini",
-     "score": 149.0,
+     "score": 149.1,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3221,7 +3253,7 @@
     },
     {
      "model": "GPT-5.4 mini (unknown thinking)",
-     "score": 149.0,
+     "score": 149.1,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3271,7 +3303,7 @@
     },
     {
      "model": "Qwen 3.6 Plus (2026-04-02)",
-     "score": 147.6,
+     "score": 147.7,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -3400,36 +3432,6 @@
      "old": false
     },
     {
-     "model": "Claude Sonnet 4.5 (2k thinking)",
-     "score": 146.8,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-09-29",
-     "old": false
-    },
-    {
-     "model": "Claude Sonnet 4.5",
-     "score": 146.8,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-09-29",
-     "old": false
-    },
-    {
-     "model": "Claude Sonnet 4.5 (12k thinking)",
-     "score": 146.8,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-09-29",
-     "old": false
-    },
-    {
      "model": "Claude Sonnet 4.5 (8k thinking)",
      "score": 146.8,
      "org": "Anthropic",
@@ -3450,6 +3452,36 @@
      "old": false
     },
     {
+     "model": "Claude Sonnet 4.5 (12k thinking)",
+     "score": 146.8,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-09-29",
+     "old": false
+    },
+    {
+     "model": "Claude Sonnet 4.5 (2k thinking)",
+     "score": 146.8,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-09-29",
+     "old": false
+    },
+    {
+     "model": "Claude Sonnet 4.5",
+     "score": 146.8,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-09-29",
+     "old": false
+    },
+    {
      "model": "MiniMax-M3",
      "score": 146.6,
      "org": "MiniMax",
@@ -3457,6 +3489,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-06-01",
+     "old": false
+    },
+    {
+     "model": "Qwen3.6 27B",
+     "score": 146.5,
+     "org": "Alibaba",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-22",
      "old": false
     },
     {
@@ -3480,13 +3522,13 @@
      "old": false
     },
     {
-     "model": "Qwen3.6 27B",
-     "score": 146.4,
+     "model": "Qwen3.5-122B-A10B",
+     "score": 146.3,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-04-22",
+     "released": "2026-02-24",
      "old": false
     },
     {
@@ -3517,16 +3559,6 @@
      "pass4": null,
      "cost": null,
      "released": "2026-04-24",
-     "old": false
-    },
-    {
-     "model": "Qwen3.5-122B-A10B",
-     "score": 146.2,
-     "org": "Alibaba",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-02-24",
      "old": false
     },
     {
@@ -3920,6 +3952,16 @@
      "old": false
     },
     {
+     "model": "Qwen3-Max-Instruct",
+     "score": 142.5,
+     "org": "Alibaba",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-09-24",
+     "old": false
+    },
+    {
      "model": "GPT-5.5 Instant",
      "score": 142.5,
      "org": "OpenAI",
@@ -3927,16 +3969,6 @@
      "pass4": null,
      "cost": null,
      "released": "2026-05-05",
-     "old": false
-    },
-    {
-     "model": "Qwen3-Max-Instruct",
-     "score": 142.4,
-     "org": "Alibaba",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-09-24",
      "old": false
     },
     {
@@ -4070,7 +4102,7 @@
      "old": false
     },
     {
-     "model": "Claude 3.7 Sonnet (2k thinking)",
+     "model": "Claude 3.7 Sonnet (unknown thinking)",
      "score": 141.2,
      "org": "Anthropic",
      "agent": null,
@@ -4090,26 +4122,6 @@
      "old": false
     },
     {
-     "model": "Claude 3.7 Sonnet (12k thinking)",
-     "score": 141.2,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-02-24",
-     "old": false
-    },
-    {
-     "model": "Claude 3.7 Sonnet (unknown thinking)",
-     "score": 141.2,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-02-24",
-     "old": false
-    },
-    {
      "model": "Claude 3.7 Sonnet (1k thinking)",
      "score": 141.2,
      "org": "Anthropic",
@@ -4120,7 +4132,27 @@
      "old": false
     },
     {
+     "model": "Claude 3.7 Sonnet (12k thinking)",
+     "score": 141.2,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-02-24",
+     "old": false
+    },
+    {
      "model": "Claude 3.7 Sonnet (15k thinking)",
+     "score": 141.2,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-02-24",
+     "old": false
+    },
+    {
+     "model": "Claude 3.7 Sonnet (2k thinking)",
      "score": 141.2,
      "org": "Anthropic",
      "agent": null,
@@ -4170,16 +4202,6 @@
      "old": false
     },
     {
-     "model": "Grok 3 mini",
-     "score": 140.4,
-     "org": "xAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-06-24",
-     "old": false
-    },
-    {
      "model": "o3-mini (unknown thinking)",
      "score": 140.4,
      "org": "OpenAI",
@@ -4187,6 +4209,16 @@
      "pass4": null,
      "cost": null,
      "released": "2025-01-31",
+     "old": false
+    },
+    {
+     "model": "Grok 3 mini",
+     "score": 140.4,
+     "org": "xAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-06-24",
      "old": false
     },
     {
@@ -4516,7 +4548,7 @@
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2024-12-11",
+     "released": "2024-12-06",
      "old": false
     },
     {
@@ -4661,7 +4693,7 @@
     },
     {
      "model": "Gemma 3 27B",
-     "score": 130.1,
+     "score": 130.0,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -4981,7 +5013,7 @@
     },
     {
      "model": "Gemma 2 27B",
-     "score": 122.1,
+     "score": 122.0,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -5046,8 +5078,8 @@
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2023-08-09",
-     "old": true
+     "released": null,
+     "old": false
     },
     {
      "model": "Claude 2",
@@ -5101,23 +5133,13 @@
     },
     {
      "model": "Mistral NeMo",
-     "score": 118.7,
+     "score": 118.6,
      "org": "Mistral AI",
      "agent": null,
      "pass4": null,
      "cost": null,
      "released": "2024-07-18",
      "old": true
-    },
-    {
-     "model": "Qwen2.5-7B",
-     "score": 118.5,
-     "org": "Alibaba",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2024-09-19",
-     "old": false
     },
     {
      "model": "GPT-3.5 Turbo (Nov 2023)",
@@ -5128,6 +5150,16 @@
      "cost": null,
      "released": "2023-11-06",
      "old": true
+    },
+    {
+     "model": "Qwen2.5-7B",
+     "score": 118.4,
+     "org": "Alibaba",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2024-09-19",
+     "old": false
     },
     {
      "model": "Mixtral 8x7B",
@@ -5160,16 +5192,6 @@
      "old": false
     },
     {
-     "model": "phi-3-mini 3.8B",
-     "score": 117.3,
-     "org": "Microsoft",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2024-04-23",
-     "old": true
-    },
-    {
      "model": "Yi-34B",
      "score": 117.3,
      "org": "01.AI",
@@ -5177,6 +5199,16 @@
      "pass4": null,
      "cost": null,
      "released": "2023-11-22",
+     "old": true
+    },
+    {
+     "model": "phi-3-mini 3.8B",
+     "score": 117.2,
+     "org": "Microsoft",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2024-04-23",
      "old": true
     },
     {
@@ -5211,7 +5243,7 @@
     },
     {
      "model": "Llama 3-8B",
-     "score": 116.4,
+     "score": 116.3,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -5241,7 +5273,7 @@
     },
     {
      "model": "Llama 2-70B",
-     "score": 113.7,
+     "score": 113.6,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -5271,7 +5303,7 @@
     },
     {
      "model": "Qwen-14B",
-     "score": 112.9,
+     "score": 112.8,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -5291,7 +5323,7 @@
     },
     {
      "model": "Falcon-180B",
-     "score": 112.0,
+     "score": 111.9,
      "org": "Technology Innovation Institute",
      "agent": null,
      "pass4": null,
@@ -5311,7 +5343,7 @@
     },
     {
      "model": "DeepSeek LLM 67B",
-     "score": 110.6,
+     "score": 110.5,
      "org": "DeepSeek",
      "agent": null,
      "pass4": null,
@@ -5321,7 +5353,7 @@
     },
     {
      "model": "LLaMA-65B",
-     "score": 110.0,
+     "score": 109.9,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -5351,7 +5383,7 @@
     },
     {
      "model": "Nemotron-4 15B",
-     "score": 107.5,
+     "score": 107.4,
      "org": "NVIDIA",
      "agent": null,
      "pass4": null,
@@ -5361,7 +5393,7 @@
     },
     {
      "model": "LLaMA-33B",
-     "score": 107.2,
+     "score": 107.1,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -5371,7 +5403,7 @@
     },
     {
      "model": "Qwen-7B",
-     "score": 106.6,
+     "score": 106.5,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -5381,7 +5413,7 @@
     },
     {
      "model": "Llama 2-13B",
-     "score": 105.9,
+     "score": 105.8,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -5411,7 +5443,7 @@
     },
     {
      "model": "Yi 6B",
-     "score": 104.5,
+     "score": 104.4,
      "org": "01.AI",
      "agent": null,
      "pass4": null,
@@ -5421,7 +5453,7 @@
     },
     {
      "model": "Falcon-40B",
-     "score": 104.2,
+     "score": 104.1,
      "org": "Technology Innovation Institute",
      "agent": null,
      "pass4": null,
@@ -5431,7 +5463,7 @@
     },
     {
      "model": "Baichuan2-13B",
-     "score": 102.9,
+     "score": 102.8,
      "org": "Baichuan",
      "agent": null,
      "pass4": null,
@@ -5441,7 +5473,7 @@
     },
     {
      "model": "Qwen2.5-Coder (1.5B)",
-     "score": 102.7,
+     "score": 102.6,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -5451,7 +5483,7 @@
     },
     {
      "model": "Llama 3.2 1B",
-     "score": 102.5,
+     "score": 102.4,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -5470,16 +5502,6 @@
      "old": false
     },
     {
-     "model": "MPT-30B",
-     "score": 100.3,
-     "org": "MosaicML",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2023-06-22",
-     "old": true
-    },
-    {
      "model": "LLaMA-13B",
      "score": 100.2,
      "org": "Meta AI",
@@ -5490,8 +5512,18 @@
      "old": true
     },
     {
+     "model": "MPT-30B",
+     "score": 100.2,
+     "org": "MosaicML",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2023-06-22",
+     "old": true
+    },
+    {
      "model": "Llama 2-7B",
-     "score": 98.7,
+     "score": 98.6,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -5501,7 +5533,7 @@
     },
     {
      "model": "LLaMA-7B",
-     "score": 96.3,
+     "score": 96.2,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -5511,7 +5543,7 @@
     },
     {
      "model": "Baichuan 2-7B",
-     "score": 96.0,
+     "score": 95.8,
      "org": "Baichuan",
      "agent": null,
      "pass4": null,
@@ -5521,7 +5553,7 @@
     },
     {
      "model": "DeepSeek Coder 33B",
-     "score": 95.9,
+     "score": 95.8,
      "org": "DeepSeek,Peking University",
      "agent": null,
      "pass4": null,
@@ -5531,7 +5563,7 @@
     },
     {
      "model": "Falcon-7B",
-     "score": 94.7,
+     "score": 94.6,
      "org": "Technology Innovation Institute",
      "agent": null,
      "pass4": null,
@@ -5541,7 +5573,7 @@
     },
     {
      "model": "MPT-7B",
-     "score": 94.2,
+     "score": 94.1,
      "org": "MosaicML",
      "agent": null,
      "pass4": null,
@@ -5551,7 +5583,7 @@
     },
     {
      "model": "Gemma 2B",
-     "score": 93.8,
+     "score": 93.7,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -5561,7 +5593,7 @@
     },
     {
      "model": "StarCoder 2 7B",
-     "score": 93.1,
+     "score": 93.0,
      "org": "Hugging Face,ServiceNow,NVIDIA,BigCode",
      "agent": null,
      "pass4": null,
@@ -5571,7 +5603,7 @@
     },
     {
      "model": "XGen-7B",
-     "score": 93.0,
+     "score": 92.8,
      "org": "Salesforce",
      "agent": null,
      "pass4": null,
@@ -5581,7 +5613,7 @@
     },
     {
      "model": "Phi-1.5",
-     "score": 91.1,
+     "score": 90.9,
      "org": "Microsoft",
      "agent": null,
      "pass4": null,
@@ -5591,7 +5623,7 @@
     },
     {
      "model": "Baichuan1-7B",
-     "score": 90.0,
+     "score": 89.9,
      "org": "Baichuan",
      "agent": null,
      "pass4": null,
@@ -5601,7 +5633,7 @@
     },
     {
      "model": "Dolly 2.0-12b",
-     "score": 89.2,
+     "score": 89.0,
      "org": "Databricks",
      "agent": null,
      "pass4": null,
@@ -5611,7 +5643,7 @@
     },
     {
      "model": "DeepSeek Coder 6.7B",
-     "score": 89.1,
+     "score": 89.0,
      "org": "DeepSeek,Peking University",
      "agent": null,
      "pass4": null,
@@ -5621,7 +5653,7 @@
     },
     {
      "model": "StarCoder 2 3B",
-     "score": 88.3,
+     "score": 88.1,
      "org": "Hugging Face,ServiceNow,NVIDIA,BigCode",
      "agent": null,
      "pass4": null,
@@ -5631,7 +5663,7 @@
     },
     {
      "model": "Cerebras-GPT-13B",
-     "score": 82.7,
+     "score": 82.5,
      "org": "Cerebras Systems",
      "agent": null,
      "pass4": null,
@@ -5641,7 +5673,7 @@
     },
     {
      "model": "DeepSeek Coder 1.3B",
-     "score": 62.7,
+     "score": 62.4,
      "org": "DeepSeek,Peking University",
      "agent": null,
      "pass4": null,
@@ -5650,13 +5682,13 @@
      "old": true
     }
    ],
-   "latest": "2026-09-01",
-   "old_count": 76
+   "latest": "2026-09-03",
+   "old_count": 75
   },
   {
    "id": "metr_time_horizons_external",
    "name": "METR 任务时长",
-   "desc": "METR 的时间视野指标：模型能以 50% 成功率完成的任务，人类专家要花多少分钟。数字越大代表能独立干越久的活。",
+   "desc": "时间视野指标：模型以 50% 成功率完成的任务，人类专家所需分钟数。数值越大表示可独立完成的任务链越长。",
    "cat": "综合",
    "short": "METR",
    "unit": "分钟",
@@ -6153,7 +6185,7 @@
   {
    "id": "gdpval_external",
    "name": "GDPval 真实职业任务",
-   "desc": "OpenAI 出的评测：44 个行业的真实工作交付物，请业内专家盲评模型产出与人类产出，分数是模型胜出的比例。",
+   "desc": "覆盖 44 个行业的真实工作交付物，由业内专家盲评模型产出与人类产出，分数为模型胜出比例。",
    "cat": "综合",
    "short": "GDPval",
    "unit": "%",
@@ -6637,7 +6669,7 @@
   {
    "id": "deepswe_external",
    "name": "DeepSWE · Agent 修 bug",
-   "desc": "用 mini-swe-agent 这个极简框架跑真实软件工程任务，每题跑四次。Pass@1 是单次通过率，Pass@4 是四次里至少成功一次。带每题平均花费，能直接看性价比。",
+   "desc": "基于 mini-swe-agent 框架执行真实软件工程任务，每题运行四次。Pass@1 为单次通过率，Pass@4 为四次中至少一次通过。含每题平均成本，可评估性价比。",
    "cat": "编程与 Agent",
    "short": "DeepSWE",
    "unit": "%",
@@ -6929,7 +6961,7 @@
   {
    "id": "terminalbench_external",
    "name": "Terminal-Bench · 终端 Agent",
-   "desc": "在真实终端里完成配置、执行与调试任务，考 Agent 能力而非单轮问答。同一模型换不同 Agent 框架，成绩差异很大。",
+   "desc": "在真实终端环境中完成配置、执行与调试任务，考察 Agent 能力而非单轮问答。同一模型搭配不同 Agent 框架，成绩差异较大。",
    "cat": "编程与 Agent",
    "short": "T-Bench",
    "unit": "%",
@@ -7700,7 +7732,7 @@
   {
    "id": "aider_polyglot_external",
    "name": "Aider Polyglot · 代码编辑",
-   "desc": "225 道 Exercism 多语言编程题，考模型改代码并让测试通过。上游更新较慢。",
+   "desc": "225 道 Exercism 多语言编程题，考察修改代码并通过测试的能力。上游更新频率较低。",
    "cat": "编程与 Agent",
    "short": "Aider",
    "unit": "%",
@@ -8367,7 +8399,7 @@
   {
    "id": "webdev_arena_external",
    "name": "WebDev Arena · 前端对战",
-   "desc": "让两个模型各写一版网页应用，真人投票选更好的那个，按 Elo 排名。",
+   "desc": "两个模型分别生成网页应用，由真人投票比较优劣，按 Elo 排名。",
    "cat": "编程与 Agent",
    "short": "WebDev",
    "unit": "Elo",
@@ -9384,7 +9416,7 @@
   {
    "id": "cybench_external",
    "name": "Cybench · 安全 CTF",
-   "desc": "无提示条件下独立解 CTF 题的比例，考渗透与漏洞利用的实际动手能力。",
+   "desc": "无提示条件下独立解出 CTF 题目的比例，考察渗透与漏洞利用的实操能力。",
    "cat": "编程与 Agent",
    "short": "Cybench",
    "unit": "%",
@@ -9641,6 +9673,16 @@
     }
    ],
    "rows": [
+    {
+     "model": "gpt-6-astra",
+     "score": 93.7,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
+     "old": false
+    },
     {
      "model": "claude-fable-5-1",
      "score": 90.2,
@@ -10472,13 +10514,13 @@
      "old": true
     }
    ],
-   "latest": "2026-09-01",
+   "latest": "2026-09-03",
    "old_count": 4
   },
   {
    "id": "otis_mock_aime_2024_2025",
    "name": "AIME 模拟卷",
-   "desc": "OTIS 出的 AIME 模拟题，美国高中数学邀请赛难度，是目前最常被引用的数学基准之一。",
+   "desc": "OTIS 编制的 AIME 模拟题，难度对应美国高中数学邀请赛，为常用数学基准之一。",
    "cat": "数学与推理",
    "short": "AIME",
    "unit": "%",
@@ -10506,6 +10548,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-01",
+     "old": false
+    },
+    {
+     "model": "gpt-6-astra",
+     "score": 100.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
      "old": false
     },
     {
@@ -12809,13 +12861,13 @@
      "old": true
     }
    ],
-   "latest": "2026-09-01",
+   "latest": "2026-09-03",
    "old_count": 29
   },
   {
    "id": "arc_agi_2_external",
    "name": "ARC-AGI-2 · 抽象推理",
-   "desc": "依据少量图形变换示例归纳规则，考抽象归纳推理，不依赖知识储备。",
+   "desc": "依据少量图形变换示例归纳规则，考察抽象归纳推理，不依赖知识储备。",
    "cat": "数学与推理",
    "short": "ARC-2",
    "unit": "%",
@@ -13982,7 +14034,7 @@
   {
    "id": "arc_agi_external",
    "name": "ARC-AGI-1",
-   "desc": "ARC-AGI 第一版，多数前沿模型已接近饱和，看趋势用。",
+   "desc": "ARC-AGI 第一版，多数前沿模型已接近饱和，可用于观察趋势。",
    "cat": "数学与推理",
    "short": "ARC-1",
    "unit": "%",
@@ -15239,7 +15291,7 @@
   {
    "id": "simplebench_external",
    "name": "SimpleBench · 常识陷阱",
-   "desc": "面向人类直觉简单但模型易错的常识与时空推理题，人类平均分高于多数模型。",
+   "desc": "人类直觉简单但模型易错的常识与时空推理题，人类平均分高于多数模型。",
    "cat": "数学与推理",
    "short": "Simple",
    "unit": "%",
@@ -16206,6 +16258,16 @@
     }
    ],
    "rows": [
+    {
+     "model": "gpt-6-astra",
+     "score": 95.8,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
+     "old": false
+    },
     {
      "model": "gemini-3.7-flash",
      "score": 94.8,
@@ -18757,13 +18819,13 @@
      "old": false
     }
    ],
-   "latest": "2026-08-20",
+   "latest": "2026-09-03",
    "old_count": 45
   },
   {
    "id": "hle_external",
    "name": "HLE · 人类最后考试",
-   "desc": "Humanity's Last Exam：上百个学科的专家级难题，是当前最难的知识类基准之一。",
+   "desc": "Humanity's Last Exam：覆盖上百个学科的专家级难题，为当前难度最高的知识类基准之一。",
    "cat": "知识与事实",
    "short": "HLE",
    "unit": "%",
@@ -19290,7 +19352,7 @@
   {
    "id": "simpleqa_verified",
    "name": "SimpleQA Verified · 事实准确率",
-   "desc": "短事实问答，考知识准确性以及不确定时会不会编造答案。",
+   "desc": "短事实问答，考察知识准确性及不确定时是否编造答案。",
    "cat": "知识与事实",
    "short": "SimpleQA",
    "unit": "%",
@@ -19310,6 +19372,16 @@
     }
    ],
    "rows": [
+    {
+     "model": "gpt-6-astra",
+     "score": 75.6,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
+     "old": false
+    },
     {
      "model": "gemini-3.1-pro-preview",
      "score": 73.5,
@@ -20011,13 +20083,13 @@
      "old": false
     }
    ],
-   "latest": "2026-09-01",
+   "latest": "2026-09-03",
    "old_count": 3
   },
   {
    "id": "scicode_external",
    "name": "SciCode · 科研代码",
-   "desc": "把科研论文里的方法实现成可运行代码，考科学理解加编程的结合。",
+   "desc": "将科研论文中的方法实现为可运行代码，考察科学理解与编程能力的结合。",
    "cat": "知识与事实",
    "short": "SciCode",
    "unit": "%",
