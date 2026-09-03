@@ -47,6 +47,9 @@ EPOCH_BOARDS = [
      "短事实问答，考察模型的知识准确性及在不确定时是否编造答案。"),
     ("arc_agi_2_external.csv", "ARC-AGI-2 · 抽象推理",
      "依据少量图形变换示例归纳规则，考察抽象归纳推理能力，不依赖知识储备。"),
+    ("deepswe_external.csv", "DeepSWE · Agent 修 bug",
+     "用 mini-swe-agent 这个极简框架跑真实软件工程任务，每题跑四次。Pass@1 是单次通过率，"
+     "Pass@4 是四次里至少成功一次。数据里带每题平均花费，能直接看性价比。"),
     ("simplebench_external.csv", "SimpleBench · 常识陷阱",
      "面向人类直觉简单但模型易错的常识与时空推理题，人类平均分高于多数模型。"),
 ]
@@ -69,6 +72,18 @@ def get(url: str) -> bytes:
 
 def rows_of(z: zipfile.ZipFile, name: str) -> list[dict]:
     return list(csv.DictReader(io.StringIO(z.read(name).decode("utf-8"))))
+
+
+def _num(v) -> float | None:
+    try:
+        return round(float(v), 3)
+    except (TypeError, ValueError):
+        return None
+
+
+def _pct(v, scale) -> float | None:
+    n = _num(v)
+    return None if n is None else round(n * 100 if scale == 1.0 else n, 1)
 
 
 def epoch_board(z: zipfile.ZipFile, fname: str, score_col: str,
@@ -101,7 +116,10 @@ def epoch_board(z: zipfile.ZipFile, fname: str, score_col: str,
             "model": name,
             "score": round(score, 1),
             "org": (r.get("Organization") or r.get("Model Org") or "").strip(),
-            "agent": (r.get("Agent") or "").strip() or None,
+            "agent": (r.get("Agent") or r.get("Harness") or "").strip() or None,
+            # 这两列只有部分榜单有，有就带上（DeepSWE 的四次通过率和每题成本）
+            "pass4": _pct(r.get("Pass@4"), scale),
+            "cost": _num(r.get("Mean cost (USD)")),
             "released": released,
             "old": bool(released and released < AGE_CUTOFF),
         }
@@ -180,6 +198,10 @@ def main() -> None:
                 {"k": "org", "t": "厂商"}]
         if any(r["agent"] for r in rows):
             cols.append({"k": "agent", "t": "Agent 框架"})
+        if any(r.get("pass4") is not None for r in rows):
+            cols.insert(1, {"k": "pass4", "t": "Pass@4 %", "num": True})
+        if any(r.get("cost") is not None for r in rows):
+            cols.append({"k": "cost", "t": "每题成本 $", "num": True})
         boards.append({
             "id": fname.removesuffix(".csv"), "name": name, "desc": desc,
             "source": "Epoch AI", "url": "https://epoch.ai/benchmarks",
