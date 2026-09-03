@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03 04:28 UTC",
+ "updated_at": "2026-09-03 05:15 UTC",
  "sources": [
   {
    "name": "LiteLLM",
@@ -7956,7 +7956,15 @@
    "vision": true,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": {
+    "others": [],
+    "official": 10.0,
+    "note": "官网 Fable 5.1 输入 $10 / 输出 $50，缓存读 $0.25、写 $12.50。",
+    "src": "https://claude.com/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "claude-haiku-4-5",
@@ -7975,7 +7983,15 @@
    "vision": true,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": {
+    "others": [],
+    "official": 1.0,
+    "note": "官网 Haiku 4.5 输入 $1 / 输出 $5。",
+    "src": "https://claude.com/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "claude-haiku-4-5-20251001",
@@ -8184,7 +8200,15 @@
    "vision": true,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": {
+    "others": [],
+    "official": 5.0,
+    "note": "官网 Opus 5 输入 $5 / 输出 $25，缓存读 $0.50、写 $6.25。",
+    "src": "https://claude.com/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "claude-sonnet-4-5",
@@ -8261,12 +8285,19 @@
    "reasoning": true,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 3.0
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 3.0
+     }
+    ],
+    "official": 2.0,
+    "note": "官网 Sonnet 5 输入 $2 / 输出 $10。genai-prices 报 $3 是旧价。",
+    "src": "https://claude.com/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "vertex_ai/claude-3-5-haiku",
@@ -18609,16 +18640,19 @@
    "reasoning": true,
    "tool_call": false,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 0.55
-    },
-    {
-     "src": "llm-prices",
-     "input": 0.55
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 0.55
+     },
+     {
+      "src": "llm-prices",
+      "input": 0.55
+     }
+    ],
+    "verdict": "unknown"
+   }
   },
   {
    "model": "deepseek-v4-flash",
@@ -18638,16 +18672,23 @@
    "reasoning": true,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 0.14
-    },
-    {
-     "src": "genai-prices",
-     "input": 0.14
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 0.14
+     },
+     {
+      "src": "genai-prices",
+      "input": 0.14
+     }
+    ],
+    "official": 0.44,
+    "note": "官网按时段和缓存分四档：cache miss 高峰 $0.44、低谷 $0.22；cache hit 高峰 $0.014、低谷 $0.007。本站取高峰 cache miss。另两个库报 $0.14，四档里没这个数，判定它们过期。",
+    "src": "https://api-docs.deepseek.com/quick_start/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "deepseek-v4-flash-vision-exp",
@@ -18666,7 +18707,15 @@
    "vision": true,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": {
+    "others": [],
+    "official": 0.44,
+    "note": "档位同 deepseek-v4-flash，取高峰 cache miss。",
+    "src": "https://api-docs.deepseek.com/quick_start/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "deepseek-v4-pro",
@@ -18686,16 +18735,23 @@
    "reasoning": true,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 0.435
-    },
-    {
-     "src": "genai-prices",
-     "input": 1.74
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 0.435
+     },
+     {
+      "src": "genai-prices",
+      "input": 1.74
+     }
+    ],
+    "official": 1.32,
+    "note": "官网 cache miss 高峰 $1.32、低谷 $0.66；cache hit 高峰 $0.044、低谷 $0.022。本站取高峰 cache miss。另两个库报 $0.435 和 $1.74，都不在官网档位里。",
+    "src": "https://api-docs.deepseek.com/quick_start/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "deepseek/deepseek-chat",
@@ -18715,12 +18771,15 @@
    "reasoning": false,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 0.38
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 0.38
+     }
+    ],
+    "verdict": "unknown"
+   }
   },
   {
    "model": "deepseek/deepseek-coder",
@@ -18759,12 +18818,15 @@
    "reasoning": true,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 4.0
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 4.0
+     }
+    ],
+    "verdict": "unknown"
+   }
   },
   {
    "model": "deepseek/deepseek-r1-distill-llama-70b",
@@ -18823,12 +18885,15 @@
    "reasoning": false,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 0.89
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 0.89
+     }
+    ],
+    "verdict": "unknown"
+   }
   },
   {
    "model": "deepseek/deepseek-v3.1",
@@ -18967,12 +19032,19 @@
    "reasoning": true,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 0.098
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 0.098
+     }
+    ],
+    "official": 0.44,
+    "note": "官网按时段和缓存分四档：cache miss 高峰 $0.44、低谷 $0.22；cache hit 高峰 $0.014、低谷 $0.007。本站取高峰 cache miss。另两个库报 $0.14，四档里没这个数，判定它们过期。",
+    "src": "https://api-docs.deepseek.com/quick_start/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "deepseek/deepseek-v4-flash",
@@ -19091,7 +19163,15 @@
    "vision": true,
    "reasoning": true,
    "tool_call": true,
-   "new": false
+   "new": false,
+   "xref": {
+    "others": [],
+    "official": 0.44,
+    "note": "档位同 deepseek-v4-flash，取高峰 cache miss。",
+    "src": "https://api-docs.deepseek.com/quick_start/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "deepseek/deepseek-v4-flash-vision-exp",
@@ -19151,12 +19231,19 @@
    "reasoning": true,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 0.435
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 0.435
+     }
+    ],
+    "official": 1.32,
+    "note": "官网 cache miss 高峰 $1.32、低谷 $0.66；cache hit 高峰 $0.044、低谷 $0.022。本站取高峰 cache miss。另两个库报 $0.435 和 $1.74，都不在官网档位里。",
+    "src": "https://api-docs.deepseek.com/quick_start/pricing",
+    "checked": "2026-09-03",
+    "verdict": "ok"
+   }
   },
   {
    "model": "deepseek/deepseek-v4-pro",
@@ -27140,12 +27227,15 @@
    "reasoning": true,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 1.5
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 1.5
+     }
+    ],
+    "verdict": "unknown"
+   }
   },
   {
    "model": "gemini-3.7-flash",
@@ -31351,12 +31441,15 @@
    "reasoning": true,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 0.15
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 0.15
+     }
+    ],
+    "verdict": "unknown"
+   }
   },
   {
    "model": "minimax/MiniMax-M2.5-lightning",
@@ -38876,12 +38969,15 @@
    "reasoning": false,
    "tool_call": false,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 0.6
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 0.6
+     }
+    ],
+    "verdict": "unknown"
+   }
   },
   {
    "model": "gpt-4o-mini-tts-2025-12-15",
@@ -39585,12 +39681,15 @@
    "reasoning": true,
    "tool_call": true,
    "new": false,
-   "xref": [
-    {
-     "src": "genai-prices",
-     "input": 1.0
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "genai-prices",
+      "input": 1.0
+     }
+    ],
+    "verdict": "unknown"
+   }
   },
   {
    "model": "gpt-5.6-sol",
@@ -39743,12 +39842,15 @@
    "reasoning": false,
    "tool_call": false,
    "new": false,
-   "xref": [
-    {
-     "src": "llm-prices",
-     "input": 10.0
-    }
-   ]
+   "xref": {
+    "others": [
+     {
+      "src": "llm-prices",
+      "input": 10.0
+     }
+    ],
+    "verdict": "unknown"
+   }
   },
   {
    "model": "gpt-image-1-mini",

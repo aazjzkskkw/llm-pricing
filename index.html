@@ -101,14 +101,15 @@ function stats(d, vendors) {
   // 上游偶尔把生图模型标成 chat，卡个上下文门槛把它们排掉，免得「最低价」是张图
   const cheapest = chat.filter(m => m.input > 0 && (m.context || 0) >= 16000)
     .sort((a, b) => a.input - b.input)[0];
-  const diff = models.filter(m => m.xref).length;
+  const okN = models.filter(m => (m.xref || {}).verdict === 'ok').length;
+  const unkN = models.filter(m => (m.xref || {}).verdict === 'unknown').length;
   document.getElementById('stats').innerHTML = [
     ['收录模型', d.count.toLocaleString(), `${vendors} 家厂商与平台`],
     ['免费档', freeN, '对话模型标价 0'],
     ['最低付费价', money(cheapest.input), cheapest.model.split('/').pop()],
     ['最新发布', newest.released, newest.model.split('/').pop()],
     ['补充渠道', (d.channels || []).length, '同一模型可跨渠道比价'],
-    ['多源对账', diff, diff ? '条报价与其他源不一致' : '全部一致'],
+    ['价格核对', `${okN} / ${okN + unkN}`, okN + unkN ? '已对过官网 / 有争议的条数' : '无争议'],
   ].map(([k, n, s]) => `<div class="stat"><div class="k">${k}</div>
       <div class="n">${n}</div><div class="s">${s}</div></div>`).join('');
 }
@@ -180,9 +181,14 @@ function priceCell(v, m, main) {
   let extra = '';
   if (main && m.suspect)
     extra += '<span class="tag red" title="价格量级异常，疑为上游数据源单位填写错误（每千 token 误填为每 token），请以厂商官方价格为准">异常</span>';
-  if (main && m.xref)
-    extra += `<span class="tag orange" title="其他价格库报价：${
-      m.xref.map(x => x.src + ' $' + x.input).join('，')}。计价口径或分档可能不同，以厂商官网为准">对账不一致</span>`;
+  if (main && m.xref) {
+    const x = m.xref, others = (x.others || []).map(o => `${o.src} $${o.input}`).join('，');
+    if (x.verdict === 'ok')
+      extra += `<span class="tag ok" title="${x.checked} 核对过官网：${x.note}${
+        others ? ' ｜ 其他库报价：' + others : ''}">已核对官网</span>`;
+    else
+      extra += `<span class="tag orange" title="其他价格库报价：${others}。多半是分档口径不同（高峰/低谷、缓存命中），也可能有一方过期。点厂商的官方价格页自己确认一下">待核对</span>`;
+  }
   return `<td class="num ${tier(v)}">${money(v)}${extra}</td>`;
 }
 

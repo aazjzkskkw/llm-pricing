@@ -1,0 +1,52 @@
+{
+ "_readme": "手工核对过的价格，key 是 model_key()。vendor 必须和行里的厂商一致 —— 别家平台转售同一个模型是它自己的报价，不能拿原厂官网价去判它对错。official 是官网标价（美元 / 百万输入 token）。加条目前必须自己打开 src 看一眼。",
+ "deepseek-v4-flash": {
+  "official": 0.44,
+  "note": "官网按时段和缓存分四档：cache miss 高峰 $0.44、低谷 $0.22；cache hit 高峰 $0.014、低谷 $0.007。本站取高峰 cache miss。另两个库报 $0.14，四档里没这个数，判定它们过期。",
+  "checked": "2026-09-03",
+  "src": "https://api-docs.deepseek.com/quick_start/pricing",
+  "vendor": "DeepSeek"
+ },
+ "deepseek-v4-flash-vision-exp": {
+  "official": 0.44,
+  "note": "档位同 deepseek-v4-flash，取高峰 cache miss。",
+  "checked": "2026-09-03",
+  "src": "https://api-docs.deepseek.com/quick_start/pricing",
+  "vendor": "DeepSeek"
+ },
+ "deepseek-v4-pro": {
+  "official": 1.32,
+  "note": "官网 cache miss 高峰 $1.32、低谷 $0.66；cache hit 高峰 $0.044、低谷 $0.022。本站取高峰 cache miss。另两个库报 $0.435 和 $1.74，都不在官网档位里。",
+  "checked": "2026-09-03",
+  "src": "https://api-docs.deepseek.com/quick_start/pricing",
+  "vendor": "DeepSeek"
+ },
+ "claude-sonnet-5": {
+  "official": 2.0,
+  "note": "官网 Sonnet 5 输入 $2 / 输出 $10。genai-prices 报 $3 是旧价。",
+  "checked": "2026-09-03",
+  "src": "https://claude.com/pricing",
+  "vendor": "Anthropic"
+ },
+ "claude-fable-5-1": {
+  "official": 10.0,
+  "note": "官网 Fable 5.1 输入 $10 / 输出 $50，缓存读 $0.25、写 $12.50。",
+  "checked": "2026-09-03",
+  "src": "https://claude.com/pricing",
+  "vendor": "Anthropic"
+ },
+ "claude-opus-5": {
+  "official": 5.0,
+  "note": "官网 Opus 5 输入 $5 / 输出 $25，缓存读 $0.50、写 $6.25。",
+  "checked": "2026-09-03",
+  "src": "https://claude.com/pricing",
+  "vendor": "Anthropic"
+ },
+ "claude-haiku-4-5": {
+  "official": 1.0,
+  "note": "官网 Haiku 4.5 输入 $1 / 输出 $5。",
+  "checked": "2026-09-03",
+  "src": "https://claude.com/pricing",
+  "vendor": "Anthropic"
+ }
+}

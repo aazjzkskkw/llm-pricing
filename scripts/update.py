@@ -24,7 +24,8 @@ SRC_VERCEL = "https://ai-gateway.vercel.sh/v1/models"
 SRC_NOVITA = "https://api.novita.ai/v3/openai/models"
 SRC_DEEPINFRA = "https://api.deepinfra.com/models/list"
 
-OUT = Path(__file__).resolve().parent.parent / "data" / "models.json"
+DATA = Path(__file__).resolve().parent.parent / "data"
+OUT = DATA / "models.json"
 
 VENDOR_NAMES = {
     "openai": "OpenAI",
@@ -386,19 +387,45 @@ def xref_prices() -> dict[str, list[tuple[str, float, float | None]]]:
     return out
 
 
-def price_check(row: dict, xref: dict) -> list[dict] | None:
-    """跟别的源对一下输入价。差 20% 以内算正常（各家口径、分档不同），
-    差得多就把别人的报价带上，页面里标出来让人自己判断。"""
+def load_notes() -> dict:
+    """人工核对过官网的结论，data/price_notes.json 里手写维护。"""
+    f = DATA / "price_notes.json"
+    try:
+        return {k: v for k, v in json.loads(f.read_text(encoding="utf-8")).items()
+                if not k.startswith("_")}
+    except FileNotFoundError:
+        return {}
+
+
+def price_check(row: dict, xref: dict, notes: dict) -> dict | None:
+    """跟别的源对输入价。差 20% 以内算正常（各家分档口径不同）。
+    差得多时先看有没有人工核对过官网：核对过就直接给结论，没核对过才叫存疑。
+    ——三个源投票是不靠谱的，DeepSeek v4 那两个模型上另外两个源一致但都错，
+    官网四档价里根本没有它们报的数，所以只认官网。"""
     if not row["official"] or row["input"] in (None, 0):
         return None
-    others = xref.get(norm_name(row["model"]))
-    if not others:
-        return None
+    others = xref.get(norm_name(row["model"])) or []
     bad = [(s, i) for s, i, _ in others
            if i > 0 and abs(i - row["input"]) / max(i, row["input"]) > 0.2]
-    if not bad:
+    note = notes.get(row.get("key", ""))
+    if note and note.get("vendor") != row["vendor_name"]:
+        note = None                  # 转售方的报价不能拿原厂官网价判对错
+    if not bad and not note:
         return None
-    return [{"src": s, "input": round(i, 3)} for s, i in bad[:2]]
+    out = {"others": [{"src": s, "input": round(i, 3)} for s, i in bad[:2]]}
+    if note:
+        off = note.get("official")
+        out["official"] = off
+        out["note"] = note.get("note", "")
+        out["src"] = note.get("src", "")
+        out["checked"] = note.get("checked", "")
+        # 核对过官网，本站价对得上就是「已核对」，对不上就是本站取错了档
+        out["verdict"] = ("ok" if off is not None
+                          and abs(off - row["input"]) <= max(off, row["input"]) * 0.02
+                          else "wrong")
+    elif bad:
+        out["verdict"] = "unknown"
+    return out
 
 
 def or_release_dates(raw: dict) -> dict[str, str]:
@@ -582,12 +609,17 @@ def main() -> None:
     rows += new_rows
     rows.sort(key=lambda r: (r["vendor_name"], r["model"]))
 
-    xref = xref_prices()
+    xref, notes = xref_prices(), load_notes()
     for r in rows:
-        diff = price_check(r, xref)
+        diff = price_check(r, xref, notes)
         if diff:
             r["xref"] = diff
     n_priced = sum(1 for r in rows if r["input"] is not None)
+    verdicts = {}
+    for r in rows:
+        v = (r.get("xref") or {}).get("verdict")
+        if v:
+            verdicts[v] = verdicts.get(v, 0) + 1
     n_diff = sum(1 for r in rows if r.get("xref"))
     channels = sorted({r["via"] for r in rows if r.get("via")})
     OUT.write_text(json.dumps({
@@ -616,7 +648,7 @@ def main() -> None:
           f"{len(new_rows)} 来自渠道补充, "
           f"{sum(1 for r in rows if not r['official'])} on aggregators, "
           f"{sum(1 for r in rows if r['suspect'])} suspect, "
-          f"{n_diff} 与其他源报价不一致) -> {OUT}")
+          f"对账 {n_diff} 条 {verdicts}) -> {OUT}")
 
 
 if __name__ == "__main__":
