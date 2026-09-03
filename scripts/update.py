@@ -202,6 +202,7 @@ def fetch_new(raw: dict, known: set[str]) -> list[dict]:
             "max_output": None,
             "mode": "chat",
             "official": False,
+            "via": "OpenRouter",   # 品牌归 vendor_name，价格是 OpenRouter 的
             "new": True,
             "vision": bool(m.get("architecture", {}).get("input_modalities")
                            and "image" in m["architecture"]["input_modalities"]),
