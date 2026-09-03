@@ -240,8 +240,9 @@ function flagChart() {
     brand.set(m.key, m.vendor_name);
   for (const m of models) if (ok(m) && m.official && !brand.has(m.key))
     brand.set(m.key, m.vendor_name);
+  // 这张图只看厂商官方直营价，不掺渠道转售价
   for (const m of models) {
-    if (!ok(m)) continue;
+    if (!ok(m) || !m.official) continue;
     const c = cheap.get(m.key);
     if (!c || m.input < c.input) cheap.set(m.key, m);
   }
@@ -258,12 +259,11 @@ function flagChart() {
   const el = document.getElementById('chart');
   el.style.display = '';
   el.innerHTML = `<h3>头部模型：多强，多少钱<small>按 ECI 综合能力分排 ·
-      柱长为最低渠道价（对数刻度）· 美元 / 1M 输入</small></h3>` +
+      柱长为官方直营价（对数刻度）· 美元 / 1M 输入</small></h3>` +
     list.map(m => `<div class="row">
       <span class="nm" title="${brand.get(m.key)} ${m.key}">
         <b>${brand.get(m.key)}</b> <span class="dim">${m.key}</span></span>
-      ${bar(Math.max(logPct(m.input, lo, hi), 4),
-            `${money(m.input)} <span class="dim">${chanOf(m)}</span>`)}</div>`).join('');
+      ${bar(Math.max(logPct(m.input, lo, hi), 4), money(m.input))}</div>`).join('');
 }
 
 function render() {
