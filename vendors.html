@@ -15,8 +15,9 @@
           padding:3px 0; border-bottom:1px dashed var(--line); }
   .mrow:last-child { border-bottom:none; }
   .mrow span:first-child { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .mrow i { color:var(--dim); font-style:normal; font-size:11px; margin-left:6px; }
   .mrow b { font-weight:500; font-variant-numeric:tabular-nums; white-space:nowrap; }
-  .more { display:inline-block; margin-top:8px; font-size:12px; text-decoration:none; }
+  .more { display:inline-block; margin-top:8px; margin-right:12px; font-size:12px; text-decoration:none; }
   .more:hover { text-decoration:underline; }
 </style>
 </head>
@@ -39,6 +40,7 @@
     <option value="0">仅聚合平台</option>
   </select>
   <select id="sort">
+    <option value="new">按最新发布排</option>
     <option value="cheap">按最低价排</option>
     <option value="count">按模型数排</option>
     <option value="name">按名称排</option>
@@ -46,10 +48,10 @@
 </div>
 <p class="count" id="count"></p>
 <div class="grid" id="grid"></div>
-<p class="note">价格为美元 / 100 万 token，取该厂商 chat 类模型中的输入价。想看某家全部模型（含向量、语音等），点卡片里的链接跳到价格总表。</p>
+<p class="note">价格为美元 / 100 万 token。卡片里默认按发布时间倒序，先看到的是这家最新的模型。已官宣退役和两年前发布的对话模型不收录。</p>
 
 <script>
-let models = [];
+let models = [], pages = {};
 const fmt$ = v => v == null ? '未公布' : v === 0 ? '免费'
   : v < 0.01 ? '$' + v.toFixed(4) : '$' + (+v.toFixed(2));
 
@@ -59,6 +61,7 @@ new ResizeObserver(() => document.documentElement.style
 
 fetch('data/models.json').then(r => r.json()).then(d => {
   document.getElementById('updated').textContent = d.updated_at;
+  pages = d.pricing_pages || {};
   // 只留有价格的 chat 模型：向量/语音的价格量纲不同，混一起算区间没意义
   models = d.models.filter(m => m.mode === 'chat' && m.input != null);
   render();
@@ -85,25 +88,31 @@ function render() {
   }
   const vs = [...groups.values()];
   for (const g of vs) {
-    g.chat.sort((a, b) => a.input - b.input);
-    g.min = g.chat[0].input;
-    g.max = g.chat[g.chat.length - 1].input;
+    // 卡片里按发布时间倒序，没有日期的排后面
+    g.chat.sort((a, b) => (b.released || '').localeCompare(a.released || '') || a.input - b.input);
+    g.latest = g.chat.find(m => m.released)?.released || null;
+    const prices = g.chat.map(m => m.input);
+    g.min = Math.min(...prices); g.max = Math.max(...prices);
   }
   vs.sort(by === 'count' ? (a, b) => b.chat.length - a.chat.length
         : by === 'name' ? (a, b) => a.name.localeCompare(b.name)
-        : (a, b) => a.min - b.min);
+        : by === 'cheap' ? (a, b) => a.min - b.min
+        : (a, b) => (b.latest || '').localeCompare(a.latest || ''));
 
   document.getElementById('count').textContent = `共 ${vs.length} 家`;
   document.getElementById('grid').innerHTML = vs.map(g => {
-    // 每家列最便宜的 6 个，够看出价格档位
     const top = g.chat.slice(0, 6).map(m => `<div class="mrow">
-        <span title="${m.model}">${m.model.split('/').pop()}</span>
+        <span title="${m.model}">${m.model.split('/').pop()}${
+          m.released ? `<i>${m.released.slice(0, 7)}</i>` : ''}</span>
         <b>${fmt$(m.input)} / ${fmt$(m.output)}</b></div>`).join('');
+    const page = pages[g.name];
     return `<div class="vcard">
       <h3>${g.name}${g.hasOfficial ? '' : '<span class="tag blue">平台</span>'}</h3>
-      <div class="sum">${g.chat.length} 个对话模型 · 输入价 ${fmt$(g.min)} ~ ${fmt$(g.max)}</div>
+      <div class="sum">${g.chat.length} 个对话模型 · 输入价 ${fmt$(g.min)} ~ ${fmt$(g.max)}${
+        g.latest ? ` · 最近更新 ${g.latest}` : ''}</div>
       <div class="mlist">${top}</div>
       <a class="more" href="index.html?vendor=${encodeURIComponent(g.name)}">在总表里看这家 →</a>
+      ${page ? `<a class="more" href="${page}" target="_blank" rel="noopener">官方价格页 ↗</a>` : ''}
     </div>`;
   }).join('');
 }

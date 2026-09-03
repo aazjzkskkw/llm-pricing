@@ -36,8 +36,13 @@
     <option value="">含未公布价格</option>
     <option value="1">仅已公布价格</option>
   </select>
+  <select id="sortsel">
+    <option value="vendor_name">默认按厂商</option>
+    <option value="released">按最新发布</option>
+    <option value="input">按输入价从低到高</option>
+  </select>
 </div>
-<p class="count" id="count"></p>
+<p class="count" id="count">已剔除官宣退役和两年前发布的对话模型。<span id="official-hint"></span></p>
 <table id="tbl">
   <thead><tr>
     <th data-k="vendor_name">厂商</th>
@@ -46,6 +51,7 @@
     <th data-k="output" class="num">输出 $/1M</th>
     <th data-k="cache_read" class="num">缓存读 $/1M</th>
     <th data-k="context" class="num">上下文</th>
+    <th data-k="released">发布</th>
     <th>特性</th>
   </tr></thead>
   <tbody></tbody>
@@ -77,10 +83,20 @@ fetch('data/models.json').then(r => r.json()).then(d => {
 
 ['q','vendor','mode','priced','official'].forEach(id =>
   document.getElementById(id).addEventListener('input', render));
+// 排序下拉和点列头是同一套状态：发布日期和价格默认都想看「最新/最便宜」在前
+document.getElementById('sortsel').addEventListener('input', e => {
+  sortKey = e.target.value;
+  sortAsc = sortKey !== 'released';
+  render();
+});
 document.querySelectorAll('th[data-k]').forEach(th =>
   th.onclick = () => {
     const k = th.dataset.k;
-    sortAsc = sortKey === k ? !sortAsc : true; sortKey = k; render();
+    sortAsc = sortKey === k ? !sortAsc : k !== 'released';
+    sortKey = k;
+    document.getElementById('sortsel').value =
+      ['vendor_name','released','input'].includes(k) ? k : 'vendor_name';
+    render();
   });
 
 function rows() {
@@ -105,8 +121,8 @@ function rows() {
 
 function render() {
   const rs = rows();
-  document.getElementById('count').textContent =
-    `共 ${rs.length} 个模型（点击列头排序，按价格列排序可对比同一模型在各平台的定价差异）`;
+  document.getElementById('official-hint').textContent =
+    `当前 ${rs.length} 个模型，点列头可排序；按价格排能看出同一模型在各平台的差价。`;
   document.querySelector('#tbl tbody').innerHTML = rs.map(m =>
     `<tr><td>${m.vendor_name}${
       m.via ? `<span class="tag orange">经 ${m.via}</span>`
@@ -121,6 +137,7 @@ function render() {
     <td class="num">${fmt$(m.output)}</td>
     <td class="num">${fmt$(m.cache_read)}</td>
     <td class="num">${fmtN(m.context)}</td>
+    <td class="v">${m.released || '<span class="na">-</span>'}</td>
     <td class="v">${m.mode || ''}</td></tr>`).join('');
 }
 </script>
