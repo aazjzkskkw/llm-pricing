@@ -115,7 +115,9 @@ function render() {
       m.vision ? '<span class="tag blue">视觉</span>' : ''}${
       m.reasoning ? '<span class="tag blue">推理</span>' : ''}${
       m.tool_call ? '<span class="tag blue">工具</span>' : ''}</td>
-    <td class="num">${fmt$(m.input)}</td>
+    <td class="num">${fmt$(m.input)}${m.suspect
+      ? '<span class="tag red" title="这个价格和同类模型差了上千倍，基本可以确定是上游数据库把「每千 token」填进了「每 token」字段，别当真">?</span>'
+      : ''}</td>
     <td class="num">${fmt$(m.output)}</td>
     <td class="num">${fmt$(m.cache_read)}</td>
     <td class="num">${fmtN(m.context)}</td>

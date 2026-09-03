@@ -147,19 +147,26 @@ def norm(raw: dict) -> list[dict]:
             continue
         in_cost = m.get("input_cost_per_token")
         out_cost = m.get("output_cost_per_token")
+        mode = m.get("mode")
+        in_price = round(in_cost * 1e6, 3) if in_cost is not None else None
+        out_price = round(out_cost * 1e6, 3) if out_cost is not None else None
+        # 向量/重排模型没有输出 token，上游填 0，显示成「免费」会误导
+        if mode in ("embedding", "rerank") and out_price == 0:
+            out_price = None
         rows.append({
             "model": name,
             "vendor": provider,
             "vendor_name": VENDOR_NAMES.get(provider, provider),
             # 统一为 美元/百万 token；None = 官方未公布
-            "input": round(in_cost * 1e6, 3) if in_cost is not None else None,
-            "output": round(out_cost * 1e6, 3) if out_cost is not None else None,
+            "input": in_price,
+            "output": out_price,
             "cache_read": (round(m["cache_read_input_token_cost"] * 1e6, 3)
                            if m.get("cache_read_input_token_cost") is not None else None),
             "context": m.get("max_input_tokens") or m.get("max_tokens"),
             "max_output": m.get("max_output_tokens"),
-            "mode": m.get("mode"),  # chat / embedding / audio / image ...
+            "mode": mode,  # chat / embedding / audio / image ...
             "official": provider not in AGGREGATORS,
+            "suspect": suspect(in_price, mode),
             "vision": bool(m.get("supports_vision")),
             "reasoning": bool(m.get("supports_reasoning")),
             "tool_call": bool(m.get("supports_function_calling")),
@@ -170,6 +177,16 @@ def norm(raw: dict) -> list[dict]:
 
 def norm_name(s: str) -> str:
     return s.lower().replace(":", "-").replace("_", "-").replace(".", "-").strip()
+
+
+# 上游偶尔把「每千 token」的价格填进「每 token」字段，结果价格离谱 1000 倍
+# （见 embed-multilingual-light-v3.0、azure_ai/jais-30b-chat）。这里按各类模型
+# 真实价格上限粗筛一下标出来，不直接删，免得把真·天价模型（o1-pro $150/1M）误伤。
+SANE_MAX = {"embedding": 10, "chat": 200, "responses": 200, "rerank": 10}
+
+
+def suspect(price: float | None, mode: str | None) -> bool:
+    return price is not None and price > SANE_MAX.get(mode or "", 500)
 
 
 def fetch_new(raw: dict, known: set[str]) -> list[dict]:
@@ -203,6 +220,7 @@ def fetch_new(raw: dict, known: set[str]) -> list[dict]:
             "mode": "chat",
             "official": False,
             "via": "OpenRouter",   # 品牌归 vendor_name，价格是 OpenRouter 的
+            "suspect": suspect(round(in_cost * 1e6, 3), "chat"),
             "new": True,
             "vision": bool(m.get("architecture", {}).get("input_modalities")
                            and "image" in m["architecture"]["input_modalities"]),
@@ -234,7 +252,8 @@ def main() -> None:
     }, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"OK: {len(rows)} models ({n_priced} with prices, "
           f"{len(new_rows)} new from OpenRouter, "
-          f"{sum(1 for r in rows if not r['official'])} on aggregators) -> {OUT}")
+          f"{sum(1 for r in rows if not r['official'])} on aggregators, "
+          f"{sum(1 for r in rows if r['suspect'])} suspect) -> {OUT}")
 
 
 if __name__ == "__main__":

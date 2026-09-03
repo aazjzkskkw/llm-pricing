@@ -51,6 +51,7 @@ tr:hover td { background:#f7f9fc; }
 .tag.blue { color:var(--accent); background:var(--accent-bg); }
 .tag.green { color:#15803d; background:#e9f9ef; }
 .tag.orange { color:#c2410c; background:#fff3e8; }
+.tag.red { color:#b91c1c; background:#fdeaea; cursor:help; font-weight:600; }
 .free { color:#15803d; font-weight:600; }
 .na { color:#b0b7c3; }
 .v { color:var(--dim); }
