@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>公益站 — LLM 价格对比</title>
+<title>中转站 — LLM 价格对比</title>
 <link rel="stylesheet" href="style.css">
 <style>
   h2 { max-width:var(--max); margin:26px auto 2px; padding:0 20px; font-size:17px; }
@@ -28,9 +28,9 @@
 </head>
 <body>
 <header>
-  <div class="eyebrow">FREE RELAYS</div>
-  <h1>公益站</h1>
-  <div class="meta">只收不能充钱、只发免费额度的站（含半公益）。能充值的中转站在<a href="relays.html">另一页</a>。名单同步自 <a href="https://ytzzjx.github.io/" target="_blank" rel="noopener">公益中转分享</a>，已去除其中的邀请参数。同步时间：<span id="updated">…</span></div>
+  <div class="eyebrow">API RELAYS</div>
+  <h1>中转站</h1>
+  <div class="meta">第三方 API 中转站名单（可充值 / 充值情况未标注），名单同步自 <a href="https://ytzzjx.github.io/" target="_blank" rel="noopener">公益中转分享</a>，已去除邀请参数。公益站在<a href="free.html">另一页</a>。同步时间：<span id="updated">…</span></div>
 </header>
 <nav></nav>
 
@@ -58,8 +58,8 @@
 <p class="count" id="count"></p>
 <div class="grid" id="stations"></div>
 
-<h2 class="sec">官方免费额度<small>厂商与平台自有免费档，无第三方转发</small></h2>
-<p class="lead">额度与速率限制以各站点说明为准。</p>
+<h2 class="sec">正规聚合平台<small>有官方授权、可开发票，长期用建议走这些</small></h2>
+<p class="lead">规模与价格区间见<a href="tools.html">订阅与渠道</a>页，那里的数据由价格总表实时算出。</p>
 <div class="grid" id="official"></div>
 
 <p class="note">本页不为任何第三方站点背书，不含推广参数，链接均为站点入口。名单由 <a href="https://ytzzjx.github.io/" target="_blank" rel="noopener">公益中转分享</a> 维护，状态分类由本站脚本按其描述自动归类，可能与实际情况有偏差，以站内公告为准。</p>
@@ -82,7 +82,7 @@ function render() {
   const q = document.getElementById('q').value.toLowerCase();
   const st = document.getElementById('st').value;
   const rs = stations.filter(s =>
-    (!st || s.status === st) && s.type === 'charity' &&
+    (!st || s.status === st) && s.type !== 'charity' &&
     (!q || [s.name, s.models, s.entry, s.kind, s.summary].join(' ').toLowerCase().includes(q)));
   document.getElementById('count').textContent =
     `${rs.length} 个站点（共收录 ${stations.length} 个）`;
@@ -96,7 +96,9 @@ function render() {
     ].filter(Boolean).map(x => `<div class="kv">${x}</div>`).join('');
     return `<div class="card">
       ${logo('', s.name)}
-      <div class="st st-${cls}">${label} · <span class="v">更新 ${s.updated}</span></div>
+      <div class="st st-${cls}">${label} · <span class="v">更新 ${s.updated}</span>${
+        s.type === 'paid' ? '<span class="tag orange">可充值</span>'
+                          : '<span class="tag gray">充值情况未标注</span>'}</div>
       <div class="name">${s.name}</div>
       ${s.summary ? `<div class="desc">${s.summary}</div>` : ''}
       ${kv}
@@ -107,18 +109,18 @@ function render() {
 }
 
 const OFFICIAL_FREE = [
-  { name: 'OpenRouter 免费模型', desc: '带 :free 后缀的模型免费调用，每日有请求次数上限，一个 Key 覆盖多家模型。', url: 'https://openrouter.ai/models?max_price=0' },
-  { name: 'Groq', desc: '免费档提供 Llama、GLM 等开源模型，以推理速度见长。', url: 'https://console.groq.com/' },
-  { name: 'Cerebras', desc: '免费档开放多款开源模型。', url: 'https://cloud.cerebras.ai/' },
-  { name: 'GitHub Models', desc: 'GitHub 账号即可调用主流闭源模型，有速率限制。', url: 'https://github.com/marketplace/models' },
-  { name: 'Cloudflare Workers AI', desc: '每日固定免费额度，与 Workers 集成。', url: 'https://developers.cloudflare.com/workers-ai/' },
-  { name: 'Google AI Studio', desc: 'Gemini 提供免费档，可在网页端直接调用。', url: 'https://aistudio.google.com/' },
-  { name: '智谱 GLM Flash 系列', desc: 'GLM-4.5-Flash 等 Flash 型号官方定价为 0，价格总表可查。', url: 'https://open.bigmodel.cn/pricing' },
+  { name: 'OpenRouter', desc: '一个 Key 打通几十家模型，按量计费无月费，用量和路由都在控制台可查。', url: 'https://openrouter.ai/' },
+  { name: 'Vercel AI Gateway', desc: '与各家厂商官方对接的网关，价格基本贴着原厂，适合已在用 Vercel 的项目。', url: 'https://vercel.com/docs/ai-gateway' },
+  { name: 'Together', desc: '开源模型托管，自有算力，企业合同和发票齐全。', url: 'https://www.together.ai/pricing' },
+  { name: 'Fireworks', desc: '开源模型推理平台，主打低延迟和批量吞吐。', url: 'https://fireworks.ai/pricing' },
+  { name: 'DeepInfra', desc: '开源模型按量计费，价格在同类里偏低。', url: 'https://deepinfra.com/pricing' },
+  { name: 'Novita', desc: '开源模型托管，国内访问相对稳定。', url: 'https://novita.ai/pricing' },
+  { name: 'Groq / Cerebras', desc: '自研推理芯片，主打极低延迟，都有免费档可先试。', url: 'https://console.groq.com/' },
 ];
 document.getElementById('official').innerHTML = OFFICIAL_FREE.map(p => `
   <div class="card">
     ${logo('', p.name)}
-    <div class="st st-open">官方免费</div>
+    <div class="st st-open">正规平台</div>
     <div class="name">${p.name}</div>
     <div class="desc">${p.desc}</div>
     <a href="${p.url}" target="_blank" rel="noopener">前往查看 →</a>

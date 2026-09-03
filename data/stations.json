@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03 06:59 UTC",
+ "updated_at": "2026-09-03 07:09 UTC",
  "credit": "https://ytzzjx.github.io/",
  "count": 31,
  "stations": [
@@ -14,7 +14,8 @@
    "entry": "邮箱注册，无需邮箱验证。想拿 50 签到就先访问 https://motomoto.lol 打开「数据授权」，再去签到；不开只有 10。",
    "caveat": "签到 50 和 10 的差别就是「数据授权」这一个开关，而它在隐私政策里的正式名称是训练数据授权：打开后站方可能存储或采样你的提示词、模型输出和工具调用，用于训练、微调、蒸馏和评测，站方自己也提示「请勿提交敏感信息」，并写明已进入训练的部分通常无法再单独剔除。授权对当日使用生效，关闭从第二天起才调整。要额度还是要请求不被留存，自己权衡；跑敏感内容时建议关掉、只领 10。站点刚上线（隐私政策生效日 2026-09-01），稳定性和额度政策都可能变。",
    "updated": "2026-09-02",
-   "status": "open"
+   "status": "open",
+   "type": "charity"
   },
   {
    "name": "GcmodAi",
@@ -27,7 +28,8 @@
    "entry": "通过邀请链接注册即可，注册后送 1 块。",
    "caveat": "免费部分只有注册那 1 块，约一百次请求，用完就得自己充值——它列在公益区是因为有这笔免费额度，但本质更接近付费站的试用装，别当成能长期白用的站。没有签到，所以额度不会自己回来。全部模型按次计费，每次一分钱，不按 token 计量；充值 1:1，VIP 分组需充值订阅解锁。并发和具体模型清单以站内实际显示为准。",
    "updated": "2026-08-31",
-   "status": "open"
+   "status": "open",
+   "type": "charity"
   },
   {
    "name": "247看 API",
@@ -40,7 +42,8 @@
    "entry": "邀请链接注册；纯付费站，注册无赠送额度，需自行充值后使用。",
    "caveat": "纯付费站，注册没有赠送，必须充值才能用。特惠分组虽是常驻，但倍率和分组规则可能调整，请以站内实际显示为准；充值比例 1:1。",
    "updated": "2026-08-31",
-   "status": "open"
+   "status": "open",
+   "type": "paid"
   },
   {
    "name": "Denxio",
@@ -53,7 +56,8 @@
    "entry": "注册链接已含邀请码；另需去 Telegram 频道 t.me/denxio_free 的登仙令分区向 @JieYin_bot 发送「登仙令」领取注册码。",
    "caveat": "有人用这个站做涩情内容和蒸馏，把站方的上游 Pro 号全搞封了，公益服务已停，恢复情况请看 Telegram 频道和 QQ 群公告。原有门槛：注册码（登仙令）必须去 Telegram 领，没有就注册不了；仙池的开放通知也只发在 Telegram 频道和 QQ 群。",
    "updated": "2026-08-31",
-   "status": "open"
+   "status": "open",
+   "type": "charity"
   },
   {
    "name": "Rinko NAI 生图公益站",
@@ -66,7 +70,8 @@
    "entry": "通过邀请链接注册。",
    "caveat": "代币规则、模型能力、API 限制和作品广场内容可能调整，请以站内公告与实际页面为准。",
    "updated": "2026-08-28",
-   "status": "open"
+   "status": "open",
+   "type": "charity"
   },
   {
    "name": "ze",
@@ -79,7 +84,8 @@
    "entry": "已换型为 sub2api，需通过新的邀请链接重新注册；老账号数据不准。",
    "caveat": "站点类型已换成 sub2api，此前的额度和签到数据都不能参考，需要重新注册；当前注册送 10,000 但可能被改回去，换型后的模型范围与计费规则也尚未核实。",
    "updated": "2026-08-28",
-   "status": "open"
+   "status": "open",
+   "type": "unknown"
   },
   {
    "name": "Nofx",
@@ -92,7 +98,8 @@
    "entry": "使用邀请注册链接注册；注册后加入 Discord 可再领 5 刀。",
    "caveat": "站内没找到充值入口，是否真的不支持充值以站内实际显示为准。签到上限与倍率可能调整，请以站内公告和实际调用为准。",
    "updated": "2026-08-28",
-   "status": "open"
+   "status": "open",
+   "type": "charity"
   },
   {
    "name": "AnyRouter",
@@ -105,7 +112,8 @@
    "entry": "Linux Do 二级账号，或 .edu.cn 教育邮箱注册。",
    "caveat": "模型范围、上下文规则和服务状态可能调整，请以站内实际说明为准。",
    "updated": "2026-08-26",
-   "status": "open"
+   "status": "open",
+   "type": "unknown"
   },
   {
    "name": "Fate New API",
@@ -118,7 +126,8 @@
    "entry": "通过 NodeLoc 注册。被删号之后重新走一遍注册链接就能再注册。",
    "caveat": "不使用好像会被删号——本人已经被删过两次，所以注册完记得保持调用。被删之后重新走注册链接可以再注册。签到金额、模型可用性、倍率和服务规则也可能调整，请以站内实际说明为准。",
    "updated": "2026-08-24",
-   "status": "open"
+   "status": "open",
+   "type": "unknown"
   },
   {
    "name": "北执半公益站",
@@ -131,7 +140,8 @@
    "entry": "仅支持主流邮箱注册，例如 QQ 邮箱。",
    "caveat": "每分钟最多 15 次请求，不适合 Agent 或自动化高频任务；站点由个人维护，不提供商业 SLA，请勿用于生产环境。",
    "updated": "2026-08-24",
-   "status": "open"
+   "status": "open",
+   "type": "charity"
   },
   {
    "name": "Xingya",
@@ -144,7 +154,8 @@
    "entry": "通过邀请链接注册；邀请好友注册并加入 QQ 群后，可再领取 80 芽点。想签到也必须先进 QQ 群。",
    "caveat": "签到现在依赖 QQ 群精华里的签到码，不进群就签不了，签到码也可能随时更换。这是付费站；充值比例、代币消耗和新用户福利可能调整，请以站内实际规则为准。",
    "updated": "2026-08-24",
-   "status": "open"
+   "status": "open",
+   "type": "paid"
   },
   {
    "name": "Jasperio",
@@ -157,7 +168,8 @@
    "entry": "直接打开站点体验；未提供额外注册门槛信息。",
    "caveat": "生成图片会不定时删除，请尽快下载；当前免费能力可能调整，请勿滥用。",
    "updated": "2026-08-21",
-   "status": "open"
+   "status": "open",
+   "type": "unknown"
   },
   {
    "name": "TabiToken",
@@ -170,7 +182,8 @@
    "entry": "当前开放注册，窗口可能随时关闭，建议尽快尝试。",
    "caveat": "注册窗口可能随时关闭；已注册用户请尽快调用，否则有封号风险。",
    "updated": "2026-08-20",
-   "status": "open"
+   "status": "open",
+   "type": "unknown"
   },
   {
    "name": "JustWoker 公益站",
@@ -183,7 +196,8 @@
    "entry": "使用注册满 1 年的 GitHub 账号注册。",
    "caveat": "GitHub 账号注册年限是当前已知门槛；模型范围、签到规则、倍率和稳定性可能调整，请以站内实际规则为准。",
    "updated": "2026-08-20",
-   "status": "open"
+   "status": "open",
+   "type": "charity"
   },
   {
    "name": "AbinAPI",
@@ -196,7 +210,8 @@
    "entry": "通过邀请链接注册，注册后进群可领 20 刀。",
    "caveat": "付费站。支持分组调用，0.75 分组相对更稳定；实际倍率和服务状态请以站内调用结果为准。",
    "updated": "2026-08-20",
-   "status": "open"
+   "status": "open",
+   "type": "paid"
   },
   {
    "name": "GoRouter",
@@ -209,7 +224,8 @@
    "entry": "当前开放注册，窗口可能随时关闭，建议尽快尝试。",
    "caveat": "近期稳定性下降，建议留一个备用线路，不要作为唯一依赖；注册窗口可能随时关闭；已注册用户请尽快调用，否则有封号风险。",
    "updated": "2026-08-19",
-   "status": "open"
+   "status": "open",
+   "type": "unknown"
   },
   {
    "name": "True SOTA",
@@ -222,7 +238,8 @@
    "entry": "通过邀请链接注册即送 20 刀。",
    "caveat": "付费站。其他模型、签到和稳定性暂未确认；倍率、赠送和计费规则请以站内实际说明为准。",
    "updated": "2026-08-19",
-   "status": "open"
+   "status": "open",
+   "type": "paid"
   },
   {
    "name": "PAI 生图公益站",
@@ -235,7 +252,8 @@
    "entry": "通过邀请链接注册并登录；2026 年 8 月 18 日注册另送 888 限时积分。",
    "caveat": "注册送 888 为当日限时积分；签到数额、模型定价和活动规则可能随时调整，请以站内实际显示为准。",
    "updated": "2026-08-18",
-   "status": "open"
+   "status": "open",
+   "type": "charity"
   },
   {
    "name": "GemAI（哈基米公益站）",
@@ -248,7 +266,8 @@
    "entry": "通过邀请链接注册，邀请注册即送 200。",
    "caveat": "半公益站；签到金额可能浮动，模型范围和计费规则也可能调整，请以站内公告为准。",
    "updated": "2026-08-17",
-   "status": "open"
+   "status": "open",
+   "type": "charity"
   },
   {
    "name": "一梦五千年",
@@ -261,7 +280,8 @@
    "entry": "只能用 GitHub、Linux Do 或 Discord 账号授权注册，不支持邮箱注册；2026-08-31 核对时注册已开放。",
    "caveat": "只能用 GitHub、Linux Do 或 Discord 注册，三者都没有就没法注册。注册开放状态可能再次收紧，以注册页面实际结果为准；不要批量测活，可能会被拉黑 IP。签到为随机奖励，数额不固定。",
    "updated": "2026-08-17",
-   "status": "open"
+   "status": "open",
+   "type": "unknown"
   },
   {
    "name": "Hubway",
@@ -274,7 +294,8 @@
    "entry": "通过注册链接注册，并加入官方群可领 10。",
    "caveat": "付费站，注册赠送只有进群那 10。标示倍率与实际倍率不一致（约 0.6 对约 0.06），以站内实际计费为准。",
    "updated": "2026-08-14",
-   "status": "open"
+   "status": "open",
+   "type": "paid"
   },
   {
    "name": "CheapCodex",
@@ -287,7 +308,8 @@
    "entry": "邮箱注册。注册系统的邮件发送有问题，验证邮件可能进垃圾箱或收不到，请先翻垃圾箱。",
    "caveat": "GPT 倍率 2.5x，比标准计费贵，赠送额度的实际可用量要按倍率折算。目前的赠送力度来自百亿补贴阶段，属于阶段性政策，随时可能调整。注册时邮件系统有问题，可能收不到验证邮件，请查看垃圾箱。",
    "updated": "2026-08-31",
-   "status": "watch"
+   "status": "watch",
+   "type": "unknown"
   },
   {
    "name": "BaaaAI 公益站",
@@ -300,7 +322,8 @@
    "entry": "通过邀请链接注册。",
    "caveat": "模型已经几天调不通，恢复时间未知。每日额度需在控制台自行申请且要至少调用一次；并发只有 2。模型列表、额度与使用规则可能调整，请以控制台实际显示为准。",
    "updated": "2026-08-28",
-   "status": "watch"
+   "status": "watch",
+   "type": "charity"
   },
   {
    "name": "KKToken",
@@ -313,7 +336,8 @@
    "entry": "需要 GitHub 账号，有账号限制，具体门槛以注册页提示为准。",
    "caveat": "Claude Code CLI 的请求头会被站点 CF 拦截并报错，curl 调 /v1/messages 正常，请改用 Claude Desktop。新站上线时间不长，额度、签到与模型规则可能调整；注册有 GitHub 限制，具体门槛以注册页为准。",
    "updated": "2026-08-28",
-   "status": "watch"
+   "status": "watch",
+   "type": "unknown"
   },
   {
    "name": "AgentRouter 国内入口",
@@ -326,7 +350,8 @@
    "entry": "国内注册地址；GitHub 老号（2025 年 12 月之前注册）或 Linux Do 账号。",
    "caveat": "Claude 倍率已上调、GPT-5.6-sol 倍率已下调，具体倍率以站内显示为准；签到需退出账号后重新登录才会生效。正常使用奖励机制仍待确认。",
    "updated": "2026-08-26",
-   "status": "watch"
+   "status": "watch",
+   "type": "unknown"
   },
   {
    "name": "AgentRouter",
@@ -339,7 +364,8 @@
    "entry": "GitHub 老号（2025 年 12 月之前注册）或 Linux Do 账号。",
    "caveat": "Claude 倍率已上调、GPT-5.6-sol 倍率已下调，具体倍率以站内显示为准；签到需退出账号后重新登录才会生效。正常使用奖励机制仍待确认。",
    "updated": "2026-08-26",
-   "status": "watch"
+   "status": "watch",
+   "type": "unknown"
   },
   {
    "name": "AIHub",
@@ -352,7 +378,8 @@
    "entry": "注册后加入官方群可领 10 刀；有 L 站账号的话，好评可再领 10 刀。",
    "caveat": "付费站。自动切换的具体策略待确认；L 站好评赠送我没领过，条件以站内说明为准。站长称会主动检测渠道并对掺水或投毒退款，这是站方自述，我没有独立验证。",
    "updated": "2026-08-14",
-   "status": "watch"
+   "status": "watch",
+   "type": "paid"
   },
   {
    "name": "TokenForge（tokengate）",
@@ -365,7 +392,8 @@
    "entry": "注册页仍可访问，但站方刚删光所有用户、正在修复，建议等结果出来再决定。原门槛为 GitHub 注册、主账号邮箱需为 Google 或 Microsoft 邮箱、账号注册时间超过 14 天，并需通过 Discord 认证。",
    "caveat": "站方于 2026-09-02 删除了所有用户账号，原因不明，正在修复，已有账号和额度能否恢复未知。另有实测注入：模型被限制成只能用英文回答，中文提问也回英文，说明请求在到达模型前被加了指令，其他改动无从判断。两件事叠加，不要用于需要结果可信或账号要长期留存的场景。站点已改名换域名，旧的 manus.space 地址不要再用。",
    "updated": "2026-08-26",
-   "status": "avoid"
+   "status": "avoid",
+   "type": "unknown"
   },
   {
    "name": "SeekAI",
@@ -378,7 +406,8 @@
    "entry": "GitHub 账号注册，新号即可。",
    "caveat": "目前仅支持 DeepSeek；工具调用可能异常，稳定性和输出质量也有波动，建议仅作备用。",
    "updated": "2026-08-13",
-   "status": "avoid"
+   "status": "avoid",
+   "type": "unknown"
   },
   {
    "name": "ArityFlow",
@@ -391,7 +420,8 @@
    "entry": "目前暂停注册，等待重新开放；签到码需加入 QQ 群获取。",
    "caveat": "注册已关闭，恢复时间未知；签到依赖 QQ 群内发放的签到码。严查除 coding 分组以外的编程行为，违规可能封号。",
    "updated": "2026-08-19",
-   "status": "stopped"
+   "status": "stopped",
+   "type": "unknown"
   },
   {
    "name": "Sulmate 半公益站",
@@ -404,7 +434,8 @@
    "entry": "目前停止注册，等待恢复开放。",
    "caveat": "新用户注册已停止，恢复时间未知。已有账号的公益池、签到奖励、VIP 价格和分组规则也可能调整，请以站内实际说明为准。",
    "updated": "2026-08-18",
-   "status": "stopped"
+   "status": "stopped",
+   "type": "charity"
   }
  ]
 }
