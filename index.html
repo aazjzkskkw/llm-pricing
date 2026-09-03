@@ -36,7 +36,16 @@
     <option value="">含未公布价格</option>
     <option value="1">仅已公布价格</option>
   </select>
+  <select id="range">
+    <option value="fresh">近一年发布</option>
+    <option value="all">全部（含一年前，扩展）</option>
+  </select>
+  <select id="tier">
+    <option value="">全部模型</option>
+    <option value="1">只看各厂旗舰</option>
+  </select>
   <select id="sortsel">
+    <option value="flagship">旗舰优先</option>
     <option value="key">按模型分组（跨渠道比价）</option>
     <option value="vendor_name">按厂商</option>
     <option value="released">按最近发布</option>
@@ -63,9 +72,9 @@
   <tbody></tbody>
 </table>
 
-<script src="app.js"></script>
+<script src="app.js?v=2"></script>
 <script>
-let models = [], sortKey = 'key', sortAsc = true;
+let models = [], sortKey = 'flagship', sortAsc = true;
 // 统一的「渠道」概念：补充行看 via，主源里平台自己就是渠道，其余算厂商直营
 const chanOf = m => m.via || (m.official ? '官方直营' : m.vendor_name);
 const fmtN = v => v == null ? '<span class="na">-</span>' : v.toLocaleString();
@@ -76,7 +85,7 @@ const bar = document.querySelector('.bar');
 new ResizeObserver(() => document.documentElement.style
   .setProperty('--th-top', bar.offsetHeight + 'px')).observe(bar);
 
-fetch('data/models.json').then(r => r.json()).then(d => {
+fetch('data/models.json').then(r => r.json()).then(async d => {
   models = d.models;
   document.getElementById('updated').textContent = d.updated_at;
   document.getElementById('srcs').innerHTML = (d.sources || [])
@@ -87,8 +96,11 @@ fetch('data/models.json').then(r => r.json()).then(d => {
   const chans = [...new Set(models.map(chanOf))].sort();
   document.getElementById('channel').innerHTML +=
     chans.map(c => `<option>${c}</option>`).join('');
-  const preset = new URLSearchParams(location.search).get('vendor');
+  const qs = new URLSearchParams(location.search);
+  const preset = qs.get('vendor');
   if (preset && vs.includes(preset)) vendorSel.value = preset;
+  if (qs.get('range') === 'all') document.getElementById('range').value = 'all';
+  await markFlagships(models);       // app.js：拿 ECI 榜单标旗舰
   stats(d, vs.length);
   render();
 });
@@ -114,7 +126,7 @@ function stats(d, vendors) {
       <div class="n">${n}</div><div class="s">${s}</div></div>`).join('');
 }
 
-['q','vendor','mode','priced','official','channel','dedup'].forEach(id =>
+['q','vendor','mode','priced','official','channel','dedup','range','tier'].forEach(id =>
   document.getElementById(id).addEventListener('input', render));
 document.getElementById('sortsel').addEventListener('input', e => {
   sortKey = e.target.value;
@@ -127,7 +139,7 @@ document.querySelectorAll('th[data-k]').forEach(th =>
     sortAsc = sortKey === k ? !sortAsc : k !== 'released';
     sortKey = k;
     document.getElementById('sortsel').value =
-      ['key','vendor_name','released','input'].includes(k) ? k : 'vendor_name';
+      ['key','vendor_name','released','input'].includes(k) ? k : 'flagship';
     render();
   });
 
@@ -139,7 +151,11 @@ function rows() {
   const official = document.getElementById('official').value;
   const ch = document.getElementById('channel').value;
   const dedup = document.getElementById('dedup').value;
+  const showAged = document.getElementById('range').value === 'all';
+  const onlyTop = document.getElementById('tier').value;
   let rs = models.filter(m =>
+    (showAged || !m.aged) &&
+    (!onlyTop || m.flagship) &&
     (!ch || chanOf(m) === ch) &&
     // 也拿分组键匹配一次：搜 glm-5.3 才能带出 Fireworks 那种 glm-5p3 的写法
     (!q || m.model.toLowerCase().includes(q) || m.vendor_name.toLowerCase().includes(q)
@@ -163,6 +179,15 @@ function rows() {
                      && !kept.has(m.key) && kept.add(m.key));
   }
   rs.sort((a, b) => {
+    if (sortKey === 'flagship') {    // 旗舰在前，有能力分的按分数从高到低
+      const f = (b.flagship ? 1 : 0) - (a.flagship ? 1 : 0);
+      if (f) return f;
+      const e = (b.eci ?? -1) - (a.eci ?? -1);
+      if (e) return e;
+      return a.vendor_name.localeCompare(b.vendor_name)
+          || String(a.key).localeCompare(String(b.key))
+          || (a.input ?? 9e9) - (b.input ?? 9e9);
+    }
     if (sortKey === 'key') {         // 分组视图：同模型排在一起，组内按价格升序
       const c = String(a.key).localeCompare(String(b.key));
       if (c) return sortAsc ? c : -c;
@@ -197,16 +222,22 @@ function render() {
   const grouped = sortKey === 'key' && !document.getElementById('dedup').value;
   const multi = [...groups.values()].filter(g => g.n > 1).length;
   document.getElementById('count').innerHTML =
-    `已排除厂商标注退役及发布超两年的对话模型。当前 <b>${rs.length}</b> 行，
+    `默认只看近一年发布的对话模型，更早的切「全部」查看。当前 <b>${rs.length}</b> 行，
      归为 <b>${groups.size}</b> 个模型，其中 <b>${multi}</b> 个有两个以上渠道可比价。`;
   let prev = null;
   document.querySelector('#tbl tbody').innerHTML = rs.map(m => {
     const g = groups.get(m.key);
     const head = grouped && m.key !== prev;        // 每组第一行加分隔线和渠道数
     prev = m.key;
-    const cheapest = g.n > 1 && m.input != null && m.input === g.min;
+    // 组内同价的行很多，只给第一行打「最低价」，不然一片标签没信息量
+    const cheapest = g.n > 1 && m.input != null && m.input === g.min && !g.marked
+      && (g.marked = true);
     return `<tr${head ? ' class="gstart"' : ''}><td>${m.vendor_name}</td>
     <td>${m.model}${
+      m.flagship ? `<span class="tag star" title="${m.eci != null
+        ? 'Epoch ECI 综合能力分 ' + m.eci + '，本厂前三'
+        : '该厂商当前价位最高的型号（未上 ECI 榜，用价格代理）'}">旗舰</span>` : ''}${
+      m.aged ? '<span class="tag gray" title="发布超过一年，默认不在主表里">扩展</span>' : ''}${
       g.n > 1 && head ? `<span class="tag gray">${g.n} 个渠道</span>` : ''}${
       cheapest ? '<span class="tag ok">最低价</span>' : ''}${
       m.new ? '<span class="tag green">新</span>' : ''}${

@@ -62,3 +62,37 @@ function buildNav() {
     `<a href="${href}"${href === here ? ' class="on"' : ''}>${label}</a>`).join('');
 }
 buildNav();
+
+// 榜单里的模型名（"Claude Fable 5"）归一到跟 models.json 的 key 一个写法，用来联表
+const benchKey = s => s.toLowerCase().replace(/\(.*?\)/g, '')
+  .replace(/[^a-z0-9.]+/g, '-').replace(/\./g, '-').replace(/^-|-$/g, '');
+
+// 旗舰判定：优先用 Epoch 的 ECI 综合分（真实测出来的能力），
+// 没上榜的退回「同厂商里最贵的」当代理指标。每家取前 3。
+async function markFlagships(models) {
+  const eci = new Map();
+  try {
+    const b = await (await fetch('data/bench.json')).json();
+    const board = (b.boards || []).find(x => x.id === 'epoch_capabilities_index');
+    for (const r of board?.rows || []) eci.set(benchKey(r.model), r.score);
+  } catch { /* 榜单拉不到就只靠价格 */ }
+
+  const best = new Map();          // vendor -> [{key, score}]
+  for (const m of models) {
+    if (m.mode !== 'chat' || m.aged) continue;
+    m.eci = eci.get(m.key) ?? null;
+    const score = m.eci ?? (m.input ?? 0) / 1e4;   // 没分就用价格当弱代理
+    const arr = best.get(m.vendor_name) || [];
+    arr.push([m.key, score]);
+    best.set(m.vendor_name, arr);
+  }
+  const top = new Map();
+  for (const [v, arr] of best) {
+    const uniq = new Map();
+    for (const [k, sc] of arr) uniq.set(k, Math.max(uniq.get(k) ?? -1, sc));
+    top.set(v, new Set([...uniq.entries()].sort((a, b) => b[1] - a[1])
+      .slice(0, 3).map(x => x[0])));
+  }
+  for (const m of models) m.flagship = !m.aged && m.mode === 'chat'
+    && (top.get(m.vendor_name)?.has(m.key) ?? false);
+}
