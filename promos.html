@@ -4,35 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>厂商活动 & 平台优惠 — LLM 价格对比</title>
+<link rel="stylesheet" href="style.css">
 <style>
-  :root { --bg:#f5f7fa; --card:#ffffff; --fg:#1c2128; --dim:#6b7280; --line:#e4e8ee;
-          --accent:#2563eb; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--fg);
-         font:14px/1.6 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif; }
-  header { padding:28px 20px 4px; max-width:1200px; margin:0 auto; }
-  h1 { font-size:24px; margin:0 0 4px; }
-  .meta { color:var(--dim); font-size:13px; }
-  .meta a { color:var(--accent); text-decoration:none; }
-  h2 { max-width:1200px; margin:28px auto 4px; padding:0 20px; font-size:17px; }
-  .grid { max-width:1200px; margin:8px auto 8px; padding:0 20px;
-          display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:14px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
-          padding:16px 18px; box-shadow:0 1px 3px rgba(0,0,0,.05);
-          display:flex; flex-direction:column; gap:6px; }
-  .card:hover { box-shadow:0 3px 10px rgba(0,0,0,.08); }
-  .card .name { font-weight:600; font-size:15px; }
-  .card .desc { color:var(--dim); font-size:13px; flex:1; }
-  .card a { color:var(--accent); font-size:13px; text-decoration:none; font-weight:500; }
-  .card a:hover { text-decoration:underline; }
-  .note { max-width:1200px; margin:10px auto 40px; padding:0 20px; color:var(--dim); font-size:12px; }
+  h2 { max-width:var(--max); margin:28px auto 4px; padding:0 20px; font-size:17px; }
+  .card { display:flex; flex-direction:column; gap:4px; }
+  .card .desc { flex:1; }
 </style>
 </head>
 <body>
 <header>
-  <h1>🎁 厂商活动 &amp; 平台优惠</h1>
-  <div class="meta">各厂商及聚合平台的免费额度 / 优惠入口。<a href="index.html">← 返回价格对比</a></div>
+  <h1>厂商活动 &amp; 平台优惠</h1>
+  <div class="meta">各厂商和聚合平台的免费额度入口，随手收的。</div>
 </header>
+<nav>
+  <a href="index.html">价格总表</a>
+  <a href="vendors.html">按厂商看</a>
+  <a href="bench.html">模型评测</a>
+  <a href="promos.html" class="gift on">🎁 活动与优惠</a>
+</nav>
 <h2>厂商官方活动</h2>
 <div class="grid" id="official"></div>
 <h2>聚合平台优惠</h2>
