@@ -44,13 +44,10 @@
 <table id="tbl"><thead><tr id="head"></tr></thead><tbody></tbody></table>
 <p class="note">各榜单的题目、评分方式与所用 Agent 框架不同，分数不可跨榜单直接比较。同一模型存在多档推理强度（high / max 等）时，仅保留最高分。数据来源：Epoch AI「AI Benchmarking Hub」(<a href="https://epoch.ai/benchmarks" target="_blank">epoch.ai/benchmarks</a>, CC-BY 4.0)、<a href="https://github.com/vectara/hallucination-leaderboard" target="_blank">Vectara Hallucination Leaderboard</a>。</p>
 
-<script src="app.js?v=2"></script>
+<script src="app.js?v=3"></script>
 <script>
 let boards = [], cur = 0, sortKey = null, sortAsc = false;
 
-const bar = document.querySelector('.bar');
-new ResizeObserver(() => document.documentElement.style
-  .setProperty('--th-top', bar.offsetHeight + 'px')).observe(bar);
 
 fetch('data/bench.json').then(r => r.json()).then(d => {
   boards = d.boards;
@@ -110,7 +107,10 @@ function render() {
     b.cols.map(c => {
       const v = r[c.k];
       if (v == null || v === '') return '<td class="na">·</td>';
-      return `<td class="${c.num ? 'num' : 'v'}">${v}</td>`;
+      // 百分比列在格子里画条底纹当迷你条形图，Elo / 分钟 / 成本这些量纲不画
+      const pct = c.pct && v >= 0 && v <= 100;
+      return `<td class="${c.num ? 'num' : 'v'}${pct ? ' sbar' : ''}"${
+        pct ? ` style="--w:${v}%"` : ''}>${v}</td>`;
     }).join('') +
     `<td class="v">${r.released || '<span class="na">-</span>'}</td></tr>`).join('');
 }

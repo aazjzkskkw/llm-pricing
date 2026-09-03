@@ -264,7 +264,7 @@ def overview(boards: list[dict]) -> dict:
         "source": "Epoch AI", "url": "https://epoch.ai/benchmarks",
         # 第一列是 ECI，前端默认按第一列排，这样打开就是按综合能力从强到弱
         "cols": ([{"k": b["short"], "t": f"{b['short']} {b['unit_short']}".strip(),
-                   "num": True} for b in picked]
+                   "num": True, "pct": b["unit"] == "%"} for b in picked]
                  + [{"k": "n", "t": "上榜数", "num": True},
                     {"k": "org", "t": "厂商"}]),
         "rows": keep,
@@ -283,10 +283,11 @@ def main() -> None:
         rows = epoch_board(z, cfg["f"], cfg.get("col", ""), cfg.get("pct", True))
         if not rows:
             continue
-        cols = [{"k": "score", "t": f"分数 {cfg['unit']}".strip(), "num": True},
+        cols = [{"k": "score", "t": f"分数 {cfg['unit']}".strip(), "num": True,
+                 "pct": cfg["unit"] == "%"},
                 {"k": "org", "t": "厂商"}]
         if any(r.get("pass4") is not None for r in rows):
-            cols.insert(1, {"k": "pass4", "t": "Pass@4 %", "num": True})
+            cols.insert(1, {"k": "pass4", "t": "Pass@4 %", "num": True, "pct": True})
         if any(r["agent"] for r in rows):
             cols.append({"k": "agent", "t": "Agent 框架"})
         if any(r.get("cost") is not None for r in rows):
@@ -294,6 +295,7 @@ def main() -> None:
         boards.append({
             "id": cfg["f"].removesuffix(".csv"), "name": cfg["name"],
             "desc": cfg["desc"], "cat": cfg["cat"], "short": cfg["short"],
+            "unit": cfg["unit"],
             "unit_short": "" if cfg["unit"] == "%" else cfg["unit"],
             "source": "Epoch AI", "url": "https://epoch.ai/benchmarks",
             "cols": cols, "rows": rows,

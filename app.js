@@ -54,6 +54,18 @@ function tier(v) {
   return 't4';
 }
 
+// 表头 sticky 的偏移要跟着筛选条的实际高度走（窄屏筛选条会换行）。
+// 别用 ResizeObserver：没留引用的实例会被回收，回调压根不触发。
+function fitStickyHead() {
+  const bar = document.querySelector('.bar');
+  if (!bar) return;
+  const set = () => document.documentElement.style
+    .setProperty('--th-top', bar.offsetHeight + 'px');
+  set();
+  addEventListener('resize', set);
+}
+fitStickyHead();
+
 function buildNav() {
   const here = location.pathname.split('/').pop() || 'index.html';
   const nav = document.querySelector('nav');

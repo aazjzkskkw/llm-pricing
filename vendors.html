@@ -46,14 +46,11 @@
 <div class="grid" id="grid"></div>
 <p class="note">价格单位为美元 / 100 万 token，卡片内按模型发布时间倒序。已排除厂商标注退役及发布超两年的对话模型。</p>
 
-<script src="app.js?v=2"></script>
+<script src="app.js?v=3"></script>
 <script>
 let models = [], pages = {};
 const fmt$ = money;   // app.js
 
-const bar = document.querySelector('.bar');
-new ResizeObserver(() => document.documentElement.style
-  .setProperty('--th-top', bar.offsetHeight + 'px')).observe(bar);
 
 fetch('data/models.json').then(r => r.json()).then(d => {
   document.getElementById('updated').textContent = d.updated_at;

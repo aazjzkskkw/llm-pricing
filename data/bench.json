@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03 05:43 UTC",
+ "updated_at": "2026-09-03 05:49 UTC",
  "cutoff": "2024-09-03",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
@@ -15,67 +15,80 @@
     {
      "k": "ECI",
      "t": "ECI 分",
-     "num": true
+     "num": true,
+     "pct": false
     },
     {
      "k": "METR",
      "t": "METR 分钟",
-     "num": true
+     "num": true,
+     "pct": false
     },
     {
      "k": "SWE-B",
      "t": "SWE-B",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "DeepSWE",
      "t": "DeepSWE",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "T-Bench",
      "t": "T-Bench",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "Aider",
      "t": "Aider",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "WebDev",
      "t": "WebDev Elo",
-     "num": true
+     "num": true,
+     "pct": false
     },
     {
      "k": "FMath",
      "t": "FMath",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "AIME",
      "t": "AIME",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "ARC-2",
      "t": "ARC-2",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "GPQA",
      "t": "GPQA",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "HLE",
      "t": "HLE",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "SimpleQA",
      "t": "SimpleQA",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "n",
@@ -2169,6 +2182,7 @@
    "desc": "Epoch AI 依据数十个基准的成绩拟合出的综合能力指数，无固定上限，用于跨代际比较模型的整体能力水平。想一眼看排名先看这个。",
    "cat": "综合",
    "short": "ECI",
+   "unit": "分",
    "unit_short": "分",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -2176,7 +2190,8 @@
     {
      "k": "score",
      "t": "分数 分",
-     "num": true
+     "num": true,
+     "pct": false
     },
     {
      "k": "org",
@@ -5644,6 +5659,7 @@
    "desc": "METR 的时间视野指标：模型能以 50% 成功率完成的任务，人类专家要花多少分钟。数字越大代表能独立干越久的活。",
    "cat": "综合",
    "short": "METR",
+   "unit": "分钟",
    "unit_short": "分钟",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -5651,7 +5667,8 @@
     {
      "k": "score",
      "t": "分数 分钟",
-     "num": true
+     "num": true,
+     "pct": false
     },
     {
      "k": "org",
@@ -6139,6 +6156,7 @@
    "desc": "OpenAI 出的评测：44 个行业的真实工作交付物，请业内专家盲评模型产出与人类产出，分数是模型胜出的比例。",
    "cat": "综合",
    "short": "GDPval",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -6146,7 +6164,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -6274,6 +6293,7 @@
    "desc": "500 个经人工核验的真实 GitHub issue，模型提交的补丁需通过项目自带测试。",
    "cat": "编程与 Agent",
    "short": "SWE-B",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -6281,7 +6301,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -6619,6 +6640,7 @@
    "desc": "用 mini-swe-agent 这个极简框架跑真实软件工程任务，每题跑四次。Pass@1 是单次通过率，Pass@4 是四次里至少成功一次。带每题平均花费，能直接看性价比。",
    "cat": "编程与 Agent",
    "short": "DeepSWE",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -6626,12 +6648,14 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "pass4",
      "t": "Pass@4 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -6908,6 +6932,7 @@
    "desc": "在真实终端里完成配置、执行与调试任务，考 Agent 能力而非单轮问答。同一模型换不同 Agent 框架，成绩差异很大。",
    "cat": "编程与 Agent",
    "short": "T-Bench",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -6915,7 +6940,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -7677,6 +7703,7 @@
    "desc": "225 道 Exercism 多语言编程题，考模型改代码并让测试通过。上游更新较慢。",
    "cat": "编程与 Agent",
    "short": "Aider",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -7684,7 +7711,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -8342,6 +8370,7 @@
    "desc": "让两个模型各写一版网页应用，真人投票选更好的那个，按 Elo 排名。",
    "cat": "编程与 Agent",
    "short": "WebDev",
+   "unit": "Elo",
    "unit_short": "Elo",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -8349,7 +8378,8 @@
     {
      "k": "score",
      "t": "分数 Elo",
-     "num": true
+     "num": true,
+     "pct": false
     },
     {
      "k": "org",
@@ -9357,6 +9387,7 @@
    "desc": "无提示条件下独立解 CTF 题的比例，考渗透与漏洞利用的实际动手能力。",
    "cat": "编程与 Agent",
    "short": "Cybench",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -9364,7 +9395,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -9592,6 +9624,7 @@
    "desc": "Epoch AI 自建的未公开数学题库，难度覆盖竞赛级至科研级，用于规避训练集污染。",
    "cat": "数学与推理",
    "short": "FMath",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -9599,7 +9632,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -10447,6 +10481,7 @@
    "desc": "OTIS 出的 AIME 模拟题，美国高中数学邀请赛难度，是目前最常被引用的数学基准之一。",
    "cat": "数学与推理",
    "short": "AIME",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -10454,7 +10489,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -12782,6 +12818,7 @@
    "desc": "依据少量图形变换示例归纳规则，考抽象归纳推理，不依赖知识储备。",
    "cat": "数学与推理",
    "short": "ARC-2",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -12789,7 +12826,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -13947,6 +13985,7 @@
    "desc": "ARC-AGI 第一版，多数前沿模型已接近饱和，看趋势用。",
    "cat": "数学与推理",
    "short": "ARC-1",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -13954,7 +13993,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -15202,6 +15242,7 @@
    "desc": "面向人类直觉简单但模型易错的常识与时空推理题，人类平均分高于多数模型。",
    "cat": "数学与推理",
    "short": "Simple",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -15209,7 +15250,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -16147,6 +16189,7 @@
    "desc": "研究生级物理、化学、生物多选题，题目经过防检索设计。随机作答基准 25%。",
    "cat": "知识与事实",
    "short": "GPQA",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -16154,7 +16197,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -18722,6 +18766,7 @@
    "desc": "Humanity's Last Exam：上百个学科的专家级难题，是当前最难的知识类基准之一。",
    "cat": "知识与事实",
    "short": "HLE",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -18729,7 +18774,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -19247,6 +19293,7 @@
    "desc": "短事实问答，考知识准确性以及不确定时会不会编造答案。",
    "cat": "知识与事实",
    "short": "SimpleQA",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -19254,7 +19301,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",
@@ -19972,6 +20020,7 @@
    "desc": "把科研论文里的方法实现成可运行代码，考科学理解加编程的结合。",
    "cat": "知识与事实",
    "short": "SciCode",
+   "unit": "%",
    "unit_short": "",
    "source": "Epoch AI",
    "url": "https://epoch.ai/benchmarks",
@@ -19979,7 +20028,8 @@
     {
      "k": "score",
      "t": "分数 %",
-     "num": true
+     "num": true,
+     "pct": true
     },
     {
      "k": "org",

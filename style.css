@@ -121,3 +121,48 @@ tbody tr.gstart:first-child td { border-top:none; }
 /* 旗舰标记 */
 .tag.star { color:#92400e; background:#fef3c7; }
 .tag.star::before { content:"★ "; }
+
+/* ---- 动画。纯 CSS，不引库；开了系统「减少动态效果」就整体关掉 ---- */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior:smooth; }
+  @keyframes rise { from { opacity:0; transform:translateY(10px); } }
+
+  /* 只给静态容器做入场，动态列表（表格行、卡片）不做 ——
+     它们每次筛选都重渲染，一动就成了闪屏 */
+  header, nav, .stats, .bar, .grid, table, .warn, .lead, .note, .boards {
+    animation:rise .4s cubic-bezier(.2,.7,.3,1) both;
+  }
+  nav { animation-delay:.05s; }
+  .stats, .boards { animation-delay:.1s; }
+  .bar, .warn { animation-delay:.15s; }
+  .grid, table, .lead { animation-delay:.2s; }
+
+  .stat, .card, .vcard, .logo, nav a, .boards button, th, .tag {
+    transition:transform .18s cubic-bezier(.2,.7,.3,1),
+               box-shadow .18s ease, background .16s ease, color .16s ease,
+               border-color .16s ease;
+  }
+  .stat:hover { transform:translateY(-2px); box-shadow:0 6px 16px rgba(16,24,40,.08); }
+  .card:hover .logo, .vcard:hover .logo { transform:scale(1.08) rotate(-4deg); }
+  nav a:hover { transform:translateY(-1px); }
+  .boards button:hover { transform:translateY(-1px); }
+}
+
+/* 概览数字用渐变，看着精神一点 */
+.stat .n { background:linear-gradient(100deg,var(--fg) 30%,var(--accent));
+  -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+th:hover { color:var(--accent); }
+tbody tr { box-shadow:inset 3px 0 0 transparent; }
+tbody tr:hover { box-shadow:inset 3px 0 0 var(--accent); }
+
+/* 键盘焦点要看得见，别为了好看把它删了 */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline:2px solid var(--accent); outline-offset:2px;
+}
+
+/* 百分比分数在格子里画条底纹，长短即高低。
+   注意别叫 .bar —— 那是顶部筛选条的类名，撞了会把格子按 sticky flex 布局 */
+td.sbar { background:linear-gradient(to right,
+    color-mix(in srgb, var(--accent) 14%, transparent) var(--w,0%),
+    transparent var(--w,0%)); }

@@ -72,18 +72,13 @@
   <tbody></tbody>
 </table>
 
-<script src="app.js?v=2"></script>
+<script src="app.js?v=3"></script>
 <script>
 let models = [], sortKey = 'flagship', sortAsc = true;
 // 统一的「渠道」概念：补充行看 via，主源里平台自己就是渠道，其余算厂商直营
 const chanOf = m => m.via || (m.official ? '官方直营' : m.vendor_name);
 const fmtN = v => v == null ? '<span class="na">-</span>' : v.toLocaleString();
 const vendorSel = document.getElementById('vendor');
-
-// 表头 sticky 位置跟着筛选条实际高度走，窄屏筛选条换行时才不会互相压住
-const bar = document.querySelector('.bar');
-new ResizeObserver(() => document.documentElement.style
-  .setProperty('--th-top', bar.offsetHeight + 'px')).observe(bar);
 
 fetch('data/models.json').then(r => r.json()).then(async d => {
   models = d.models;
