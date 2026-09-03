@@ -7,16 +7,19 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="hero">
 <header>
   <div class="eyebrow">MODEL PRICING</div>
-  <h1>LLM 价格对比</h1>
+  <h1>LLM <em>价格对比</em></h1>
   <div class="meta">官方直营价与各渠道转售价并列 · 美元 / 100 万 token · 更新于 <b id="updated">…</b>
   <br><span class="dim" id="srcs">…</span></div>
 </header>
 <nav></nav>
 
 <div class="stats" id="stats"></div>
+</div>
 
+<div class="grid2" id="viz"></div>
 <div class="chart" id="chart" style="display:none"></div>
 
 <div class="bar">
@@ -75,7 +78,7 @@
   <tbody></tbody>
 </table>
 
-<script src="app.js?v=7"></script>
+<script src="app.js?v=8"></script>
 <script>
 let models = [], sortKey = 'flagship', sortAsc = true;
 // 统一的「渠道」概念：补充行看 via，主源里平台自己就是渠道，其余算厂商直营
@@ -100,6 +103,13 @@ fetch('data/models.json').then(r => r.json()).then(async d => {
   if (qs.get('range') === 'all') document.getElementById('range').value = 'all';
   await markFlagships(models);       // app.js：拿 ECI 榜单标旗舰
   stats(d, vs.length);
+  // 价格分布：一眼看出这批模型集中在哪个价位
+  const ins = models.filter(m => m.mode === 'chat' && !m.aged && m.input != null)
+    .map(m => m.input);
+  document.getElementById('viz').innerHTML =
+    priceHist(ins, `近一年 ${ins.length} 个对话模型的输入价分布`) +
+    priceHist(models.filter(m => m.mode === 'chat' && !m.aged && m.output != null)
+      .map(m => m.output), '同一批模型的输出价分布');
   flagChart();
   render();
 });
