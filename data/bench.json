@@ -1,0 +1,1499 @@
+{
+ "updated_at": "2026-09-03 02:04 UTC",
+ "boards": [
+  {
+   "id": "polyglot",
+   "name": "Aider Polyglot · 代码编辑",
+   "desc": "225 道 Exercism 多语言编程题，考模型改代码并让测试通过的能力。分数为两轮尝试后的正确率。",
+   "source": "Aider",
+   "url": "https://aider.chat/docs/leaderboards/",
+   "cols": [
+    {
+     "k": "score",
+     "t": "正确率 %",
+     "num": true
+    },
+    {
+     "k": "wellformed",
+     "t": "格式正确 %",
+     "num": true
+    },
+    {
+     "k": "format",
+     "t": "编辑格式"
+    },
+    {
+     "k": "cost",
+     "t": "跑完成本 $",
+     "num": true
+    },
+    {
+     "k": "date",
+     "t": "测试日期"
+    }
+   ],
+   "rows": [
+    {
+     "model": "gpt-5 (high)",
+     "score": 88.0,
+     "wellformed": 91.6,
+     "format": "diff",
+     "cost": 29.08,
+     "date": "2025-08-23"
+    },
+    {
+     "model": "gpt-5 (medium)",
+     "score": 86.7,
+     "wellformed": 88.4,
+     "format": "diff",
+     "cost": 17.69,
+     "date": "2025-08-25"
+    },
+    {
+     "model": "o3-pro (high)",
+     "score": 84.9,
+     "wellformed": 97.8,
+     "format": "diff",
+     "cost": 146.32,
+     "date": "2025-06-28"
+    },
+    {
+     "model": "gemini-2.5-pro-preview-06-05 (32k think)",
+     "score": 83.1,
+     "wellformed": 99.6,
+     "format": "diff-fenced",
+     "cost": 49.88,
+     "date": "2025-06-06"
+    },
+    {
+     "model": "o3 (high)",
+     "score": 81.3,
+     "wellformed": 94.7,
+     "format": "diff",
+     "cost": 21.23,
+     "date": "2025-06-25"
+    },
+    {
+     "model": "gpt-5 (low)",
+     "score": 81.3,
+     "wellformed": 86.7,
+     "format": "diff",
+     "cost": 10.37,
+     "date": "2025-08-25"
+    },
+    {
+     "model": "grok-4 (high)",
+     "score": 79.6,
+     "wellformed": 97.3,
+     "format": "diff",
+     "cost": 59.62,
+     "date": "2025-07-11"
+    },
+    {
+     "model": "gemini-2.5-pro-preview-06-05 (default think)",
+     "score": 79.1,
+     "wellformed": 100.0,
+     "format": "diff-fenced",
+     "cost": 45.6,
+     "date": "2025-06-06"
+    },
+    {
+     "model": "o3 (high) + gpt-4.1",
+     "score": 78.2,
+     "wellformed": 100.0,
+     "format": "architect",
+     "cost": 17.55,
+     "date": "2025-06-27"
+    },
+    {
+     "model": "Gemini 2.5 Pro Preview 05-06",
+     "score": 76.9,
+     "wellformed": 97.3,
+     "format": "diff-fenced",
+     "cost": 37.41,
+     "date": "2025-05-07"
+    },
+    {
+     "model": "o3",
+     "score": 76.9,
+     "wellformed": 93.8,
+     "format": "diff",
+     "cost": 13.75,
+     "date": "2025-06-25"
+    },
+    {
+     "model": "DeepSeek-V3.2-Exp (Reasoner)",
+     "score": 74.2,
+     "wellformed": 97.3,
+     "format": "diff",
+     "cost": 1.3,
+     "date": "2025-10-03"
+    },
+    {
+     "model": "Gemini 2.5 Pro Preview 03-25",
+     "score": 72.9,
+     "wellformed": 92.4,
+     "format": "diff-fenced",
+     "cost": null,
+     "date": "2025-04-12"
+    },
+    {
+     "model": "o4-mini (high)",
+     "score": 72.0,
+     "wellformed": 90.7,
+     "format": "diff",
+     "cost": 19.64,
+     "date": "2025-04-16"
+    },
+    {
+     "model": "claude-opus-4-20250514 (32k thinking)",
+     "score": 72.0,
+     "wellformed": 97.3,
+     "format": "diff",
+     "cost": 65.75,
+     "date": "2025-05-25"
+    },
+    {
+     "model": "DeepSeek R1 (0528)",
+     "score": 71.4,
+     "wellformed": 94.6,
+     "format": "diff",
+     "cost": 4.8,
+     "date": "2025-06-06"
+    },
+    {
+     "model": "claude-opus-4-20250514 (no think)",
+     "score": 70.7,
+     "wellformed": 98.7,
+     "format": "diff",
+     "cost": 68.63,
+     "date": "2025-05-25"
+    },
+    {
+     "model": "DeepSeek-V3.2-Exp (Chat)",
+     "score": 70.2,
+     "wellformed": 98.2,
+     "format": "diff",
+     "cost": 0.88,
+     "date": "2025-10-03"
+    },
+    {
+     "model": "claude-3-7-sonnet-20250219 (32k thinking tokens)",
+     "score": 64.9,
+     "wellformed": 97.8,
+     "format": "diff",
+     "cost": 36.83,
+     "date": "2025-02-24"
+    },
+    {
+     "model": "DeepSeek R1 + claude-3-5-sonnet-20241022",
+     "score": 64.0,
+     "wellformed": 100.0,
+     "format": "architect",
+     "cost": 13.29,
+     "date": "2025-01-23"
+    },
+    {
+     "model": "o1-2024-12-17 (high)",
+     "score": 61.7,
+     "wellformed": 91.5,
+     "format": "diff",
+     "cost": 186.5,
+     "date": "2024-12-21"
+    },
+    {
+     "model": "claude-sonnet-4-20250514 (32k thinking)",
+     "score": 61.3,
+     "wellformed": 97.3,
+     "format": "diff",
+     "cost": 26.58,
+     "date": "2025-05-24"
+    },
+    {
+     "model": "o3-mini (high)",
+     "score": 60.4,
+     "wellformed": 93.3,
+     "format": "diff",
+     "cost": 18.16,
+     "date": "2025-01-31"
+    },
+    {
+     "model": "claude-3-7-sonnet-20250219 (no thinking)",
+     "score": 60.4,
+     "wellformed": 93.3,
+     "format": "diff",
+     "cost": 17.72,
+     "date": "2025-02-24"
+    },
+    {
+     "model": "Qwen3 235B A22B diff, no think, Alibaba API",
+     "score": 59.6,
+     "wellformed": 92.9,
+     "format": "diff",
+     "cost": null,
+     "date": "2025-05-09"
+    },
+    {
+     "model": "Kimi K2",
+     "score": 59.1,
+     "wellformed": 92.9,
+     "format": "diff",
+     "cost": 1.24,
+     "date": "2025-07-17"
+    },
+    {
+     "model": "DeepSeek R1",
+     "score": 56.9,
+     "wellformed": 96.9,
+     "format": "diff",
+     "cost": 5.42,
+     "date": "2025-01-20"
+    },
+    {
+     "model": "claude-sonnet-4-20250514 (no thinking)",
+     "score": 56.4,
+     "wellformed": 98.2,
+     "format": "diff",
+     "cost": 15.82,
+     "date": "2025-05-24"
+    },
+    {
+     "model": "DeepSeek V3 (0324)",
+     "score": 55.1,
+     "wellformed": 99.6,
+     "format": "diff",
+     "cost": 1.12,
+     "date": "2025-03-24"
+    },
+    {
+     "model": "gemini-2.5-flash-preview-05-20 (24k think)",
+     "score": 55.1,
+     "wellformed": 95.6,
+     "format": "diff",
+     "cost": 8.56,
+     "date": "2025-05-25"
+    },
+    {
+     "model": "Quasar Alpha",
+     "score": 54.7,
+     "wellformed": 98.2,
+     "format": "diff",
+     "cost": null,
+     "date": "2025-04-04"
+    },
+    {
+     "model": "o3-mini (medium)",
+     "score": 53.8,
+     "wellformed": 95.1,
+     "format": "diff",
+     "cost": 8.86,
+     "date": "2025-01-31"
+    },
+    {
+     "model": "Grok 3 Beta",
+     "score": 53.3,
+     "wellformed": 99.6,
+     "format": "diff",
+     "cost": 11.03,
+     "date": "2025-04-10"
+    },
+    {
+     "model": "Optimus Alpha",
+     "score": 52.9,
+     "wellformed": 97.3,
+     "format": "diff",
+     "cost": null,
+     "date": "2025-04-10"
+    },
+    {
+     "model": "gpt-4.1",
+     "score": 52.4,
+     "wellformed": 98.2,
+     "format": "diff",
+     "cost": 9.86,
+     "date": "2025-04-14"
+    },
+    {
+     "model": "claude-3-5-sonnet-20241022",
+     "score": 51.6,
+     "wellformed": 99.6,
+     "format": "diff",
+     "cost": 14.41,
+     "date": "2025-01-17"
+    },
+    {
+     "model": "Grok 3 Mini Beta (high)",
+     "score": 49.3,
+     "wellformed": 99.6,
+     "format": "whole",
+     "cost": 0.73,
+     "date": "2025-04-10"
+    },
+    {
+     "model": "DeepSeek Chat V3 (prev)",
+     "score": 48.4,
+     "wellformed": 98.7,
+     "format": "diff",
+     "cost": 0.34,
+     "date": "2024-12-25"
+    },
+    {
+     "model": "gemini-2.5-flash-preview-04-17 (default)",
+     "score": 47.1,
+     "wellformed": 85.3,
+     "format": "diff",
+     "cost": 1.85,
+     "date": "2025-04-20"
+    },
+    {
+     "model": "chatgpt-4o-latest (2025-03-29)",
+     "score": 45.3,
+     "wellformed": 64.4,
+     "format": "diff",
+     "cost": 19.74,
+     "date": "2025-03-29"
+    },
+    {
+     "model": "gpt-4.5-preview",
+     "score": 44.9,
+     "wellformed": 97.3,
+     "format": "diff",
+     "cost": 183.18,
+     "date": "2025-02-27"
+    },
+    {
+     "model": "gemini-2.5-flash-preview-05-20 (no think)",
+     "score": 44.0,
+     "wellformed": 93.8,
+     "format": "diff",
+     "cost": 1.14,
+     "date": "2025-05-26"
+    },
+    {
+     "model": "gpt-oss-120b (high)",
+     "score": 41.8,
+     "wellformed": 79.1,
+     "format": "diff",
+     "cost": 0.74,
+     "date": "2025-08-06"
+    },
+    {
+     "model": "Qwen3 32B",
+     "score": 40.0,
+     "wellformed": 83.6,
+     "format": "diff",
+     "cost": 0.76,
+     "date": "2025-05-08"
+    },
+    {
+     "model": "gemini-exp-1206",
+     "score": 38.2,
+     "wellformed": 98.2,
+     "format": "whole",
+     "cost": null,
+     "date": "2024-12-22"
+    },
+    {
+     "model": "Gemini 2.0 Pro exp-02-05",
+     "score": 35.6,
+     "wellformed": 100.0,
+     "format": "whole",
+     "cost": null,
+     "date": "2025-02-25"
+    },
+    {
+     "model": "Grok 3 Mini Beta (low)",
+     "score": 34.7,
+     "wellformed": 100.0,
+     "format": "whole",
+     "cost": 0.79,
+     "date": "2025-04-10"
+    },
+    {
+     "model": "o1-mini-2024-09-12",
+     "score": 32.9,
+     "wellformed": 96.9,
+     "format": "whole",
+     "cost": 18.58,
+     "date": "2024-12-22"
+    },
+    {
+     "model": "gpt-4.1-mini",
+     "score": 32.4,
+     "wellformed": 92.4,
+     "format": "diff",
+     "cost": 1.99,
+     "date": "2025-04-14"
+    },
+    {
+     "model": "claude-3-5-haiku-20241022",
+     "score": 28.0,
+     "wellformed": 91.1,
+     "format": "diff",
+     "cost": 6.06,
+     "date": "2024-12-21"
+    },
+    {
+     "model": "chatgpt-4o-latest (2025-02-15)",
+     "score": 27.1,
+     "wellformed": 93.3,
+     "format": "diff",
+     "cost": 14.37,
+     "date": "2025-02-15"
+    },
+    {
+     "model": "QwQ-32B + Qwen 2.5 Coder Instruct",
+     "score": 26.2,
+     "wellformed": 100.0,
+     "format": "architect",
+     "cost": null,
+     "date": "2025-03-07"
+    },
+    {
+     "model": "gpt-4o-2024-08-06",
+     "score": 23.1,
+     "wellformed": 94.2,
+     "format": "diff",
+     "cost": 7.03,
+     "date": "2024-12-30"
+    },
+    {
+     "model": "gemini-2.0-flash-exp",
+     "score": 22.2,
+     "wellformed": 100.0,
+     "format": "whole",
+     "cost": null,
+     "date": "2024-12-22"
+    },
+    {
+     "model": "qwen-max-2025-01-25",
+     "score": 21.8,
+     "wellformed": 90.2,
+     "format": "diff",
+     "cost": null,
+     "date": "2025-01-28"
+    },
+    {
+     "model": "QwQ-32B",
+     "score": 20.9,
+     "wellformed": 67.6,
+     "format": "diff",
+     "cost": null,
+     "date": "2025-03-06"
+    },
+    {
+     "model": "gpt-4o-2024-11-20",
+     "score": 18.2,
+     "wellformed": 95.1,
+     "format": "diff",
+     "cost": 6.74,
+     "date": "2024-12-30"
+    },
+    {
+     "model": "gemini-2.0-flash-thinking-exp-01-21",
+     "score": 18.2,
+     "wellformed": 77.8,
+     "format": "diff",
+     "cost": null,
+     "date": "2025-01-21"
+    },
+    {
+     "model": "DeepSeek Chat V2.5",
+     "score": 17.8,
+     "wellformed": 92.9,
+     "format": "diff",
+     "cost": 0.51,
+     "date": "2024-12-21"
+    },
+    {
+     "model": "Qwen2.5-Coder-32B-Instruct",
+     "score": 16.4,
+     "wellformed": 99.6,
+     "format": "whole",
+     "cost": null,
+     "date": "2024-12-26"
+    },
+    {
+     "model": "Llama 4 Maverick",
+     "score": 15.6,
+     "wellformed": 99.1,
+     "format": "whole",
+     "cost": null,
+     "date": "2025-04-06"
+    },
+    {
+     "model": "yi-lightning",
+     "score": 12.9,
+     "wellformed": 92.9,
+     "format": "whole",
+     "cost": null,
+     "date": "2024-12-23"
+    },
+    {
+     "model": "command-a-03-2025-quality",
+     "score": 12.0,
+     "wellformed": 99.6,
+     "format": "whole",
+     "cost": null,
+     "date": "2025-03-14"
+    },
+    {
+     "model": "Codestral 25.01",
+     "score": 11.1,
+     "wellformed": 100.0,
+     "format": "whole",
+     "cost": 1.98,
+     "date": "2025-01-13"
+    },
+    {
+     "model": "openhands-lm-32b-v0.1",
+     "score": 10.2,
+     "wellformed": 95.1,
+     "format": "whole",
+     "cost": null,
+     "date": "2025-04-19"
+    },
+    {
+     "model": "gpt-4.1-nano",
+     "score": 8.9,
+     "wellformed": 94.2,
+     "format": "whole",
+     "cost": 0.43,
+     "date": "2025-04-14"
+    },
+    {
+     "model": "Qwen2.5-Coder-32B-Instruct",
+     "score": 8.0,
+     "wellformed": 71.6,
+     "format": "diff",
+     "cost": null,
+     "date": "2024-12-22"
+    },
+    {
+     "model": "gemma-3-27b-it",
+     "score": 4.9,
+     "wellformed": 100.0,
+     "format": "whole",
+     "cost": null,
+     "date": "2025-03-15"
+    },
+    {
+     "model": "gpt-4o-mini-2024-07-18",
+     "score": 3.6,
+     "wellformed": 100.0,
+     "format": "whole",
+     "cost": 0.32,
+     "date": "2024-12-21"
+    }
+   ]
+  },
+  {
+   "id": "refactor",
+   "name": "Aider Refactor · 大文件重构",
+   "desc": "89 个大型 Python 文件重构任务，专门考模型会不会偷懒省略代码（写 “... 此处省略”）。",
+   "source": "Aider",
+   "url": "https://aider.chat/docs/leaderboards/refactor.html",
+   "cols": [
+    {
+     "k": "score",
+     "t": "正确率 %",
+     "num": true
+    },
+    {
+     "k": "wellformed",
+     "t": "格式正确 %",
+     "num": true
+    },
+    {
+     "k": "format",
+     "t": "编辑格式"
+    },
+    {
+     "k": "date",
+     "t": "测试日期"
+    }
+   ],
+   "rows": [
+    {
+     "model": "claude-3-5-sonnet-20241022",
+     "score": 92.1,
+     "wellformed": 91.0,
+     "format": "diff",
+     "cost": 8.46,
+     "date": "2024-10-22"
+    },
+    {
+     "model": "o1-preview",
+     "score": 75.3,
+     "wellformed": 57.3,
+     "format": "diff",
+     "cost": 120.98,
+     "date": "2024-10-22"
+    },
+    {
+     "model": "claude-3-opus-20240229",
+     "score": 72.3,
+     "wellformed": 79.5,
+     "format": "diff",
+     "cost": 27.92,
+     "date": "2024-05-04"
+    },
+    {
+     "model": "claude-3.5-sonnet-20240620",
+     "score": 64.0,
+     "wellformed": 76.4,
+     "format": "diff",
+     "cost": 11.52,
+     "date": "2024-07-01"
+    },
+    {
+     "model": "gpt-4o",
+     "score": 62.9,
+     "wellformed": 53.9,
+     "format": "diff",
+     "cost": null,
+     "date": "2024-05-13"
+    },
+    {
+     "model": "gpt-4-1106-preview",
+     "score": 50.6,
+     "wellformed": 39.3,
+     "format": "udiff",
+     "cost": 18.38,
+     "date": "2024-05-08"
+    },
+    {
+     "model": "gemini/gemini-1.5-pro-latest",
+     "score": 49.4,
+     "wellformed": 7.9,
+     "format": "diff-fenced",
+     "cost": null,
+     "date": "2024-05-04"
+    },
+    {
+     "model": "gpt-4o-2024-08-06",
+     "score": 49.4,
+     "wellformed": 89.9,
+     "format": "diff",
+     "cost": 4.09,
+     "date": "2024-08-06"
+    },
+    {
+     "model": "o1-mini",
+     "score": 44.9,
+     "wellformed": 29.2,
+     "format": "diff",
+     "cost": 29.05,
+     "date": "2024-10-22"
+    },
+    {
+     "model": "gpt-4-turbo-2024-04-09 (udiff)",
+     "score": 34.1,
+     "wellformed": 30.7,
+     "format": "udiff",
+     "cost": 19.66,
+     "date": "2024-04-09"
+    },
+    {
+     "model": "gpt-4-0125-preview",
+     "score": 33.7,
+     "wellformed": 47.2,
+     "format": "udiff",
+     "cost": 20.33,
+     "date": "2024-05-08"
+    },
+    {
+     "model": "DeepSeek Coder V2 0724 (deprecated)",
+     "score": 32.6,
+     "wellformed": 59.6,
+     "format": "diff",
+     "cost": 0.41,
+     "date": "2024-07-24"
+    },
+    {
+     "model": "DeepSeek Chat V2.5",
+     "score": 31.5,
+     "wellformed": 67.4,
+     "format": "diff",
+     "cost": 1.03,
+     "date": "2024-09-05"
+    },
+    {
+     "model": "gpt-4-turbo-2024-04-09 (diff)",
+     "score": 21.4,
+     "wellformed": 6.8,
+     "format": "diff",
+     "cost": 20.49,
+     "date": "2024-04-10"
+    }
+   ]
+  },
+  {
+   "id": "hallucination",
+   "name": "Vectara · 幻觉率",
+   "desc": "让模型给同一批文档写摘要，再用事实一致性模型判断有没有编造内容。幻觉率越低越好。",
+   "source": "Vectara",
+   "url": "https://github.com/vectara/hallucination-leaderboard",
+   "cols": [
+    {
+     "k": "hall",
+     "t": "幻觉率 %",
+     "num": true,
+     "asc": true
+    },
+    {
+     "k": "fact",
+     "t": "事实一致 %",
+     "num": true
+    },
+    {
+     "k": "answer",
+     "t": "作答率 %",
+     "num": true
+    },
+    {
+     "k": "words",
+     "t": "摘要平均字数",
+     "num": true
+    }
+   ],
+   "rows": [
+    {
+     "model": "antgroup/finix_s1_32b",
+     "hall": 1.8,
+     "fact": 98.2,
+     "answer": 99.5,
+     "words": 172.4
+    },
+    {
+     "model": "openai/gpt-5.4-nano-2026-03-17",
+     "hall": 3.1,
+     "fact": 96.9,
+     "answer": 100.0,
+     "words": 144.4
+    },
+    {
+     "model": "google/gemini-2.5-flash-lite",
+     "hall": 3.3,
+     "fact": 96.7,
+     "answer": 99.5,
+     "words": 95.7
+    },
+    {
+     "model": "microsoft/Phi-4",
+     "hall": 3.7,
+     "fact": 96.3,
+     "answer": 80.7,
+     "words": 120.9
+    },
+    {
+     "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+     "hall": 4.1,
+     "fact": 95.9,
+     "answer": 99.5,
+     "words": 64.6
+    },
+    {
+     "model": "snowflake/snowflake-arctic-instruct",
+     "hall": 4.3,
+     "fact": 95.7,
+     "answer": 62.7,
+     "words": 81.4
+    },
+    {
+     "model": "google/gemma-3-12b-it",
+     "hall": 4.4,
+     "fact": 95.6,
+     "answer": 97.4,
+     "words": 89.7
+    },
+    {
+     "model": "mistralai/mistral-large-2411",
+     "hall": 4.5,
+     "fact": 95.5,
+     "answer": 99.9,
+     "words": 85.0
+    },
+    {
+     "model": "qwen/qwen3-8b",
+     "hall": 4.8,
+     "fact": 95.2,
+     "answer": 99.9,
+     "words": 83.6
+    },
+    {
+     "model": "amazon/nova-pro-v1:0",
+     "hall": 5.1,
+     "fact": 94.9,
+     "answer": 99.3,
+     "words": 66.2
+    },
+    {
+     "model": "amazon/nova-2-lite-v1:0",
+     "hall": 5.1,
+     "fact": 94.9,
+     "answer": 99.6,
+     "words": 94.1
+    },
+    {
+     "model": "mistralai/mistral-small-2501",
+     "hall": 5.1,
+     "fact": 94.9,
+     "answer": 97.9,
+     "words": 98.8
+    },
+    {
+     "model": "ibm-granite/granite-4.0-h-small",
+     "hall": 5.2,
+     "fact": 94.8,
+     "answer": 100.0,
+     "words": 107.4
+    },
+    {
+     "model": "google/gemma-4-26b-a4b-it",
+     "hall": 5.2,
+     "fact": 94.8,
+     "answer": 99.8,
+     "words": 67.1
+    },
+    {
+     "model": "ai21labs/jamba-mini-2",
+     "hall": 5.3,
+     "fact": 94.7,
+     "answer": 99.6,
+     "words": 109.4
+    },
+    {
+     "model": "deepseek-ai/DeepSeek-V3.2-Exp",
+     "hall": 5.3,
+     "fact": 94.7,
+     "answer": 96.6,
+     "words": 64.6
+    },
+    {
+     "model": "qwen/qwen3-14b",
+     "hall": 5.4,
+     "fact": 94.6,
+     "answer": 99.9,
+     "words": 111.1
+    },
+    {
+     "model": "amazon/nova-micro-v1:0",
+     "hall": 5.5,
+     "fact": 94.5,
+     "answer": 100.0,
+     "words": 100.0
+    },
+    {
+     "model": "deepseek-ai/DeepSeek-V3.1",
+     "hall": 5.5,
+     "fact": 94.5,
+     "answer": 94.5,
+     "words": 63.7
+    },
+    {
+     "model": "openai/gpt-5.4-mini-2026-03-17",
+     "hall": 5.5,
+     "fact": 94.5,
+     "answer": 100.0,
+     "words": 54.7
+    },
+    {
+     "model": "openai/gpt-4.1-2025-04-14",
+     "hall": 5.6,
+     "fact": 94.4,
+     "answer": 99.9,
+     "words": 91.7
+    },
+    {
+     "model": "qwen/qwen3-4b",
+     "hall": 5.7,
+     "fact": 94.3,
+     "answer": 99.9,
+     "words": 104.7
+    },
+    {
+     "model": "xai-org/grok-3",
+     "hall": 5.8,
+     "fact": 94.2,
+     "answer": 93.0,
+     "words": 95.9
+    },
+    {
+     "model": "qwen/qwen3-32b",
+     "hall": 5.9,
+     "fact": 94.1,
+     "answer": 99.9,
+     "words": 115.8
+    },
+    {
+     "model": "amazon/nova-lite-v1:0",
+     "hall": 6.1,
+     "fact": 93.9,
+     "answer": 99.9,
+     "words": 91.8
+    },
+    {
+     "model": "deepseek-ai/DeepSeek-V3",
+     "hall": 6.1,
+     "fact": 93.9,
+     "answer": 97.5,
+     "words": 81.7
+    },
+    {
+     "model": "deepseek-ai/DeepSeek-V3.2",
+     "hall": 6.3,
+     "fact": 93.7,
+     "answer": 92.6,
+     "words": 62.0
+    },
+    {
+     "model": "google/gemma-3-4b-it",
+     "hall": 6.4,
+     "fact": 93.6,
+     "answer": 67.3,
+     "words": 77.4
+    },
+    {
+     "model": "CohereLabs/command-r-plus-08-2024",
+     "hall": 6.9,
+     "fact": 93.1,
+     "answer": 95.0,
+     "words": 91.5
+    },
+    {
+     "model": "arcee-ai/trinity-large-preview",
+     "hall": 6.9,
+     "fact": 93.1,
+     "answer": 99.0,
+     "words": 117.3
+    },
+    {
+     "model": "openai/gpt-5.4-2026-03-05",
+     "hall": 7.0,
+     "fact": 93.0,
+     "answer": 99.9,
+     "words": 81.7
+    },
+    {
+     "model": "google/gemini-2.5-pro",
+     "hall": 7.0,
+     "fact": 93.0,
+     "answer": 99.1,
+     "words": 106.4
+    },
+    {
+     "model": "mistralai/ministral-3b-2410",
+     "hall": 7.3,
+     "fact": 92.7,
+     "answer": 99.9,
+     "words": 167.9
+    },
+    {
+     "model": "google/gemma-3-27b-it",
+     "hall": 7.4,
+     "fact": 92.6,
+     "answer": 98.8,
+     "words": 96.4
+    },
+    {
+     "model": "google/gemma-4-31b-it",
+     "hall": 7.4,
+     "fact": 92.6,
+     "answer": 100.0,
+     "words": 75.8
+    },
+    {
+     "model": "mistralai/ministral-8b-2410",
+     "hall": 7.4,
+     "fact": 92.6,
+     "answer": 99.9,
+     "words": 196.0
+    },
+    {
+     "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+     "hall": 7.7,
+     "fact": 92.3,
+     "answer": 99.0,
+     "words": 137.3
+    },
+    {
+     "model": "google/gemini-2.5-flash",
+     "hall": 7.8,
+     "fact": 92.2,
+     "answer": 99.0,
+     "words": 101.5
+    },
+    {
+     "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+     "hall": 8.2,
+     "fact": 91.8,
+     "answer": 100.0,
+     "words": 106.0
+    },
+    {
+     "model": "google/gemini-3.1-flash-lite-preview",
+     "hall": 8.2,
+     "fact": 91.8,
+     "answer": 99.6,
+     "words": 62.6
+    },
+    {
+     "model": "openai/gpt-5.4-pro-2026-03-05",
+     "hall": 8.3,
+     "fact": 91.7,
+     "answer": 100.0,
+     "words": 148.5
+    },
+    {
+     "model": "openai/gpt-5.2-low-2025-12-11",
+     "hall": 8.4,
+     "fact": 91.6,
+     "answer": 100.0,
+     "words": 126.5
+    },
+    {
+     "model": "deepseek-ai/DeepSeek-V4-Pro",
+     "hall": 8.6,
+     "fact": 91.4,
+     "answer": 97.2,
+     "words": 153.8
+    },
+    {
+     "model": "MiniMaxAI/minimax-m2p5",
+     "hall": 9.1,
+     "fact": 90.9,
+     "answer": 98.2,
+     "words": 137.2
+    },
+    {
+     "model": "CohereLabs/command-a-03-2025",
+     "hall": 9.3,
+     "fact": 90.7,
+     "answer": 97.6,
+     "words": 101.7
+    },
+    {
+     "model": "openai/gpt-5.5",
+     "hall": 9.3,
+     "fact": 90.7,
+     "answer": 100.0,
+     "words": 129.6
+    },
+    {
+     "model": "zai-org/GLM-4.5-AIR-FP8",
+     "hall": 9.3,
+     "fact": 90.7,
+     "answer": 98.1,
+     "words": 70.6
+    },
+    {
+     "model": "qwen/qwen3-235b-a22b",
+     "hall": 9.3,
+     "fact": 90.7,
+     "answer": 94.9,
+     "words": 105.6
+    },
+    {
+     "model": "qwen/qwen3-next-80b-a3b-thinking",
+     "hall": 9.3,
+     "fact": 90.7,
+     "answer": 94.4,
+     "words": 70.9
+    },
+    {
+     "model": "zai-org/GLM-4.7-flash",
+     "hall": 9.3,
+     "fact": 90.7,
+     "answer": 91.6,
+     "words": 71.8
+    },
+    {
+     "model": "CohereLabs/c4ai-aya-expanse-8b",
+     "hall": 9.5,
+     "fact": 90.5,
+     "answer": 77.5,
+     "words": 88.2
+    },
+    {
+     "model": "zai-org/GLM-4.6",
+     "hall": 9.5,
+     "fact": 90.5,
+     "answer": 94.5,
+     "words": 77.2
+    },
+    {
+     "model": "nvidia/Nemotron-3-Nano-30B-A3B",
+     "hall": 9.6,
+     "fact": 90.4,
+     "answer": 99.6,
+     "words": 104.2
+    },
+    {
+     "model": "openai/gpt-4o-2024-08-06",
+     "hall": 9.6,
+     "fact": 90.4,
+     "answer": 93.8,
+     "words": 86.6
+    },
+    {
+     "model": "ai21labs/jamba-large-1.7-2025-07",
+     "hall": 9.7,
+     "fact": 90.3,
+     "answer": 98.9,
+     "words": 124.8
+    },
+    {
+     "model": "anthropic/claude-haiku-4-5-20251001",
+     "hall": 9.8,
+     "fact": 90.2,
+     "answer": 99.5,
+     "words": 115.1
+    },
+    {
+     "model": "zai-org/glm-5",
+     "hall": 10.1,
+     "fact": 89.9,
+     "answer": 99.7,
+     "words": 74.4
+    },
+    {
+     "model": "anthropic/claude-sonnet-4-20250514",
+     "hall": 10.3,
+     "fact": 89.7,
+     "answer": 98.6,
+     "words": 145.8
+    },
+    {
+     "model": "google/gemini-3.1-pro-preview",
+     "hall": 10.4,
+     "fact": 89.6,
+     "answer": 99.4,
+     "words": 107.7
+    },
+    {
+     "model": "qwen/qwen3.5-flash-2026-02-23",
+     "hall": 10.5,
+     "fact": 89.5,
+     "answer": 99.8,
+     "words": 95.0
+    },
+    {
+     "model": "qwen/qwen3.5-35b-a3b",
+     "hall": 10.5,
+     "fact": 89.5,
+     "answer": 99.8,
+     "words": 94.9
+    },
+    {
+     "model": "openai/gpt-5-nano-2025-08-07",
+     "hall": 10.5,
+     "fact": 89.5,
+     "answer": 100.0,
+     "words": 105.7
+    },
+    {
+     "model": "anthropic/claude-sonnet-4-6",
+     "hall": 10.6,
+     "fact": 89.4,
+     "answer": 99.9,
+     "words": 114.7
+    },
+    {
+     "model": "ibm-granite/granite-3.3-8b-instruct",
+     "hall": 10.6,
+     "fact": 89.4,
+     "answer": 100.0,
+     "words": 131.4
+    },
+    {
+     "model": "qwen/qwen3.5-plus-2026-02-15",
+     "hall": 10.7,
+     "fact": 89.3,
+     "answer": 99.8,
+     "words": 92.1
+    },
+    {
+     "model": "openai/gpt-5.2-high-2025-12-11",
+     "hall": 10.8,
+     "fact": 89.2,
+     "answer": 100.0,
+     "words": 186.3
+    },
+    {
+     "model": "moonshotai/kimi-k2.6",
+     "hall": 10.8,
+     "fact": 89.2,
+     "answer": 99.7,
+     "words": 116.7
+    },
+    {
+     "model": "anthropic/claude-opus-4-5-20251101",
+     "hall": 10.9,
+     "fact": 89.1,
+     "answer": 98.7,
+     "words": 114.5
+    },
+    {
+     "model": "CohereLabs/c4ai-aya-expanse-32b",
+     "hall": 10.9,
+     "fact": 89.1,
+     "answer": 99.8,
+     "words": 112.7
+    },
+    {
+     "model": "openai/gpt-5.1-low-2025-11-13",
+     "hall": 10.9,
+     "fact": 89.1,
+     "answer": 100.0,
+     "words": 165.5
+    },
+    {
+     "model": "qwen/qwen3.5-122b-a10b",
+     "hall": 11.2,
+     "fact": 88.8,
+     "answer": 99.8,
+     "words": 86.4
+    },
+    {
+     "model": "deepseek-ai/DeepSeek-R1",
+     "hall": 11.3,
+     "fact": 88.7,
+     "answer": 97.0,
+     "words": 93.5
+    },
+    {
+     "model": "zai-org/glm-4p7",
+     "hall": 11.7,
+     "fact": 88.3,
+     "answer": 99.8,
+     "words": 70.6
+    },
+    {
+     "model": "anthropic/claude-opus-4-1-20250805",
+     "hall": 11.8,
+     "fact": 88.2,
+     "answer": 92.4,
+     "words": 129.1
+    },
+    {
+     "model": "MiniMaxAI/minimax-m2p1",
+     "hall": 11.8,
+     "fact": 88.2,
+     "answer": 98.5,
+     "words": 106.9
+    },
+    {
+     "model": "anthropic/claude-opus-4-20250514",
+     "hall": 12.0,
+     "fact": 88.0,
+     "answer": 91.0,
+     "words": 123.2
+    },
+    {
+     "model": "anthropic/claude-sonnet-4-5-20250929",
+     "hall": 12.0,
+     "fact": 88.0,
+     "answer": 95.6,
+     "words": 127.8
+    },
+    {
+     "model": "anthropic/claude-opus-4-7",
+     "hall": 12.0,
+     "fact": 88.0,
+     "answer": 98.0,
+     "words": 149.1
+    },
+    {
+     "model": "qwen/qwen3.5-27b",
+     "hall": 12.1,
+     "fact": 87.9,
+     "answer": 99.8,
+     "words": 94.4
+    },
+    {
+     "model": "openai/gpt-5.1-high-2025-11-13",
+     "hall": 12.1,
+     "fact": 87.9,
+     "answer": 100.0,
+     "words": 254.4
+    },
+    {
+     "model": "anthropic/claude-opus-4-6",
+     "hall": 12.2,
+     "fact": 87.8,
+     "answer": 99.8,
+     "words": 137.6
+    },
+    {
+     "model": "inceptionlabs/mercury-2",
+     "hall": 12.3,
+     "fact": 87.7,
+     "answer": 100.0,
+     "words": 149.1
+    },
+    {
+     "model": "MiniMaxAI/minimax-m2p7",
+     "hall": 12.9,
+     "fact": 87.1,
+     "answer": 99.4,
+     "words": 131.9
+    },
+    {
+     "model": "openai/gpt-5-mini-2025-08-07",
+     "hall": 12.9,
+     "fact": 87.1,
+     "answer": 99.9,
+     "words": 169.7
+    },
+    {
+     "model": "google/gemini-3-flash-preview",
+     "hall": 13.5,
+     "fact": 86.5,
+     "answer": 99.8,
+     "words": 90.2
+    },
+    {
+     "model": "google/gemini-3-pro-preview",
+     "hall": 13.6,
+     "fact": 86.4,
+     "answer": 99.4,
+     "words": 101.9
+    },
+    {
+     "model": "moonshotai/Kimi-K2.5",
+     "hall": 14.2,
+     "fact": 85.8,
+     "answer": 92.2,
+     "words": 112.0
+    },
+    {
+     "model": "openai/gpt-oss-120b",
+     "hall": 14.2,
+     "fact": 85.8,
+     "answer": 99.9,
+     "words": 135.2
+    },
+    {
+     "model": "mistralai/mistral-3-large-2512",
+     "hall": 14.5,
+     "fact": 85.5,
+     "answer": 98.8,
+     "words": 112.7
+    },
+    {
+     "model": "ai21labs/jamba-mini-1.7-2025-07",
+     "hall": 14.7,
+     "fact": 85.3,
+     "answer": 99.1,
+     "words": 136.4
+    },
+    {
+     "model": "openai/gpt-5-minimal-2025-08-07",
+     "hall": 14.7,
+     "fact": 85.3,
+     "answer": 99.9,
+     "words": 109.7
+    },
+    {
+     "model": "openai/gpt-5-high-2025-08-07",
+     "hall": 15.1,
+     "fact": 84.9,
+     "answer": 99.9,
+     "words": 162.7
+    },
+    {
+     "model": "xai-org/grok-4-1-fast-non-reasoning",
+     "hall": 17.8,
+     "fact": 82.2,
+     "answer": 98.5,
+     "words": 87.5
+    },
+    {
+     "model": "moonshotai/Kimi-K2-Instruct-0905",
+     "hall": 17.9,
+     "fact": 82.1,
+     "answer": 98.6,
+     "words": 59.2
+    },
+    {
+     "model": "openai/o4-mini-low-2025-04-16",
+     "hall": 18.6,
+     "fact": 81.4,
+     "answer": 98.7,
+     "words": 130.9
+    },
+    {
+     "model": "openai/o4-mini-high-2025-04-16",
+     "hall": 18.6,
+     "fact": 81.4,
+     "answer": 99.2,
+     "words": 127.7
+    },
+    {
+     "model": "xai-org/grok-4-1-fast-reasoning",
+     "hall": 19.2,
+     "fact": 80.8,
+     "answer": 99.7,
+     "words": 99.5
+    },
+    {
+     "model": "mistralai/ministral-3-14b-2512",
+     "hall": 19.4,
+     "fact": 80.6,
+     "answer": 99.6,
+     "words": 135.8
+    },
+    {
+     "model": "xai-org/grok-4-fast-non-reasoning",
+     "hall": 19.7,
+     "fact": 80.3,
+     "answer": 99.2,
+     "words": 141.9
+    },
+    {
+     "model": "xai-org/grok-4-fast-reasoning",
+     "hall": 20.2,
+     "fact": 79.8,
+     "answer": 99.5,
+     "words": 173.9
+    },
+    {
+     "model": "mistralai/ministral-3-8b-2512",
+     "hall": 21.7,
+     "fact": 78.3,
+     "answer": 99.1,
+     "words": 139.4
+    },
+    {
+     "model": "mistralai/mistral-medium-2508",
+     "hall": 22.7,
+     "fact": 77.3,
+     "answer": 99.7,
+     "words": 142.9
+    },
+    {
+     "model": "openai/o3-pro",
+     "hall": 23.3,
+     "fact": 76.7,
+     "answer": 100.0,
+     "words": 127.4
+    },
+    {
+     "model": "microsoft/Phi-4-mini-instruct",
+     "hall": 23.5,
+     "fact": 76.5,
+     "answer": 92.5,
+     "words": 420.2
+    },
+    {
+     "model": "mistralai/ministral-3-3b-2512",
+     "hall": 24.2,
+     "fact": 75.8,
+     "answer": 74.3,
+     "words": 119.4
+    }
+   ]
+  }
+ ]
+}

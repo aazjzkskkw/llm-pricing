@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>模型评测 — LLM 价格对比</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .boards { max-width:var(--max); margin:12px auto 0; padding:0 20px;
+            display:flex; gap:8px; flex-wrap:wrap; }
+  .boards button { padding:7px 14px; border-radius:20px; font-size:13px; cursor:pointer;
+            background:var(--card); border:1px solid var(--line); color:var(--fg);
+            font-family:inherit; }
+  .boards button:hover { border-color:var(--accent); color:var(--accent); }
+  .boards button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .about { max-width:var(--max); margin:14px auto 0; padding:0 20px;
+           color:var(--dim); font-size:13px; }
+  .about a { text-decoration:none; }
+  .bad { color:#b91c1c; }
+  .good { color:#15803d; }
+</style>
+</head>
+<body>
+<header>
+  <h1>模型评测</h1>
+  <div class="meta">榜单数据直接取自各开源评测项目的公开结果，不是我自己跑的。更新：<span id="updated">…</span></div>
+</header>
+<nav>
+  <a href="index.html">价格总表</a>
+  <a href="vendors.html">按厂商看</a>
+  <a href="bench.html" class="on">模型评测</a>
+  <a href="promos.html" class="gift">🎁 活动与优惠</a>
+</nav>
+<div class="boards" id="boards"></div>
+<p class="about" id="about"></p>
+<div class="bar">
+  <input id="q" type="search" placeholder="搜模型名…">
+</div>
+<p class="count" id="count"></p>
+<table id="tbl"><thead><tr id="head"></tr></thead><tbody></tbody></table>
+<p class="note">不同榜单的题目和评分方式差别很大，跨榜单的分数不能直接比。榜单本身也会随项目更新而变动，点上面的来源链接可以看原始数据和完整说明。</p>
+
+<script>
+let boards = [], cur = 0, sortKey = null, sortAsc = false;
+
+const bar = document.querySelector('.bar');
+new ResizeObserver(() => document.documentElement.style
+  .setProperty('--th-top', bar.offsetHeight + 'px')).observe(bar);
+
+fetch('data/bench.json').then(r => r.json()).then(d => {
+  boards = d.boards;
+  document.getElementById('updated').textContent = d.updated_at;
+  document.getElementById('boards').innerHTML = boards.map((b, i) =>
+    `<button data-i="${i}">${b.name}</button>`).join('');
+  document.querySelectorAll('.boards button').forEach(btn =>
+    btn.onclick = () => { cur = +btn.dataset.i; sortKey = null; render(); });
+  render();
+});
+document.getElementById('q').addEventListener('input', render);
+
+function render() {
+  const b = boards[cur];
+  document.querySelectorAll('.boards button').forEach((btn, i) =>
+    btn.classList.toggle('on', i === cur));
+  document.getElementById('about').innerHTML =
+    `${b.desc} 来源：<a href="${b.url}" target="_blank">${b.source}</a>`;
+
+  // 默认按榜单第一列排（幻觉率那种越低越好的标了 asc）
+  const main = b.cols[0];
+  const key = sortKey || main.k;
+  const asc = sortKey ? sortAsc : !!main.asc;
+  const q = document.getElementById('q').value.toLowerCase();
+  const rs = b.rows.filter(r => !q || r.model.toLowerCase().includes(q))
+    .sort((x, y) => {
+      let a = x[key], c = y[key];
+      if (a == null) return 1; if (c == null) return -1;
+      if (typeof a === 'number') return asc ? a - c : c - a;
+      return asc ? String(a).localeCompare(c) : String(c).localeCompare(a);
+    });
+
+  document.getElementById('head').innerHTML = '<th class="rank">#</th><th>模型</th>' +
+    b.cols.map(c => `<th data-k="${c.k}" class="${c.num ? 'num' : ''}">${c.t}</th>`).join('');
+  document.querySelectorAll('#head th[data-k]').forEach(th =>
+    th.onclick = () => {
+      const k = th.dataset.k;
+      sortAsc = sortKey === k ? !sortAsc : false; sortKey = k; render();
+    });
+
+  document.getElementById('count').textContent = `共 ${rs.length} 个模型上榜`;
+  document.querySelector('#tbl tbody').innerHTML = rs.map((r, i) =>
+    `<tr><td class="rank">${i + 1}</td><td>${r.model}</td>` +
+    b.cols.map(c => {
+      const v = r[c.k];
+      if (v == null || v === '') return '<td class="na">-</td>';
+      return `<td class="${c.num ? 'num' : 'v'}">${v}</td>`;
+    }).join('') + '</tr>').join('');
+}
+</script>
+</body>
+</html>
