@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03 06:59 UTC",
+ "updated_at": "2026-09-03 07:11 UTC",
  "sources": [
   {
    "name": "LiteLLM",
@@ -60223,8 +60223,8 @@
    "aged": true,
    "vendor": "openrouter",
    "vendor_name": "阿里通义千问(国际)",
-   "input": 0.227,
-   "output": 0.91,
+   "input": 0.12,
+   "output": 0.24,
    "cache_read": null,
    "context": 131072,
    "max_output": null,
