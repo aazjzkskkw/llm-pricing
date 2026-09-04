@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-04 00:51 UTC",
+ "updated_at": "2026-09-04 07:03 UTC",
  "cutoff": "2024-09-04",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
@@ -3072,16 +3072,6 @@
      "old": false
     },
     {
-     "model": "Claude Opus 4.5 (unknown thinking)",
-     "score": 150.1,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-11-24",
-     "old": false
-    },
-    {
      "model": "Claude Opus 4.5",
      "score": 150.1,
      "org": "Anthropic",
@@ -3093,6 +3083,16 @@
     },
     {
      "model": "Claude Opus 4.5 (64k thinking)",
+     "score": 150.1,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-11-24",
+     "old": false
+    },
+    {
+     "model": "Claude Opus 4.5 (unknown thinking)",
      "score": 150.1,
      "org": "Anthropic",
      "agent": null,
@@ -3432,7 +3432,7 @@
      "old": false
     },
     {
-     "model": "Claude Sonnet 4.5 (8k thinking)",
+     "model": "Claude Sonnet 4.5 (2k thinking)",
      "score": 146.8,
      "org": "Anthropic",
      "agent": null,
@@ -3442,7 +3442,7 @@
      "old": false
     },
     {
-     "model": "Claude Sonnet 4.5 (1k thinking)",
+     "model": "Claude Sonnet 4.5",
      "score": 146.8,
      "org": "Anthropic",
      "agent": null,
@@ -3462,7 +3462,7 @@
      "old": false
     },
     {
-     "model": "Claude Sonnet 4.5 (2k thinking)",
+     "model": "Claude Sonnet 4.5 (8k thinking)",
      "score": 146.8,
      "org": "Anthropic",
      "agent": null,
@@ -3472,7 +3472,7 @@
      "old": false
     },
     {
-     "model": "Claude Sonnet 4.5",
+     "model": "Claude Sonnet 4.5 (1k thinking)",
      "score": 146.8,
      "org": "Anthropic",
      "agent": null,
@@ -4102,7 +4102,7 @@
      "old": false
     },
     {
-     "model": "Claude 3.7 Sonnet (unknown thinking)",
+     "model": "Claude 3.7 Sonnet (2k thinking)",
      "score": 141.2,
      "org": "Anthropic",
      "agent": null,
@@ -4122,16 +4122,6 @@
      "old": false
     },
     {
-     "model": "Claude 3.7 Sonnet (1k thinking)",
-     "score": 141.2,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-02-24",
-     "old": false
-    },
-    {
      "model": "Claude 3.7 Sonnet (12k thinking)",
      "score": 141.2,
      "org": "Anthropic",
@@ -4142,7 +4132,7 @@
      "old": false
     },
     {
-     "model": "Claude 3.7 Sonnet (15k thinking)",
+     "model": "Claude 3.7 Sonnet (unknown thinking)",
      "score": 141.2,
      "org": "Anthropic",
      "agent": null,
@@ -4152,7 +4142,17 @@
      "old": false
     },
     {
-     "model": "Claude 3.7 Sonnet (2k thinking)",
+     "model": "Claude 3.7 Sonnet (1k thinking)",
+     "score": 141.2,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-02-24",
+     "old": false
+    },
+    {
+     "model": "Claude 3.7 Sonnet (15k thinking)",
      "score": 141.2,
      "org": "Anthropic",
      "agent": null,
@@ -4202,16 +4202,6 @@
      "old": false
     },
     {
-     "model": "o3-mini (unknown thinking)",
-     "score": 140.4,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-01-31",
-     "old": false
-    },
-    {
      "model": "Grok 3 mini",
      "score": 140.4,
      "org": "xAI",
@@ -4219,6 +4209,16 @@
      "pass4": null,
      "cost": null,
      "released": "2025-06-24",
+     "old": false
+    },
+    {
+     "model": "o3-mini (unknown thinking)",
+     "score": 140.4,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-01-31",
      "old": false
     },
     {
@@ -4548,7 +4548,7 @@
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2024-12-06",
+     "released": "2024-12-11",
      "old": false
     },
     {
@@ -5078,8 +5078,8 @@
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": null,
-     "old": false
+     "released": "2023-08-09",
+     "old": true
     },
     {
      "model": "Claude 2",
@@ -5683,7 +5683,7 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 75
+   "old_count": 76
   },
   {
    "id": "metr_time_horizons_external",
