@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-05 06:47 UTC",
- "cutoff": "2024-09-05",
+ "updated_at": "2026-09-06 06:57 UTC",
+ "cutoff": "2024-09-06",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -332,6 +332,20 @@
      "GPQA": 75.0,
      "HLE": 19.4,
      "SimpleQA": 21.6,
+     "old": false
+    },
+    {
+     "model": "GPT-6 Astra",
+     "org": "OpenAI",
+     "released": "2026-09-03",
+     "n": 7,
+     "DeepSWE": 74.1,
+     "WebDev": 1797.0,
+     "FMath": 93.7,
+     "AIME": 100.0,
+     "ARC-2": 95.0,
+     "GPQA": 95.8,
+     "SimpleQA": 75.6,
      "old": false
     },
     {
@@ -1166,17 +1180,6 @@
      "FMath": 27.7,
      "AIME": 80.0,
      "GPQA": 81.8,
-     "old": false
-    },
-    {
-     "model": "gpt-6-astra",
-     "org": "OpenAI",
-     "released": "2026-09-03",
-     "n": 4,
-     "FMath": 93.7,
-     "AIME": 100.0,
-     "GPQA": 95.8,
-     "SimpleQA": 75.6,
      "old": false
     },
     {
@@ -2827,6 +2830,16 @@
    ],
    "rows": [
     {
+     "model": "gpt-6-astra",
+     "score": 74.1,
+     "org": "OpenAI",
+     "agent": "mini-swe-agent",
+     "pass4": 80.5,
+     "cost": 6.524,
+     "released": "2026-09-03",
+     "old": false
+    },
+    {
      "model": "gemini-3-8-flash",
      "score": 73.8,
      "org": "Google DeepMind",
@@ -3077,7 +3090,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-02",
+   "latest": "2026-09-03",
    "old_count": 0
   },
   {
@@ -4542,6 +4555,16 @@
    ],
    "rows": [
     {
+     "model": "gpt-6-astra",
+     "score": 1797.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
+     "old": false
+    },
+    {
      "model": "claude-fable-5-1",
      "score": 1765.4,
      "org": "Anthropic",
@@ -5532,7 +5555,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-02",
+   "latest": "2026-09-03",
    "old_count": 0
   },
   {
@@ -9010,6 +9033,16 @@
    ],
    "rows": [
     {
+     "model": "GPT-6 Astra",
+     "score": 95.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
+     "old": false
+    },
+    {
      "model": "GPT-5.6 Sol",
      "score": 92.5,
      "org": "OpenAI",
@@ -9257,6 +9290,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-21",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Astra (None)",
+     "score": 59.6,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
      "old": false
     },
     {
@@ -10150,7 +10193,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-01",
+   "latest": "2026-09-03",
    "old_count": 1
   },
   {
@@ -10184,6 +10227,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-06-09",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Astra",
+     "score": 98.5,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
      "old": false
     },
     {
@@ -10504,6 +10557,16 @@
      "pass4": null,
      "cost": null,
      "released": "2025-12-11",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Astra (None)",
+     "score": 86.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
      "old": false
     },
     {
@@ -11407,7 +11470,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-01",
+   "latest": "2026-09-03",
    "old_count": 0
   },
   {
@@ -14968,6 +15031,16 @@
    ],
    "rows": [
     {
+     "model": "Fable 5.1",
+     "score": 46.5,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-01",
+     "old": false
+    },
+    {
      "model": "Gemini 3.1 Pro Preview (thinking",
      "score": 46.4,
      "org": "Google DeepMind",
@@ -15468,7 +15541,7 @@
      "old": false
     }
    ],
-   "latest": "2026-04-16",
+   "latest": "2026-09-01",
    "old_count": 0
   },
   {
@@ -16342,6 +16415,16 @@
      "old": false
     },
     {
+     "model": "GPT-6 Astra",
+     "score": 56.5,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
+     "old": false
+    },
+    {
      "model": "Muse Spark 1.2",
      "score": 56.4,
      "org": "Meta AI",
@@ -16489,6 +16572,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-04-20",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Astra (Non-reasoning)",
+     "score": 53.5,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
      "old": false
     },
     {
@@ -17542,7 +17635,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-02",
+   "latest": "2026-09-03",
    "old_count": 1
   },
   {

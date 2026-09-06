@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-05 06:47 UTC",
+ "updated_at": "2026-09-06 06:57 UTC",
  "credit": "https://ytzzjx.github.io/",
  "count": 31,
  "stations": [
@@ -130,6 +130,20 @@
    "type": "charity"
   },
   {
+   "name": "TokenForge（tokengate）",
+   "url": "https://tokenforge.ai.studio/sign-up",
+   "kind": "已恢复 / 需重新注册",
+   "summary": "站点已恢复正常，每日签到 20 刀；账号被站方清空过，所以要重新注册一遍。此前实测的注入问题（模型被锁成只用英文回答）这次没有复测，第一次调用时自己验一下。",
+   "signup": "未核实（重新注册后以站内显示为准）",
+   "checkin": "20 刀",
+   "models": "Claude Opus 5 可调",
+   "entry": "需要重新注册：旧账号已被站方清空，走注册链接重新注册一遍。原门槛为 GitHub 注册、主账号邮箱需为 Google 或 Microsoft 邮箱、账号注册时间超过 14 天，并需通过 Discord 认证，具体以注册页提示为准。",
+   "caveat": "账号是被站方清空后重建的，旧账号和旧额度不会回来，必须重新注册。此前实测的注入问题（模型被限制成只能用英文回答，中文提问也回英文，说明请求在到达模型前被加了指令）这次没有复测，是否修复未知，跑要求结果可信的任务前先自己验一次。签到与注册赠送以站内实际显示为准。站点已改名换域名，旧的 manus.space 地址不要再用。",
+   "updated": "2026-08-26",
+   "status": "open",
+   "type": "charity"
+  },
+  {
    "name": "Fate New API",
    "url": "https://fatenewapi.xxxxo.bond/sign-up",
    "kind": "NodeLoc 注册 / 需保持调用",
@@ -194,7 +208,7 @@
    "checkin": "5-10 刀",
    "models": "Claude Opus 4.8 / Opus 5",
    "entry": "当前开放注册，窗口可能随时关闭，建议尽快尝试。",
-   "caveat": "注册窗口可能随时关闭；已注册用户请尽快调用，否则有封号风险。",
+   "caveat": "Claude Code CLI 报「Attention Required! | Cloudflare」时开代理即可：把 HTTPS_PROXY / HTTP_PROXY 写进 ~/.claude/settings.json 的 env，或改用 TUN 模式。注册窗口可能随时关闭；已注册用户请尽快调用，否则有封号风险。",
    "updated": "2026-08-20",
    "status": "open",
    "type": "charity"
@@ -236,7 +250,7 @@
    "checkin": "5-10 刀",
    "models": "Claude Opus 4.8 / Opus 5",
    "entry": "当前开放注册，窗口可能随时关闭，建议尽快尝试。",
-   "caveat": "近期稳定性下降，建议留一个备用线路，不要作为唯一依赖；注册窗口可能随时关闭；已注册用户请尽快调用，否则有封号风险。",
+   "caveat": "近期稳定性下降，建议留一个备用线路，不要作为唯一依赖；注册窗口可能随时关闭；已注册用户请尽快调用，否则有封号风险。Claude Code CLI 报「Attention Required! | Cloudflare」时开代理即可：把 HTTPS_PROXY / HTTP_PROXY 写进 ~/.claude/settings.json 的 env，或改用 TUN 模式。",
    "updated": "2026-08-19",
    "status": "open",
    "type": "charity"
@@ -328,13 +342,13 @@
   {
    "name": "KKToken",
    "url": "https://kktoken.cc/sign-up",
-   "kind": "新站 / 需用 Claude Desktop",
-   "summary": "JustWoker 站长的新站，注册送 100 刀、每日签到 20 刀，主打 Claude Opus 4.8 与 Opus 5；Claude Code CLI 会被 CF 拦截，请改用 Claude Desktop。",
+   "kind": "新站 / Claude Code 需走代理",
+   "summary": "JustWoker 站长的新站，注册送 100 刀、每日签到 20 刀，主打 Claude Opus 4.8 与 Opus 5；Claude Code CLI 报 CF 拦截时开代理即可，不用改用 Claude Desktop。",
    "signup": "100 刀",
    "checkin": "20 刀",
    "models": "Claude Opus 4.8 / Opus 5",
    "entry": "需要 GitHub 账号，有账号限制，具体门槛以注册页提示为准。",
-   "caveat": "Claude Code CLI 的请求头会被站点 CF 拦截并报错，curl 调 /v1/messages 正常，请改用 Claude Desktop。新站上线时间不长，额度、签到与模型规则可能调整；注册有 GitHub 限制，具体门槛以注册页为准。",
+   "caveat": "Claude Code CLI 可能报「Attention Required! | Cloudflare」，那是出网线路的问题，不是接口或 CLI 请求头被针对：开代理，并把 HTTPS_PROXY / HTTP_PROXY 写进 ~/.claude/settings.json 的 env（或改用 TUN 模式）即可，不必换 Claude Desktop。新站上线时间不长，额度、签到与模型规则可能调整；注册有 GitHub 限制，具体门槛以注册页为准。",
    "updated": "2026-08-28",
    "status": "watch",
    "type": "charity"
@@ -380,20 +394,6 @@
    "updated": "2026-08-14",
    "status": "watch",
    "type": "paid"
-  },
-  {
-   "name": "TokenForge（tokengate）",
-   "url": "https://tokenforge.ai.studio/sign-up",
-   "kind": "不建议使用 / 用户被清空",
-   "summary": "站方莫名删除了所有用户，目前正在修复，已注册的账号需要重新确认。此前实测还有注入问题：模型被锁成只用英文回答。两件事叠起来，不建议用于正经任务。",
-   "signup": "原为 50 额度（账号被清空后待确认）",
-   "checkin": "原为 15 额度（账号被清空后待确认）",
-   "models": "Claude Opus 5 可调，但被注入锁成只说英文",
-   "entry": "注册页仍可访问，但站方刚删光所有用户、正在修复，建议等结果出来再决定。原门槛为 GitHub 注册、主账号邮箱需为 Google 或 Microsoft 邮箱、账号注册时间超过 14 天，并需通过 Discord 认证。",
-   "caveat": "站方于 2026-09-02 删除了所有用户账号，原因不明，正在修复，已有账号和额度能否恢复未知。另有实测注入：模型被限制成只能用英文回答，中文提问也回英文，说明请求在到达模型前被加了指令，其他改动无从判断。两件事叠加，不要用于需要结果可信或账号要长期留存的场景。站点已改名换域名，旧的 manus.space 地址不要再用。",
-   "updated": "2026-08-26",
-   "status": "avoid",
-   "type": "charity"
   },
   {
    "name": "SeekAI",
