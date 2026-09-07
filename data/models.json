@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-06 06:57 UTC",
+ "updated_at": "2026-09-07 07:07 UTC",
  "sources": [
   {
    "name": "LiteLLM",
@@ -43,8 +43,8 @@
   "OpenRouter",
   "Vercel AI Gateway"
  ],
- "cutoff": "2024-09-06",
- "fresh_cutoff": "2025-09-06",
+ "cutoff": "2024-09-07",
+ "fresh_cutoff": "2025-09-07",
  "pricing_pages": {
   "OpenAI": "https://platform.openai.com/docs/pricing",
   "Anthropic": "https://www.anthropic.com/pricing#api",
@@ -79,7 +79,7 @@
   "Novita": "https://novita.ai/pricing",
   "Databricks": "https://www.databricks.com/product/pricing/foundation-model-serving"
  },
- "count": 3194,
+ "count": 3192,
  "models": [
   {
    "model": "jamba-1.5",
@@ -33536,27 +33536,6 @@
    "tool_call": true
   },
   {
-   "model": "minimax/minimax-m2.7-free",
-   "key": "minimax-m2-7-free",
-   "aged": false,
-   "vendor": "vercel_ai_gateway",
-   "vendor_name": "MiniMax",
-   "input": 0.0,
-   "output": 0.0,
-   "cache_read": null,
-   "context": 196608,
-   "max_output": null,
-   "mode": "chat",
-   "released": "2026-03-18",
-   "official": false,
-   "via": "Vercel AI Gateway",
-   "suspect": false,
-   "new": true,
-   "vision": false,
-   "reasoning": false,
-   "tool_call": true
-  },
-  {
    "model": "minimax/minimax-m2.7-highspeed",
    "key": "minimax-m2-7-highspeed",
    "aged": false,
@@ -33587,27 +33566,6 @@
    "output": 1.2,
    "cache_read": null,
    "context": 512000,
-   "max_output": null,
-   "mode": "chat",
-   "released": "2026-05-31",
-   "official": false,
-   "via": "Vercel AI Gateway",
-   "suspect": false,
-   "new": true,
-   "vision": true,
-   "reasoning": false,
-   "tool_call": true
-  },
-  {
-   "model": "minimax/minimax-m3-free",
-   "key": "minimax-m3-free",
-   "aged": false,
-   "vendor": "vercel_ai_gateway",
-   "vendor_name": "MiniMax",
-   "input": 0.0,
-   "output": 0.0,
-   "cache_read": null,
-   "context": 1048576,
    "max_output": null,
    "mode": "chat",
    "released": "2026-05-31",
@@ -50398,7 +50356,7 @@
    "max_output": 230400,
    "mode": "chat",
    "key": "glm-5-2-free",
-   "released": "2026-06-16",
+   "released": null,
    "aged": false,
    "official": false,
    "suspect": false,
