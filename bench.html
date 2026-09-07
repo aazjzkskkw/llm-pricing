@@ -90,7 +90,10 @@ function render() {
 
   // 总览没有 ECI 数据时，沿用脚本按近期前沿模型排好的顺序，并用首个有数据的指标画图。
   const main = b.id === 'overview'
-    ? (b.cols.find(c => c.num && b.rows.some(r => typeof r[c.k] === 'number')) || b.cols[0])
+    ? (b.cols.filter(c => c.num && c.k !== 'n').sort((x, y) =>
+        b.rows.filter(r => typeof r[x.k] === 'number').length -
+        b.rows.filter(r => typeof r[y.k] === 'number').length
+      ).pop() || b.cols[0])
     : b.cols[0];
   const defaultKey = b.id === 'overview' && !b.rows.some(r => typeof r[b.cols[0].k] === 'number')
     ? null : main.k;

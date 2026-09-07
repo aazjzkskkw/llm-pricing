@@ -116,6 +116,7 @@ EFFORT_SUFFIX = r"[\s_]\(?(?:max|xhigh|high|medium|low|unknown|minimal)\)?$"
 # 只把确实覆盖近期前沿模型的榜单放到评测页前面；其余榜单仍保留，避免把旧榜
 # 当成当前能力结论。模型名来自本次数据中的近期前沿型号，后续随数据源更新可再补。
 FRONTIER_CUTOFF_DAYS = 365
+OVERVIEW_CUTOFF_DAYS = 90
 FRONTIER_HINTS = (
     r"gpt\s*[-.]?6\s*[-.]?astra",
     r"claude\s+fable\s+5(?:[. ]?1)?",
@@ -250,7 +251,6 @@ SCORE_TITLE = {"ECI 综合能力指数": "ECI 分"}
 
 
 OV_IDS = {c["f"].removesuffix(".csv") for c in EPOCH_BOARDS if c.get("ov")}
-OV_MIN = 3          # 至少在这么多张榜上出现才进总览，免得一行全是空格
 
 
 def overview(boards: list[dict]) -> dict:
@@ -275,22 +275,21 @@ def overview(boards: list[dict]) -> dict:
             if not row.get("released"):
                 row["released"] = r.get("released")
     frontier = set(frontier_models(list(rows.values())))
-    recent_cutoff = (date.today() - timedelta(days=FRONTIER_CUTOFF_DAYS)).isoformat()
-    keep = [r for r in rows.values() if r["n"] >= OV_MIN or (
-        r["model"] in frontier and r.get("released", "") >= recent_cutoff
-    )]
+    recent_cutoff = (date.today() - timedelta(days=OVERVIEW_CUTOFF_DAYS)).isoformat()
+    keep = [r for r in rows.values()
+            if (r.get("released") or "") >= recent_cutoff and r["n"] >= 2]
     for r in keep:
-        r["old"] = bool(r.get("released") and r["released"] < AGE_CUTOFF)
-        r["recent_frontier"] = r["model"] in frontier and r.get("released", "") >= recent_cutoff
-    # 近期前沿模型先看；其余按 ECI 排，没 ECI 的按上榜数量兜底
+        r["old"] = False
+        r["recent_frontier"] = r["model"] in frontier
+    # 前沿型号先看；同组优先新模型，再看参与评测数量。
     keep.sort(key=lambda r: (
-        not r["recent_frontier"], -(r.get("ECI") or -1), -r["n"]
-    ))
+        int(r["recent_frontier"]), r.get("released") or "", r["n"]
+    ), reverse=True)
     return {
         "id": "overview", "name": "总览 · 跨榜单对比", "cat": "综合",
         "short": "总览",
-        "desc": "各榜单横向汇总，一行一个模型，默认按 ECI 综合分排序。"
-                "空格表示该模型未上榜；点击列名可按单项成绩排序。",
+        "desc": "汇总最近 90 天发布、且至少参加两项评测的模型。近期前沿型号优先，"
+                "空格表示该模型未参加对应评测；点击列名可按单项成绩排序。",
         "source": "Epoch AI", "url": "https://epoch.ai/benchmarks",
         # 第一列是 ECI，前端默认按第一列排，这样打开就是按综合能力从强到弱
         "cols": ([{"k": b["short"], "t": f"{b['short']} {b['unit_short']}".strip(),
