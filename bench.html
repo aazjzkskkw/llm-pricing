@@ -88,20 +88,25 @@ function render() {
     · 榜单内最新模型发布于 <b>${b.latest || '未知'}</b>
     · ${freshness}`;
 
-  // 默认按榜单主指标排序，幻觉率这类越低越好的在数据里标了 asc
-  const main = b.cols[0];
-  const key = sortKey || main.k;
+  // 总览没有 ECI 数据时，沿用脚本按近期前沿模型排好的顺序，并用首个有数据的指标画图。
+  const main = b.id === 'overview'
+    ? (b.cols.find(c => c.num && b.rows.some(r => typeof r[c.k] === 'number')) || b.cols[0])
+    : b.cols[0];
+  const defaultKey = b.id === 'overview' && !b.rows.some(r => typeof r[b.cols[0].k] === 'number')
+    ? null : main.k;
+  const key = sortKey || defaultKey;
   const asc = sortKey ? sortAsc : !!main.asc;
   const q = document.getElementById('q').value.toLowerCase();
   const hideOld = document.getElementById('age').value;
   const rs = b.rows
-    .filter(r => (!q || r.model.toLowerCase().includes(q)) && (!hideOld || !r.old))
-    .sort((x, y) => {
-      let a = x[key], c = y[key];
-      if (a == null) return 1; if (c == null) return -1;
-      if (typeof a === 'number') return asc ? a - c : c - a;
-      return asc ? String(a).localeCompare(c) : String(c).localeCompare(a);
-    });
+    .filter(r => (!q || r.model.toLowerCase().includes(q)) && (!hideOld || !r.old));
+  if (key) rs.sort((x, y) => {
+    let a = x[key], c = y[key];
+    if (a == null && c == null) return 0;
+    if (a == null) return 1; if (c == null) return -1;
+    if (typeof a === 'number') return asc ? a - c : c - a;
+    return asc ? String(a).localeCompare(c) : String(c).localeCompare(a);
+  });
 
   // 每列的最大值，柱子长度按它缩放
   const colMax = {};

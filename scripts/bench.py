@@ -274,11 +274,18 @@ def overview(boards: list[dict]) -> dict:
                 row["org"] = r.get("org", "")
             if not row.get("released"):
                 row["released"] = r.get("released")
-    keep = [r for r in rows.values() if r["n"] >= OV_MIN]
+    frontier = set(frontier_models(list(rows.values())))
+    recent_cutoff = (date.today() - timedelta(days=FRONTIER_CUTOFF_DAYS)).isoformat()
+    keep = [r for r in rows.values() if r["n"] >= OV_MIN or (
+        r["model"] in frontier and r.get("released", "") >= recent_cutoff
+    )]
     for r in keep:
         r["old"] = bool(r.get("released") and r["released"] < AGE_CUTOFF)
-    # 按 ECI 排，没 ECI 的按上榜数量兜底
-    keep.sort(key=lambda r: (-(r.get("ECI") or -1), -r["n"]))
+        r["recent_frontier"] = r["model"] in frontier and r.get("released", "") >= recent_cutoff
+    # 近期前沿模型先看；其余按 ECI 排，没 ECI 的按上榜数量兜底
+    keep.sort(key=lambda r: (
+        not r["recent_frontier"], -(r.get("ECI") or -1), -r["n"]
+    ))
     return {
         "id": "overview", "name": "总览 · 跨榜单对比", "cat": "综合",
         "short": "总览",

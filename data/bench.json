@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-07 03:09 UTC",
+ "updated_at": "2026-09-07 03:16 UTC",
  "cutoff": "2024-09-07",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
@@ -96,6 +96,127 @@
    ],
    "rows": [
     {
+     "model": "GPT-6 Astra",
+     "org": "OpenAI",
+     "released": "2026-09-03",
+     "n": 7,
+     "DeepSWE": 74.1,
+     "WebDev": 1797.0,
+     "FMath": 93.7,
+     "AIME": 100.0,
+     "ARC-2": 95.0,
+     "GPQA": 95.8,
+     "SimpleQA": 75.6,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
+     "model": "Claude Opus 5",
+     "org": "Anthropic",
+     "released": "2026-07-24",
+     "n": 7,
+     "DeepSWE": 73.6,
+     "WebDev": 1690.6,
+     "FMath": 85.6,
+     "AIME": 98.9,
+     "ARC-2": 90.4,
+     "GPQA": 93.9,
+     "SimpleQA": 59.9,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
+     "model": "GPT-5.6 Sol",
+     "org": "OpenAI",
+     "released": "2026-07-09",
+     "n": 7,
+     "DeepSWE": 72.7,
+     "WebDev": 1618.7,
+     "FMath": 89.1,
+     "AIME": 100.0,
+     "ARC-2": 92.5,
+     "GPQA": 93.5,
+     "SimpleQA": 69.7,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
+     "model": "Claude Fable 5",
+     "org": "Anthropic",
+     "released": "2026-06-09",
+     "n": 7,
+     "DeepSWE": 69.9,
+     "WebDev": 1626.3,
+     "FMath": 87.0,
+     "AIME": 100.0,
+     "ARC-2": 89.2,
+     "GPQA": 85.9,
+     "SimpleQA": 70.7,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
+     "model": "Kimi K3",
+     "org": "Moonshot",
+     "released": "2026-07-16",
+     "n": 7,
+     "DeepSWE": 68.5,
+     "WebDev": 1673.7,
+     "FMath": 72.2,
+     "AIME": 97.2,
+     "ARC-2": 60.4,
+     "GPQA": 93.1,
+     "SimpleQA": 50.6,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
+     "model": "Grok 4.6",
+     "org": "xAI",
+     "released": "2026-08-12",
+     "n": 7,
+     "DeepSWE": 67.5,
+     "WebDev": 1628.8,
+     "FMath": 66.0,
+     "AIME": 99.2,
+     "ARC-2": 67.1,
+     "GPQA": 94.0,
+     "SimpleQA": 49.3,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
+     "model": "Claude Fable 5.1",
+     "org": "Anthropic",
+     "released": "2026-09-01",
+     "n": 5,
+     "WebDev": 1765.4,
+     "FMath": 90.2,
+     "AIME": 100.0,
+     "ARC-2": 90.0,
+     "SimpleQA": 70.8,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
+     "model": "qwen3.8-27b",
+     "org": "Alibaba",
+     "released": "2026-08-14",
+     "n": 1,
+     "WebDev": 1594.8,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
+     "model": "GPT-6 Astra (None)",
+     "org": "OpenAI",
+     "released": "2026-09-03",
+     "n": 1,
+     "ARC-2": 59.6,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
      "model": "gpt-5-2025-08-07",
      "org": "OpenAI",
      "released": "2025-08-07",
@@ -110,7 +231,8 @@
      "GPQA": 86.2,
      "HLE": 25.3,
      "SimpleQA": 50.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Gemini 3.1 Pro (Preview",
@@ -126,7 +248,8 @@
      "ARC-2": 77.1,
      "GPQA": 94.4,
      "SimpleQA": 73.5,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.2-2025-12-11",
@@ -142,7 +265,8 @@
      "GPQA": 91.4,
      "HLE": 27.8,
      "SimpleQA": 37.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Claude Opus 4.7",
@@ -158,7 +282,8 @@
      "GPQA": 90.2,
      "HLE": 36.2,
      "SimpleQA": 51.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Claude Opus 4.6",
@@ -173,7 +298,8 @@
      "AIME": 91.1,
      "GPQA": 88.4,
      "SimpleQA": 47.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Gemini 3.5 Flash",
@@ -188,7 +314,8 @@
      "ARC-2": 72.1,
      "GPQA": 92.8,
      "SimpleQA": 66.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "glm-5.2",
@@ -203,7 +330,8 @@
      "ARC-2": 22.8,
      "GPQA": 91.9,
      "SimpleQA": 34.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Gemini 3 Flash Preview",
@@ -218,7 +346,8 @@
      "ARC-2": 33.6,
      "GPQA": 89.4,
      "SimpleQA": 66.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Claude Sonnet 4.6",
@@ -233,7 +362,8 @@
      "ARC-2": 60.4,
      "GPQA": 83.3,
      "SimpleQA": 35.5,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5-5",
@@ -248,7 +378,8 @@
      "ARC-2": 85.0,
      "GPQA": 90.7,
      "SimpleQA": 63.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.4-2026-03-05",
@@ -262,7 +393,8 @@
      "AIME": 97.8,
      "GPQA": 93.3,
      "SimpleQA": 45.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-opus-4-5-20251101",
@@ -276,7 +408,8 @@
      "AIME": 48.1,
      "GPQA": 80.7,
      "HLE": 14.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "o3-2025-04-16",
@@ -290,7 +423,8 @@
      "AIME": 84.4,
      "GPQA": 81.8,
      "SimpleQA": 49.4,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-opus-4-1-20250805",
@@ -304,7 +438,8 @@
      "AIME": 40.0,
      "GPQA": 73.2,
      "HLE": 7.9,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-sonnet-4-5-20250929",
@@ -318,7 +453,8 @@
      "GPQA": 73.7,
      "HLE": 7.5,
      "SimpleQA": 23.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5-mini-2025-08-07",
@@ -332,63 +468,8 @@
      "GPQA": 75.0,
      "HLE": 19.4,
      "SimpleQA": 21.6,
-     "old": false
-    },
-    {
-     "model": "GPT-6 Astra",
-     "org": "OpenAI",
-     "released": "2026-09-03",
-     "n": 7,
-     "DeepSWE": 74.1,
-     "WebDev": 1797.0,
-     "FMath": 93.7,
-     "AIME": 100.0,
-     "ARC-2": 95.0,
-     "GPQA": 95.8,
-     "SimpleQA": 75.6,
-     "old": false
-    },
-    {
-     "model": "Claude Opus 5",
-     "org": "Anthropic",
-     "released": "2026-07-24",
-     "n": 7,
-     "DeepSWE": 73.6,
-     "WebDev": 1690.6,
-     "FMath": 85.6,
-     "AIME": 98.9,
-     "ARC-2": 90.4,
-     "GPQA": 93.9,
-     "SimpleQA": 59.9,
-     "old": false
-    },
-    {
-     "model": "GPT-5.6 Sol",
-     "org": "OpenAI",
-     "released": "2026-07-09",
-     "n": 7,
-     "DeepSWE": 72.7,
-     "WebDev": 1618.7,
-     "FMath": 89.1,
-     "AIME": 100.0,
-     "ARC-2": 92.5,
-     "GPQA": 93.5,
-     "SimpleQA": 69.7,
-     "old": false
-    },
-    {
-     "model": "Claude Fable 5",
-     "org": "Anthropic",
-     "released": "2026-06-09",
-     "n": 7,
-     "DeepSWE": 69.9,
-     "WebDev": 1626.3,
-     "FMath": 87.0,
-     "AIME": 100.0,
-     "ARC-2": 89.2,
-     "GPQA": 85.9,
-     "SimpleQA": 70.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "GPT-5.6 Terra",
@@ -402,35 +483,8 @@
      "ARC-2": 83.9,
      "GPQA": 93.3,
      "SimpleQA": 43.2,
-     "old": false
-    },
-    {
-     "model": "Kimi K3",
-     "org": "Moonshot",
-     "released": "2026-07-16",
-     "n": 7,
-     "DeepSWE": 68.5,
-     "WebDev": 1673.7,
-     "FMath": 72.2,
-     "AIME": 97.2,
-     "ARC-2": 60.4,
-     "GPQA": 93.1,
-     "SimpleQA": 50.6,
-     "old": false
-    },
-    {
-     "model": "Grok 4.6",
-     "org": "xAI",
-     "released": "2026-08-12",
-     "n": 7,
-     "DeepSWE": 67.5,
-     "WebDev": 1628.8,
-     "FMath": 66.0,
-     "AIME": 99.2,
-     "ARC-2": 67.1,
-     "GPQA": 94.0,
-     "SimpleQA": 49.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "GPT-5.6 Luna",
@@ -444,7 +498,8 @@
      "ARC-2": 59.5,
      "GPQA": 91.6,
      "SimpleQA": 41.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Gemini 3.7 Flash",
@@ -458,7 +513,8 @@
      "ARC-2": 84.6,
      "GPQA": 94.8,
      "SimpleQA": 69.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Claude Opus 4.8",
@@ -472,7 +528,8 @@
      "ARC-2": 72.1,
      "GPQA": 91.0,
      "SimpleQA": 53.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Grok 4.5",
@@ -486,7 +543,8 @@
      "ARC-2": 52.6,
      "GPQA": 93.4,
      "SimpleQA": 48.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Gemini 3.6 Flash",
@@ -500,7 +558,8 @@
      "ARC-2": 60.4,
      "GPQA": 94.1,
      "SimpleQA": 66.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gemini-3-pro-preview",
@@ -513,7 +572,8 @@
      "AIME": 91.4,
      "GPQA": 92.6,
      "HLE": 37.5,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "o4-mini-2025-04-16",
@@ -526,7 +586,8 @@
      "AIME": 81.7,
      "GPQA": 79.6,
      "SimpleQA": 19.6,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "o1-2024-12-17",
@@ -539,7 +600,8 @@
      "AIME": 73.3,
      "GPQA": 76.8,
      "SimpleQA": 41.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4o-2024-08-06",
@@ -552,7 +614,8 @@
      "AIME": 6.4,
      "GPQA": 49.2,
      "SimpleQA": 26.0,
-     "old": true
+     "old": true,
+     "recent_frontier": false
     },
     {
      "model": "deepseek-v4-pro",
@@ -565,7 +628,8 @@
      "AIME": 96.7,
      "GPQA": 90.9,
      "SimpleQA": 47.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.7-max",
@@ -578,7 +642,8 @@
      "AIME": 95.6,
      "GPQA": 90.9,
      "SimpleQA": 55.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "kimi-k2.6",
@@ -591,7 +656,8 @@
      "AIME": 96.1,
      "GPQA": 90.8,
      "SimpleQA": 34.9,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "glm-5.1",
@@ -604,7 +670,8 @@
      "AIME": 93.3,
      "GPQA": 89.9,
      "SimpleQA": 34.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Kimi K2.5",
@@ -617,7 +684,8 @@
      "ARC-2": 11.8,
      "HLE": 24.4,
      "SimpleQA": 34.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "GLM 5",
@@ -630,7 +698,8 @@
      "AIME": 80.0,
      "ARC-2": 4.9,
      "GPQA": 87.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.1-2025-11-13",
@@ -643,7 +712,8 @@
      "AIME": 88.6,
      "GPQA": 87.6,
      "SimpleQA": 48.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.6-plus",
@@ -656,7 +726,8 @@
      "AIME": 93.3,
      "GPQA": 88.4,
      "SimpleQA": 44.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Gemini 2.5 Pro",
@@ -669,7 +740,8 @@
      "FMath": 24.6,
      "AIME": 84.7,
      "GPQA": 85.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4.1-2025-04-14",
@@ -682,7 +754,8 @@
      "AIME": 38.3,
      "GPQA": 66.9,
      "SimpleQA": 31.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "glm-5-3",
@@ -695,7 +768,8 @@
      "AIME": 91.1,
      "GPQA": 90.9,
      "SimpleQA": 41.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3-8-max",
@@ -708,7 +782,8 @@
      "AIME": 99.4,
      "GPQA": 92.7,
      "SimpleQA": 45.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-sonnet-5",
@@ -721,7 +796,8 @@
      "AIME": 94.7,
      "GPQA": 90.5,
      "SimpleQA": 33.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "kimi-k2-7-code",
@@ -734,7 +810,8 @@
      "AIME": 95.6,
      "GPQA": 87.9,
      "SimpleQA": 36.5,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "DeepSeek V4 Pro 0813",
@@ -747,7 +824,8 @@
      "ARC-2": 61.3,
      "GPQA": 91.7,
      "SimpleQA": 52.9,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "DeepSeek V4 Flash 0731",
@@ -760,7 +838,8 @@
      "ARC-2": 61.4,
      "GPQA": 91.0,
      "SimpleQA": 33.6,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Inkling",
@@ -773,7 +852,8 @@
      "ARC-2": 36.5,
      "GPQA": 88.3,
      "SimpleQA": 40.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Inkling Small",
@@ -786,7 +866,8 @@
      "ARC-2": 40.1,
      "GPQA": 88.5,
      "SimpleQA": 19.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "grok-4-0709",
@@ -798,7 +879,8 @@
      "Aider": 79.6,
      "AIME": 84.0,
      "GPQA": 87.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-opus-4-20250514",
@@ -810,7 +892,8 @@
      "Aider": 70.7,
      "AIME": 42.2,
      "GPQA": 69.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-3-7-sonnet-20250219",
@@ -822,7 +905,8 @@
      "Aider": 60.4,
      "AIME": 21.9,
      "GPQA": 66.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Deepseek R1",
@@ -834,7 +918,8 @@
      "AIME": 53.3,
      "ARC-2": 1.3,
      "GPQA": 71.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4o-2024-11-20",
@@ -846,7 +931,8 @@
      "Aider": 18.2,
      "AIME": 6.2,
      "GPQA": 47.9,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.6-max-preview",
@@ -858,7 +944,8 @@
      "AIME": 91.1,
      "GPQA": 87.4,
      "SimpleQA": 52.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "glm-5-3-flash",
@@ -870,7 +957,8 @@
      "FMath": 55.8,
      "AIME": 93.9,
      "GPQA": 90.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "GLM 4.7",
@@ -882,7 +970,8 @@
      "AIME": 83.3,
      "GPQA": 83.3,
      "SimpleQA": 32.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-haiku-4-5-20251001",
@@ -894,7 +983,8 @@
      "AIME": 35.8,
      "GPQA": 60.5,
      "SimpleQA": 13.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Qwen3.6-35B-A3B",
@@ -906,7 +996,8 @@
      "FMath": 17.5,
      "AIME": 86.7,
      "GPQA": 83.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5-nano-2025-08-07",
@@ -918,7 +1009,8 @@
      "AIME": 81.1,
      "GPQA": 69.4,
      "SimpleQA": 11.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "o3-mini-2025-01-31",
@@ -930,7 +1022,8 @@
      "AIME": 76.9,
      "GPQA": 77.0,
      "SimpleQA": 15.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4.1-mini-2025-04-14",
@@ -942,7 +1035,8 @@
      "AIME": 44.7,
      "GPQA": 65.8,
      "SimpleQA": 12.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4o-mini-2024-07-18",
@@ -954,19 +1048,8 @@
      "AIME": 6.9,
      "GPQA": 37.7,
      "SimpleQA": 8.3,
-     "old": true
-    },
-    {
-     "model": "Claude Fable 5.1",
-     "org": "Anthropic",
-     "released": "2026-09-01",
-     "n": 5,
-     "WebDev": 1765.4,
-     "FMath": 90.2,
-     "AIME": 100.0,
-     "ARC-2": 90.0,
-     "SimpleQA": 70.8,
-     "old": false
+     "old": true,
+     "recent_frontier": false
     },
     {
      "model": "claude-opus-4-5-20251101_32K",
@@ -978,7 +1061,8 @@
      "AIME": 86.1,
      "GPQA": 86.0,
      "SimpleQA": 45.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Gemini 3.5 Flash-Lite",
@@ -990,7 +1074,8 @@
      "AIME": 71.1,
      "ARC-2": 10.3,
      "GPQA": 83.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.4-mini-2026-03-17",
@@ -1002,7 +1087,8 @@
      "AIME": 88.9,
      "GPQA": 86.9,
      "SimpleQA": 29.4,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "grok-4.3",
@@ -1014,7 +1100,8 @@
      "AIME": 93.3,
      "GPQA": 88.8,
      "SimpleQA": 33.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.5-flash",
@@ -1026,7 +1113,8 @@
      "AIME": 84.4,
      "GPQA": 82.3,
      "SimpleQA": 20.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.3-codex",
@@ -1037,7 +1125,8 @@
      "SWE-B": 74.8,
      "T-Bench": 78.4,
      "WebDev": 1369.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gemini-2.5-pro-preview-06-05",
@@ -1048,7 +1137,8 @@
      "Aider": 79.1,
      "GPQA": 84.8,
      "HLE": 21.6,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "DeepSeek-R1-0528",
@@ -1059,7 +1149,8 @@
      "Aider": 71.4,
      "AIME": 66.4,
      "GPQA": 76.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "DeepSeek-V3-0324",
@@ -1070,7 +1161,8 @@
      "Aider": 55.1,
      "AIME": 37.8,
      "GPQA": 67.6,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-3-5-sonnet-20241022",
@@ -1081,7 +1173,8 @@
      "Aider": 51.6,
      "AIME": 8.5,
      "GPQA": 55.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "DeepSeek-V3",
@@ -1092,7 +1185,8 @@
      "Aider": 48.4,
      "AIME": 15.8,
      "GPQA": 56.5,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4-turbo-2024-04-09",
@@ -1103,7 +1197,8 @@
      "FMath": 0.7,
      "AIME": 6.7,
      "GPQA": 46.6,
-     "old": true
+     "old": true,
+     "recent_frontier": false
     },
     {
      "model": "claude-3-opus-20240229",
@@ -1114,7 +1209,8 @@
      "AIME": 4.7,
      "GPQA": 47.2,
      "SimpleQA": 12.6,
-     "old": true
+     "old": true,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4.1-nano-2025-04-14",
@@ -1125,7 +1221,8 @@
      "AIME": 28.9,
      "GPQA": 48.9,
      "SimpleQA": 6.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Muse Spark",
@@ -1136,7 +1233,8 @@
      "AIME": 88.9,
      "GPQA": 89.8,
      "HLE": 40.6,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.5-plus",
@@ -1147,7 +1245,8 @@
      "AIME": 86.7,
      "GPQA": 84.8,
      "SimpleQA": 25.4,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-sonnet-4-5-20250929_32K",
@@ -1158,7 +1257,8 @@
      "FMath": 23.9,
      "AIME": 77.8,
      "GPQA": 81.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gemma-4-31b-it",
@@ -1169,7 +1269,8 @@
      "AIME": 73.3,
      "GPQA": 75.8,
      "SimpleQA": 10.4,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gemini-3.1-flash-lite",
@@ -1180,7 +1281,8 @@
      "FMath": 27.7,
      "AIME": 80.0,
      "GPQA": 81.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.4-nano-2026-03-17",
@@ -1191,7 +1293,8 @@
      "AIME": 87.8,
      "GPQA": 78.5,
      "SimpleQA": 11.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "grok-4.20-0309-reasoning",
@@ -1202,7 +1305,8 @@
      "AIME": 92.2,
      "GPQA": 89.3,
      "SimpleQA": 30.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3-max-2025-09-23",
@@ -1213,7 +1317,8 @@
      "AIME": 73.3,
      "GPQA": 72.6,
      "SimpleQA": 48.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.6-flash",
@@ -1224,7 +1329,8 @@
      "AIME": 84.4,
      "GPQA": 83.3,
      "SimpleQA": 15.9,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-opus-4-5-20251101_16K",
@@ -1234,7 +1340,8 @@
      "METR": 288.9,
      "AIME": 81.7,
      "GPQA": 85.5,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-sonnet-4-5-20250929_16K",
@@ -1244,7 +1351,8 @@
      "METR": 121.9,
      "AIME": 71.1,
      "GPQA": 78.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-opus-4-1-20250805_16K",
@@ -1254,7 +1362,8 @@
      "METR": 113.7,
      "AIME": 64.4,
      "GPQA": 77.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-opus-4-20250514_16K",
@@ -1264,7 +1373,8 @@
      "METR": 85.6,
      "AIME": 60.0,
      "GPQA": 76.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-sonnet-4-20250514_16K",
@@ -1274,7 +1384,8 @@
      "METR": 74.9,
      "AIME": 53.3,
      "GPQA": 75.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-3-7-sonnet-20250219_16K",
@@ -1284,7 +1395,8 @@
      "METR": 56.1,
      "AIME": 46.7,
      "GPQA": 76.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-oss-120b",
@@ -1294,7 +1406,8 @@
      "METR": 42.0,
      "T-Bench": 18.7,
      "Aider": 41.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "o1-preview-2024-09-12",
@@ -1304,7 +1417,8 @@
      "METR": 20.3,
      "AIME": 31.1,
      "GPQA": 50.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-3-5-sonnet-20240620",
@@ -1314,7 +1428,8 @@
      "METR": 11.4,
      "AIME": 6.5,
      "GPQA": 54.0,
-     "old": true
+     "old": true,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4-0314",
@@ -1324,7 +1439,8 @@
      "METR": 5.4,
      "AIME": 0.6,
      "GPQA": 35.7,
-     "old": true
+     "old": true,
+     "recent_frontier": false
     },
     {
      "model": "qwen2.5-72b-instruct",
@@ -1334,7 +1450,8 @@
      "METR": 5.2,
      "AIME": 8.1,
      "GPQA": 49.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4-0613",
@@ -1344,7 +1461,8 @@
      "METR": 4.0,
      "AIME": 1.1,
      "GPQA": 30.7,
-     "old": true
+     "old": true,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.5-pre-release",
@@ -1354,7 +1472,8 @@
      "SWE-B": 80.6,
      "AIME": 100.0,
      "GPQA": 94.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "muse-spark-1-2",
@@ -1364,7 +1483,8 @@
      "DeepSWE": 54.9,
      "WebDev": 1533.7,
      "SimpleQA": 60.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "muse-spark-1-1",
@@ -1374,7 +1494,8 @@
      "DeepSWE": 53.3,
      "WebDev": 1539.0,
      "SimpleQA": 57.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5-4",
@@ -1384,7 +1505,8 @@
      "DeepSWE": 51.8,
      "T-Bench": 81.8,
      "ARC-2": 74.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Minimax m2.5",
@@ -1394,7 +1516,8 @@
      "T-Bench": 42.7,
      "WebDev": 1383.9,
      "ARC-2": 4.9,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Qwen3.5-9B",
@@ -1404,7 +1527,8 @@
      "T-Bench": 9.2,
      "AIME": 42.8,
      "GPQA": 79.0,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-oss-20b",
@@ -1414,7 +1538,8 @@
      "T-Bench": 3.4,
      "AIME": 65.3,
      "GPQA": 60.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "deepseek-reasoner",
@@ -1424,7 +1549,8 @@
      "Aider": 74.2,
      "AIME": 87.8,
      "GPQA": 83.4,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "deepseek-chat",
@@ -1434,7 +1560,8 @@
      "Aider": 70.2,
      "AIME": 48.9,
      "GPQA": 71.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-3-7-sonnet-20250219_32K",
@@ -1444,7 +1571,8 @@
      "Aider": 64.9,
      "AIME": 53.3,
      "GPQA": 76.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-sonnet-4-20250514_32K",
@@ -1454,7 +1582,8 @@
      "Aider": 61.3,
      "AIME": 71.1,
      "GPQA": 78.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-sonnet-4-20250514",
@@ -1464,7 +1593,8 @@
      "Aider": 56.4,
      "AIME": 28.9,
      "GPQA": 66.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "grok-3-beta",
@@ -1474,7 +1604,8 @@
      "Aider": 53.3,
      "AIME": 55.6,
      "GPQA": 75.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "grok-3-mini-beta",
@@ -1484,7 +1615,8 @@
      "Aider": 49.3,
      "AIME": 77.8,
      "GPQA": 76.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-4.5-preview-2025-02-27",
@@ -1494,7 +1626,8 @@
      "Aider": 44.9,
      "AIME": 37.8,
      "GPQA": 68.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "openai/gpt-oss-120b",
@@ -1504,7 +1637,8 @@
      "Aider": 41.8,
      "AIME": 88.9,
      "GPQA": 75.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Qwen3-32B",
@@ -1514,7 +1648,8 @@
      "Aider": 40.0,
      "AIME": 66.9,
      "GPQA": 65.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "o1-mini-2024-09-12",
@@ -1524,7 +1659,8 @@
      "Aider": 32.9,
      "AIME": 46.9,
      "GPQA": 62.4,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-3-5-haiku-20241022",
@@ -1534,7 +1670,8 @@
      "Aider": 28.0,
      "AIME": 4.3,
      "GPQA": 38.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen-max-2025-01-25",
@@ -1544,7 +1681,8 @@
      "Aider": 21.8,
      "AIME": 16.1,
      "GPQA": 56.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "QwQ-32B",
@@ -1554,7 +1692,8 @@
      "Aider": 20.9,
      "AIME": 59.2,
      "GPQA": 65.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gemini-2.0-flash-thinking-exp-01-21",
@@ -1564,7 +1703,8 @@
      "Aider": 18.2,
      "AIME": 57.8,
      "GPQA": 57.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gemma-3-27b-it",
@@ -1574,7 +1714,8 @@
      "Aider": 4.9,
      "AIME": 22.5,
      "GPQA": 47.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-opus-4-8_none",
@@ -1584,7 +1725,8 @@
      "WebDev": 1539.1,
      "AIME": 84.4,
      "GPQA": 85.4,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "MiniMax-M3",
@@ -1594,7 +1736,8 @@
      "WebDev": 1487.6,
      "AIME": 71.1,
      "GPQA": 90.9,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "deepseek-v4-pro_none",
@@ -1604,7 +1747,8 @@
      "WebDev": 1445.5,
      "AIME": 46.7,
      "GPQA": 73.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "kimi-k2-thinking-turbo",
@@ -1614,7 +1758,8 @@
      "WebDev": 1337.0,
      "AIME": 83.1,
      "GPQA": 84.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.4-pro-2026-03-05",
@@ -1624,7 +1769,8 @@
      "FMath": 82.5,
      "GPQA": 94.6,
      "SimpleQA": 46.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "glm-5.2_none",
@@ -1634,7 +1780,8 @@
      "FMath": 42.5,
      "AIME": 28.9,
      "GPQA": 71.2,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.6-luna_none",
@@ -1644,7 +1791,8 @@
      "FMath": 39.6,
      "AIME": 40.0,
      "GPQA": 63.6,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.6-27b",
@@ -1654,7 +1802,8 @@
      "FMath": 35.1,
      "AIME": 91.1,
      "GPQA": 85.9,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.7-plus_none",
@@ -1664,7 +1813,8 @@
      "FMath": 34.4,
      "AIME": 80.0,
      "GPQA": 81.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.6-27b_none",
@@ -1674,7 +1824,8 @@
      "FMath": 34.0,
      "AIME": 66.7,
      "GPQA": 84.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.5-397b-a17b_none",
@@ -1684,7 +1835,8 @@
      "FMath": 31.2,
      "AIME": 82.2,
      "GPQA": 86.4,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.5-397b-a17b",
@@ -1694,7 +1846,8 @@
      "FMath": 29.5,
      "AIME": 88.9,
      "GPQA": 85.9,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.5-instant",
@@ -1704,7 +1857,8 @@
      "FMath": 26.3,
      "AIME": 68.1,
      "GPQA": 82.5,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.6-35b-a3b_none",
@@ -1714,7 +1868,8 @@
      "FMath": 20.4,
      "AIME": 68.9,
      "GPQA": 84.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.7-flash_none",
@@ -1724,7 +1879,8 @@
      "FMath": 19.3,
      "AIME": 77.8,
      "GPQA": 80.8,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "qwen3.7-flash",
@@ -1734,7 +1890,8 @@
      "FMath": 19.3,
      "AIME": 86.7,
      "GPQA": 82.3,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.4-mini-2026-03-17_none",
@@ -1744,7 +1901,8 @@
      "FMath": 17.2,
      "AIME": 26.7,
      "GPQA": 64.1,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-5.4-nano-2026-03-17_none",
@@ -1754,7 +1912,8 @@
      "FMath": 4.6,
      "AIME": 46.7,
      "GPQA": 55.6,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-3.5-turbo-0125",
@@ -1764,7 +1923,8 @@
      "FMath": 0.0,
      "AIME": 2.2,
      "GPQA": 27.2,
-     "old": true
+     "old": true,
+     "recent_frontier": false
     },
     {
      "model": "Qwen3-235B-A22B-Thinking-2507",
@@ -1774,7 +1934,8 @@
      "AIME": 86.7,
      "GPQA": 80.1,
      "SimpleQA": 40.4,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-sonnet-4-5-20250929_59K",
@@ -1784,7 +1945,8 @@
      "AIME": 77.8,
      "GPQA": 82.3,
      "SimpleQA": 30.7,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "claude-haiku-4-5-20251001_32K",
@@ -1794,7 +1956,8 @@
      "AIME": 66.7,
      "GPQA": 71.2,
      "SimpleQA": 12.6,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gemini-1.5-pro-002",
@@ -1804,7 +1967,8 @@
      "AIME": 23.1,
      "GPQA": 57.2,
      "HLE": 4.6,
-     "old": false
+     "old": false,
+     "recent_frontier": false
     }
    ],
    "frontier_models": [
@@ -1813,10 +1977,12 @@
     "Claude Opus 5",
     "GPT-5.6 Sol",
     "GPT-6 Astra",
+    "GPT-6 Astra (None)",
     "Grok 4.6",
-    "Kimi K3"
+    "Kimi K3",
+    "qwen3.8-27b"
    ],
-   "frontier_count": 7,
+   "frontier_count": 9,
    "recent_frontier_models": [
     "GPT-6 Astra",
     "Claude Opus 5",
@@ -1824,9 +1990,11 @@
     "Claude Fable 5",
     "Kimi K3",
     "Grok 4.6",
-    "Claude Fable 5.1"
+    "Claude Fable 5.1",
+    "qwen3.8-27b",
+    "GPT-6 Astra (None)"
    ],
-   "recent_frontier_count": 7,
+   "recent_frontier_count": 9,
    "featured": true,
    "old_count": 8,
    "latest": "2026-09-03"
