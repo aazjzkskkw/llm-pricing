@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-06 06:57 UTC",
- "cutoff": "2024-09-06",
+ "updated_at": "2026-09-07 03:09 UTC",
+ "cutoff": "2024-09-07",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -1807,8 +1807,29 @@
      "old": false
     }
    ],
-   "latest": "2026-09-03",
-   "old_count": 8
+   "frontier_models": [
+    "Claude Fable 5",
+    "Claude Fable 5.1",
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra",
+    "Grok 4.6",
+    "Kimi K3"
+   ],
+   "frontier_count": 7,
+   "recent_frontier_models": [
+    "GPT-6 Astra",
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
+    "Claude Fable 5",
+    "Kimi K3",
+    "Grok 4.6",
+    "Claude Fable 5.1"
+   ],
+   "recent_frontier_count": 7,
+   "featured": true,
+   "old_count": 8,
+   "latest": "2026-09-03"
   },
   {
    "id": "metr_time_horizons_external",
@@ -2305,7 +2326,12 @@
     }
    ],
    "latest": "2026-04-07",
-   "old_count": 12
+   "old_count": 12,
+   "frontier_models": [],
+   "frontier_count": 0,
+   "recent_frontier_models": [],
+   "recent_frontier_count": 0,
+   "featured": false
   },
   {
    "id": "gdpval_external",
@@ -2442,7 +2468,12 @@
     }
    ],
    "latest": "2025-12-11",
-   "old_count": 0
+   "old_count": 0,
+   "frontier_models": [],
+   "frontier_count": 0,
+   "recent_frontier_models": [],
+   "recent_frontier_count": 0,
+   "featured": false
   },
   {
    "id": "swe_bench_verified",
@@ -2789,7 +2820,12 @@
     }
    ],
    "latest": "2026-06-16",
-   "old_count": 0
+   "old_count": 0,
+   "frontier_models": [],
+   "frontier_count": 0,
+   "recent_frontier_models": [],
+   "recent_frontier_count": 0,
+   "featured": false
   },
   {
    "id": "deepswe_external",
@@ -3091,7 +3127,16 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 0
+   "old_count": 0,
+   "frontier_models": [
+    "gpt-6-astra"
+   ],
+   "frontier_count": 1,
+   "recent_frontier_models": [
+    "gpt-6-astra"
+   ],
+   "recent_frontier_count": 1,
+   "featured": true
   },
   {
    "id": "terminalbench_external",
@@ -3862,7 +3907,12 @@
     }
    ],
    "latest": "2026-04-23",
-   "old_count": 0
+   "old_count": 0,
+   "frontier_models": [],
+   "frontier_count": 0,
+   "recent_frontier_models": [],
+   "recent_frontier_count": 0,
+   "featured": false
   },
   {
    "id": "aider_polyglot_external",
@@ -4435,7 +4485,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-06",
-     "old": false
+     "old": true
     },
     {
      "model": "Qwen2.5-Coder-32B-Instruct",
@@ -4529,7 +4579,12 @@
     }
    ],
    "latest": "2025-12-01",
-   "old_count": 3
+   "old_count": 4,
+   "frontier_models": [],
+   "frontier_count": 0,
+   "recent_frontier_models": [],
+   "recent_frontier_count": 0,
+   "featured": false
   },
   {
    "id": "webdev_arena_external",
@@ -5556,7 +5611,20 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 0
+   "old_count": 0,
+   "frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-27b",
+    "qwen3.8-max"
+   ],
+   "frontier_count": 3,
+   "recent_frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-max",
+    "qwen3.8-27b"
+   ],
+   "recent_frontier_count": 3,
+   "featured": true
   },
   {
    "id": "cybench_external",
@@ -5793,7 +5861,12 @@
     }
    ],
    "latest": "2026-02-05",
-   "old_count": 6
+   "old_count": 6,
+   "frontier_models": [],
+   "frontier_count": 0,
+   "recent_frontier_models": [],
+   "recent_frontier_count": 0,
+   "featured": false
   },
   {
    "id": "frontiermath_tiers_1_3_v2",
@@ -6660,7 +6733,18 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 4
+   "old_count": 4,
+   "frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-max"
+   ],
+   "frontier_count": 2,
+   "recent_frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-max"
+   ],
+   "recent_frontier_count": 2,
+   "featured": true
   },
   {
    "id": "otis_mock_aime_2024_2025",
@@ -9007,7 +9091,18 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 29
+   "old_count": 29,
+   "frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-max"
+   ],
+   "frontier_count": 2,
+   "recent_frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-max"
+   ],
+   "recent_frontier_count": 2,
+   "featured": true
   },
   {
    "id": "arc_agi_2_external",
@@ -10194,7 +10289,30 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 1
+   "old_count": 1,
+   "frontier_models": [
+    "Claude Fable 5",
+    "Claude Fable 5.1",
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra",
+    "GPT-6 Astra (None)",
+    "Grok 4.6",
+    "Kimi K3"
+   ],
+   "frontier_count": 8,
+   "recent_frontier_models": [
+    "GPT-6 Astra",
+    "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "Claude Fable 5.1",
+    "Claude Fable 5",
+    "Grok 4.6",
+    "Kimi K3",
+    "GPT-6 Astra (None)"
+   ],
+   "recent_frontier_count": 8,
+   "featured": true
   },
   {
    "id": "arc_agi_external",
@@ -11471,7 +11589,30 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 0
+   "old_count": 0,
+   "frontier_models": [
+    "Claude Fable 5",
+    "Claude Fable 5.1",
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra",
+    "GPT-6 Astra (None)",
+    "Grok 4.6",
+    "Kimi K3"
+   ],
+   "frontier_count": 8,
+   "recent_frontier_models": [
+    "Claude Fable 5",
+    "GPT-6 Astra",
+    "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "Claude Fable 5.1",
+    "Kimi K3",
+    "Grok 4.6",
+    "GPT-6 Astra (None)"
+   ],
+   "recent_frontier_count": 8,
+   "featured": true
   },
   {
    "id": "simplebench_external",
@@ -12418,7 +12559,12 @@
     }
    ],
    "latest": "2026-08-12",
-   "old_count": 8
+   "old_count": 8,
+   "frontier_models": [],
+   "frontier_count": 0,
+   "recent_frontier_models": [],
+   "recent_frontier_count": 0,
+   "featured": false
   },
   {
    "id": "gpqa_diamond",
@@ -15005,7 +15151,18 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 45
+   "old_count": 45,
+   "frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-max"
+   ],
+   "frontier_count": 2,
+   "recent_frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-max"
+   ],
+   "recent_frontier_count": 2,
+   "featured": true
   },
   {
    "id": "hle_external",
@@ -15542,7 +15699,12 @@
     }
    ],
    "latest": "2026-09-01",
-   "old_count": 0
+   "old_count": 0,
+   "frontier_models": [],
+   "frontier_count": 0,
+   "recent_frontier_models": [],
+   "recent_frontier_count": 0,
+   "featured": false
   },
   {
    "id": "simpleqa_verified",
@@ -16279,7 +16441,18 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 3
+   "old_count": 3,
+   "frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-max"
+   ],
+   "frontier_count": 2,
+   "recent_frontier_models": [
+    "gpt-6-astra",
+    "qwen3.8-max"
+   ],
+   "recent_frontier_count": 2,
+   "featured": true
   },
   {
    "id": "scicode_external",
@@ -17636,7 +17809,56 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 1
+   "old_count": 1,
+   "frontier_models": [
+    "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+    "Claude Fable 5.1 (Adaptive Reasoning, High Effort, Default Fallback)",
+    "Claude Fable 5.1 (Adaptive Reasoning, Low Effort, Default Fallback)",
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "Claude Fable 5.1 (Adaptive Reasoning, Medium Effort, Default Fallback)",
+    "Claude Fable 5.1 (Adaptive Reasoning, Xhigh Effort, Default Fallback)",
+    "Claude Opus 5 (Adaptive Reasoning, High Effort)",
+    "Claude Opus 5 (Adaptive Reasoning, Low Effort)",
+    "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+    "Claude Opus 5 (Adaptive Reasoning, Medium Effort)",
+    "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
+    "GPT-5.6 Sol",
+    "GPT-5.6 Sol (Non-reasoning)",
+    "GPT-6 Astra",
+    "GPT-6 Astra (Non-reasoning)",
+    "Gemini 3.8 Flash",
+    "Grok 4.6",
+    "Kimi K3",
+    "Qwen3.8",
+    "Qwen3.8 27B",
+    "Qwen3.8 27B (Non-reasoning)"
+   ],
+   "frontier_count": 21,
+   "recent_frontier_models": [
+    "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
+    "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+    "Claude Fable 5.1 (Adaptive Reasoning, Xhigh Effort, Default Fallback)",
+    "Kimi K3",
+    "Claude Fable 5.1 (Adaptive Reasoning, High Effort, Default Fallback)",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra",
+    "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+    "Claude Fable 5.1 (Adaptive Reasoning, Low Effort, Default Fallback)",
+    "Claude Fable 5.1 (Adaptive Reasoning, Medium Effort, Default Fallback)",
+    "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
+    "Grok 4.6",
+    "Gemini 3.8 Flash",
+    "Claude Opus 5 (Adaptive Reasoning, High Effort)",
+    "GPT-6 Astra (Non-reasoning)",
+    "Qwen3.8",
+    "Claude Opus 5 (Adaptive Reasoning, Medium Effort)",
+    "Claude Opus 5 (Adaptive Reasoning, Low Effort)",
+    "GPT-5.6 Sol (Non-reasoning)",
+    "Qwen3.8 27B",
+    "Qwen3.8 27B (Non-reasoning)"
+   ],
+   "recent_frontier_count": 21,
+   "featured": true
   },
   {
    "id": "hallucination",
@@ -18615,7 +18837,12 @@
     }
    ],
    "latest": "2026-04-24",
-   "old_count": 1
+   "old_count": 1,
+   "frontier_models": [],
+   "frontier_count": 0,
+   "recent_frontier_models": [],
+   "recent_frontier_count": 0,
+   "featured": false
   }
  ]
 }

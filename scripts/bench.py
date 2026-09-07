@@ -16,6 +16,7 @@ import re
 import time
 import urllib.request
 import zipfile
+from datetime import date, timedelta
 from pathlib import Path
 
 EPOCH_ZIP = "https://epoch.ai/data/benchmark_data.zip"
@@ -111,6 +112,29 @@ SCORE_COLS = ["Best score (across scorers)", "mean_score", "Score", "Accuracy",
 # 同一模型会按推理强度分成多条记录，两种写法都有：" (max)" 和 "_high"。
 # 注意别用 \b 卡前缀，正则里 _ 也算单词字符，"_high" 前面没有词边界。
 EFFORT_SUFFIX = r"[\s_]\(?(?:max|xhigh|high|medium|low|unknown|minimal)\)?$"
+
+# 只把确实覆盖近期前沿模型的榜单放到评测页前面；其余榜单仍保留，避免把旧榜
+# 当成当前能力结论。模型名来自本次数据中的近期前沿型号，后续随数据源更新可再补。
+FRONTIER_CUTOFF_DAYS = 365
+FRONTIER_HINTS = (
+    r"gpt\s*[-.]?6\s*[-.]?astra",
+    r"claude\s+fable\s+5(?:[. ]?1)?",
+    r"claude\s+opus\s+5",
+    r"gpt\s*[-.]?5\s*[.]?6\s+sol",
+    r"gemini\s+3[.]8\s+flash",
+    r"kimi\s+k3",
+    r"grok\s+4[.]6",
+    r"qwen3[.]8(?:[ -](?:max|27b))?",
+)
+
+
+def frontier_models(rows: list[dict]) -> list[str]:
+    hits = []
+    for r in rows:
+        model = r.get("model", "")
+        if any(re.search(pattern, model, re.I) for pattern in FRONTIER_HINTS):
+            hits.append(model)
+    return sorted(set(hits))
 
 
 def get(url: str) -> bytes:
@@ -314,12 +338,38 @@ def main() -> None:
         "rows": vectara_board(released_map()),
     })
 
-    boards.insert(0, overview(boards))
-
+    # 先给各榜单打标，再生成总览；页面可以把覆盖近期前沿模型的榜单置顶。
     for b in boards:
         dates = [r["released"] for r in b["rows"] if r.get("released")]
-        b["latest"] = max(dates) if dates else None   # 榜单里最新的模型有多新
+        b["latest"] = max(dates) if dates else None
         b["old_count"] = sum(1 for r in b["rows"] if r.get("old"))
+        b["frontier_models"] = frontier_models(b["rows"])
+        b["frontier_count"] = len(b["frontier_models"])
+        cutoff = date.today() - timedelta(days=FRONTIER_CUTOFF_DAYS)
+        b["recent_frontier_models"] = [
+            r["model"] for r in b["rows"]
+            if r.get("released") and r["released"] >= cutoff.isoformat()
+            and r["model"] in b["frontier_models"]
+        ]
+        b["recent_frontier_count"] = len(set(b["recent_frontier_models"]))
+        b["featured"] = b["recent_frontier_count"] > 0
+
+    boards.insert(0, overview(boards))
+    overview_board = boards[0]
+    overview_board["frontier_models"] = frontier_models(overview_board["rows"])
+    overview_board["frontier_count"] = len(overview_board["frontier_models"])
+    overview_board["recent_frontier_models"] = [
+        r["model"] for r in overview_board["rows"]
+        if r.get("released") and r["released"] >= (date.today() - timedelta(days=FRONTIER_CUTOFF_DAYS)).isoformat()
+        and r["model"] in overview_board["frontier_models"]
+    ]
+    overview_board["recent_frontier_count"] = len(set(overview_board["recent_frontier_models"]))
+    overview_board["featured"] = overview_board["recent_frontier_count"] > 0
+    overview_board["old_count"] = sum(1 for r in overview_board["rows"] if r.get("old"))
+    overview_board["latest"] = max(
+        (r["released"] for r in overview_board["rows"] if r.get("released")),
+        default=None,
+    )
     OUT.write_text(json.dumps({
         "updated_at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
         "cutoff": AGE_CUTOFF,
