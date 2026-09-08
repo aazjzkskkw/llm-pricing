@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-07 07:07 UTC",
+ "updated_at": "2026-09-08 07:01 UTC",
  "sources": [
   {
    "name": "LiteLLM",
@@ -43,8 +43,8 @@
   "OpenRouter",
   "Vercel AI Gateway"
  ],
- "cutoff": "2024-09-07",
- "fresh_cutoff": "2025-09-07",
+ "cutoff": "2024-09-08",
+ "fresh_cutoff": "2025-09-08",
  "pricing_pages": {
   "OpenAI": "https://platform.openai.com/docs/pricing",
   "Anthropic": "https://www.anthropic.com/pricing#api",
@@ -35133,7 +35133,7 @@
    "input": 0.75,
    "output": 3.75,
    "cache_read": null,
-   "context": 32768,
+   "context": 262144,
    "max_output": null,
    "mode": "chat",
    "released": "2026-04-30",
@@ -47176,7 +47176,7 @@
    "max_output": 176947,
    "mode": "chat",
    "key": "minimax-m2-7-free",
-   "released": "2026-03-18",
+   "released": null,
    "aged": false,
    "official": false,
    "suspect": false,
@@ -47216,7 +47216,7 @@
    "max_output": 943718,
    "mode": "chat",
    "key": "minimax-m3-free",
-   "released": "2026-05-31",
+   "released": null,
    "aged": false,
    "official": false,
    "suspect": false,

@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-07 07:07 UTC",
- "cutoff": "2024-09-07",
+ "updated_at": "2026-09-08 07:01 UTC",
+ "cutoff": "2024-09-08",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -180,21 +180,6 @@
      "ARC-2": 92.5,
      "GPQA": 93.5,
      "SimpleQA": 69.7,
-     "old": false,
-     "recent_frontier": true
-    },
-    {
-     "model": "Claude Fable 5",
-     "org": "Anthropic",
-     "released": "2026-06-09",
-     "n": 7,
-     "DeepSWE": 69.9,
-     "WebDev": 1626.3,
-     "FMath": 87.0,
-     "AIME": 100.0,
-     "ARC-2": 89.2,
-     "GPQA": 85.9,
-     "SimpleQA": 70.7,
      "old": false,
      "recent_frontier": true
     },
@@ -525,7 +510,6 @@
     }
    ],
    "frontier_models": [
-    "Claude Fable 5",
     "Claude Fable 5.1",
     "Claude Opus 5",
     "GPT-5.6 Sol",
@@ -533,17 +517,16 @@
     "Grok 4.6",
     "Kimi K3"
    ],
-   "frontier_count": 7,
+   "frontier_count": 6,
    "recent_frontier_models": [
     "GPT-6 Astra",
     "Claude Fable 5.1",
     "Grok 4.6",
     "Claude Opus 5",
     "Kimi K3",
-    "GPT-5.6 Sol",
-    "Claude Fable 5"
+    "GPT-5.6 Sol"
    ],
-   "recent_frontier_count": 7,
+   "recent_frontier_count": 6,
    "featured": true,
    "old_count": 0,
    "latest": "2026-09-03"
@@ -7917,7 +7900,7 @@
     {
      "model": "Gemini 3 Deep Think (2/26)",
      "score": 84.6,
-     "org": "",
+     "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
      "cost": null,
@@ -8167,7 +8150,7 @@
     {
      "model": "Gemini 3 Deep Think (Preview) ²",
      "score": 45.1,
-     "org": "",
+     "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
      "cost": null,
@@ -9327,7 +9310,7 @@
     {
      "model": "Gemini 3 Deep Think (Preview)",
      "score": 87.5,
-     "org": "",
+     "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
      "cost": null,
@@ -9337,7 +9320,7 @@
     {
      "model": "Gemini 3 Deep Think (Preview) ²",
      "score": 87.5,
-     "org": "",
+     "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
      "cost": null,
