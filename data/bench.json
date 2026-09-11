@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-10 07:07 UTC",
- "cutoff": "2024-09-10",
+ "updated_at": "2026-09-11 07:06 UTC",
+ "cutoff": "2024-09-11",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -507,20 +507,6 @@
      "FMath": 42.5,
      "AIME": 28.9,
      "GPQA": 71.2,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "kimi-k2-7-code",
-     "org": "Moonshot",
-     "released": "2026-06-12",
-     "n": 6,
-     "DeepSWE": 30.5,
-     "WebDev": 1472.7,
-     "FMath": 54.0,
-     "AIME": 95.6,
-     "GPQA": 87.9,
-     "SimpleQA": 36.5,
      "old": false,
      "recent_frontier": false
     }
