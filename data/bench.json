@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-12 06:59 UTC",
- "cutoff": "2024-09-12",
+ "updated_at": "2026-09-13 07:17 UTC",
+ "cutoff": "2024-09-13",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -866,7 +866,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "DeepSeek-V3",
@@ -1030,7 +1030,7 @@
     }
    ],
    "latest": "2026-04-07",
-   "old_count": 12,
+   "old_count": 13,
    "frontier_models": [],
    "frontier_count": 0,
    "recent_frontier_models": [],
@@ -3089,7 +3089,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "gpt-4.1-mini-2025-04-14",
@@ -3283,7 +3283,7 @@
     }
    ],
    "latest": "2025-12-01",
-   "old_count": 4,
+   "old_count": 5,
    "frontier_models": [],
    "frontier_count": 0,
    "recent_frontier_models": [],
@@ -4511,7 +4511,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "o1-preview-2024-09-12",
@@ -4521,7 +4521,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "Mixtral-8x22B-Instruct-v0.1",
@@ -4565,7 +4565,7 @@
     }
    ],
    "latest": "2026-02-05",
-   "old_count": 6,
+   "old_count": 8,
    "frontier_models": [],
    "frontier_count": 0,
    "recent_frontier_models": [],
@@ -6873,7 +6873,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "gpt-5.4-nano-2026-03-17_none",
@@ -7043,7 +7043,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "gemini-2.0-flash-001",
@@ -7837,7 +7837,7 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 29,
+   "old_count": 31,
    "frontier_models": [
     "gpt-6-astra",
     "qwen3.8-max",
@@ -8823,7 +8823,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "GPT-4.5",
@@ -9037,7 +9037,7 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 1,
+   "old_count": 2,
    "frontier_models": [
     "Claude Fable 5",
     "Claude Fable 5.1",
@@ -10083,7 +10083,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "Claude Haiku 4.5 (Thinking 1K)",
@@ -10153,7 +10153,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "Claude 3.7",
@@ -10337,7 +10337,7 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 0,
+   "old_count": 2,
    "frontier_models": [
     "Claude Fable 5",
     "Claude Fable 5.1",
@@ -10973,7 +10973,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "claude-3-5-sonnet-20241022",
@@ -11273,7 +11273,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "gpt-4o-2024-08-06",
@@ -11307,7 +11307,7 @@
     }
    ],
    "latest": "2026-08-12",
-   "old_count": 8,
+   "old_count": 10,
    "frontier_models": [],
    "frontier_count": 0,
    "recent_frontier_models": [],
@@ -12835,7 +12835,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "Qwen3-30B-A3B",
@@ -13095,7 +13095,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-12",
-     "old": false
+     "old": true
     },
     {
      "model": "gpt-4o-2024-08-06",
@@ -13919,7 +13919,7 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 45,
+   "old_count": 47,
    "frontier_models": [
     "gpt-6-astra",
     "qwen3.8-max",

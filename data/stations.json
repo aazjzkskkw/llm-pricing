@@ -1,7 +1,7 @@
 {
- "updated_at": "2026-09-12 06:59 UTC",
+ "updated_at": "2026-09-13 07:17 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 31,
+ "count": 30,
  "stations": [
   {
    "name": "Chinahk 公益站",
@@ -335,20 +335,6 @@
    "models": "Gemini 新模型 / Claude 全模型",
    "entry": "通过邀请链接注册，邀请注册即送 200。",
    "caveat": "半公益站；签到金额可能浮动，模型范围和计费规则也可能调整，请以站内公告为准。",
-   "updated": "2026-08-17",
-   "status": "open",
-   "type": "charity"
-  },
-  {
-   "name": "一梦五千年",
-   "url": "https://fapi.leileihog.top/sign-up",
-   "kind": "已开放注册 / 第三方登录",
-   "summary": "注册已重新开放，不再是此前的限量名额，但只能用 GitHub、Linux Do 或 Discord 账号注册，不支持邮箱；注册送 10 刀，GPT-5.6-sol 与 GPT-5.6-luna 为 1x 倍率，也有其他国产模型。",
-   "signup": "10 刀",
-   "checkin": "随机奖励",
-   "models": "GPT-5.6-sol / GPT-5.6-luna / 国产模型",
-   "entry": "只能用 GitHub、Linux Do 或 Discord 账号授权注册，不支持邮箱注册；2026-08-31 核对时注册已开放。",
-   "caveat": "只能用 GitHub、Linux Do 或 Discord 注册，三者都没有就没法注册。注册开放状态可能再次收紧，以注册页面实际结果为准；不要批量测活，可能会被拉黑 IP。签到为随机奖励，数额不固定。",
    "updated": "2026-08-17",
    "status": "open",
    "type": "charity"
