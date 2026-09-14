@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-09-13 07:17 UTC",
+ "updated_at": "2026-09-14 07:41 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 30,
+ "count": 31,
  "stations": [
+  {
+   "name": "Ksir的小饭锅",
+   "url": "https://api.biliksir.ggff.net/sign-up",
+   "kind": "公益站 / 邀请注册送 0.2 刀 / 酒馆站",
+   "summary": "公益酒馆站，邀请注册送 0.2 刀、每日签到 5 刀；站内有 Claude 和 DeepSeek 可用，可以写代码，但不可破限。",
+   "signup": "0.2 刀",
+   "checkin": "5 刀",
+   "models": "Claude / DeepSeek",
+   "entry": "通过邀请链接注册。",
+   "caveat": "破限（越狱、绕过内容审核）不被允许，想拿它跑这类内容的话别用这个站；倍率、模型清单和规则可能调整，请以站内实际显示为准。",
+   "updated": "2026-09-13",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "Chinahk 公益站",
    "url": "https://newapi.chinahk.qzz.io/sign-up",
