@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-14 07:41 UTC",
- "cutoff": "2024-09-14",
+ "updated_at": "2026-09-15 07:25 UTC",
+ "cutoff": "2024-09-15",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -480,33 +480,6 @@
      "AIME": 94.7,
      "GPQA": 90.5,
      "SimpleQA": 33.7,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "glm-5.2",
-     "org": "Z.ai (Zhipu AI)",
-     "released": "2026-06-16",
-     "n": 8,
-     "SWE-B": 78.7,
-     "DeepSWE": 43.8,
-     "WebDev": 1593.2,
-     "FMath": 59.2,
-     "AIME": 86.4,
-     "ARC-2": 22.8,
-     "GPQA": 91.9,
-     "SimpleQA": 34.2,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "glm-5.2_none",
-     "org": "Z.ai (Zhipu AI)",
-     "released": "2026-06-16",
-     "n": 3,
-     "FMath": 42.5,
-     "AIME": 28.9,
-     "GPQA": 71.2,
      "old": false,
      "recent_frontier": false
     }
