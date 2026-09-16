@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-09-15 07:25 UTC",
+ "updated_at": "2026-09-16 07:24 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 31,
+ "count": 32,
  "stations": [
+  {
+   "name": "Orevx Engine 半公益站",
+   "url": "https://orevx.ai/login?mode=register&inviteCode=FAGCRGAT",
+   "kind": "半公益站 / 邮箱或手机注册 / 每日签到 100-200 算力",
+   "summary": "半公益站，邮箱或手机注册送 100 算力，每日随机签到 100-200 算力；常见国产模型和 GPT、Claude 都有，调用速度快，模型使用界面在 /llm-dashboard。",
+   "signup": "100 算力",
+   "checkin": "随机 100-200 算力",
+   "models": "常见国产模型 / GPT / Claude（可用模型很多，不逐项列举，以站内 llm-dashboard 显示为准）",
+   "entry": "邮箱或手机号注册（邮箱仅限 qq.com / 163.com / gmail.com / outlook.com / hotmail.com），注册后需同时绑定邮箱和手机号。",
+   "caveat": "可用模型很多，不逐项列举，具体以站内 llm-dashboard 显示为准；签到为随机额度，每次金额不固定；站点同时经营付费订阅，免费额度规则可能随时调整。",
+   "updated": "2026-09-15",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "Ksir的小饭锅",
    "url": "https://api.biliksir.ggff.net/sign-up",
