@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-19 07:08 UTC",
- "cutoff": "2024-09-19",
+ "updated_at": "2026-09-20 07:33 UTC",
+ "cutoff": "2024-09-20",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -929,7 +929,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-19",
-     "old": false
+     "old": true
     },
     {
      "model": "gpt-4-1106-preview",
@@ -1013,7 +1013,7 @@
     }
    ],
    "latest": "2026-04-07",
-   "old_count": 13,
+   "old_count": 14,
    "frontier_models": [],
    "frontier_count": 0,
    "recent_frontier_models": [],
@@ -7356,7 +7356,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-19",
-     "old": false
+     "old": true
     },
     {
      "model": "Llama-4-Scout-17B-16E-Instruct",
@@ -7626,7 +7626,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-19",
-     "old": false
+     "old": true
     },
     {
      "model": "Hermes-2-Theta-Llama-3-70B",
@@ -7840,7 +7840,7 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 32,
+   "old_count": 34,
    "frontier_models": [
     "gpt-6-astra",
     "qwen3.8-max",
@@ -13128,7 +13128,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-19",
-     "old": false
+     "old": true
     },
     {
      "model": "mistral-large-2407",
@@ -13558,7 +13558,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-09-19",
-     "old": false
+     "old": true
     },
     {
      "model": "claude-2.0",
@@ -13922,7 +13922,7 @@
     }
    ],
    "latest": "2026-09-03",
-   "old_count": 48,
+   "old_count": 50,
    "frontier_models": [
     "gpt-6-astra",
     "qwen3.8-max",
