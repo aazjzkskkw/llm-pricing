@@ -1,7 +1,7 @@
 {
- "updated_at": "2026-09-20 07:33 UTC",
+ "updated_at": "2026-09-21 07:45 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 33,
+ "count": 34,
  "stations": [
   {
    "name": "StarBridge 公益站",
@@ -394,6 +394,20 @@
    "updated": "2026-08-14",
    "status": "open",
    "type": "paid"
+  },
+  {
+   "name": "Piu酱",
+   "url": "https://piu.du4s.com/sign-up",
+   "kind": "公益站 / 邀请链接注册 / 注册送 20 签到 1-10 刀",
+   "summary": "公益站，已重新开放注册（先到先得）；注册送 20 额度，每日随机签到 1-10 刀。含 gemini-3.8-flash-medium、gemini-3-pro、DeepSeek V4.1 Flash、GLM-5.3-Flash 等 14 个模型，按量与按次两种计费，按次每次 0.2。",
+   "signup": "20 额度",
+   "checkin": "随机 1-10 刀",
+   "models": "gemini-3.8-flash-medium / gemini-3-pro / gemini-3.1-pro / deepseek-v4.1-flash / GLM-5.3-Flash / mimo-v2.5-pro 等 14 个（公开模型广场核实）",
+   "entry": "通过邀请链接注册，需邮箱验证（2026-09-20 已重新开放注册）。",
+   "caveat": "8 月底才开站，属新站，稳定性有待观察；用户反馈注册先到先得，可能再次关闭；注册赠送额度、签到金额与模型可用情况以站内实际显示为准。",
+   "updated": "2026-09-20",
+   "status": "watch",
+   "type": "charity"
   },
   {
    "name": "AgentRouter",
