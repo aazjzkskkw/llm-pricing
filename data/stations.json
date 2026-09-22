@@ -1,8 +1,36 @@
 {
- "updated_at": "2026-09-21 07:45 UTC",
+ "updated_at": "2026-09-22 07:28 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 34,
+ "count": 37,
  "stations": [
+  {
+   "name": "zquant",
+   "url": "https://sub2api.zquant.site/register",
+   "kind": "付费站 / GPT 与 Grok / 倍率约 0.15",
+   "summary": "付费站，本人充值 20 多；倍率约 0.15，有 GPT 全模型和 Grok。站内带降智检测和降智雷达——最近 GPT 风控比较严，降智很影响体验，使用前先看降智雷达；进 QQ 群 738420477 可领 1 块钱试用。",
+   "signup": "进 QQ 群 738420477 领 1 元试用",
+   "checkin": "未提供",
+   "models": "GPT 全模型 / Grok",
+   "entry": "通过邀请链接注册；进官方 QQ 群 738420477 可领 1 元试用。",
+   "caveat": "降智是这家目前最大的问题：GPT 风控严的时候体验落差很大，付费前先用 1 元试用加降智雷达确认；倍率约 0.15，降智情况会随上游风控变化，以站内实际显示为准。",
+   "updated": "2026-09-21",
+   "status": "open",
+   "type": "paid"
+  },
+  {
+   "name": "星见雅",
+   "url": "https://new.xinjianya.top/register",
+   "kind": "公益站 / GitHub 或 Linux DO 注册 / 每日签到约 1000",
+   "summary": "老牌公益站，GitHub 或 Linux DO 注册，可签到；含 gpt-5.6-sol、gpt-5.6-terra、z-ai/glm-5.3、z-ai/glm-5.3-flash、moonshotai/kimi-k3 与 deepseek-ai/deepseek-v4-flash-0731。",
+   "signup": "未提供",
+   "checkin": "约 1000",
+   "models": "gpt-5.6-sol / gpt-5.6-terra / z-ai/glm-5.3 / z-ai/glm-5.3-flash / moonshotai/kimi-k3 / deepseek-ai/deepseek-v4-flash-0731",
+   "entry": "GitHub 或 Linux DO 注册。",
+   "caveat": "gpt-5.6-sol 实际使用表现不太对劲，用户反馈「用起来怪怪的」，对该模型有依赖的话先小量试用；签到金额、模型可用性与倍率以站内实际显示为准。",
+   "updated": "2026-09-21",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "StarBridge 公益站",
    "url": "https://api.careke.cn/sign-up",
@@ -271,14 +299,14 @@
   },
   {
    "name": "北执半公益站",
-   "url": "https://beizhi.sylu.cc/sign-up",
+   "url": "http://beizhi.dedyn.io/sign-up",
    "kind": "半公益站",
    "summary": "半公益站，提供免费的国产模型；签到额度较多，并支持 Gemini 新模型和 Claude。",
    "signup": "免费国产模型",
    "checkin": "额度较多",
    "models": "免费国产模型 / Gemini 新模型 / Claude",
    "entry": "仅支持主流邮箱注册，例如 QQ 邮箱。",
-   "caveat": "每分钟最多 15 次请求，不适合 Agent 或自动化高频任务；站点由个人维护，不提供商业 SLA，请勿用于生产环境。",
+   "caveat": "每分钟最多 15 次请求，不适合 Agent 或自动化高频任务；站点由个人维护，不提供商业 SLA，请勿用于生产环境。已更换域名为 beizhi.dedyn.io，**该站只能 http 访问，https 打不开，收藏时不要加 s**。",
    "updated": "2026-08-24",
    "status": "open",
    "type": "charity"
@@ -314,13 +342,13 @@
   {
    "name": "JustWoker 公益站",
    "url": "https://api.justwoker.icu/sign-up",
-   "kind": "公益站 / 已恢复 / 仅 GPT",
-   "summary": "站点已经恢复可用，目前只能使用 GPT 模型，不再提供 Claude；调用站内模型请使用 /v1/messages。",
+   "kind": "公益站 / Claude Opus 4.8 / Kiro 渠道",
+   "summary": "站内模型已换成 Claude Opus 4.8，走 Kiro 渠道；调用站内模型请使用 /v1/messages。有部分用户反馈存在偷数据和注入问题，不要用在隐私场景，使用时盯着提示词。",
    "signup": "以站内当前显示为准",
    "checkin": "以站内当前显示为准",
-   "models": "仅 GPT（调用请使用 /v1/messages）",
+   "models": "Claude Opus 4.8（Kiro 渠道，调用请使用 /v1/messages）",
    "entry": "此前需使用注册满 1 年的 GitHub 账号；当前注册状态与门槛以注册页实际显示为准。",
-   "caveat": "当前只有 GPT 模型，Claude 尚未恢复；模型调用请使用 /v1/messages。注册门槛、赠送、签到、倍率和稳定性本次未复核，请以站内实际规则为准。",
+   "caveat": "有部分用户反馈该渠道存在偷数据和注入问题：不要用在隐私场景，使用时盯着提示词；模型调用请使用 /v1/messages。注册门槛、赠送、签到、倍率和稳定性未复核，请以站内实际规则为准。",
    "updated": "2026-08-20",
    "status": "open",
    "type": "charity"
@@ -394,6 +422,20 @@
    "updated": "2026-08-14",
    "status": "open",
    "type": "paid"
+  },
+  {
+   "name": "墨白公益站",
+   "url": "https://new.ai.hinswu.top/sign-up",
+   "kind": "公益站 / 邮箱注册 / 每日签到 1-10",
+   "summary": "公益站，限 gmail / 163 / qq / foxmail / icloud 邮箱注册，需邮箱验证和人机验证；每日签到 1-10，注册后加入官方 QQ 群 444158239（进群答案 zakozako）可再签到一次，相当于每天签到两次。免费可用 DeepSeek V4.1 Flash。",
+   "signup": "未提供固定注册赠送",
+   "checkin": "站内每日 1-10；进官方 QQ 群 444158239（进群答案 zakozako）可再签到一次，相当于每天两次",
+   "models": "DeepSeek V4.1 Flash（模型广场虽列出 936 个，免费可用不多，以站内显示为准）",
+   "entry": "邮箱注册，限 gmail.com / 163.com / qq.com / foxmail.com / icloud.com，需邮箱验证与人机验证；也支持 Passkey 与 OIDC（HINS Auth）登录。",
+   "caveat": "站方公告：有人用模型做破甲、逆向、黄文等违规内容导致上游取消合作，高级模型分组被下线后虽恢复但仅对入群绑定的正式用户开放，且部分模型未恢复；后续部分免费模型也需入群解锁，群内发言不友好会封号并连坐邀请用户；Grok 系列 9 月 17 日起因服务器脱网暂不可用；签到金额、免费模型范围与限流规则以站内实际显示为准。",
+   "updated": "2026-09-21",
+   "status": "watch",
+   "type": "charity"
   },
   {
    "name": "Piu酱",

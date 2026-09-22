@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-21 07:45 UTC",
- "cutoff": "2024-09-21",
+ "updated_at": "2026-09-22 07:28 UTC",
+ "cutoff": "2024-09-22",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -99,14 +99,30 @@
      "model": "GPT-6 Astra",
      "org": "OpenAI",
      "released": "2026-09-03",
-     "n": 7,
+     "n": 8,
      "DeepSWE": 74.1,
-     "WebDev": 1797.0,
+     "WebDev": 1800.3,
      "FMath": 93.7,
      "AIME": 100.0,
      "ARC-2": 95.0,
      "GPQA": 95.8,
+     "HLE": 54.8,
      "SimpleQA": 75.6,
+     "old": false,
+     "recent_frontier": true
+    },
+    {
+     "model": "Gemini 3.8 Flash",
+     "org": "Google DeepMind",
+     "released": "2026-09-02",
+     "n": 7,
+     "DeepSWE": 73.8,
+     "WebDev": 1567.9,
+     "FMath": 68.4,
+     "AIME": 98.9,
+     "GPQA": 95.4,
+     "HLE": 44.5,
+     "SimpleQA": 69.7,
      "old": false,
      "recent_frontier": true
     },
@@ -115,7 +131,7 @@
      "org": "Anthropic",
      "released": "2026-09-01",
      "n": 5,
-     "WebDev": 1765.4,
+     "WebDev": 1758.0,
      "FMath": 90.2,
      "AIME": 100.0,
      "ARC-2": 90.0,
@@ -141,7 +157,7 @@
      "released": "2026-08-12",
      "n": 7,
      "DeepSWE": 67.5,
-     "WebDev": 1628.8,
+     "WebDev": 1617.6,
      "FMath": 66.0,
      "AIME": 99.2,
      "ARC-2": 67.1,
@@ -156,7 +172,7 @@
      "released": "2026-07-24",
      "n": 7,
      "DeepSWE": 73.6,
-     "WebDev": 1690.6,
+     "WebDev": 1687.0,
      "FMath": 85.6,
      "AIME": 98.9,
      "ARC-2": 90.4,
@@ -171,7 +187,7 @@
      "released": "2026-07-16",
      "n": 7,
      "DeepSWE": 68.5,
-     "WebDev": 1673.7,
+     "WebDev": 1674.3,
      "FMath": 72.2,
      "AIME": 97.2,
      "ARC-2": 60.4,
@@ -186,7 +202,7 @@
      "released": "2026-07-09",
      "n": 7,
      "DeepSWE": 72.7,
-     "WebDev": 1618.7,
+     "WebDev": 1617.3,
      "FMath": 89.1,
      "AIME": 100.0,
      "ARC-2": 92.5,
@@ -196,24 +212,11 @@
      "recent_frontier": true
     },
     {
-     "model": "gemini-3-8-flash",
-     "org": "Google DeepMind",
-     "released": "2026-09-02",
-     "n": 6,
-     "DeepSWE": 73.8,
-     "WebDev": 1567.3,
-     "FMath": 68.4,
-     "AIME": 98.9,
-     "GPQA": 95.4,
-     "SimpleQA": 69.7,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
      "model": "muse-spark-1.3",
      "org": "Meta AI",
      "released": "2026-09-02",
-     "n": 2,
+     "n": 3,
+     "WebDev": 1651.9,
      "FMath": 74.4,
      "AIME": 99.2,
      "old": false,
@@ -225,7 +228,7 @@
      "released": "2026-08-20",
      "n": 5,
      "DeepSWE": 63.4,
-     "WebDev": 1604.4,
+     "WebDev": 1607.1,
      "FMath": 55.8,
      "AIME": 93.9,
      "GPQA": 90.2,
@@ -238,7 +241,7 @@
      "released": "2026-08-14",
      "n": 6,
      "DeepSWE": 69.0,
-     "WebDev": 1598.6,
+     "WebDev": 1614.5,
      "FMath": 68.8,
      "AIME": 91.1,
      "GPQA": 90.9,
@@ -252,7 +255,7 @@
      "released": "2026-08-13",
      "n": 7,
      "DeepSWE": 65.5,
-     "WebDev": 1587.0,
+     "WebDev": 1587.3,
      "FMath": 71.6,
      "AIME": 97.2,
      "ARC-2": 84.6,
@@ -266,7 +269,7 @@
      "org": "DeepSeek",
      "released": "2026-08-13",
      "n": 6,
-     "WebDev": 1581.6,
+     "WebDev": 1580.5,
      "FMath": 64.6,
      "AIME": 98.6,
      "ARC-2": 61.3,
@@ -281,7 +284,7 @@
      "released": "2026-08-05",
      "n": 3,
      "DeepSWE": 54.9,
-     "WebDev": 1533.7,
+     "WebDev": 1534.4,
      "SimpleQA": 60.3,
      "old": false,
      "recent_frontier": false
@@ -292,7 +295,7 @@
      "released": "2026-08-02",
      "n": 6,
      "DeepSWE": 57.5,
-     "WebDev": 1668.9,
+     "WebDev": 1670.6,
      "FMath": 74.7,
      "AIME": 99.4,
      "GPQA": 92.7,
@@ -305,7 +308,7 @@
      "org": "DeepSeek",
      "released": "2026-07-31",
      "n": 6,
-     "WebDev": 1579.1,
+     "WebDev": 1580.2,
      "FMath": 57.5,
      "AIME": 94.4,
      "ARC-2": 61.4,
@@ -342,7 +345,7 @@
      "released": "2026-07-21",
      "n": 7,
      "DeepSWE": 46.7,
-     "WebDev": 1538.9,
+     "WebDev": 1537.0,
      "FMath": 58.9,
      "AIME": 94.2,
      "ARC-2": 60.4,
@@ -356,7 +359,7 @@
      "org": "Google DeepMind",
      "released": "2026-07-21",
      "n": 5,
-     "WebDev": 1449.1,
+     "WebDev": 1446.6,
      "FMath": 26.0,
      "AIME": 71.1,
      "ARC-2": 10.3,
@@ -369,7 +372,7 @@
      "org": "Thinking Machines",
      "released": "2026-07-15",
      "n": 6,
-     "WebDev": 1407.6,
+     "WebDev": 1410.0,
      "FMath": 33.3,
      "AIME": 88.9,
      "ARC-2": 36.5,
@@ -383,7 +386,7 @@
      "org": "Thinking Machines",
      "released": "2026-07-15",
      "n": 6,
-     "WebDev": 1401.6,
+     "WebDev": 1406.6,
      "FMath": 46.3,
      "AIME": 90.0,
      "ARC-2": 40.1,
@@ -398,7 +401,7 @@
      "released": "2026-07-09",
      "n": 7,
      "DeepSWE": 69.6,
-     "WebDev": 1519.9,
+     "WebDev": 1521.2,
      "FMath": 86.0,
      "AIME": 99.7,
      "ARC-2": 83.9,
@@ -413,7 +416,7 @@
      "released": "2026-07-09",
      "n": 7,
      "DeepSWE": 67.2,
-     "WebDev": 1517.6,
+     "WebDev": 1518.9,
      "FMath": 82.1,
      "AIME": 98.3,
      "ARC-2": 59.5,
@@ -428,7 +431,7 @@
      "released": "2026-07-09",
      "n": 3,
      "DeepSWE": 53.3,
-     "WebDev": 1539.0,
+     "WebDev": 1541.5,
      "SimpleQA": 57.8,
      "old": false,
      "recent_frontier": false
@@ -470,7 +473,7 @@
      "released": "2026-07-08",
      "n": 7,
      "DeepSWE": 53.8,
-     "WebDev": 1556.4,
+     "WebDev": 1555.1,
      "FMath": 57.2,
      "AIME": 97.8,
      "ARC-2": 52.6,
@@ -485,7 +488,7 @@
      "released": "2026-06-30",
      "n": 6,
      "DeepSWE": 53.8,
-     "WebDev": 1538.6,
+     "WebDev": 1536.7,
      "FMath": 65.6,
      "AIME": 94.7,
      "GPQA": 90.5,
@@ -499,13 +502,15 @@
     "Claude Opus 5",
     "GPT-5.6 Sol",
     "GPT-6 Astra",
+    "Gemini 3.8 Flash",
     "Grok 4.6",
     "Kimi K3",
     "qwen3.8-max-0902"
    ],
-   "frontier_count": 7,
+   "frontier_count": 8,
    "recent_frontier_models": [
     "GPT-6 Astra",
+    "Gemini 3.8 Flash",
     "Claude Fable 5.1",
     "qwen3.8-max-0902",
     "Grok 4.6",
@@ -513,7 +518,7 @@
     "Kimi K3",
     "GPT-5.6 Sol"
    ],
-   "recent_frontier_count": 7,
+   "recent_frontier_count": 8,
    "featured": true,
    "old_count": 0,
    "latest": "2026-09-03"
@@ -1903,16 +1908,6 @@
      "old": false
     },
     {
-     "model": "gemini-3.1-pro-preview",
-     "score": 78.4,
-     "org": "Google DeepMind",
-     "agent": "Forge Code",
-     "pass4": null,
-     "cost": null,
-     "released": "2026-02-19",
-     "old": false
-    },
-    {
      "model": "GPT-5.3-Codex",
      "score": 78.4,
      "org": "OpenAI",
@@ -1920,6 +1915,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-02-05",
+     "old": false
+    },
+    {
+     "model": "gemini-3.1-pro-preview",
+     "score": 78.4,
+     "org": "Google DeepMind",
+     "agent": "Forge Code",
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-19",
      "old": false
     },
     {
@@ -1963,7 +1968,7 @@
      "old": false
     },
     {
-     "model": "gpt-5.2-2025-12-11",
+     "model": "GPT-5.2",
      "score": 64.9,
      "org": "OpenAI",
      "agent": "Droid",
@@ -1973,7 +1978,7 @@
      "old": false
     },
     {
-     "model": "GPT-5.2",
+     "model": "gpt-5.2-2025-12-11",
      "score": 64.9,
      "org": "OpenAI",
      "agent": "Droid",
@@ -1993,7 +1998,7 @@
      "old": false
     },
     {
-     "model": "claude-opus-4-5-20251101",
+     "model": "Claude Opus 4.5",
      "score": 63.1,
      "org": "Anthropic",
      "agent": "Droid",
@@ -2003,7 +2008,7 @@
      "old": false
     },
     {
-     "model": "Claude Opus 4.5",
+     "model": "claude-opus-4-5-20251101",
      "score": 63.1,
      "org": "Anthropic",
      "agent": "Droid",
@@ -2066,7 +2071,7 @@
      "model": "Grok 4.20 Reasoning",
      "score": 57.3,
      "org": "xAI",
-     "agent": "grok-cli",
+     "agent": "Grok CLI",
      "pass4": null,
      "cost": null,
      "released": "2026-02-17",
@@ -2123,7 +2128,7 @@
      "old": false
     },
     {
-     "model": "GPT-5.1",
+     "model": "gpt-5.1-2025-11-13",
      "score": 47.6,
      "org": "OpenAI",
      "agent": "Terminus 2",
@@ -2133,7 +2138,7 @@
      "old": false
     },
     {
-     "model": "gpt-5.1-2025-11-13",
+     "model": "GPT-5.1",
      "score": 47.6,
      "org": "OpenAI",
      "agent": "Terminus 2",
@@ -2163,7 +2168,7 @@
      "old": false
     },
     {
-     "model": "gpt-5-codex",
+     "model": "GPT-5-Codex",
      "score": 44.3,
      "org": "OpenAI",
      "agent": "Codex CLI",
@@ -2173,7 +2178,7 @@
      "old": false
     },
     {
-     "model": "GPT-5-Codex",
+     "model": "gpt-5-codex",
      "score": 44.3,
      "org": "OpenAI",
      "agent": "Codex CLI",
@@ -2326,7 +2331,7 @@
      "model": "GPT-5-Mini",
      "score": 34.8,
      "org": "OpenAI",
-     "agent": "spoox-m",
+     "agent": "spoox-o-m",
      "pass4": null,
      "cost": null,
      "released": "2025-08-07",
@@ -2343,7 +2348,7 @@
      "old": false
     },
     {
-     "model": "gemini-2.5-pro",
+     "model": "Gemini 2.5 Pro",
      "score": 32.6,
      "org": "Google DeepMind",
      "agent": "Terminus 2",
@@ -2353,7 +2358,7 @@
      "old": false
     },
     {
-     "model": "Gemini 2.5 Pro",
+     "model": "gemini-2.5-pro",
      "score": 32.6,
      "org": "Google DeepMind",
      "agent": "Terminus 2",
@@ -2443,7 +2448,7 @@
      "old": false
     },
     {
-     "model": "grok-code-fast-1",
+     "model": "Grok Code Fast 1",
      "score": 25.8,
      "org": "xAI",
      "agent": "Mini-SWE-Agent",
@@ -2453,7 +2458,7 @@
      "old": false
     },
     {
-     "model": "Grok Code Fast 1",
+     "model": "grok-code-fast-1",
      "score": 25.8,
      "org": "xAI",
      "agent": "Mini-SWE-Agent",
@@ -2473,7 +2478,7 @@
      "old": false
     },
     {
-     "model": "glm-4.6",
+     "model": "GLM 4.6",
      "score": 24.5,
      "org": "Z.ai (Zhipu AI),Tsinghua University",
      "agent": "Terminus 2",
@@ -2483,7 +2488,7 @@
      "old": false
     },
     {
-     "model": "GLM 4.6",
+     "model": "glm-4.6",
      "score": 24.5,
      "org": "Z.ai (Zhipu AI),Tsinghua University",
      "agent": "Terminus 2",
@@ -3298,7 +3303,7 @@
    "rows": [
     {
      "model": "gpt-6-astra",
-     "score": 1797.0,
+     "score": 1800.3,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3308,7 +3313,7 @@
     },
     {
      "model": "claude-fable-5-1",
-     "score": 1765.4,
+     "score": 1758.0,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -3318,7 +3323,7 @@
     },
     {
      "model": "claude-opus-5",
-     "score": 1690.6,
+     "score": 1687.0,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -3328,7 +3333,7 @@
     },
     {
      "model": "kimi-k3",
-     "score": 1673.7,
+     "score": 1674.3,
      "org": "Moonshot",
      "agent": null,
      "pass4": null,
@@ -3338,7 +3343,7 @@
     },
     {
      "model": "qwen3.8-max",
-     "score": 1668.9,
+     "score": 1670.6,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -3347,18 +3352,18 @@
      "old": false
     },
     {
-     "model": "grok-4.6",
-     "score": 1628.8,
-     "org": "xAI",
+     "model": "muse-spark-1.3",
+     "score": 1651.9,
+     "org": "Meta AI",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-08-12",
+     "released": "2026-09-02",
      "old": false
     },
     {
      "model": "claude-fable-5",
-     "score": 1626.3,
+     "score": 1628.0,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -3367,8 +3372,18 @@
      "old": false
     },
     {
+     "model": "grok-4.6",
+     "score": 1617.6,
+     "org": "xAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-12",
+     "old": false
+    },
+    {
      "model": "gpt-5.6-sol",
-     "score": 1618.7,
+     "score": 1617.3,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3377,18 +3392,8 @@
      "old": false
     },
     {
-     "model": "glm-5.3-flash",
-     "score": 1604.4,
-     "org": "Z.ai (Zhipu AI)",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-08-20",
-     "old": false
-    },
-    {
      "model": "glm-5.3",
-     "score": 1598.6,
+     "score": 1614.5,
      "org": "Z.ai (Zhipu AI)",
      "agent": null,
      "pass4": null,
@@ -3397,8 +3402,28 @@
      "old": false
     },
     {
+     "model": "deepseek-v4.1-flash",
+     "score": 1614.0,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-09",
+     "old": false
+    },
+    {
+     "model": "glm-5.3-flash",
+     "score": 1607.1,
+     "org": "Z.ai (Zhipu AI)",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-20",
+     "old": false
+    },
+    {
      "model": "qwen3.8-27b",
-     "score": 1594.8,
+     "score": 1593.3,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -3418,7 +3443,7 @@
     },
     {
      "model": "gemini-3.7-flash",
-     "score": 1587.0,
+     "score": 1587.3,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -3428,7 +3453,7 @@
     },
     {
      "model": "deepseek-v4-pro-0813",
-     "score": 1581.6,
+     "score": 1580.5,
      "org": "DeepSeek",
      "agent": null,
      "pass4": null,
@@ -3438,7 +3463,7 @@
     },
     {
      "model": "deepseek-v4-flash-0731",
-     "score": 1579.1,
+     "score": 1580.2,
      "org": "DeepSeek",
      "agent": null,
      "pass4": null,
@@ -3448,7 +3473,7 @@
     },
     {
      "model": "gemini-3.8-flash",
-     "score": 1567.3,
+     "score": 1567.9,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -3468,22 +3493,12 @@
     },
     {
      "model": "claude-opus-4-8",
-     "score": 1563.5,
+     "score": 1558.8,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
      "cost": null,
      "released": "2026-05-28",
-     "old": false
-    },
-    {
-     "model": "grok-4.5",
-     "score": 1556.4,
-     "org": "xAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-07-08",
      "old": false
     },
     {
@@ -3497,18 +3512,18 @@
      "old": false
     },
     {
-     "model": "claude-opus-4-8_none",
-     "score": 1539.1,
-     "org": "Anthropic",
+     "model": "grok-4.5",
+     "score": 1555.1,
+     "org": "xAI",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-05-28",
+     "released": "2026-07-08",
      "old": false
     },
     {
      "model": "muse-spark-1.1",
-     "score": 1539.0,
+     "score": 1541.5,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -3517,8 +3532,18 @@
      "old": false
     },
     {
+     "model": "claude-opus-4-8_none",
+     "score": 1538.8,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-05-28",
+     "old": false
+    },
+    {
      "model": "gemini-3.6-flash",
-     "score": 1538.9,
+     "score": 1537.0,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -3528,7 +3553,7 @@
     },
     {
      "model": "claude-sonnet-5",
-     "score": 1538.6,
+     "score": 1536.7,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -3538,7 +3563,7 @@
     },
     {
      "model": "muse-spark-1.2",
-     "score": 1533.7,
+     "score": 1534.4,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -3547,18 +3572,8 @@
      "old": false
     },
     {
-     "model": "claude-sonnet-4-6",
-     "score": 1522.5,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-02-17",
-     "old": false
-    },
-    {
      "model": "gpt-5.6-terra",
-     "score": 1519.9,
+     "score": 1521.2,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3567,8 +3582,18 @@
      "old": false
     },
     {
+     "model": "claude-sonnet-4-6",
+     "score": 1521.0,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-17",
+     "old": false
+    },
+    {
      "model": "gpt-5.6-luna",
-     "score": 1517.6,
+     "score": 1518.9,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3578,7 +3603,7 @@
     },
     {
      "model": "qwen3.7-max",
-     "score": 1516.7,
+     "score": 1517.1,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -3597,18 +3622,18 @@
      "old": false
     },
     {
-     "model": "glm-5.1",
-     "score": 1508.9,
-     "org": "Z.ai (Zhipu AI)",
+     "model": "gpt-5.5",
+     "score": 1510.2,
+     "org": "OpenAI",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-04-07",
+     "released": "2026-04-23",
      "old": false
     },
     {
      "model": "kimi-k2.6",
-     "score": 1508.7,
+     "score": 1508.8,
      "org": "Moonshot",
      "agent": null,
      "pass4": null,
@@ -3617,13 +3642,13 @@
      "old": false
     },
     {
-     "model": "gpt-5.5",
+     "model": "glm-5.1",
      "score": 1508.3,
-     "org": "OpenAI",
+     "org": "Z.ai (Zhipu AI)",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-04-23",
+     "released": "2026-04-07",
      "old": false
     },
     {
@@ -3638,7 +3663,7 @@
     },
     {
      "model": "claude-opus-4-5-20251101_32K",
-     "score": 1494.4,
+     "score": 1494.9,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -3648,7 +3673,7 @@
     },
     {
      "model": "MiniMax-M3",
-     "score": 1487.6,
+     "score": 1486.7,
      "org": "MiniMax",
      "agent": null,
      "pass4": null,
@@ -3668,7 +3693,7 @@
     },
     {
      "model": "qwen3.6-max-preview",
-     "score": 1478.9,
+     "score": 1479.1,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -3678,7 +3703,7 @@
     },
     {
      "model": "mimo-v2.5-pro",
-     "score": 1475.7,
+     "score": 1474.9,
      "org": "Xiaomi Corp",
      "agent": null,
      "pass4": null,
@@ -3698,7 +3723,7 @@
     },
     {
      "model": "claude-opus-4-5-20251101",
-     "score": 1468.1,
+     "score": 1468.2,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -3708,7 +3733,7 @@
     },
     {
      "model": "deepseek-v4-pro",
-     "score": 1463.8,
+     "score": 1463.6,
      "org": "DeepSeek",
      "agent": null,
      "pass4": null,
@@ -3718,7 +3743,7 @@
     },
     {
      "model": "gpt-5.4-2026-03-05",
-     "score": 1462.9,
+     "score": 1463.0,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3728,7 +3753,7 @@
     },
     {
      "model": "qwen3.6-plus",
-     "score": 1459.7,
+     "score": 1460.5,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -3737,18 +3762,8 @@
      "old": false
     },
     {
-     "model": "gemini-3.5-flash-lite",
-     "score": 1449.1,
-     "org": "Google DeepMind",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-07-21",
-     "old": false
-    },
-    {
      "model": "gemini-3.1-pro-preview",
-     "score": 1446.5,
+     "score": 1446.6,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -3757,8 +3772,18 @@
      "old": false
     },
     {
+     "model": "gemini-3.5-flash-lite",
+     "score": 1446.6,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-07-21",
+     "old": false
+    },
+    {
      "model": "deepseek-v4-pro_none",
-     "score": 1445.5,
+     "score": 1445.7,
      "org": "DeepSeek",
      "agent": null,
      "pass4": null,
@@ -3768,7 +3793,7 @@
     },
     {
      "model": "gemini-3-pro-preview",
-     "score": 1437.8,
+     "score": 1438.8,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -3778,7 +3803,7 @@
     },
     {
      "model": "mimo-v2.5",
-     "score": 1437.8,
+     "score": 1437.2,
      "org": "Xiaomi Corp",
      "agent": null,
      "pass4": null,
@@ -3788,7 +3813,7 @@
     },
     {
      "model": "kimi-k2.5",
-     "score": 1435.9,
+     "score": 1436.4,
      "org": "Moonshot",
      "agent": null,
      "pass4": null,
@@ -3798,7 +3823,7 @@
     },
     {
      "model": "glm-5",
-     "score": 1435.5,
+     "score": 1435.9,
      "org": "Z.ai (Zhipu AI)",
      "agent": null,
      "pass4": null,
@@ -3808,7 +3833,7 @@
     },
     {
      "model": "glm-4.7",
-     "score": 1434.3,
+     "score": 1434.7,
      "org": "Z.ai (Zhipu AI)",
      "agent": null,
      "pass4": null,
@@ -3828,7 +3853,7 @@
     },
     {
      "model": "deepseek-v4-flash",
-     "score": 1431.1,
+     "score": 1430.9,
      "org": "DeepSeek",
      "agent": null,
      "pass4": null,
@@ -3838,7 +3863,7 @@
     },
     {
      "model": "gpt-5-2025-08-07",
-     "score": 1419.1,
+     "score": 1419.5,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3848,7 +3873,17 @@
     },
     {
      "model": "Inkling",
-     "score": 1407.6,
+     "score": 1410.0,
+     "org": "Thinking Machines",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-07-15",
+     "old": false
+    },
+    {
+     "model": "inkling-small",
+     "score": 1406.6,
      "org": "Thinking Machines",
      "agent": null,
      "pass4": null,
@@ -3858,7 +3893,7 @@
     },
     {
      "model": "kimi-k2.5_none",
-     "score": 1404.9,
+     "score": 1405.7,
      "org": "Moonshot",
      "agent": null,
      "pass4": null,
@@ -3867,18 +3902,8 @@
      "old": false
     },
     {
-     "model": "inkling-small",
-     "score": 1401.6,
-     "org": "Thinking Machines",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-07-15",
-     "old": false
-    },
-    {
      "model": "qwen3.5-plus",
-     "score": 1399.2,
+     "score": 1398.9,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -3888,7 +3913,7 @@
     },
     {
      "model": "MiniMax-M2.7",
-     "score": 1398.1,
+     "score": 1397.5,
      "org": "MiniMax",
      "agent": null,
      "pass4": null,
@@ -3898,7 +3923,7 @@
     },
     {
      "model": "gpt-5.4-mini-2026-03-17",
-     "score": 1397.1,
+     "score": 1397.2,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3908,7 +3933,7 @@
     },
     {
      "model": "gpt-5.1-2025-11-13",
-     "score": 1391.0,
+     "score": 1392.0,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -3928,7 +3953,7 @@
     },
     {
      "model": "claude-opus-4-1-20250805",
-     "score": 1388.8,
+     "score": 1389.0,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -3938,7 +3963,7 @@
     },
     {
      "model": "MiniMax-M2.1",
-     "score": 1387.0,
+     "score": 1387.5,
      "org": "MiniMax",
      "agent": null,
      "pass4": null,
@@ -3958,7 +3983,7 @@
     },
     {
      "model": "MiniMax-M2.5",
-     "score": 1383.9,
+     "score": 1384.1,
      "org": "MiniMax",
      "agent": null,
      "pass4": null,
@@ -3968,7 +3993,7 @@
     },
     {
      "model": "gemini-3-flash-preview",
-     "score": 1382.8,
+     "score": 1383.1,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -3978,7 +4003,7 @@
     },
     {
      "model": "grok-4-20",
-     "score": 1373.6,
+     "score": 1373.8,
      "org": "xAI",
      "agent": null,
      "pass4": null,
@@ -3988,7 +4013,7 @@
     },
     {
      "model": "gpt-5.3-codex",
-     "score": 1369.0,
+     "score": 1369.9,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -4008,7 +4033,7 @@
     },
     {
      "model": "gemma-4-31b-it",
-     "score": 1363.6,
+     "score": 1364.1,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -4018,7 +4043,7 @@
     },
     {
      "model": "gemma-4-26b-a4b",
-     "score": 1361.7,
+     "score": 1361.4,
      "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
@@ -4028,7 +4053,7 @@
     },
     {
      "model": "qwen3.5-27B",
-     "score": 1357.5,
+     "score": 1357.4,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -4038,7 +4063,7 @@
     },
     {
      "model": "grok-4.3",
-     "score": 1356.7,
+     "score": 1357.2,
      "org": "xAI",
      "agent": null,
      "pass4": null,
@@ -4048,7 +4073,7 @@
     },
     {
      "model": "laguna-m.1",
-     "score": 1347.3,
+     "score": 1347.5,
      "org": "Poolside",
      "agent": null,
      "pass4": null,
@@ -4058,7 +4083,7 @@
     },
     {
      "model": "glm-4.6",
-     "score": 1340.2,
+     "score": 1340.6,
      "org": "Z.ai (Zhipu AI),Tsinghua University",
      "agent": null,
      "pass4": null,
@@ -4068,7 +4093,7 @@
     },
     {
      "model": "gpt-5.2-codex",
-     "score": 1338.3,
+     "score": 1338.7,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -4098,7 +4123,7 @@
     },
     {
      "model": "mimo-v2-flash",
-     "score": 1330.2,
+     "score": 1330.6,
      "org": "Xiaomi Corp",
      "agent": null,
      "pass4": null,
@@ -4108,7 +4133,7 @@
     },
     {
      "model": "claude-haiku-4-5-20251001",
-     "score": 1327.4,
+     "score": 1329.3,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -4118,7 +4143,7 @@
     },
     {
      "model": "deepseek/deepseek-v3.2",
-     "score": 1324.5,
+     "score": 1324.7,
      "org": "DeepSeek",
      "agent": null,
      "pass4": null,
@@ -4128,7 +4153,7 @@
     },
     {
      "model": "laguna-xs.2",
-     "score": 1302.0,
+     "score": 1302.4,
      "org": "Poolside",
      "agent": null,
      "pass4": null,
@@ -4138,7 +4163,7 @@
     },
     {
      "model": "MiniMax-M2",
-     "score": 1297.0,
+     "score": 1297.8,
      "org": "MiniMax",
      "agent": null,
      "pass4": null,
@@ -4148,7 +4173,7 @@
     },
     {
      "model": "Qwen3-Coder-480B-A35B-Instruct",
-     "score": 1273.2,
+     "score": 1273.8,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -4168,7 +4193,7 @@
     },
     {
      "model": "mistral-medium-2604",
-     "score": 1265.0,
+     "score": 1264.9,
      "org": "Mistral AI",
      "agent": null,
      "pass4": null,
@@ -4178,7 +4203,7 @@
     },
     {
      "model": "gemini-3.1-flash-lite",
-     "score": 1254.1,
+     "score": 1254.3,
      "org": "Google",
      "agent": null,
      "pass4": null,
@@ -4188,7 +4213,7 @@
     },
     {
      "model": "qwen3.6-35b-a3b",
-     "score": 1249.8,
+     "score": 1250.2,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -4207,18 +4232,8 @@
      "old": false
     },
     {
-     "model": "trinity-large-thinking",
-     "score": 1238.4,
-     "org": "Arcee AI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-01",
-     "old": false
-    },
-    {
      "model": "qwen3.5-flash",
-     "score": 1238.1,
+     "score": 1238.2,
      "org": "Alibaba",
      "agent": null,
      "pass4": null,
@@ -4227,8 +4242,18 @@
      "old": false
     },
     {
+     "model": "trinity-large-thinking",
+     "score": 1236.6,
+     "org": "Arcee AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-01",
+     "old": false
+    },
+    {
      "model": "mistral-large-2512",
-     "score": 1230.1,
+     "score": 1229.5,
      "org": "Mistral AI",
      "agent": null,
      "pass4": null,
@@ -4258,7 +4283,7 @@
     },
     {
      "model": "grok-4-1",
-     "score": 1209.8,
+     "score": 1211.0,
      "org": "xAI",
      "agent": null,
      "pass4": null,
@@ -4268,7 +4293,7 @@
     },
     {
      "model": "mercury-2",
-     "score": 1166.2,
+     "score": 1166.6,
      "org": "Inception Labs",
      "agent": null,
      "pass4": null,
@@ -4278,7 +4303,7 @@
     },
     {
      "model": "grok-code-fast-1",
-     "score": 1164.5,
+     "score": 1165.1,
      "org": "",
      "agent": null,
      "pass4": null,
@@ -4297,7 +4322,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-03",
+   "latest": "2026-09-09",
    "old_count": 0,
    "frontier_models": [
     "gpt-6-astra",
@@ -13961,6 +13986,16 @@
    ],
    "rows": [
     {
+     "model": "GPT 6 Astra",
+     "score": 54.8,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-03",
+     "old": false
+    },
+    {
      "model": "Fable 5.1",
      "score": 46.5,
      "org": "Anthropic",
@@ -13978,6 +14013,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-02-19",
+     "old": false
+    },
+    {
+     "model": "Gemini 3.8 Flash",
+     "score": 44.5,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-02",
      "old": false
     },
     {
@@ -14471,13 +14516,19 @@
      "old": false
     }
    ],
-   "latest": "2026-09-01",
+   "latest": "2026-09-03",
    "old_count": 0,
-   "frontier_models": [],
-   "frontier_count": 0,
-   "recent_frontier_models": [],
-   "recent_frontier_count": 0,
-   "featured": false
+   "frontier_models": [
+    "GPT 6 Astra",
+    "Gemini 3.8 Flash"
+   ],
+   "frontier_count": 2,
+   "recent_frontier_models": [
+    "GPT 6 Astra",
+    "Gemini 3.8 Flash"
+   ],
+   "recent_frontier_count": 2,
+   "featured": true
   },
   {
    "id": "simpleqa_verified",
@@ -15274,7 +15325,7 @@
    "rows": [
     {
      "model": "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
-     "score": 62.0,
+     "score": 63.1,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -15284,7 +15335,7 @@
     },
     {
      "model": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
-     "score": 60.2,
+     "score": 61.0,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
@@ -15294,12 +15345,52 @@
     },
     {
      "model": "Claude Fable 5.1 (Adaptive Reasoning, Xhigh Effort, Default Fallback)",
-     "score": 60.1,
+     "score": 60.9,
      "org": "Anthropic",
      "agent": null,
      "pass4": null,
      "cost": null,
      "released": "2026-09-01",
+     "old": false
+    },
+    {
+     "model": "Gemini 3.7 Flash",
+     "score": 59.8,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-13",
+     "old": false
+    },
+    {
+     "model": "Muse Spark 1.3",
+     "score": 59.7,
+     "org": "Meta AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-02",
+     "old": false
+    },
+    {
+     "model": "Kimi K3",
+     "score": 59.5,
+     "org": "Moonshot",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-07-16",
+     "old": false
+    },
+    {
+     "model": "GLM-5.3",
+     "score": 59.0,
+     "org": "Z.ai (Zhipu AI)",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-14",
      "old": false
     },
     {
@@ -15313,33 +15404,23 @@
      "old": false
     },
     {
-     "model": "Kimi K3",
-     "score": 58.7,
-     "org": "Moonshot",
+     "model": "Step 5 Preview",
+     "score": 58.9,
+     "org": "StepFun",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-07-16",
+     "released": "2026-09-18",
      "old": false
     },
     {
      "model": "Muse Spark 1.1",
-     "score": 58.2,
+     "score": 58.8,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
      "cost": null,
      "released": "2026-07-09",
-     "old": false
-    },
-    {
-     "model": "Gemini 3.7 Flash",
-     "score": 57.9,
-     "org": "Google DeepMind",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-08-13",
      "old": false
     },
     {
@@ -15353,8 +15434,18 @@
      "old": false
     },
     {
+     "model": "Grok 4.7",
+     "score": 57.4,
+     "org": "xAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-21",
+     "old": false
+    },
+    {
      "model": "GPT-5.6 Sol",
-     "score": 56.9,
+     "score": 57.1,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
@@ -15373,13 +15464,23 @@
      "old": false
     },
     {
-     "model": "GLM-5.3",
-     "score": 56.5,
-     "org": "Z.ai (Zhipu AI)",
+     "model": "Gemini 3.8 Flash",
+     "score": 56.6,
+     "org": "Google DeepMind",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-08-14",
+     "released": "2026-09-02",
+     "old": false
+    },
+    {
+     "model": "Grok 4.6",
+     "score": 56.5,
+     "org": "xAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-12",
      "old": false
     },
     {
@@ -15390,6 +15491,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-03",
+     "old": false
+    },
+    {
+     "model": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+     "score": 56.4,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-07-24",
      "old": false
     },
     {
@@ -15413,16 +15524,6 @@
      "old": false
     },
     {
-     "model": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
-     "score": 55.7,
-     "org": "Anthropic",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-07-24",
-     "old": false
-    },
-    {
      "model": "Claude Fable 5.1 (Adaptive Reasoning, Low Effort, Default Fallback)",
      "score": 55.7,
      "org": "Anthropic",
@@ -15443,6 +15544,16 @@
      "old": false
     },
     {
+     "model": "GPT-5.6 Terra",
+     "score": 55.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-07-09",
+     "old": false
+    },
+    {
      "model": "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
      "score": 55.0,
      "org": "Anthropic",
@@ -15453,16 +15564,6 @@
      "old": false
     },
     {
-     "model": "Grok 4.6",
-     "score": 54.6,
-     "org": "xAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-08-12",
-     "old": false
-    },
-    {
      "model": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)",
      "score": 54.5,
      "org": "Anthropic",
@@ -15470,16 +15571,6 @@
      "pass4": null,
      "cost": null,
      "released": "2026-04-16",
-     "old": false
-    },
-    {
-     "model": "Gemini 3.8 Flash",
-     "score": 54.4,
-     "org": "Google DeepMind",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-09-02",
      "old": false
     },
     {
@@ -15503,16 +15594,6 @@
      "old": false
     },
     {
-     "model": "GPT-5.6 Terra",
-     "score": 53.9,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-07-09",
-     "old": false
-    },
-    {
      "model": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)",
      "score": 53.6,
      "org": "Anthropic",
@@ -15520,6 +15601,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-06-30",
+     "old": false
+    },
+    {
+     "model": "GPT-5.6 Luna",
+     "score": 53.6,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-07-09",
      "old": false
     },
     {
@@ -15583,13 +15674,33 @@
      "old": false
     },
     {
-     "model": "GPT-5.6 Luna",
-     "score": 52.5,
-     "org": "OpenAI",
+     "model": "Qwen3.8 Max (0902)",
+     "score": 52.1,
+     "org": "Alibaba",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-07-09",
+     "released": "2026-09-01",
+     "old": false
+    },
+    {
+     "model": "DeepSeek V4.1 Flash (Reasoning, Max Effort)",
+     "score": 51.9,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-09",
+     "old": false
+    },
+    {
+     "model": "GLM 5.3 Flash",
+     "score": 51.6,
+     "org": "Z.ai (Zhipu AI)",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-20",
      "old": false
     },
     {
@@ -15600,6 +15711,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-04-08",
+     "old": false
+    },
+    {
+     "model": "DeepSeek V4 Pro 0813 (Reasoning, Max Effort)",
+     "score": 51.0,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-13",
      "old": false
     },
     {
@@ -15670,16 +15791,6 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-31",
-     "old": false
-    },
-    {
-     "model": "DeepSeek V4 Pro 0813 (Reasoning, Max Effort)",
-     "score": 49.2,
-     "org": "DeepSeek",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-08-13",
      "old": false
     },
     {
@@ -15773,6 +15884,16 @@
      "old": false
     },
     {
+     "model": "MiniMax-M3",
+     "score": 47.1,
+     "org": "MiniMax",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-06-01",
+     "old": false
+    },
+    {
      "model": "GPT-5.6 Sol (Non-reasoning)",
      "score": 47.1,
      "org": "OpenAI",
@@ -15790,6 +15911,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-03-18",
+     "old": false
+    },
+    {
+     "model": "Inkling",
+     "score": 47.0,
+     "org": "Thinking Machines",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-07-15",
      "old": false
     },
     {
@@ -15813,6 +15944,16 @@
      "old": false
     },
     {
+     "model": "Qwen3.8 27B",
+     "score": 46.6,
+     "org": "Alibaba",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-14",
+     "old": false
+    },
+    {
      "model": "DeepSeek V4 Pro (Reasoning, High Effort)",
      "score": 46.4,
      "org": "DeepSeek",
@@ -15823,26 +15964,6 @@
      "old": false
     },
     {
-     "model": "Inkling",
-     "score": 46.1,
-     "org": "Thinking Machines",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-07-15",
-     "old": false
-    },
-    {
-     "model": "GLM-5.3-Flash",
-     "score": 46.1,
-     "org": "Z.ai (Zhipu AI)",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-08-20",
-     "old": false
-    },
-    {
      "model": "Qwen3.7 Plus",
      "score": 45.5,
      "org": "Alibaba",
@@ -15850,16 +15971,6 @@
      "pass4": null,
      "cost": null,
      "released": "2026-06-02",
-     "old": false
-    },
-    {
-     "model": "MiniMax-M3",
-     "score": 45.4,
-     "org": "MiniMax",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-06-01",
      "old": false
     },
     {
@@ -15890,16 +16001,6 @@
      "pass4": null,
      "cost": null,
      "released": "2025-09-29",
-     "old": false
-    },
-    {
-     "model": "Qwen3.8 27B",
-     "score": 44.7,
-     "org": "Alibaba",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-08-14",
      "old": false
     },
     {
@@ -16033,6 +16134,16 @@
      "old": false
     },
     {
+     "model": "Gemini 3.5 Flash-Lite",
+     "score": 41.3,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-07-21",
+     "old": false
+    },
+    {
      "model": "Cogito v2.1 (Reasoning)",
      "score": 41.0,
      "org": "Deep Cogito",
@@ -16040,16 +16151,6 @@
      "pass4": null,
      "cost": null,
      "released": "2025-11-19",
-     "old": false
-    },
-    {
-     "model": "Gemini 3.5 Flash-Lite",
-     "score": 40.9,
-     "org": "Google DeepMind",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-07-21",
      "old": false
     },
     {
@@ -16083,6 +16184,26 @@
      "old": false
     },
     {
+     "model": "Nemotron 3 Ultra 550B A55B (Reasoning)",
+     "score": 40.3,
+     "org": "NVIDIA",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-06-04",
+     "old": false
+    },
+    {
+     "model": "Mistral Medium 3.5",
+     "score": 40.2,
+     "org": "Mistral AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-28",
+     "old": false
+    },
+    {
      "model": "Gemma 4 26B A4B (Reasoning)",
      "score": 40.0,
      "org": "Google DeepMind",
@@ -16113,16 +16234,6 @@
      "old": false
     },
     {
-     "model": "Nemotron 3 Ultra 550B A55B (Reasoning)",
-     "score": 39.9,
-     "org": "NVIDIA",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-06-04",
-     "old": false
-    },
-    {
      "model": "GPT-5.6 Luna (Non-reasoning)",
      "score": 39.9,
      "org": "OpenAI",
@@ -16143,16 +16254,6 @@
      "old": false
     },
     {
-     "model": "Mistral Medium 3.5",
-     "score": 39.6,
-     "org": "Mistral AI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-28",
-     "old": false
-    },
-    {
      "model": "GPT-5 mini",
      "score": 39.2,
      "org": "OpenAI",
@@ -16170,16 +16271,6 @@
      "pass4": null,
      "cost": null,
      "released": "2025-09-18",
-     "old": false
-    },
-    {
-     "model": "gpt-oss-120b",
-     "score": 38.9,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-08-05",
      "old": false
     },
     {
@@ -16260,6 +16351,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-06-16",
+     "old": false
+    },
+    {
+     "model": "gpt-oss-120b",
+     "score": 36.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-08-05",
      "old": false
     },
     {
@@ -16603,7 +16704,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-03",
+   "latest": "2026-09-21",
    "old_count": 1,
    "frontier_models": [
     "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
@@ -16626,9 +16727,10 @@
     "Kimi K3",
     "Qwen3.8",
     "Qwen3.8 27B",
-    "Qwen3.8 27B (Non-reasoning)"
+    "Qwen3.8 27B (Non-reasoning)",
+    "Qwen3.8 Max (0902)"
    ],
-   "frontier_count": 21,
+   "frontier_count": 22,
    "recent_frontier_models": [
     "Claude Fable 5.1 (Adaptive Reasoning, Max Effort, Default Fallback)",
     "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
@@ -16636,23 +16738,24 @@
     "Kimi K3",
     "Claude Fable 5.1 (Adaptive Reasoning, High Effort, Default Fallback)",
     "GPT-5.6 Sol",
+    "Gemini 3.8 Flash",
+    "Grok 4.6",
     "GPT-6 Astra",
     "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
     "Claude Fable 5.1 (Adaptive Reasoning, Low Effort, Default Fallback)",
     "Claude Fable 5.1 (Adaptive Reasoning, Medium Effort, Default Fallback)",
     "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
-    "Grok 4.6",
-    "Gemini 3.8 Flash",
     "Claude Opus 5 (Adaptive Reasoning, High Effort)",
     "GPT-6 Astra (Non-reasoning)",
     "Qwen3.8",
+    "Qwen3.8 Max (0902)",
     "Claude Opus 5 (Adaptive Reasoning, Medium Effort)",
     "Claude Opus 5 (Adaptive Reasoning, Low Effort)",
     "GPT-5.6 Sol (Non-reasoning)",
     "Qwen3.8 27B",
     "Qwen3.8 27B (Non-reasoning)"
    ],
-   "recent_frontier_count": 21,
+   "recent_frontier_count": 22,
    "featured": true
   },
   {
