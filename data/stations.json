@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-09-23 07:31 UTC",
+ "updated_at": "2026-09-24 07:24 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 37,
+ "count": 38,
  "stations": [
+  {
+   "name": "hiyo",
+   "url": "https://free.hiyo.top/register",
+   "kind": "公益站 / GitHub 或 Linux DO 注册 / 只有 luna",
+   "summary": "公益站，GitHub 或 Linux DO 注册，注册送 20，有签到；目前只有 luna 模型，后续上 6-luna，速度可能稍微较慢。",
+   "signup": "20",
+   "checkin": "有签到（金额以站内显示为准）",
+   "models": "luna（后续上 6-luna）",
+   "entry": "GitHub 或 Linux DO 注册。",
+   "caveat": "目前只有 luna 一个模型，选择比较单一，6-luna 还没上；速度可能稍微较慢；赠送与签到金额以站内实际显示为准。",
+   "updated": "2026-09-24",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "zquant",
    "url": "https://sub2api.zquant.site/register",
@@ -35,12 +49,12 @@
    "name": "StarBridge 公益站",
    "url": "https://api.careke.cn/sign-up",
    "kind": "公益站 / GitHub 注册 / 注册送 20 签到 10",
-   "summary": "公益站，GitHub 注册送 20 元、每日签到 10 元；含 gemini-3.8-flash-high、gpt-6-astra、gpt-5.6-sol 等 15 个模型，额度按元显示。",
+   "summary": "公益站，GitHub 注册送 20 元、每日签到 10 元；含 gemini-3.8-flash-high、gpt-6-astra、gpt-5.6-sol 等 15 个模型，额度按元显示。站点服务器此前忘记续约，需要重新注册。",
    "signup": "20 元",
    "checkin": "10 元",
    "models": "gemini-3.8-flash-high / gpt-6-astra / gpt-5.6-sol / claude-sonnet-4-6 / gpt-5.6-terra / gpt-5.6-luna / gpt-5.5 等 15 个（公开模型广场核实）",
-   "entry": "GitHub 注册（2026-09-19 实测可注册）。",
-   "caveat": "站内 9 月 18 日公告称暂停新用户注册、部分接口限时开放、部分模型限量供应，注册改走 GitHub，但 9 月 19 日实测邀请链接仍可注册，两边不一致请以注册页实际为准；Gemini 系模型占比高，受 Google 限速调整影响的可能性较大；额度、签到与模型以站内实际显示为准。",
+   "entry": "GitHub 注册；站点服务器此前忘记续约，原账号需要重新注册。",
+   "caveat": "站点服务器此前忘记续约，原账号需重新注册；站内 9 月 18 日公告曾称暂停新用户注册、部分接口限时开放、部分模型限量供应，注册改走 GitHub；Gemini 系模型占比高，受 Google 限速调整影响的可能性较大；额度、签到与模型以站内实际显示为准。",
    "updated": "2026-09-19",
    "status": "open",
    "type": "charity"

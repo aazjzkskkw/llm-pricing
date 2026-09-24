@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-23 07:31 UTC",
- "cutoff": "2024-09-23",
+ "updated_at": "2026-09-24 07:24 UTC",
+ "cutoff": "2024-09-24",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -6076,7 +6076,7 @@
     {
      "model": "nemotron-3-ultra",
      "score": 86.7,
-     "org": "NVIDIA",
+     "org": "Nvidia",
      "agent": null,
      "pass4": null,
      "cost": null,
@@ -11978,7 +11978,7 @@
     {
      "model": "nemotron-3-ultra",
      "score": 85.4,
-     "org": "NVIDIA",
+     "org": "Nvidia",
      "agent": null,
      "pass4": null,
      "cost": null,
@@ -16186,7 +16186,7 @@
     {
      "model": "Nemotron 3 Ultra 550B A55B (Reasoning)",
      "score": 40.3,
-     "org": "NVIDIA",
+     "org": "Nvidia",
      "agent": null,
      "pass4": null,
      "cost": null,
@@ -16366,7 +16366,7 @@
     {
      "model": "NVIDIA Nemotron 3 Super 120B A12B (Reasoning)",
      "score": 36.0,
-     "org": "NVIDIA",
+     "org": "Nvidia",
      "agent": null,
      "pass4": null,
      "cost": null,
