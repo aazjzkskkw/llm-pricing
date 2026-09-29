@@ -1,8 +1,36 @@
 {
- "updated_at": "2026-09-28 08:24 UTC",
+ "updated_at": "2026-09-29 08:03 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 40,
+ "count": 42,
  "stations": [
+  {
+   "name": "Artbloom 公益站",
+   "url": "https://api.artbloom.tech/signup",
+   "kind": "公益站 / GitHub 注册满一年 / 注册送 100 刀",
+   "summary": "公益站，通过邀请链接用 GitHub 注册（账号需满一年）送 100 刀，即到账。有 claude-opus-5、claude-opus-5-5、DeepSeek-V4-Flash、kimi-k3 与生图模型，OpenAI 兼容接口，模型页透明计价。",
+   "signup": "100 刀（注册即到账）",
+   "checkin": "未提供",
+   "models": "claude-opus-5 / claude-opus-5-5（均 $2 输入、$10 输出每百万 token）/ DeepSeek-V4-Flash / kimi-k3（均 $1 输入、$3 输出）；生图 gpt-image-2.5 系列 $0.02-0.5/张",
+   "entry": "通过邀请链接以 GitHub 注册（GitHub 账号需注册满一年）。",
+   "caveat": "语言模型按官方价每百万 token 计费，100 刀的 token 量要按这个价折算，不是折扣倍率；GitHub 账号需注册满一年；公开范围内额度来源只有注册赠送和邀请，登录区内是否有其他活动需注册后确认；模型与价格以站内模型页为准。",
+   "updated": "2026-09-26",
+   "status": "open",
+   "type": "charity"
+  },
+  {
+   "name": "星桥 公益站",
+   "url": "https://xingqiao.chat/sign-up",
+   "kind": "公益站 / 只有 Gemini / 按次计费",
+   "summary": "公益站，邀请码注册送 200 次，每拉一人再送 100 次，每日签到 20 次；只有 Gemini 系模型，全模型 0.02 元/次按次计费，不支持充值。",
+   "signup": "200 次（邀请码注册）；每拉一人再送 100 次",
+   "checkin": "20 次",
+   "models": "只有 Gemini 系（全模型 0.02 元/次）",
+   "entry": "邮箱验证注册（走邀请链接），无人机验证。",
+   "caveat": "只有 Gemini 系模型，想用 Claude / GPT 的别选这个站；次数与价格规则可能调整，以站内实际显示为准。",
+   "updated": "2026-09-26",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "玖时API 半公益站",
    "url": "https://api.jiushi.xin/register",
