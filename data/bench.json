@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-30 08:10 UTC",
- "cutoff": "2024-09-30",
+ "updated_at": "2026-10-01 08:31 UTC",
+ "cutoff": "2024-10-01",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -226,6 +226,19 @@
      "recent_frontier": true
     },
     {
+     "model": "gpt-6.1-sol",
+     "org": "OpenAI",
+     "released": "2026-09-29",
+     "n": 5,
+     "WebDev": 1758.7,
+     "FMath": 93.7,
+     "AIME": 100.0,
+     "GPQA": 95.4,
+     "SimpleQA": 73.9,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
      "model": "claude-sonnet-5-5",
      "org": "Anthropic",
      "released": "2026-09-28",
@@ -235,6 +248,34 @@
      "AIME": 100.0,
      "GPQA": 95.6,
      "SimpleQA": 46.5,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
+     "model": "GPT-6 Sol",
+     "org": "OpenAI",
+     "released": "2026-09-22",
+     "n": 6,
+     "WebDev": 1689.3,
+     "FMath": 89.8,
+     "AIME": 100.0,
+     "ARC-2": 89.6,
+     "GPQA": 94.3,
+     "SimpleQA": 60.7,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
+     "model": "GPT-6 Luna",
+     "org": "OpenAI",
+     "released": "2026-09-22",
+     "n": 6,
+     "WebDev": 1582.0,
+     "FMath": 78.9,
+     "AIME": 98.9,
+     "ARC-2": 59.3,
+     "GPQA": 90.5,
+     "SimpleQA": 41.4,
      "old": false,
      "recent_frontier": false
     },
@@ -536,7 +577,7 @@
    "recent_frontier_count": 9,
    "featured": true,
    "old_count": 0,
-   "latest": "2026-09-28"
+   "latest": "2026-09-29"
   },
   {
    "id": "metr_time_horizons_external",
@@ -3337,6 +3378,16 @@
      "old": false
     },
     {
+     "model": "gpt-6.1-sol",
+     "score": 1758.7,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-29",
+     "old": false
+    },
+    {
      "model": "claude-fable-5-1",
      "score": 1758.0,
      "org": "Anthropic",
@@ -3354,6 +3405,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-28",
+     "old": false
+    },
+    {
+     "model": "gpt-6-sol",
+     "score": 1689.3,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -3484,6 +3545,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-08-13",
+     "old": false
+    },
+    {
+     "model": "gpt-6-luna",
+     "score": 1582.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -4357,7 +4428,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-28",
+   "latest": "2026-09-29",
    "old_count": 0,
    "frontier_models": [
     "gpt-6-astra",
@@ -4639,6 +4710,16 @@
    ],
    "rows": [
     {
+     "model": "gpt-6.1-sol",
+     "score": 93.7,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-29",
+     "old": false
+    },
+    {
      "model": "gpt-6-astra",
      "score": 93.7,
      "org": "OpenAI",
@@ -4666,6 +4747,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-01",
+     "old": false
+    },
+    {
+     "model": "gpt-6-sol",
+     "score": 89.8,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -4766,6 +4857,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-05-28",
+     "old": false
+    },
+    {
+     "model": "gpt-6-luna",
+     "score": 78.9,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -5529,7 +5630,7 @@
      "old": true
     }
    ],
-   "latest": "2026-09-28",
+   "latest": "2026-09-29",
    "old_count": 4,
    "frontier_models": [
     "gpt-6-astra",
@@ -5569,6 +5670,16 @@
    ],
    "rows": [
     {
+     "model": "gpt-6.1-sol",
+     "score": 100.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-29",
+     "old": false
+    },
+    {
      "model": "claude-sonnet-5-5",
      "score": 100.0,
      "org": "Anthropic",
@@ -5576,6 +5687,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-28",
+     "old": false
+    },
+    {
+     "model": "gpt-6-sol",
+     "score": 100.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -5696,6 +5817,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-08-12",
+     "old": false
+    },
+    {
+     "model": "gpt-6-luna",
+     "score": 98.9,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -7939,7 +8070,7 @@
      "old": true
     }
    ],
-   "latest": "2026-09-28",
+   "latest": "2026-09-29",
    "old_count": 38,
    "frontier_models": [
     "gpt-6-astra",
@@ -8026,6 +8157,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-01",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Sol",
+     "score": 89.6,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -8266,6 +8407,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-09",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Luna",
+     "score": 59.3,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -8809,6 +8960,16 @@
      "old": false
     },
     {
+     "model": "GPT-6 Sol (None)",
+     "score": 1.7,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
+     "old": false
+    },
+    {
      "model": "Gemini 2.0 Flash",
      "score": 1.3,
      "org": "Google DeepMind,Google",
@@ -9147,6 +9308,16 @@
      "cost": null,
      "released": "2026-07-15",
      "old": false
+    },
+    {
+     "model": "GPT-6 Luna (None)",
+     "score": 0.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
+     "old": false
     }
    ],
    "latest": "2026-09-22",
@@ -9308,6 +9479,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-08-13",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Sol",
+     "score": 95.5,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -9518,6 +9699,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-08",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Luna",
+     "score": 86.7,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -10061,6 +10252,16 @@
      "old": false
     },
     {
+     "model": "GPT-6 Sol (None)",
+     "score": 29.3,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
+     "old": false
+    },
+    {
      "model": "Claude Sonnet 4 (Thinking 8K)",
      "score": 29.0,
      "org": "Anthropic",
@@ -10338,6 +10539,16 @@
      "pass4": null,
      "cost": null,
      "released": "2025-02-27",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Luna (None)",
+     "score": 8.8,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -11485,6 +11696,16 @@
      "old": false
     },
     {
+     "model": "gpt-6.1-sol",
+     "score": 95.4,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-29",
+     "old": false
+    },
+    {
      "model": "gemini-3.8-flash",
      "score": 95.4,
      "org": "Google DeepMind",
@@ -11522,6 +11743,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-02-19",
+     "old": false
+    },
+    {
+     "model": "gpt-6-sol",
+     "score": 94.3,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -11788,6 +12019,16 @@
      "model": "claude-opus-5-5",
      "score": 90.6,
      "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
+     "old": false
+    },
+    {
+     "model": "gpt-6-luna",
+     "score": 90.5,
+     "org": "OpenAI",
      "agent": null,
      "pass4": null,
      "cost": null,
@@ -14065,7 +14306,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-28",
+   "latest": "2026-09-29",
    "old_count": 54,
    "frontier_models": [
     "gpt-6-astra",
@@ -14683,6 +14924,16 @@
      "old": false
     },
     {
+     "model": "gpt-6.1-sol",
+     "score": 73.9,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-29",
+     "old": false
+    },
+    {
      "model": "gemini-3.1-pro-preview",
      "score": 73.5,
      "org": "Google DeepMind",
@@ -14790,6 +15041,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-04-23",
+     "old": false
+    },
+    {
+     "model": "gpt-6-sol",
+     "score": 60.7,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -15040,6 +15301,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-09",
+     "old": false
+    },
+    {
+     "model": "gpt-6-luna",
+     "score": 41.4,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -15423,7 +15694,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-28",
+   "latest": "2026-09-29",
    "old_count": 3,
    "frontier_models": [
     "gpt-6-astra",
@@ -15603,6 +15874,16 @@
      "old": false
     },
     {
+     "model": "GPT-6 Sol",
+     "score": 57.6,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
+     "old": false
+    },
+    {
      "model": "Grok 4.7",
      "score": 57.4,
      "org": "xAI",
@@ -15703,6 +15984,16 @@
      "old": false
     },
     {
+     "model": "GPT-6.1 Sol",
+     "score": 55.8,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-29",
+     "old": false
+    },
+    {
      "model": "Claude Fable 5.1 (Adaptive Reasoning, Low Effort, Default Fallback)",
      "score": 55.7,
      "org": "Anthropic",
@@ -15740,6 +16031,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-24",
+     "old": false
+    },
+    {
+     "model": "GPT-6 Luna",
+     "score": 54.6,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -16093,6 +16394,16 @@
      "old": false
     },
     {
+     "model": "GPT-6 Sol (Non-reasoning)",
+     "score": 47.3,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
+     "old": false
+    },
+    {
      "model": "MiniMax-M3",
      "score": 47.1,
      "org": "MiniMax",
@@ -16270,6 +16581,16 @@
      "pass4": null,
      "cost": null,
      "released": null,
+     "old": false
+    },
+    {
+     "model": "GPT-6 Luna (Non-reasoning)",
+     "score": 43.1,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-22",
      "old": false
     },
     {
@@ -16913,7 +17234,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-28",
+   "latest": "2026-09-29",
    "old_count": 1,
    "frontier_models": [
     "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
