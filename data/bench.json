@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-01 08:31 UTC",
- "cutoff": "2024-10-01",
+ "updated_at": "2026-10-02 08:07 UTC",
+ "cutoff": "2024-10-02",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -276,6 +276,17 @@
      "ARC-2": 59.3,
      "GPQA": 90.5,
      "SimpleQA": 41.4,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
+     "model": "grok-4.7",
+     "org": "xAI",
+     "released": "2026-09-21",
+     "n": 3,
+     "AIME": 98.1,
+     "GPQA": 92.7,
+     "SimpleQA": 56.0,
      "old": false,
      "recent_frontier": false
     },
@@ -5877,6 +5888,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-05-28",
+     "old": false
+    },
+    {
+     "model": "grok-4.7",
+     "score": 98.1,
+     "org": "xAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-21",
      "old": false
     },
     {
@@ -11866,6 +11887,16 @@
      "old": false
     },
     {
+     "model": "grok-4.7",
+     "score": 92.7,
+     "org": "xAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-21",
+     "old": false
+    },
+    {
      "model": "qwen3.8-max",
      "score": 92.7,
      "org": "Alibaba",
@@ -15081,6 +15112,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-09",
+     "old": false
+    },
+    {
+     "model": "grok-4.7",
+     "score": 56.0,
+     "org": "xAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-21",
      "old": false
     },
     {
