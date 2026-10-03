@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-02 08:07 UTC",
+ "updated_at": "2026-10-03 07:46 UTC",
  "sources": [
   {
    "name": "LiteLLM",
@@ -43,8 +43,8 @@
   "OpenRouter",
   "Vercel AI Gateway"
  ],
- "cutoff": "2024-10-02",
- "fresh_cutoff": "2025-10-02",
+ "cutoff": "2024-10-03",
+ "fresh_cutoff": "2025-10-03",
  "pricing_pages": {
   "OpenAI": "https://platform.openai.com/docs/pricing",
   "Anthropic": "https://www.anthropic.com/pricing#api",
@@ -79,7 +79,7 @@
   "Novita": "https://novita.ai/pricing",
   "Databricks": "https://www.databricks.com/product/pricing/foundation-model-serving"
  },
- "count": 3680,
+ "count": 3679,
  "models": [
   {
    "model": "jamba-1.5",
@@ -20095,46 +20095,6 @@
    "new": false
   },
   {
-   "model": "databricks/databricks-gemini-2-5-flash",
-   "vendor": "databricks",
-   "vendor_name": "Databricks",
-   "input": 0.3,
-   "output": 2.5,
-   "cache_read": 0.03,
-   "context": 1048576,
-   "max_output": 65535,
-   "mode": "chat",
-   "key": "databricks-gemini-2-5-flash",
-   "released": null,
-   "aged": false,
-   "official": false,
-   "suspect": false,
-   "vision": true,
-   "reasoning": true,
-   "tool_call": true,
-   "new": false
-  },
-  {
-   "model": "databricks/databricks-gemini-2-5-pro",
-   "vendor": "databricks",
-   "vendor_name": "Databricks",
-   "input": 1.25,
-   "output": 10.0,
-   "cache_read": 0.125,
-   "context": 1048576,
-   "max_output": 65536,
-   "mode": "chat",
-   "key": "databricks-gemini-2-5-pro",
-   "released": null,
-   "aged": false,
-   "official": false,
-   "suspect": false,
-   "vision": true,
-   "reasoning": true,
-   "tool_call": true,
-   "new": false
-  },
-  {
    "model": "databricks/databricks-gemini-3-1-flash-image",
    "vendor": "databricks",
    "vendor_name": "Databricks",
@@ -23823,7 +23783,7 @@
    "aged": true,
    "vendor": "openrouter",
    "vendor_name": "DeepSeek",
-   "input": 0.3,
+   "input": 0.27,
    "output": 1.0,
    "cache_read": null,
    "context": 163840,
@@ -24266,6 +24226,27 @@
    "vision": false,
    "reasoning": false,
    "tool_call": false
+  },
+  {
+   "model": "deepseek/deepseek-v4.1-flash-fast",
+   "key": "deepseek-v4-1-flash-fast",
+   "aged": false,
+   "vendor": "vercel_ai_gateway",
+   "vendor_name": "DeepSeek",
+   "input": 0.3,
+   "output": 1.2,
+   "cache_read": null,
+   "context": 1048576,
+   "max_output": null,
+   "mode": "chat",
+   "released": "2026-09-29",
+   "official": false,
+   "via": "Vercel AI Gateway",
+   "suspect": false,
+   "new": true,
+   "vision": true,
+   "reasoning": false,
+   "tool_call": true
   },
   {
    "model": "deepseek/deepseek-v4.1-flash-p",
@@ -33015,26 +32996,6 @@
    "vision": true,
    "reasoning": true,
    "tool_call": true,
-   "new": false
-  },
-  {
-   "model": "gemini/gemini-2.5-flash-image",
-   "vendor": "gemini",
-   "vendor_name": "Google",
-   "input": 0.3,
-   "output": 2.5,
-   "cache_read": 0.03,
-   "context": 65536,
-   "max_output": 32768,
-   "mode": "image_generation",
-   "key": "gemini-2-5-flash-image",
-   "released": "2025-10-07",
-   "aged": false,
-   "official": true,
-   "suspect": false,
-   "vision": true,
-   "reasoning": false,
-   "tool_call": false,
    "new": false
   },
   {
@@ -70494,6 +70455,27 @@
    "vision": false,
    "reasoning": false,
    "tool_call": false
+  },
+  {
+   "model": "inclusionai/ling-3.1-flash",
+   "key": "ling-3-1-flash",
+   "aged": false,
+   "vendor": "openrouter",
+   "vendor_name": "蚂蚁 Ling",
+   "input": 0.0,
+   "output": 0.0,
+   "cache_read": null,
+   "context": 262144,
+   "max_output": null,
+   "mode": "chat",
+   "released": "2026-10-02",
+   "official": false,
+   "via": "OpenRouter",
+   "suspect": false,
+   "new": true,
+   "vision": false,
+   "reasoning": false,
+   "tool_call": true
   },
   {
    "model": "inclusionai/ling-3.1-flash",

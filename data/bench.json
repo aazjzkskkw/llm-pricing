@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-02 08:07 UTC",
- "cutoff": "2024-10-02",
+ "updated_at": "2026-10-03 07:46 UTC",
+ "cutoff": "2024-10-03",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -283,7 +283,8 @@
      "model": "grok-4.7",
      "org": "xAI",
      "released": "2026-09-21",
-     "n": 3,
+     "n": 4,
+     "FMath": 53.0,
      "AIME": 98.1,
      "GPQA": 92.7,
      "SimpleQA": 56.0,
@@ -5148,6 +5149,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-06-12",
+     "old": false
+    },
+    {
+     "model": "grok-4.7",
+     "score": 53.0,
+     "org": "xAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-21",
      "old": false
     },
     {
