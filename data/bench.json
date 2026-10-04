@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-03 07:46 UTC",
- "cutoff": "2024-10-03",
+ "updated_at": "2026-10-04 07:55 UTC",
+ "cutoff": "2024-10-04",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -7799,7 +7799,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-10-03",
-     "old": false
+     "old": true
     },
     {
      "model": "Llama-3.1-Tulu-3-70B-DPO",
@@ -8103,7 +8103,7 @@
     }
    ],
    "latest": "2026-09-29",
-   "old_count": 38,
+   "old_count": 39,
    "frontier_models": [
     "gpt-6-astra",
     "qwen3.8-max",
@@ -14045,7 +14045,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-10-03",
-     "old": false
+     "old": true
     },
     {
      "model": "claude-2.1",
@@ -14349,7 +14349,7 @@
     }
    ],
    "latest": "2026-09-29",
-   "old_count": 54,
+   "old_count": 55,
    "frontier_models": [
     "gpt-6-astra",
     "qwen3.8-max",
