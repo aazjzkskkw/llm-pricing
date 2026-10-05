@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-04 07:55 UTC",
+ "updated_at": "2026-10-05 08:37 UTC",
  "sources": [
   {
    "name": "LiteLLM",
@@ -43,8 +43,8 @@
   "OpenRouter",
   "Vercel AI Gateway"
  ],
- "cutoff": "2024-10-04",
- "fresh_cutoff": "2025-10-04",
+ "cutoff": "2024-10-05",
+ "fresh_cutoff": "2025-10-05",
  "pricing_pages": {
   "OpenAI": "https://platform.openai.com/docs/pricing",
   "Anthropic": "https://www.anthropic.com/pricing#api",
@@ -79,7 +79,7 @@
   "Novita": "https://novita.ai/pricing",
   "Databricks": "https://www.databricks.com/product/pricing/foundation-model-serving"
  },
- "count": 3684,
+ "count": 3683,
  "models": [
   {
    "model": "jamba-1.5",
@@ -70477,8 +70477,8 @@
    "aged": false,
    "vendor": "vercel_ai_gateway",
    "vendor_name": "蚂蚁 Ling",
-   "input": 0.0,
-   "output": 0.0,
+   "input": 0.075,
+   "output": 0.22,
    "cache_read": null,
    "context": 256000,
    "max_output": null,
@@ -70512,27 +70512,6 @@
    "vision": false,
    "reasoning": false,
    "tool_call": false
-  },
-  {
-   "model": "inclusionai/ling-3.0-flash-sante-free",
-   "key": "ling-3-0-flash-sante-free",
-   "aged": false,
-   "vendor": "vercel_ai_gateway",
-   "vendor_name": "蚂蚁 Ling",
-   "input": 0.0,
-   "output": 0.0,
-   "cache_read": null,
-   "context": 256000,
-   "max_output": null,
-   "mode": "chat",
-   "released": "2026-09-04",
-   "official": false,
-   "via": "Vercel AI Gateway",
-   "suspect": false,
-   "new": true,
-   "vision": false,
-   "reasoning": false,
-   "tool_call": true
   },
   {
    "model": "inclusionai/ling-3.0-flash-vl",

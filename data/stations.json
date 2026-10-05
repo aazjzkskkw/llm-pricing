@@ -1,18 +1,18 @@
 {
- "updated_at": "2026-10-04 07:55 UTC",
+ "updated_at": "2026-10-05 08:37 UTC",
  "credit": "https://ytzzjx.github.io/",
  "count": 43,
  "stations": [
   {
    "name": "xxzl 公益站",
    "url": "https://ai.1tim.com/sign-up",
-   "kind": "公益站 / 四分组 / 注册送 200",
-   "summary": "公益站，邀请注册送 200、签到 5。模型分 Claude、GPT、DeepSeek、GLM 四个分组：Claude 组不保证高级模型可用，GPT 组随机空降 6-astra 或 6 系列 sol、保证 luna 可用且 astra 不降智，DeepSeek 组走官方 key、每天共享池 1000 刀用完即没，GLM 组随时拉闸、只保证 5.3-flash 高稳定。",
+   "kind": "公益站 / 仅 GitHub 注册 / 23 个模型 8 分组",
+   "summary": "公益站，目前仅支持 GitHub 账号注册，且不限注册时间（用户提供）。邀请链接注册送 200、每日签到 5。模型增至 23 个、分 8 个分组，新增「群友贡献高可用」分组与 Kimi 渠道；用户反馈 astra 满血可过糖果题。",
    "signup": "200",
    "checkin": "5",
-   "models": "Claude（opus 4.6/4.7、sonnet 4-6）/ GPT（6-astra、6-sol、6.1-sol、6-luna、5.5、5.6-luna/sol/terra）/ DeepSeek（v4.1-flash 官方 key，每天 1000 刀共享池）/ GLM（5.3-flash）",
-   "entry": "用户名 + 密码 + 邮箱验证码注册（走邀请链接），无人机验证。",
-   "caveat": "公益站。额度按美元显示，注册赠送与签到金额由用户提供，具体以站内实际显示为准。各分组的可用性限制是站方自己写的：Claude 组不保证高级模型长时间高智商，GPT 组可用性不高、模型随机空降，GLM 组随时拉闸，DeepSeek 组是每天 1000 刀的共享池、用完即没。模型清单与分组以站内模型广场为准。",
+   "models": "23 个模型 8 分组：Claude（opus 5-5、sonnet 5、opus 5、opus 4-8、opus 4-7、sonnet 4-6）/ GPT（6-astra、6-sol、6.1-sol、6-luna、5.5、5.6-luna/sol/terra）/ DeepSeek（v4.1-flash 官方 key，每天 1000 刀共享池）/ GLM（5.3-flash）/ Kimi（k3-1 神秘渠道，每天 1000 刀共享池）；另有 Claude / GPT / DeepSeek 各一个群友贡献高可用分组",
+   "entry": "目前仅支持 GitHub 账号注册，不限注册时间（用户提供）；接口显示邮箱注册开关也开着，以注册页实际显示为准。",
+   "caveat": "公益站。额度按美元显示，注册赠送与签到金额由用户提供，具体以站内实际显示为准。注册方式用户反馈仅 GitHub，但接口显示邮箱注册开关也开着，以注册页实际为准。各分组限制是站方自己写的：普通 Claude / GPT 组可用性不高、模型随机空降，GLM 组随时拉闸，DeepSeek 组与 Kimi 组都是每天 1000 刀的共享池、用完即没；群友贡献高可用分组要在群里发「真寻酱捏」领取，GPT 版无账号需等 5 小时、Claude 版限并发。站长历史：该站站长以前开过一个叫「新云」的付费站，风评不好、闹得不愉快，最后没了（用户提供）。模型清单与分组以站内模型广场为准。",
    "updated": "2026-10-04",
    "status": "open",
    "type": "charity"
@@ -132,8 +132,8 @@
   {
    "name": "zquant",
    "url": "https://sub2api.zquant.site/register",
-   "kind": "付费站 / GPT 与 Grok / 倍率约 0.15",
-   "summary": "付费站，本人充值 20 多；倍率约 0.15，有 GPT 全模型和 Grok。站内带降智检测和降智雷达——最近 GPT 风控比较严，降智很影响体验，使用前先看降智雷达；进 QQ 群 738420477 可领 1 块钱试用，站内还有签到，每次 0.1-1 刀，但现在需要充值满 20 才能签到。",
+   "kind": "付费站 / GPT 与 Grok / 倍率约 0.15 / 国庆充值 1:1.1",
+   "summary": "付费站，本人充值 20 多；倍率约 0.15，有 GPT 全模型和 Grok。站内带降智检测和降智雷达——最近 GPT 风控比较严，降智很影响体验，使用前先看降智雷达；进 QQ 群 738420477 可领 1 块钱试用，站内还有签到，每次 0.1-1 刀，但现在需要充值满 20 才能签到。国庆活动期间充值按 1:1.1 算。",
    "signup": "进 QQ 群 738420477 领 1 元试用",
    "checkin": "0.1-1 刀（需充值满 20 才能签到）",
    "models": "GPT 全模型 / Grok",
