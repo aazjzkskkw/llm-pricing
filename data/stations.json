@@ -1,18 +1,18 @@
 {
- "updated_at": "2026-10-05 08:37 UTC",
+ "updated_at": "2026-10-06 08:43 UTC",
  "credit": "https://ytzzjx.github.io/",
  "count": 43,
  "stations": [
   {
    "name": "xxzl 公益站",
    "url": "https://ai.1tim.com/sign-up",
-   "kind": "公益站 / 仅 GitHub 注册 / 23 个模型 8 分组",
-   "summary": "公益站，目前仅支持 GitHub 账号注册，且不限注册时间（用户提供）。邀请链接注册送 200、每日签到 5。模型增至 23 个、分 8 个分组，新增「群友贡献高可用」分组与 Kimi 渠道；用户反馈 astra 满血可过糖果题。",
+   "kind": "公益站 / 需一年 GitHub 注册 / 23 个模型 8 分组",
+   "summary": "公益站，新注册需要注册满一年的 GitHub 账号，邮箱注册将不再开放；邮箱注册的老用户请尽快绑定 GitHub，否则账号会被删。邀请链接注册送 200、每日签到 5。模型增至 23 个、分 8 个分组，新增「群友贡献高可用」分组与 Kimi 渠道；用户反馈 astra 满血可过糖果题。",
    "signup": "200",
    "checkin": "5",
    "models": "23 个模型 8 分组：Claude（opus 5-5、sonnet 5、opus 5、opus 4-8、opus 4-7、sonnet 4-6）/ GPT（6-astra、6-sol、6.1-sol、6-luna、5.5、5.6-luna/sol/terra）/ DeepSeek（v4.1-flash 官方 key，每天 1000 刀共享池）/ GLM（5.3-flash）/ Kimi（k3-1 神秘渠道，每天 1000 刀共享池）；另有 Claude / GPT / DeepSeek 各一个群友贡献高可用分组",
-   "entry": "目前仅支持 GitHub 账号注册，不限注册时间（用户提供）；接口显示邮箱注册开关也开着，以注册页实际显示为准。",
-   "caveat": "公益站。额度按美元显示，注册赠送与签到金额由用户提供，具体以站内实际显示为准。注册方式用户反馈仅 GitHub，但接口显示邮箱注册开关也开着，以注册页实际为准。各分组限制是站方自己写的：普通 Claude / GPT 组可用性不高、模型随机空降，GLM 组随时拉闸，DeepSeek 组与 Kimi 组都是每天 1000 刀的共享池、用完即没；群友贡献高可用分组要在群里发「真寻酱捏」领取，GPT 版无账号需等 5 小时、Claude 版限并发。站长历史：该站站长以前开过一个叫「新云」的付费站，风评不好、闹得不愉快，最后没了（用户提供）。模型清单与分组以站内模型广场为准。",
+   "entry": "新注册需要注册满一年的 GitHub 账号；邮箱注册将不再开放，已用邮箱注册的老用户请尽快绑定 GitHub，否则账号会被删（用户提供）。",
+   "caveat": "公益站。额度按美元显示，注册赠送与签到金额由用户提供，具体以站内实际显示为准。注册方式收紧：新注册需要注册满一年的 GitHub 账号，邮箱注册将不再开放，邮箱注册的老用户请尽快绑定 GitHub，否则账号会被删（用户提供）。各分组限制是站方自己写的：普通 Claude / GPT 组可用性不高、模型随机空降，GLM 组随时拉闸，DeepSeek 组与 Kimi 组都是每天 1000 刀的共享池、用完即没；群友贡献高可用分组要在群里发「真寻酱捏」领取，GPT 版无账号需等 5 小时、Claude 版限并发。站长历史：该站站长以前开过一个叫「新云」的付费站，风评不好、闹得不愉快，最后没了（用户提供）。模型清单与分组以站内模型广场为准。",
    "updated": "2026-10-04",
    "status": "open",
    "type": "charity"
@@ -118,13 +118,13 @@
   {
    "name": "hiyo",
    "url": "https://free.hiyo.top/register",
-   "kind": "公益站 / GitHub 或 Linux DO 注册 / 只有 luna",
-   "summary": "公益站，GitHub 或 Linux DO 注册，注册送 20，有签到；目前只有 luna 模型，后续上 6-luna，速度可能稍微较慢。",
+   "kind": "公益站 / GitHub 或 Linux DO 注册 / luna 与 gpt-6-luna",
+   "summary": "公益站，GitHub 或 Linux DO 注册，注册送 20，有签到；已上线 gpt-6-luna，速度可能稍微较慢。",
    "signup": "20",
    "checkin": "有签到（金额以站内显示为准）",
-   "models": "luna（后续上 6-luna）",
+   "models": "luna / gpt-6-luna",
    "entry": "GitHub 或 Linux DO 注册。",
-   "caveat": "目前只有 luna 一个模型，选择比较单一，6-luna 还没上；速度可能稍微较慢；赠送与签到金额以站内实际显示为准。",
+   "caveat": "目前有 luna 与 gpt-6-luna 可选，选择仍然偏少；速度可能稍微较慢；赠送与签到金额以站内实际显示为准。",
    "updated": "2026-09-24",
    "status": "open",
    "type": "charity"
@@ -466,6 +466,20 @@
    "type": "paid"
   },
   {
+   "name": "Sulmate 半公益站",
+   "url": "https://free.sulmate.cn/sign-up",
+   "kind": "需注册码 / 半公益站",
+   "summary": "现在需要注册码才能注册。原有公益组全站共享 1x，VIP 组支持付费调用。",
+   "signup": "需注册码；原为公益池共享额度",
+   "checkin": "已有账号以站内规则为准",
+   "models": "",
+   "entry": "现在需要注册码才能注册。",
+   "caveat": "现在需要注册码才能注册。已有账号的公益池、签到奖励、VIP 价格和分组规则也可能调整，请以站内实际说明为准。",
+   "updated": "2026-08-18",
+   "status": "open",
+   "type": "charity"
+  },
+  {
    "name": "PAI 生图公益站",
    "url": "https://pai.zaiduyu.top/#/auth",
    "kind": "公益生图 / 限时福利",
@@ -510,13 +524,13 @@
   {
    "name": "墨白公益站",
    "url": "https://new.ai.hinswu.top/sign-up",
-   "kind": "公益站 / 邮箱注册 / 每日签到 1-10",
-   "summary": "公益站，限 gmail / 163 / qq / foxmail / icloud 邮箱注册，需邮箱验证和人机验证；每日签到 1-10，注册后加入官方 QQ 群 444158239（进群答案 zakozako）可再签到一次，相当于每天签到两次。免费可用 DeepSeek V4.1 Flash。",
+   "kind": "公益站 / 邮箱注册 / 需绑定 OIDC / 每日签到 1-10",
+   "summary": "公益站，需要绑定 OIDC，否则会删除账号（用户提供）。限 gmail / 163 / qq / foxmail / icloud 邮箱注册，需邮箱验证和人机验证；每日签到 1-10，注册后加入官方 QQ 群 444158239（进群答案 zakozako）可再签到一次，相当于每天签到两次。免费可用 DeepSeek V4.1 Flash。",
    "signup": "未提供固定注册赠送",
    "checkin": "站内每日 1-10；进官方 QQ 群 444158239（进群答案 zakozako）可再签到一次，相当于每天两次",
    "models": "DeepSeek V4.1 Flash（模型广场虽列出 936 个，免费可用不多，以站内显示为准）",
-   "entry": "邮箱注册，限 gmail.com / 163.com / qq.com / foxmail.com / icloud.com，需邮箱验证与人机验证；也支持 Passkey 与 OIDC（HINS Auth）登录。",
-   "caveat": "站方公告：有人用模型做破甲、逆向、黄文等违规内容导致上游取消合作，高级模型分组被下线后虽恢复但仅对入群绑定的正式用户开放，且部分模型未恢复；后续部分免费模型也需入群解锁，群内发言不友好会封号并连坐邀请用户；Grok 系列 9 月 17 日起因服务器脱网暂不可用；签到金额、免费模型范围与限流规则以站内实际显示为准。",
+   "entry": "邮箱注册，限 gmail.com / 163.com / qq.com / foxmail.com / icloud.com，需邮箱验证与人机验证；也支持 Passkey 与 OIDC（HINS Auth）登录。需要绑定 OIDC，否则会删除账号（用户提供）。",
+   "caveat": "需要绑定 OIDC，否则会删除账号（用户提供）。站方公告：有人用模型做破甲、逆向、黄文等违规内容导致上游取消合作，高级模型分组被下线后虽恢复但仅对入群绑定的正式用户开放，且部分模型未恢复；后续部分免费模型也需入群解锁，群内发言不友好会封号并连坐邀请用户；Grok 系列 9 月 17 日起因服务器脱网暂不可用；签到金额、免费模型范围与限流规则以站内实际显示为准。",
    "updated": "2026-09-21",
    "status": "watch",
    "type": "charity"
@@ -588,20 +602,6 @@
    "entry": "目前暂停注册，等待重新开放；签到码需加入 QQ 群获取。",
    "caveat": "注册已关闭，恢复时间未知；签到依赖 QQ 群内发放的签到码。严查除 coding 分组以外的编程行为，违规可能封号。",
    "updated": "2026-08-19",
-   "status": "stopped",
-   "type": "charity"
-  },
-  {
-   "name": "Sulmate 半公益站",
-   "url": "https://free.sulmate.cn/sign-up",
-   "kind": "暂停注册 / 半公益站",
-   "summary": "已停止新用户注册，恢复开放后再更新。原有公益池全站共享 1x，VIP 组支持付费调用。",
-   "signup": "暂停注册；原为公益池共享额度",
-   "checkin": "已有账号以站内规则为准",
-   "models": "",
-   "entry": "目前停止注册，等待恢复开放。",
-   "caveat": "新用户注册已停止，恢复时间未知。已有账号的公益池、签到奖励、VIP 价格和分组规则也可能调整，请以站内实际说明为准。",
-   "updated": "2026-08-18",
    "status": "stopped",
    "type": "charity"
   }
