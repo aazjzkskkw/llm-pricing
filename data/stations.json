@@ -1,8 +1,36 @@
 {
- "updated_at": "2026-10-06 08:43 UTC",
+ "updated_at": "2026-10-07 08:18 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 43,
+ "count": 45,
  "stations": [
+  {
+   "name": "Edge API",
+   "url": "https://ai.lffm.cn/sign-up",
+   "kind": "付费站 / 走 aff 送 1 刀 / 0.07 倍不降智 GPT",
+   "summary": "付费站，走 aff 注册送 1 刀；有 0.07 倍率的不降智 GPT（用户提供）。额度按人民币显示。",
+   "signup": "1 刀（走 aff 注册）",
+   "checkin": "以站内实际显示为准",
+   "models": "0.07 倍不降智 GPT（用户提供）；站方公告分组倍率 deepseek / GLM 0.10，Claude-MAX 满血 0.80",
+   "entry": "邮箱验证注册（走邀请链接），无人机验证；走 aff 注册送 1 刀。",
+   "caveat": "付费站，充值前先小额验证。注册赠送 1 刀与 0.07 倍率为用户提供，站方注明倍率不是官方折扣、以模型价格页和消费记录为准。主用 ai.mxmt.cn，备用 ai.femkj.cn 与 ai.lffm.cn。",
+   "updated": "2026-10-07",
+   "status": "open",
+   "type": "paid"
+  },
+  {
+   "name": "SheApi",
+   "url": "https://www.sheapi.top/sign-up",
+   "kind": "付费站 / 33 个模型 13 分组 / cc-max 满血",
+   "summary": "付费站，注册送 1、有签到。33 个模型分成 13 个分组，低倍率分组有 plus_0720 的 0.04 和 deepseek / glm / kimi 的 0.07；grok 分组 0.09 不降智；cc-max 是满血且有防封微注入。注册只支持 QQ 邮箱。",
+   "signup": "1",
+   "checkin": "有签到",
+   "models": "33 个模型 13 分组：cc-max ×1.2（满血、有防封微注入）/ gpt-max ×0.6（满血官 key）/ pro ×0.2（Pro 号池）/ grok ×0.09 / luna ×0.3 / plus_0720 ×0.04 / deepseek、glm、kimi ×0.07；gpt-image-2 按张 0.04、原生版 0.06",
+   "entry": "注册只支持 QQ 邮箱，需邮箱验证，无人机验证；注册送 1。",
+   "caveat": "付费站，充值需另购兑换码（pay.ldxp.cn/shop/QYHYA5BR）或联系客服，退款按余额 90%。注册只支持 QQ 邮箱，官方明确禁止跑蒸馏，发现马上清退且不退款；收不到验证码要加 QQ 3355691290 手工注册。首 Token 延迟高或频繁请求失败时，站方公告建议改用 us.lax.sheapi.top/v1 或 www.sheapi.cc/v1。「特殊测试组」倍率 99，站方标注勿选。各分组倍率与可用性以站内模型广场为准。",
+   "updated": "2026-10-06",
+   "status": "open",
+   "type": "paid"
+  },
   {
    "name": "xxzl 公益站",
    "url": "https://ai.1tim.com/sign-up",
@@ -74,6 +102,20 @@
    "type": "charity"
   },
   {
+   "name": "Axis AI 公益站",
+   "url": "https://ai.onyxaxis.org/register?invite=AMMRWZ5P",
+   "kind": "公益 API 中转站 / OpenAI 兼容 / 8 个模型",
+   "summary": "免费的公益 API 中转站，OpenAI 兼容接口（/v1），当前可用 claude-opus-5.5、claude-sonnet-5.5、gpt-6-astra、gpt-6.1-sol、gpt-6-sol、gpt-6-luna、gpt-5.6-sol、gpt-5.6-luna 共 8 个模型。注册走 OneAuth（QQ 登录）OAuth，需邮箱和 QQ 号，提交后需站方审核。国庆期间福利较多，连续签到 5 天可得一张重置卡（用户提供）。",
+   "signup": "国庆福利较多（以站内为准）；连续签到 5 天得一张重置卡（用户提供）",
+   "checkin": "有签到；连续签到 5 天得一张重置卡（用户提供）",
+   "models": "OpenAI 兼容 /v1，8 个模型：claude-opus-5.5 / claude-sonnet-5.5 / gpt-6-astra / gpt-6.1-sol / gpt-6-sol / gpt-6-luna / gpt-5.6-sol / gpt-5.6-luna；GPT 不降智（用户提供）",
+   "entry": "OneAuth（QQ 登录）OAuth 注册，需填用户名、邮箱（必填）和 QQ 号，邀请开放；注册与创建 Key 有 Turnstile 验证，提交后需站方审核。",
+   "caveat": "接口严禁接入 SillyTavern（酒馆）、RisuAI、Agnai 等角色扮演前端，也不得转售或分发 Key 给他人接入——这是站方公告明令禁止的。同时禁止破甲 / 破限 / 越狱提示词、色情及擦边内容、恶意代码与网络攻击等，系统自动检测，一经发现直接永久封号且不予申诉。QQ 号必填，介意的话别注册；注册后需站方审核，不保证即时通过。模型清单随站内调整，以实际可调用为准。",
+   "updated": "2026-09-25",
+   "status": "open",
+   "type": "charity"
+  },
+  {
    "name": "Camila 公益站",
    "url": "https://free.camila.qzz.io/sign-up",
    "kind": "公益站 / 注册送 5000 积分 / 签到 200 左右",
@@ -97,20 +139,6 @@
    "models": "Claude / Gemini（gemini 0.04 元一次、claude-opus-4-6 0.3 元一次）",
    "entry": "通过邀请链接注册。",
    "caveat": "签到金额与模型价格可能调整，以站内实际显示为准；可用模型清单以站内为准。",
-   "updated": "2026-09-25",
-   "status": "open",
-   "type": "charity"
-  },
-  {
-   "name": "Axis AI 公益站",
-   "url": "https://ai.onyxaxis.org/register?invite=AMMRWZ5P",
-   "kind": "公益站 / 对话平台 / 注册需审核",
-   "summary": "完全免费的公益 AI 对话平台（站内自述，非 API 中转）；用户名 + 邮箱 + QQ 号注册（QQ 号必填，邀请码可选）或 GitHub 注册，提交后需站方审核；进官方 QQ 群 309623044 可领赠送的 go 套餐。有 Claude Fable 5、GPT-6 Luna（无限额度）、Qwen 3.8 Max、GLM-5.3 Flash。",
-   "signup": "进 QQ 群 309623044 领赠送的 go 套餐",
-   "checkin": "未提供",
-   "models": "Claude Fable 5 / GPT-6 Luna（无限额度）/ Qwen 3.8 Max / GLM-5.3 Flash",
-   "entry": "用户名 + 邮箱 + QQ 号（必填）+ 密码注册，邀请码可选；或 GitHub 注册。提交后需站方审核。",
-   "caveat": "这是对话平台，没有 API 接口，想接工具或客户端的注意；QQ 号是必填项，介意的话别注册；注册后需站方审核，不保证即时通过；模型清单以站内实际显示为准。",
    "updated": "2026-09-25",
    "status": "open",
    "type": "charity"
