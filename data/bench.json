@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-07 08:18 UTC",
- "cutoff": "2024-10-07",
+ "updated_at": "2026-10-08 08:33 UTC",
+ "cutoff": "2024-10-08",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -218,21 +218,6 @@
      "ARC-2": 60.4,
      "GPQA": 93.1,
      "SimpleQA": 50.6,
-     "old": false,
-     "recent_frontier": true
-    },
-    {
-     "model": "GPT-5.6 Sol",
-     "org": "OpenAI",
-     "released": "2026-07-09",
-     "n": 7,
-     "DeepSWE": 72.7,
-     "WebDev": 1617.3,
-     "FMath": 89.1,
-     "AIME": 100.0,
-     "ARC-2": 92.5,
-     "GPQA": 93.5,
-     "SimpleQA": 69.7,
      "old": false,
      "recent_frontier": true
     },
@@ -488,85 +473,12 @@
      "SimpleQA": 19.1,
      "old": false,
      "recent_frontier": false
-    },
-    {
-     "model": "GPT-5.6 Terra",
-     "org": "OpenAI",
-     "released": "2026-07-09",
-     "n": 7,
-     "DeepSWE": 69.6,
-     "WebDev": 1521.2,
-     "FMath": 86.0,
-     "AIME": 99.7,
-     "ARC-2": 83.9,
-     "GPQA": 93.3,
-     "SimpleQA": 43.2,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "GPT-5.6 Luna",
-     "org": "OpenAI",
-     "released": "2026-07-09",
-     "n": 7,
-     "DeepSWE": 67.2,
-     "WebDev": 1518.9,
-     "FMath": 82.1,
-     "AIME": 98.3,
-     "ARC-2": 59.5,
-     "GPQA": 91.6,
-     "SimpleQA": 41.0,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "muse-spark-1-1",
-     "org": "Meta AI",
-     "released": "2026-07-09",
-     "n": 3,
-     "DeepSWE": 53.3,
-     "WebDev": 1541.5,
-     "SimpleQA": 57.8,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "gpt-5.6-luna_none",
-     "org": "OpenAI",
-     "released": "2026-07-09",
-     "n": 3,
-     "FMath": 39.6,
-     "AIME": 40.0,
-     "GPQA": 63.6,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "gpt-5.6-sol_none",
-     "org": "OpenAI",
-     "released": "2026-07-09",
-     "n": 2,
-     "AIME": 68.9,
-     "GPQA": 82.8,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "gpt-5.6-terra_none",
-     "org": "OpenAI",
-     "released": "2026-07-09",
-     "n": 2,
-     "AIME": 53.3,
-     "GPQA": 77.3,
-     "old": false,
-     "recent_frontier": false
     }
    ],
    "frontier_models": [
     "Claude Fable 5.1",
     "Claude Opus 5",
     "Claude Opus 5.5",
-    "GPT-5.6 Sol",
     "GPT-6 Astra",
     "Gemini 3.8 Flash",
     "Grok 4.6",
@@ -574,7 +486,7 @@
     "qwen3.8-27b",
     "qwen3.8-max-0902"
    ],
-   "frontier_count": 10,
+   "frontier_count": 9,
    "recent_frontier_models": [
     "Claude Opus 5.5",
     "GPT-6 Astra",
@@ -584,10 +496,9 @@
     "qwen3.8-27b",
     "Grok 4.6",
     "Claude Opus 5",
-    "Kimi K3",
-    "GPT-5.6 Sol"
+    "Kimi K3"
    ],
-   "recent_frontier_count": 10,
+   "recent_frontier_count": 9,
    "featured": true,
    "old_count": 0,
    "latest": "2026-09-29"
@@ -946,23 +857,13 @@
      "old": true
     },
     {
-     "model": "gpt-4o-2024-11-20",
+     "model": "gpt-4o-2024-05-13",
      "score": 9.2,
      "org": "OpenAI",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2024-11-20",
-     "old": false
-    },
-    {
-     "model": "gpt-4o-2024-08-06",
-     "score": 7.0,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2024-08-06",
+     "released": "2024-05-13",
      "old": true
     },
     {
@@ -1016,16 +917,6 @@
      "old": true
     },
     {
-     "model": "gpt-4-0613",
-     "score": 4.0,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2023-06-13",
-     "old": true
-    },
-    {
      "model": "claude-3-opus-20240229",
      "score": 4.0,
      "org": "Anthropic",
@@ -1033,16 +924,6 @@
      "pass4": null,
      "cost": null,
      "released": "2024-02-29",
-     "old": true
-    },
-    {
-     "model": "gpt-4-turbo",
-     "score": 3.7,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2023-11-06",
      "old": true
     },
     {
@@ -1087,7 +968,7 @@
     }
    ],
    "latest": "2026-04-07",
-   "old_count": 14,
+   "old_count": 12,
    "frontier_models": [],
    "frontier_count": 0,
    "recent_frontier_models": [],
