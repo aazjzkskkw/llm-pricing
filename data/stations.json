@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-10-08 08:33 UTC",
+ "updated_at": "2026-10-09 08:38 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 45,
+ "count": 46,
  "stations": [
+  {
+   "name": "Aotera",
+   "url": "https://aotera.cc/sign-up",
+   "kind": "付费站 / 0.1 倍不降智 GPT / 开业活动",
+   "summary": "付费新站，Plus 分组 0.1 倍率、GPT 不降智；Pro 0.17 倍、Pro 500 0.24 倍。注册有 Turnstile 人机验证与邮箱验证。开业活动：进群人数每到一个阶段领红包，第一天签到送 6。",
+   "signup": "开业活动：进群人数每阶段领红包（以群内公告为准）",
+   "checkin": "有签到；开业第一天签到送 6",
+   "models": "Plus ×0.1（不降智）/ Pro ×0.17 / Pro 500 ×0.24；7 个 GPT 系模型（6-astra、6-sol、6-luna、6.1-sol、5.6-luna/sol/terra）",
+   "entry": "邮箱验证注册并完成 Turnstile 人机验证（走邀请链接）。",
+   "caveat": "付费站，开业活动的红包与签到赠送以群内公告和站内显示为准，阶段规则、金额和结束时间可能随时调整。注册有人机验证；模型目前以 GPT 系为主，倍率与可用模型以站内模型广场为准。",
+   "updated": "2026-10-07",
+   "status": "open",
+   "type": "paid"
+  },
   {
    "name": "Edge API",
    "url": "https://ai.lffm.cn/sign-up",
@@ -48,13 +62,13 @@
   {
    "name": "sub-coco",
    "url": "https://www.sub-coco.org/register",
-   "kind": "源头站 / GPT 不降智分组 0.08",
-   "summary": "付费源头站，zquant 的一个上游，也是很多站点的源头，利润比较低。没有签到，注册不送额度；现已上线 0.08 的 GPT 不降智分组，国庆期间另有 0.2 倍的福利官 key。",
+   "kind": "源头站 / 0.2 倍不降智 GPT 官 key 常驻",
+   "summary": "付费源头站，zquant 的一个上游，也是很多站点的源头，利润比较低。没有签到，注册不送额度；**0.2 倍率不降智 GPT 的福利官 key 已常驻**，带 96% 以上缓存——本人一直在 zquant 用这条线。",
    "signup": "不送",
    "checkin": "没有签到",
-   "models": "GPT 不降智分组（0.08）",
+   "models": "0.2 倍率不降智 GPT（福利官 key，常驻，96% 以上缓存）；另有 0.08 的 GPT 不降智分组",
    "entry": "通过邀请链接注册，注册不送额度。",
-   "caveat": "付费源头站，利润比较低。没有签到，注册不送额度。GPT 不降智分组目前是 0.08；0.2 倍是国庆期间的福利官 key，活动结束后可能恢复原价，其余模型和计费规则以站内实际显示为准。",
+   "caveat": "付费源头站，利润比较低。没有签到，注册不送额度。0.2 倍不降智 GPT 的福利官 key 用户反馈已常驻，但仍以站内实际显示为准；缓存比例 96% 以上与倍率同为用户口径，实际以模型价格页和消费记录为准。",
    "updated": "2026-10-03",
    "status": "open",
    "type": "charity"
@@ -341,7 +355,7 @@
   },
   {
    "name": "GcmodAi",
-   "url": "https://zc.gcmod.cn/sign-up",
+   "url": "https://gcmod.bond/register",
    "kind": "半公益站 / 一分钱一次",
    "summary": "全部模型按次计费，每次请求一分钱（0.01 元），不看 token 用量。注册送 1 块，现已开签到，每天约 1 毛、够跑十次请求；订阅两档也划算——5 元每周重置 30 元额度，20 元每天重置 300 元额度。含 Kimi-K3、GPT-5.6-luna 与 DeepSeek V4 Pro。",
    "signup": "1 块（约 100 次请求）",
