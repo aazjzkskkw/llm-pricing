@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-09 08:38 UTC",
- "cutoff": "2024-10-09",
+ "updated_at": "2026-10-10 08:13 UTC",
+ "cutoff": "2024-10-10",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -222,6 +222,18 @@
      "recent_frontier": true
     },
     {
+     "model": "claude-haiku-5-5",
+     "org": "Anthropic",
+     "released": "2026-10-07",
+     "n": 4,
+     "FMath": 75.1,
+     "AIME": 98.9,
+     "GPQA": 89.6,
+     "SimpleQA": 23.8,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
      "model": "GPT-6.1 Sol",
      "org": "OpenAI",
      "released": "2026-09-29",
@@ -286,6 +298,18 @@
      "AIME": 98.1,
      "GPQA": 92.7,
      "SimpleQA": 56.0,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
+     "model": "deepseek-v4.1-flash",
+     "org": "DeepSeek",
+     "released": "2026-09-09",
+     "n": 4,
+     "WebDev": 1614.0,
+     "FMath": 67.4,
+     "AIME": 98.3,
+     "GPQA": 89.8,
      "old": false,
      "recent_frontier": false
     },
@@ -501,7 +525,7 @@
    "recent_frontier_count": 9,
    "featured": true,
    "old_count": 0,
-   "latest": "2026-09-29"
+   "latest": "2026-10-07"
   },
   {
    "id": "metr_time_horizons_external",
@@ -4814,6 +4838,16 @@
      "old": false
     },
     {
+     "model": "claude-haiku-5-5",
+     "score": 75.1,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-07",
+     "old": false
+    },
+    {
      "model": "qwen3.8-max",
      "score": 74.7,
      "org": "Alibaba",
@@ -4891,6 +4925,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-02",
+     "old": false
+    },
+    {
+     "model": "deepseek-v4.1-flash",
+     "score": 67.4,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-09",
      "old": false
     },
     {
@@ -5574,7 +5618,7 @@
      "old": true
     }
    ],
-   "latest": "2026-09-29",
+   "latest": "2026-10-07",
    "old_count": 4,
    "frontier_models": [
     "gpt-6-astra",
@@ -5764,6 +5808,16 @@
      "old": false
     },
     {
+     "model": "claude-haiku-5-5",
+     "score": 98.9,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-07",
+     "old": false
+    },
+    {
      "model": "gpt-6-luna",
      "score": 98.9,
      "org": "OpenAI",
@@ -5801,6 +5855,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-08-13",
+     "old": false
+    },
+    {
+     "model": "deepseek-v4.1-flash",
+     "score": 98.3,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-09",
      "old": false
     },
     {
@@ -8024,7 +8088,7 @@
      "old": true
     }
    ],
-   "latest": "2026-09-29",
+   "latest": "2026-10-07",
    "old_count": 39,
    "frontier_models": [
     "gpt-6-astra",
@@ -12162,6 +12226,16 @@
      "old": false
     },
     {
+     "model": "deepseek-v4.1-flash",
+     "score": 89.8,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-09",
+     "old": false
+    },
+    {
      "model": "muse-spark",
      "score": 89.8,
      "org": "Meta AI",
@@ -12169,6 +12243,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-04-08",
+     "old": false
+    },
+    {
+     "model": "claude-haiku-5-5",
+     "score": 89.6,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-07",
      "old": false
     },
     {
@@ -14382,7 +14466,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-29",
+   "latest": "2026-10-07",
    "old_count": 55,
    "frontier_models": [
     "gpt-6-astra",
@@ -15620,6 +15704,16 @@
      "old": false
     },
     {
+     "model": "claude-haiku-5-5",
+     "score": 23.8,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-07",
+     "old": false
+    },
+    {
      "model": "claude-sonnet-4-5-20250929",
      "score": 23.7,
      "org": "Anthropic",
@@ -15647,6 +15741,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-02-25",
+     "old": false
+    },
+    {
+     "model": "mistral-large-4-0",
+     "score": 20.0,
+     "org": "Mistral AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-06",
      "old": false
     },
     {
@@ -15780,7 +15884,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-29",
+   "latest": "2026-10-07",
    "old_count": 3,
    "frontier_models": [
     "gpt-6-astra",
@@ -17632,7 +17736,7 @@
      "fact": 95.2,
      "answer": 99.9,
      "words": 83.6,
-     "released": "2025-04-28",
+     "released": null,
      "old": false
     },
     {
@@ -18001,7 +18105,7 @@
      "fact": 90.7,
      "answer": 94.9,
      "words": 105.6,
-     "released": "2025-04-28",
+     "released": null,
      "old": false
     },
     {
@@ -18307,7 +18411,7 @@
      "fact": 87.7,
      "answer": 100.0,
      "words": 149.1,
-     "released": "2026-02-24",
+     "released": "2026-03-04",
      "old": false
     },
     {
