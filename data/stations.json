@@ -1,7 +1,7 @@
 {
- "updated_at": "2026-10-12 08:49 UTC",
+ "updated_at": "2026-10-13 09:06 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 47,
+ "count": 48,
  "stations": [
   {
    "name": "STA1N API",
@@ -576,6 +576,20 @@
    "updated": "2026-08-14",
    "status": "open",
    "type": "paid"
+  },
+  {
+   "name": "大肥鱼公益站",
+   "url": "https://arc.103-121-95-72.sslip.io/register?invite=XXPSNBJP",
+   "kind": "公益站 / 自研对话站 + OpenAI 兼容接口 / 新站开服",
+   "summary": "公益新站，自研对话站（非 New API），仅 QQ 邮箱注册。聊天界面 + OpenAI 兼容 /v1 接口，85 个模型（Claude / GPT / Gemini / DeepSeek / GLM / Grok / Kimi 等），接口实测可调通。注册即用基础套餐、当前无用量限制；每日签到，连续 5 天领重置卡；开服冲福利按人数解锁全站奖励。",
+   "signup": "注册即用基础套餐：含全部实测可用模型、永久有效（当前无用量限制）",
+   "checkin": "有签到；连续签到 5 天领 1 张重置卡（30 天有效）",
+   "models": "85 个（接口实测）：Claude fable-5 / haiku-4-5 / opus 4-6·4-8·5·5-5 / sonnet 4-6·5·5-5；GPT 5.5 / 5.6-luna·sol·terra / 6-astra·luna·sol / 6.1-sol；Gemini 2.5-3.8；DeepSeek V4.1-Flash / V4-Pro / V4-Flash；GLM 5.1-5.3；Grok 4.6 / 4.7 / 4.20；Kimi K2.7-Code / K3；Qwen 3.6-3.8；MiniMax M2-M3.1；gpt-image 生图",
+   "entry": "仅 QQ 邮箱注册，需邮箱验证与人机验证（走邀请链接）。",
+   "caveat": "新站（站内公告发布于收录前一天），站方称可用性功能里渠道显示健康但不一定可用、实际调用可能报错，正在修复。开服冲福利是阶段活动，档位与发放规则以站内公告为准。注册需 QQ 邮箱并完成邮箱验证与人机验证；模型多带上游后缀（apigoto / vyceai / sensenova 等），具体可用性以站内为准。",
+   "updated": "2026-10-13",
+   "status": "watch",
+   "type": "charity"
   },
   {
    "name": "墨白公益站",
