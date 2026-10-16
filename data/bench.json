@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-15 07:08 UTC",
- "cutoff": "2024-10-15",
+ "updated_at": "2026-10-16 06:51 UTC",
+ "cutoff": "2024-10-16",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -207,6 +207,28 @@
      "recent_frontier": true
     },
     {
+     "model": "Muse-Spark-Open-816B-A42B",
+     "org": "Meta AI",
+     "released": "2026-10-15",
+     "n": 4,
+     "FMath": 69.8,
+     "AIME": 98.1,
+     "GPQA": 88.6,
+     "SimpleQA": 56.6,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
+     "model": "muse-wonder-1.0",
+     "org": "Meta AI",
+     "released": "2026-10-12",
+     "n": 2,
+     "FMath": 82.1,
+     "AIME": 99.4,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
      "model": "Claude Haiku 5.5",
      "org": "Anthropic",
      "released": "2026-10-07",
@@ -223,7 +245,8 @@
      "model": "mistral-large-4-0",
      "org": "Mistral AI",
      "released": "2026-10-06",
-     "n": 3,
+     "n": 4,
+     "FMath": 58.6,
      "AIME": 98.3,
      "GPQA": 88.1,
      "SimpleQA": 20.0,
@@ -508,7 +531,7 @@
    "recent_frontier_count": 8,
    "featured": true,
    "old_count": 0,
-   "latest": "2026-10-07"
+   "latest": "2026-10-15"
   },
   {
    "id": "metr_time_horizons_external",
@@ -4791,6 +4814,16 @@
      "old": false
     },
     {
+     "model": "muse-wonder-1.0",
+     "score": 82.1,
+     "org": "Meta AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-12",
+     "old": false
+    },
+    {
      "model": "gpt-5.6-luna",
      "score": 82.1,
      "org": "OpenAI",
@@ -4898,6 +4931,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-04-16",
+     "old": false
+    },
+    {
+     "model": "Muse-Spark-Open-816B-A42B",
+     "score": 69.8,
+     "org": "Meta AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-15",
      "old": false
     },
     {
@@ -5038,6 +5081,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-21",
+     "old": false
+    },
+    {
+     "model": "mistral-large-4-0",
+     "score": 58.6,
+     "org": "Mistral AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-06",
      "old": false
     },
     {
@@ -5611,7 +5664,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-07",
+   "latest": "2026-10-15",
    "old_count": 4,
    "frontier_models": [
     "gpt-6-astra",
@@ -5908,6 +5961,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-05-28",
+     "old": false
+    },
+    {
+     "model": "Muse-Spark-Open-816B-A42B",
+     "score": 98.1,
+     "org": "Meta AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-15",
      "old": false
     },
     {
@@ -8111,7 +8174,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-12",
+   "latest": "2026-10-15",
    "old_count": 39,
    "frontier_models": [
     "gpt-6-astra",
@@ -12389,6 +12452,16 @@
      "old": false
     },
     {
+     "model": "Muse-Spark-Open-816B-A42B",
+     "score": 88.6,
+     "org": "Meta AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-15",
+     "old": false
+    },
+    {
      "model": "inkling-small",
      "score": 88.5,
      "org": "Thinking Machines",
@@ -14569,7 +14642,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-07",
+   "latest": "2026-10-15",
    "old_count": 55,
    "frontier_models": [
     "gpt-6-astra",
@@ -15377,6 +15450,16 @@
      "old": false
     },
     {
+     "model": "Muse-Spark-Open-816B-A42B",
+     "score": 56.6,
+     "org": "Meta AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-15",
+     "old": false
+    },
+    {
      "model": "grok-4.7",
      "score": 56.0,
      "org": "xAI",
@@ -16027,7 +16110,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-07",
+   "latest": "2026-10-15",
    "old_count": 3,
    "frontier_models": [
     "gpt-6-astra",
