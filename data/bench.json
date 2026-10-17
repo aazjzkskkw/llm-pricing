@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-16 06:51 UTC",
- "cutoff": "2024-10-16",
+ "updated_at": "2026-10-17 06:43 UTC",
+ "cutoff": "2024-10-17",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -14499,7 +14499,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-10-16",
-     "old": false
+     "old": true
     },
     {
      "model": "Llama-3.1-8B-Instruct",
@@ -14539,7 +14539,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-10-16",
-     "old": false
+     "old": true
     },
     {
      "model": "deepseek-llm-67b-chat",
@@ -14643,7 +14643,7 @@
     }
    ],
    "latest": "2026-10-15",
-   "old_count": 55,
+   "old_count": 57,
    "frontier_models": [
     "gpt-6-astra",
     "qwen3.8-max",
@@ -18653,6 +18653,15 @@
      "old": false
     },
     {
+     "model": "google/gemini-4-argon",
+     "hall": 12.1,
+     "fact": 87.9,
+     "answer": 99.1,
+     "words": 178.2,
+     "released": "2026-10-13",
+     "old": false
+    },
+    {
      "model": "anthropic/claude-opus-4-6",
      "hall": 12.2,
      "fact": 87.8,
@@ -18887,7 +18896,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-22",
+   "latest": "2026-10-13",
    "old_count": 1,
    "frontier_models": [
     "openai/gpt-6-astra"
