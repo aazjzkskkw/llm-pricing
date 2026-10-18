@@ -1,8 +1,50 @@
 {
- "updated_at": "2026-10-17 06:43 UTC",
+ "updated_at": "2026-10-18 07:04 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 52,
+ "count": 55,
  "stations": [
+  {
+   "name": "421-API",
+   "url": "https://421api.xyz/sign-up",
+   "kind": "公益站 / 注册送 0.5 元 / 签到 0.5 左右",
+   "summary": "公益站，QQ 邮箱注册，新用户注册送 0.5 元试用额度，签到 0.5 左右（用户提供）。",
+   "signup": "0.5 元试用额度（用户提供）",
+   "checkin": "0.5 左右（用户提供）",
+   "models": "以站内模型广场为准",
+   "entry": "QQ 邮箱注册，需邮箱验证（走邀请链接）。",
+   "caveat": "注册赠送与签到金额为用户提供，以站内实际显示为准；可用模型与倍率以站内模型广场为准。",
+   "updated": "2026-10-18",
+   "status": "open",
+   "type": "charity"
+  },
+  {
+   "name": "风绘 API",
+   "url": "https://api.huidev.com/sign-up",
+   "kind": "公益站 / 注册送 2 / 签到 0.3",
+   "summary": "公益站，支持 GitHub 与邮箱注册，注册送 2、签到 0.3（用户提供）。目前只有 DeepSeek，deepseek-flash 已是最新的 1017 版本。",
+   "signup": "2（用户提供）",
+   "checkin": "0.3（用户提供）",
+   "models": "deepseek-flash（V4.1 Flash 1017 版，当前限时免费）/ deepseek-v4-pro",
+   "entry": "GitHub OAuth 或邮箱注册（需邮箱验证），走邀请链接。",
+   "caveat": "注册赠送与签到金额为用户提供，以站内实际显示为准。deepseek-flash 的限时免费与 deepseek-v4-pro 的高峰/空闲计价来自公开价格接口，站方可能随时调整，实际扣费以站内记录为准。",
+   "updated": "2026-10-18",
+   "status": "open",
+   "type": "charity"
+  },
+  {
+   "name": "慧慧云",
+   "url": "https://api.huihuiyun.top/register",
+   "kind": "公益站 / 有免费分组 / 注册送 1",
+   "summary": "公益站，注册送 1，有免费分组（用户提供）。免费分组实测可调 4 个模型：auto（随机路由高级模型）、grok-4.7、grok-composer-2.5-fast、sensenova-6.8-flash-lite。无签到。",
+   "signup": "1（用户提供）",
+   "checkin": "无",
+   "models": "免费分组 4 个：auto（随机路由高级模型）、grok-4.7、grok-composer-2.5-fast、sensenova-6.8-flash-lite；付费分组另有 Gemini、Claude 与 DeepSeek 系列",
+   "entry": "通过邀请链接注册，注册送 1。",
+   "caveat": "注册赠送与无签到为用户提供。免费分组的可用模型为实测结果，站方可能随时调整；付费分组倍率与模型以站内模型广场为准。",
+   "updated": "2026-10-17",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "10API",
    "url": "https://nextapi.store/login?inv=INVY5KXY1ZN",
