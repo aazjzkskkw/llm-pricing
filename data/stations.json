@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-10-18 07:04 UTC",
+ "updated_at": "2026-10-19 07:28 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 55,
+ "count": 56,
  "stations": [
+  {
+   "name": "OmniRush",
+   "url": "https://omnirush.ai/console",
+   "kind": "公益站 / 每天 10M gpt-6-astra",
+   "summary": "公益站，每天 10M gpt-6-astra（用户提供）。需绑定 Discord 和 GitHub，GitHub 账号注册时间不能短于 7 天。",
+   "signup": "未提供",
+   "checkin": "未提供；每天 10M gpt-6-astra（用户提供）",
+   "models": "gpt-6-astra（每天 10M，用户提供）；官网另列 GPT 6.1 Sol、GPT 6 Sol",
+   "entry": "需绑定 Discord 与 GitHub，GitHub 账号注册时间不能短于 7 天（用户提供）。",
+   "caveat": "每天额度与模型为用户提供，以站内实际显示为准。注册门槛为 GitHub 账号至少 7 天且需绑定 Discord（用户提供，官网 FAQ 一致）；部分注册会转人工审核。",
+   "updated": "2026-10-19",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "421-API",
    "url": "https://421api.xyz/sign-up",
@@ -21,12 +35,12 @@
    "name": "风绘 API",
    "url": "https://api.huidev.com/sign-up",
    "kind": "公益站 / 注册送 2 / 签到 0.3",
-   "summary": "公益站，支持 GitHub 与邮箱注册，注册送 2、签到 0.3（用户提供）。目前只有 DeepSeek，deepseek-flash 已是最新的 1017 版本。",
+   "summary": "公益站，只能 GitHub 注册，注册送 2、签到 0.3（用户提供）。目前只有 DeepSeek，deepseek-flash 已是最新的 1017 版本。",
    "signup": "2（用户提供）",
    "checkin": "0.3（用户提供）",
    "models": "deepseek-flash（V4.1 Flash 1017 版，当前限时免费）/ deepseek-v4-pro",
-   "entry": "GitHub OAuth 或邮箱注册（需邮箱验证），走邀请链接。",
-   "caveat": "注册赠送与签到金额为用户提供，以站内实际显示为准。deepseek-flash 的限时免费与 deepseek-v4-pro 的高峰/空闲计价来自公开价格接口，站方可能随时调整，实际扣费以站内记录为准。",
+   "entry": "只能 GitHub 注册（用户提供），走邀请链接。",
+   "caveat": "注册方式、注册赠送与签到金额为用户提供，以站内实际显示为准。deepseek-flash 的限时免费与 deepseek-v4-pro 的高峰/空闲计价来自公开价格接口，站方可能随时调整，实际扣费以站内记录为准。",
    "updated": "2026-10-18",
    "status": "open",
    "type": "charity"
