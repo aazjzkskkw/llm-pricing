@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-19 07:28 UTC",
- "cutoff": "2024-10-19",
+ "updated_at": "2026-10-20 07:18 UTC",
+ "cutoff": "2024-10-20",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -232,9 +232,10 @@
      "model": "Claude Haiku 5.5",
      "org": "Anthropic",
      "released": "2026-10-07",
-     "n": 5,
+     "n": 6,
      "FMath": 75.1,
      "AIME": 98.9,
+     "ARC-2": 61.3,
      "GPQA": 89.6,
      "HLE": 30.1,
      "SimpleQA": 23.8,
@@ -254,13 +255,14 @@
      "recent_frontier": false
     },
     {
-     "model": "gemini-4-argon",
+     "model": "Gemini 4 Argon",
      "org": "Google DeepMind",
      "released": "2026-09-30",
-     "n": 5,
+     "n": 6,
      "WebDev": 1679.5,
      "FMath": 86.0,
      "AIME": 100.0,
+     "ARC-2": 91.2,
      "GPQA": 96.4,
      "SimpleQA": 76.0,
      "old": false,
@@ -475,34 +477,6 @@
      "FMath": 19.3,
      "AIME": 86.7,
      "GPQA": 82.3,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "Gemini 3.6 Flash",
-     "org": "Google DeepMind",
-     "released": "2026-07-21",
-     "n": 7,
-     "DeepSWE": 46.7,
-     "WebDev": 1537.0,
-     "FMath": 58.9,
-     "AIME": 94.2,
-     "ARC-2": 60.4,
-     "GPQA": 94.1,
-     "SimpleQA": 66.2,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "Gemini 3.5 Flash-Lite",
-     "org": "Google DeepMind",
-     "released": "2026-07-21",
-     "n": 5,
-     "WebDev": 1446.6,
-     "FMath": 26.0,
-     "AIME": 71.1,
-     "ARC-2": 10.3,
-     "GPQA": 83.3,
      "old": false,
      "recent_frontier": false
     }
@@ -8254,6 +8228,16 @@
      "old": false
     },
     {
+     "model": "Gemini 4 Argon",
+     "score": 91.2,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-30",
+     "old": false
+    },
+    {
      "model": "Claude Opus 5",
      "score": 90.4,
      "org": "Anthropic",
@@ -8511,6 +8495,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-08-13",
+     "old": false
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "score": 61.3,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-07",
      "old": false
     },
     {
@@ -9504,7 +9498,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-29",
+   "latest": "2026-10-07",
    "old_count": 3,
    "frontier_models": [
     "Claude Fable 5",
@@ -9609,6 +9603,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-02",
+     "old": false
+    },
+    {
+     "model": "Gemini 4 Argon",
+     "score": 98.5,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-09-30",
      "old": false
     },
     {
@@ -9889,6 +9893,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-31",
+     "old": false
+    },
+    {
+     "model": "Claude Haiku 5.5",
+     "score": 89.0,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-07",
      "old": false
     },
     {
@@ -10942,7 +10956,7 @@
      "old": false
     }
    ],
-   "latest": "2026-09-29",
+   "latest": "2026-10-07",
    "old_count": 2,
    "frontier_models": [
     "Claude Fable 5",
@@ -16340,6 +16354,16 @@
      "old": false
     },
     {
+     "model": "Muse Spark Open",
+     "score": 58.4,
+     "org": "Meta AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-15",
+     "old": false
+    },
+    {
      "model": "GPT-5.6 Sol",
      "score": 57.8,
      "org": "OpenAI",
@@ -17260,6 +17284,16 @@
      "old": false
     },
     {
+     "model": "Trinity Large Thinking",
+     "score": 40.6,
+     "org": "Arcee AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-01",
+     "old": false
+    },
+    {
      "model": "GPT-4.1 mini",
      "score": 40.4,
      "org": "OpenAI",
@@ -17370,6 +17404,16 @@
      "old": false
     },
     {
+     "model": "gpt-oss-20b",
+     "score": 38.9,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-08-05",
+     "old": false
+    },
+    {
      "model": "DeepSeek V3.2 (Reasoning)",
      "score": 38.9,
      "org": "DeepSeek",
@@ -17470,6 +17514,16 @@
      "old": false
     },
     {
+     "model": "Qwen3 Coder Next",
+     "score": 36.2,
+     "org": "",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-02",
+     "old": false
+    },
+    {
      "model": "Qwen3.8 27B (Non-reasoning)",
      "score": 36.2,
      "org": "Alibaba",
@@ -17477,16 +17531,6 @@
      "pass4": null,
      "cost": null,
      "released": "2026-08-14",
-     "old": false
-    },
-    {
-     "model": "Trinity Large Thinking",
-     "score": 36.1,
-     "org": "Arcee AI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-04-01",
      "old": false
     },
     {
@@ -17570,26 +17614,6 @@
      "old": false
     },
     {
-     "model": "gpt-oss-20B",
-     "score": 34.4,
-     "org": "OpenAI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-08-05",
-     "old": false
-    },
-    {
-     "model": "Llama 4 Maverick",
-     "score": 33.1,
-     "org": "Meta AI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2025-04-05",
-     "old": false
-    },
-    {
      "model": "Qwen3 30B A3B 2507 (Reasoning)",
      "score": 33.0,
      "org": "Alibaba",
@@ -17610,13 +17634,13 @@
      "old": false
     },
     {
-     "model": "Qwen3 Coder Next",
-     "score": 32.3,
-     "org": "",
+     "model": "Llama 4 Maverick",
+     "score": 31.7,
+     "org": "Meta AI",
      "agent": null,
      "pass4": null,
      "cost": null,
-     "released": "2026-02-02",
+     "released": "2025-04-05",
      "old": false
     },
     {
@@ -17771,7 +17795,7 @@
     },
     {
      "model": "Llama 4 Scout",
-     "score": 17.0,
+     "score": 21.3,
      "org": "Meta AI",
      "agent": null,
      "pass4": null,
@@ -17820,7 +17844,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-12",
+   "latest": "2026-10-15",
    "old_count": 1,
    "frontier_models": [
     "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
@@ -18577,7 +18601,7 @@
      "fact": 88.7,
      "answer": 97.0,
      "words": 93.5,
-     "released": "2025-01-20",
+     "released": null,
      "old": false
     },
     {
