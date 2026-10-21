@@ -1,8 +1,50 @@
 {
- "updated_at": "2026-10-20 07:18 UTC",
+ "updated_at": "2026-10-21 07:15 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 57,
+ "count": 60,
  "stations": [
+  {
+   "name": "狸猫 AI",
+   "url": "https://limao-api.com/sign-up",
+   "kind": "公益站 / 注册送 1 / 签到 1 毛",
+   "summary": "公益站，仅 QQ 邮箱注册，注册送 1、签到 1 毛（用户提供）。模型广场 25 个模型，覆盖 Claude、GPT、Gemini、DeepSeek、Grok、Kimi 与生图，default / 国模 / 生图三组均 1 倍率。",
+   "signup": "1（用户提供）",
+   "checkin": "1 毛（用户提供）",
+   "models": "25 个模型：Claude（opus 4-6 等）/ GPT（gpt-image-2 系列）/ Gemini（4-argon 等）/ DeepSeek / Grok（grok-imagine 系列）/ Kimi（k3、k3-c）",
+   "entry": "仅允许 QQ 邮箱注册，需邮箱验证（走邀请链接）；收不到验证码先查垃圾邮件。",
+   "caveat": "注册赠送与签到金额为用户提供，以站内实际显示为准。仅支持 QQ 邮箱注册，收不到验证码记得查垃圾邮件；虚拟商品兑换后不退不换，密钥不要外传。开业活动规则与截止时间以站内公告为准。",
+   "updated": "2026-10-21",
+   "status": "open",
+   "type": "charity"
+  },
+  {
+   "name": "汐のAPI",
+   "url": "https://api.203236.xyz/sign-up",
+   "kind": "公益站 / 注册送 15 / 签到 10",
+   "summary": "公益站，QQ 邮箱注册，注册送 15 额度、签到 10（用户提供）。101 个模型，默认组 1 倍率、VIP 0.8、SVIP 0.6，另有 Claude / GPT / Gemini 独立分组与国内 wb 组。**封号很严，请注意自己的 IP；国内可以直连**（用户提供）。",
+   "signup": "15 额度（用户提供）",
+   "checkin": "10（用户提供）",
+   "models": "101 个模型：Claude（fable-5 / opus 4.5-4.6 / sonnet 4-5~5-5）/ GPT（6-astra、6-sol、5.6-sol、gpt-image-2 系列）/ Gemini（3.6、3.8-flash、4-argon-low）/ DeepSeek V4 / GLM 5.3 / Grok 4.6 / Kimi / Qwen 等",
+   "entry": "QQ 邮箱注册，需邮箱验证（走邀请链接）；国内可以直连（用户提供）。",
+   "caveat": "**封号很严，请注意自己的 IP；国内可以直连**（用户提供）。同 IP 多账号会被封（住宅 IP 只留最早的一个，机房/代理 IP 全封，每 15 分钟执行）；被邀请人触发风控还会清零邀请人的 5 白蜡。注册赠送与签到金额为用户提供，以站内实际显示为准。额度以自定义货币 🕯 显示。",
+   "updated": "2026-10-21",
+   "status": "open",
+   "type": "charity"
+  },
+  {
+   "name": "晚晚舟",
+   "url": "https://wanwanzhou.top/register",
+   "kind": "公益站 / 注册送 1 / 拉 5 人后每天签到 1r",
+   "summary": "公益站，注册送 1，拉 5 人后可每天签到领 1r（用户提供）。哈基米 flash 系列 0.01、克 o 系列 0.05。",
+   "signup": "1（用户提供）",
+   "checkin": "拉 5 人后可每天签到领 1r（用户提供）",
+   "models": "哈基米 flash 系列 0.01、克 o 系列 0.05（用户提供）；完整清单以登录后站内为准",
+   "entry": "QQ 邮箱注册，需邮箱验证（走邀请链接）。",
+   "caveat": "注册赠送、签到条件与倍率均为用户提供，以站内实际显示为准。签到需先拉够 5 人才能解锁；站内模型广场未对外开放，模型清单以登录后站内显示为准。",
+   "updated": "2026-10-20",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "OmniRush",
    "url": "https://omnirush.ai/console",
