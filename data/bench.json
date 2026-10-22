@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-21 07:15 UTC",
- "cutoff": "2024-10-21",
+ "updated_at": "2026-10-22 07:17 UTC",
+ "cutoff": "2024-10-22",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -205,6 +205,18 @@
      "SimpleQA": 59.9,
      "old": false,
      "recent_frontier": true
+    },
+    {
+     "model": "deepseek-v4.1-flash-1017",
+     "org": "DeepSeek",
+     "released": "2026-10-17",
+     "n": 4,
+     "FMath": 71.2,
+     "AIME": 99.4,
+     "GPQA": 93.2,
+     "SimpleQA": 42.5,
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Muse-Spark-Open-816B-A42B",
@@ -505,7 +517,7 @@
    "recent_frontier_count": 8,
    "featured": true,
    "old_count": 0,
-   "latest": "2026-10-15"
+   "latest": "2026-10-17"
   },
   {
    "id": "metr_time_horizons_external",
@@ -4898,6 +4910,16 @@
      "old": false
     },
     {
+     "model": "deepseek-v4.1-flash-1017",
+     "score": 71.2,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-17",
+     "old": false
+    },
+    {
      "model": "claude-opus-4-7",
      "score": 70.2,
      "org": "Anthropic",
@@ -5638,7 +5660,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-15",
+   "latest": "2026-10-17",
    "old_count": 4,
    "frontier_models": [
     "gpt-6-astra",
@@ -5805,6 +5827,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-09",
+     "old": false
+    },
+    {
+     "model": "deepseek-v4.1-flash-1017",
+     "score": 99.4,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-17",
      "old": false
     },
     {
@@ -8148,7 +8180,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-15",
+   "latest": "2026-10-17",
    "old_count": 39,
    "frontier_models": [
     "gpt-6-astra",
@@ -12146,6 +12178,16 @@
      "old": false
     },
     {
+     "model": "deepseek-v4.1-flash-1017",
+     "score": 93.2,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-17",
+     "old": false
+    },
+    {
      "model": "kimi-k3",
      "score": 93.1,
      "org": "Moonshot",
@@ -14656,7 +14698,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-15",
+   "latest": "2026-10-17",
    "old_count": 57,
    "frontier_models": [
     "gpt-6-astra",
@@ -15714,6 +15756,16 @@
      "old": false
     },
     {
+     "model": "deepseek-v4.1-flash-1017",
+     "score": 42.5,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-17",
+     "old": false
+    },
+    {
      "model": "gpt-6-luna",
      "score": 41.4,
      "org": "OpenAI",
@@ -16124,7 +16176,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-15",
+   "latest": "2026-10-17",
    "old_count": 3,
    "frontier_models": [
     "gpt-6-astra",
