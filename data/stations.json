@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-10-22 07:17 UTC",
+ "updated_at": "2026-10-23 07:10 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 60,
+ "count": 61,
  "stations": [
+  {
+   "name": "长春叙",
+   "url": "https://changchunxu.xyz/sign-up",
+   "kind": "公益站 / 注册送 4.16（明天起 1）/ 签到 0.2 左右",
+   "summary": "公益站，注册送 4.16，明天起改为送 1，签到 0.2 左右（用户提供）。gemini-3.8-flash 按次 0.01、gemini-4-argon 按次 0.2；44 个模型，分 ds按次、哈基米按次/按量、小克按次/按量 五组。",
+   "signup": "4.16（明天起改为 1，用户提供）",
+   "checkin": "0.2 左右（用户提供）",
+   "models": "44 个模型：Gemini（3.8-flash、4-argon、3.5-flash、2.5 系列）/ Claude（opus 4-6~5-5、sonnet 4-5~5、fable-5，分 kiro / 企业 / 酒馆 / 反重力渠道）/ DeepSeek（v4.1-flash、v4-flash、v3.2）",
+   "entry": "邮箱注册，需邮箱验证（走邀请链接）。",
+   "caveat": "注册赠送金额、改为 1 的时间与签到金额为用户提供，以站内实际显示为准。创建 API 密钥时必须选分组，否则拉取不到模型。按次与按量计费并存，倍率与渠道差异较大，实际扣费以站内记录为准。",
+   "updated": "2026-10-23",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "狸猫 AI",
    "url": "https://limao-api.com/sign-up",
