@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-10-23 07:10 UTC",
+ "updated_at": "2026-10-24 06:59 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 61,
+ "count": 62,
  "stations": [
+  {
+   "name": "HyxAPI",
+   "url": "https://hyxware.com/auth?mode=register",
+   "kind": "公益站 / 签到 15 左右",
+   "summary": "公益站，注册无赠送，签到 15 左右（用户提供）。支持邮箱、GitHub 与 Linux DO 登录，额度按美元显示。模型有 DeepSeek V4 系列、GLM 5.x、GPT 5.6 等。",
+   "signup": "无",
+   "checkin": "15 左右（用户提供）",
+   "models": "DeepSeek V4 系列（v4-flash-0731、v4-pro、v4-pro-0813、v4.1-flash）/ GLM 5、5.1、5.2、5.3 / GPT 5.6-luna 等",
+   "entry": "邮箱注册（需邮箱验证），或 GitHub / Linux DO 登录（走邀请链接）。",
+   "caveat": "注册无赠送、签到金额为用户提供，以站内实际显示为准。模型与价格以站内模型页为准，可能随时调整。",
+   "updated": "2026-10-24",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "长春叙",
    "url": "https://changchunxu.xyz/sign-up",

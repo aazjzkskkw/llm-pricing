@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-23 07:10 UTC",
- "cutoff": "2024-10-23",
+ "updated_at": "2026-10-24 06:59 UTC",
+ "cutoff": "2024-10-24",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -18019,6 +18019,15 @@
      "old": false
     },
     {
+     "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+     "hall": 4.2,
+     "fact": 95.8,
+     "answer": 99.9,
+     "words": 108.2,
+     "released": "2026-09-10",
+     "old": false
+    },
+    {
      "model": "snowflake/snowflake-arctic-instruct",
      "hall": 4.3,
      "fact": 95.7,
@@ -18493,6 +18502,15 @@
      "answer": 99.5,
      "words": 115.1,
      "released": "2025-10-01",
+     "old": false
+    },
+    {
+     "model": "anthropic/claude-opus-5-5",
+     "hall": 9.9,
+     "fact": 90.1,
+     "answer": 99.7,
+     "words": 192.1,
+     "released": "2026-09-23",
      "old": false
     },
     {
