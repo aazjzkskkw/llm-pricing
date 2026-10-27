@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-10-26 07:32 UTC",
+ "updated_at": "2026-10-27 07:29 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 62,
+ "count": 63,
  "stations": [
+  {
+   "name": "秋刀鱼",
+   "url": "https://qiudaoy.com/sign-up",
+   "kind": "付费站 / 酒馆站 / 注册送 2.5 / argon 0.02/次",
+   "summary": "付费酒馆站，注册送 2.5，没有签到（用户提供）。重点：argon 0.02/次（用户提供）。",
+   "signup": "2.5（用户提供）",
+   "checkin": "无（用户提供）",
+   "models": "重点：argon 0.02/次（用户提供）；其余模型以登录后站内显示为准",
+   "entry": "邮箱注册，需邮箱验证（走邀请链接）。",
+   "caveat": "付费酒馆站。注册赠送、argon 0.02/次与没有签到均为用户提供，以站内实际显示为准；其余模型与倍率以登录后站内模型广场为准。",
+   "updated": "2026-10-26",
+   "status": "open",
+   "type": "paid"
+  },
   {
    "name": "HyxAPI",
    "url": "https://hyxware.com/auth?mode=register",
@@ -522,20 +536,6 @@
    "type": "charity"
   },
   {
-   "name": "MotoMoto",
-   "url": "https://motomoto.lol/sign-up",
-   "kind": "公益站 / GitHub 注册 / OpenAI 仅限 Codex",
-   "summary": "注册送 50 刀（注册 30 + 邀请码 20），倍率 1x，每日签到约 50。密码注册已关闭，新用户只能用 GitHub 注册；老账号还能用密码登录但必须尽快绑定 GitHub，否则按刷号处理。注意站方规定 OpenAI 模型只能在 Codex 里用，接到其他智能体按违规处理。",
-   "signup": "50 刀（注册 30 + 邀请码 20）",
-   "checkin": "约 50",
-   "models": "gpt-5.5、gpt-5.6-sol（OpenAI 兼容，倍率 1x）",
-   "entry": "GitHub 授权注册（密码注册已于 2026-09-07 关闭）。老账号仍可用原密码登录，但必须进「个人设置」绑定 GitHub，否则按刷号违规暂停使用。",
-   "caveat": "**站方规定 OpenAI 模型只能在 Codex 里用，接到其他第三方智能体按违规处理**——拿它跑 Claude Code 之类的客户端属于违规，注意别踩。站规还禁止多开账号、脚本注册或签到、刷额度、倒卖密钥与额度、越狱提示与绕过内容审核，一经查实直接封号、额度作废不退不补；9 月 5 日刚因大量违规封过一批号并短暂停服，误封可走 /appeal 申诉。隐私政策里有训练数据授权条款：授权后站方可能存储或采样你的提示词、模型输出和工具调用用于训练、微调、蒸馏和评测，已进入训练的部分通常无法单独剔除，跑敏感内容前自己去设置里确认开关状态（签到金额现在统一约 50，和这个开关还有没有关系我没核实）。额度是站内记账、不是现金，长时间不用会被清零；站点上线不久，稳定性和额度政策都可能变。",
-   "updated": "2026-09-02",
-   "status": "open",
-   "type": "charity"
-  },
-  {
    "name": "GcmodAi",
    "url": "https://gcmod.bond/register",
    "kind": "半公益站 / 一分钱一次",
@@ -744,6 +744,20 @@
    "updated": "2026-08-14",
    "status": "open",
    "type": "paid"
+  },
+  {
+   "name": "Krisphyn API",
+   "url": "https://api.krisphyn.cc/sign-up",
+   "kind": "公益站 / 注册送 1 / 签到 0.6",
+   "summary": "公益站，注册送 1、签到 0.6（用户提供）。106 个模型，22 个分组，免费组 0.01 倍含 18 个模型（step-5-preview、kimi-k3、gemini-3.8-flash 等）；公告称不对中国大陆用户开放，注册后需做非中国大陆认证。",
+   "signup": "1（用户提供）",
+   "checkin": "0.6（用户提供）",
+   "models": "106 个模型：免费组 18 个（step-5-preview、kimi-k3、gemini-3.8-flash、Qwen3.8-27B、longcat-2.5、mimo-v2.6-flash、sensenova-6.8-flash-lite、agnes-2.5-flash 等）/ Claude（opus-5、4.8、haiku-4.5、fable-5.1）/ Gemini（3.5/3.6/3-pro）/ DeepSeek（v4.1-flash-1017）/ GLM（4.5-air、5.2、5.3）/ Grok（4.6、4.3、composer-2.5-fast）/ Kimi / Qwen 等",
+   "entry": "邮箱（需验证）、GitHub 或 Telegram OAuth 注册（走邀请链接）；公告称不对中国大陆用户开放，注册后需做非中国大陆用户认证。",
+   "caveat": "**公告称本站不对中国大陆用户开放，注册后需做非中国大陆用户认证**。注册赠送与签到金额为用户提供，以站内实际显示为准。模型广场的「看不到」状态不一定代表不可用，可自行尝试；gpt 分组站方标注「不稳」、gpt plus 标注稳定性一般。额度为自定义货币 🍀，付款金额不含平台手续费需足额支付。分组倍率与模型可能随时调整。",
+   "updated": "2026-10-26",
+   "status": "watch",
+   "type": "charity"
   },
   {
    "name": "大肥鱼公益站",
