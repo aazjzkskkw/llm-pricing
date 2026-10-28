@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-27 07:29 UTC",
- "cutoff": "2024-10-27",
+ "updated_at": "2026-10-28 08:01 UTC",
+ "cutoff": "2024-10-28",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -190,6 +190,18 @@
      "SimpleQA": 49.3,
      "old": false,
      "recent_frontier": true
+    },
+    {
+     "model": "gpt-6.1-terra",
+     "org": "OpenAI",
+     "released": "2026-10-26",
+     "n": 4,
+     "FMath": 90.9,
+     "AIME": 100.0,
+     "GPQA": 94.3,
+     "SimpleQA": 57.3,
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "deepseek-v4.1-flash-1017",
@@ -478,7 +490,7 @@
    "recent_frontier_count": 7,
    "featured": true,
    "old_count": 0,
-   "latest": "2026-10-17"
+   "latest": "2026-10-26"
   },
   {
    "id": "metr_time_horizons_external",
@@ -4651,6 +4663,16 @@
      "old": false
     },
     {
+     "model": "gpt-6.1-terra",
+     "score": 90.9,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-26",
+     "old": false
+    },
+    {
      "model": "claude-fable-5-1",
      "score": 90.2,
      "org": "Anthropic",
@@ -5621,7 +5643,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-17",
+   "latest": "2026-10-26",
    "old_count": 4,
    "frontier_models": [
     "gpt-6-astra",
@@ -5660,6 +5682,16 @@
     }
    ],
    "rows": [
+    {
+     "model": "gpt-6.1-terra",
+     "score": 100.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-26",
+     "old": false
+    },
     {
      "model": "gemini-4-argon",
      "score": 100.0,
@@ -8141,7 +8173,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-17",
+   "latest": "2026-10-26",
    "old_count": 41,
    "frontier_models": [
     "gpt-6-astra",
@@ -12039,6 +12071,16 @@
      "old": false
     },
     {
+     "model": "gpt-6.1-terra",
+     "score": 94.3,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-26",
+     "old": false
+    },
+    {
      "model": "gpt-6-sol",
      "score": 94.3,
      "org": "OpenAI",
@@ -14659,7 +14701,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-17",
+   "latest": "2026-10-26",
    "old_count": 59,
    "frontier_models": [
     "gpt-6-astra",
@@ -15467,6 +15509,16 @@
      "old": false
     },
     {
+     "model": "gpt-6.1-terra",
+     "score": 57.3,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-26",
+     "old": false
+    },
+    {
      "model": "Muse-Spark-Open-816B-A42B",
      "score": 56.6,
      "org": "Meta AI",
@@ -16137,7 +16189,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-17",
+   "latest": "2026-10-26",
    "old_count": 3,
    "frontier_models": [
     "gpt-6-astra",
