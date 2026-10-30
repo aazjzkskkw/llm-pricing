@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-10-29 08:12 UTC",
+ "updated_at": "2026-10-30 08:17 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 65,
+ "count": 66,
  "stations": [
+  {
+   "name": "ThousandYuan Ai",
+   "url": "https://api.thousandyuan.dpdns.org/sign-up",
+   "kind": "公益站 / 注册送 30 / 签到送 50",
+   "summary": "公益站，注册送 30，每日签到送 50（用户提供）。13 个模型，default 与 vip 两组都是 1 倍率，含 Claude、GPT、Gemini、DeepSeek、Grok、Kimi 等。",
+   "signup": "30（用户提供）",
+   "checkin": "50（用户提供）",
+   "models": "claude-opus-5-5、claude-sonnet-5-0、gpt-6-1-sol、gemini-4、deepseek-v4.1-flash、grok-4.7、glm-5.3 / 5.3-flash、qwen3.8、kimi-k2.6、minimax-m3 / m3.1-flash、spark-x2.6（default / vip 两组均 1 倍）",
+   "entry": "邮箱注册，需邮箱验证（走邀请链接）。",
+   "caveat": "注册赠送与签到金额为用户提供，以站内实际显示为准。模型与倍率以站内模型广场为准，可能随时调整。",
+   "updated": "2026-10-30",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "猫のAPI",
    "url": "https://www.catpawrouter.com/sign-up",
