@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-31 08:08 UTC",
- "cutoff": "2024-10-31",
+ "updated_at": "2026-11-01 08:53 UTC",
+ "cutoff": "2024-11-01",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -438,20 +438,6 @@
      "DeepSWE": 54.9,
      "WebDev": 1534.4,
      "SimpleQA": 60.3,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "qwen3-8-max",
-     "org": "Alibaba",
-     "released": "2026-08-02",
-     "n": 6,
-     "DeepSWE": 57.5,
-     "WebDev": 1670.6,
-     "FMath": 74.7,
-     "AIME": 99.4,
-     "GPQA": 92.7,
-     "SimpleQA": 45.8,
      "old": false,
      "recent_frontier": false
     }
