@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-11-02 09:01 UTC",
+ "updated_at": "2026-11-03 09:10 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 72,
+ "count": 73,
  "stations": [
+  {
+   "name": "ZOO API",
+   "url": "https://zooapi.gfkfqtcx.com/sign-up",
+   "kind": "公益站 / 注册送 0.5 / 签到 0.1-1",
+   "summary": "公益站，注册送 0.5，签到 0.1-1（用户提供）。全站 1 元 = 1 🐱 无隐藏倍率；45 个模型，按次计费为主，太子（argon）0.04-0.08/次、3.8 flash 0.01-0.02/次。",
+   "signup": "0.5（用户提供）",
+   "checkin": "0.1-1（用户提供）",
+   "models": "45 个模型，按次计费：太子 gemini-4-argon 0.04-0.08/次、gemini-3.8-flash 0.01-0.02/次、claude-opus 4-6~5-5 0.06/次、claude-sonnet 4-6~5-5 0.035/次、deepseek-v4-pro 0.04/次、deepseek-v4.1-flash 0.025/次、gemini-3.1-pro 0.04/次",
+   "entry": "邮箱注册，需邮箱验证（走邀请链接）。",
+   "caveat": "注册赠送与签到金额为用户提供，以站内实际显示为准。太子 0.04/次与 3.8 0.01/次的活动价需邀请 3 位用户完成注册解锁 promo 渠道（截止 11 月 4 日），未达成按原价计费；开站充 5 送 5 活动已于 11 月 1 日截止。额度按自定义货币 🐱 显示。",
+   "updated": "2026-11-02",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "大白饭",
    "url": "https://newapi.hkkkj.qzz.io/sign-up",
@@ -83,20 +97,6 @@
    "models": "34 个模型：DeepSeek（v4-flash、v4.1-flash、v4-pro）/ GLM（5.2、5.3、5.3-flash）/ Kimi（k2.8、k3、k3.1-pro）/ MiniMax（m3、m3.1-flash）/ hy3、hy4、step-5-preview、sensenova、Qwen3.8 等",
    "entry": "邮箱注册，需邮箱验证（走邀请链接）。",
    "caveat": "注册赠送与签到金额为用户提供，以站内实际显示为准。模型倍率跨度极大（step-5-preview 与 MiniCPM 0.005，kimi-k3.1-pro 37.5），实际消耗以站内模型广场和调用记录为准。",
-   "updated": "2026-10-31",
-   "status": "open",
-   "type": "charity"
-  },
-  {
-   "name": "公益中转api",
-   "url": "https://ces.ddddai.xyz/sign-up",
-   "kind": "公益站 / 注册送 2 / 签到 0.7 左右",
-   "summary": "公益站，注册送 2，签到 0.7 左右（用户提供）。35 个模型 5 个分组，倍率公开：deepseek 与 kimi/glm 分组 0.2、gpt 与 gemini 分组 20、default 1。",
-   "signup": "2（用户提供）",
-   "checkin": "0.7 左右（用户提供）",
-   "models": "35 个模型：DeepSeek（v4-pro、v4.1-flash-1017）/ GLM（5、5.1-5.3 及 flash 系列）/ Kimi（k3、k2.7-code、k2.6）/ GPT（6-astra、5.6 系列）/ Gemini（3.5-flash、3.1-pro）/ MiniMax / Qwen 等",
-   "entry": "邮箱注册，需邮箱验证（走邀请链接）。",
-   "caveat": "注册赠送与签到金额为用户提供，以站内实际显示为准。分组倍率差异极大（deepseek / kimi-glm 0.2，gpt / gemini 20），选分组前看清计费；模型与倍率以站内模型广场为准。",
    "updated": "2026-10-31",
    "status": "open",
    "type": "charity"
@@ -788,20 +788,6 @@
    "type": "charity"
   },
   {
-   "name": "JustWoker 公益站",
-   "url": "https://api.justwoker.icu/sign-up",
-   "kind": "公益站 / Claude Opus 4.8 / Kiro 渠道",
-   "summary": "站内模型已换成 Claude Opus 4.8，走 Kiro 渠道；调用站内模型请使用 /v1/messages。有部分用户反馈存在偷数据和注入问题，不要用在隐私场景，使用时盯着提示词。",
-   "signup": "以站内当前显示为准",
-   "checkin": "以站内当前显示为准",
-   "models": "Claude Opus 4.8（Kiro 渠道，调用请使用 /v1/messages）",
-   "entry": "此前需使用注册满 1 年的 GitHub 账号；当前注册状态与门槛以注册页实际显示为准。",
-   "caveat": "有部分用户反馈该渠道存在偷数据和注入问题：不要用在隐私场景，使用时盯着提示词；模型调用请使用 /v1/messages。注册门槛、赠送、签到、倍率和稳定性未复核，请以站内实际规则为准。",
-   "updated": "2026-08-20",
-   "status": "open",
-   "type": "charity"
-  },
-  {
    "name": "AbinAPI",
    "url": "https://www.abinapi.com/register",
    "kind": "付费站 / Grok Heavy 0.08",
@@ -870,6 +856,20 @@
    "updated": "2026-08-14",
    "status": "open",
    "type": "paid"
+  },
+  {
+   "name": "Jasper",
+   "url": "https://api.yjs.im/sign-up",
+   "kind": "公益站 / 免费模型多",
+   "summary": "公益站，免费模型多（用户提供）。149 个模型，Unlimited 组 0 倍 59 个、Free 组 0.01 倍 9 个。额度按自定义货币 ✦ 显示。",
+   "signup": "待确认",
+   "checkin": "有签到，金额待确认",
+   "models": "149 个模型。免费：Unlimited 组 0 倍 59 个（nvidia/deepseek-v4.1-flash、amd/deepseek-v4-flash、nvidia/glm-5.3-flash、nvidia/glm-5.3、nvidia/step-5-preview、sensenova-6.8-flash-lite、kilo-auto/free、openrouter/free 等）/ Free 组 0.01 倍 9 个（deepseek-v4-flash、deepseek-v4-pro、deepseek-v4.1-flash、glm-5.3、glm-5.3-flash、glm-5.2、step-5-preview、claude-opus-5-5-web）。付费组：DeepSeek 0.06、OpenModels 0.15、Codex-Budget 0.07、Gpt-Undegraded 0.12、Claude-Kiro-Discount 0.06、Gemini 0.25",
+   "entry": "邮箱注册并需邮箱验证，也支持 GitHub 登录（走邀请链接）。",
+   "caveat": "注册赠送与签到金额未核实，待确认。免费模型以站内为准，站方标注 Free 组随时调整并禁止转发；Unlimited 组标注不限制二次转发与使用量。页脚声明仅面向海外华人、中国大陆地区请勿使用。额度按自定义货币 ✦ 显示，站方公告充值比例 ✦10 = $1.6 = ¥10。",
+   "updated": "2026-11-02",
+   "status": "watch",
+   "type": "charity"
   },
   {
    "name": "Krisphyn API",
@@ -954,6 +954,20 @@
    "updated": "2026-08-14",
    "status": "watch",
    "type": "paid"
+  },
+  {
+   "name": "芙卡卡の小食堂",
+   "url": "https://api.fuka.win/sign-up",
+   "kind": "公益站 / 能用 150 次 gemini-3.8-flash / 无签到 / 鸡蛋",
+   "summary": "公益站，注册送的额度能用 150 次 gemini-3.8-flash，没有签到（用户提供）。当鸡蛋福利用，用完就扔。额度按自定义货币 🍭 显示。",
+   "signup": "能用 150 次 gemini-3.8-flash（用户提供）",
+   "checkin": "无（用户提供）",
+   "models": "注册额度能用 150 次 gemini-3.8-flash（用户提供）。广场共 64 个模型（Anthropic 34、Google 20、OpenAI 4、DeepSeek 3、智谱 3）；分组 default / 哈基米专享 / 哈基米按量 / 小克专享 / 小克按量均 1 倍；按次 38 个、按量 26 个。抽查：claude-4.x 6/次、claude-4.5/4.6 8/次、claude-4.5 按量输入 100/输出 500、gemini-4-argon 输入 140/输出 700、deepseek 1/次",
+   "entry": "邮箱注册，需邮箱验证（走邀请链接）。",
+   "caveat": "按鸡蛋福利对待：只薅注册送的免费额度，付费体验没验证过，充值请谨慎，用完就扔。能用 150 次 gemini-3.8-flash 与无签到为用户提供，以站内实际显示为准。其余模型价格为登录后广场抽查，分组与价格随时可能变，以站内为准。额度按自定义货币 🍭 显示。",
+   "updated": "2026-11-02",
+   "status": "avoid",
+   "type": "charity"
   },
   {
    "name": "星云智联API",

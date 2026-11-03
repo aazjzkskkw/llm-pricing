@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-02 09:01 UTC",
- "cutoff": "2024-11-02",
+ "updated_at": "2026-11-03 09:10 UTC",
+ "cutoff": "2024-11-03",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -190,6 +190,18 @@
      "SimpleQA": 49.3,
      "old": false,
      "recent_frontier": true
+    },
+    {
+     "model": "mistral-large-4-0-oss",
+     "org": "Mistral AI",
+     "released": "2026-10-29",
+     "n": 4,
+     "FMath": 46.3,
+     "AIME": 99.4,
+     "GPQA": 90.2,
+     "SimpleQA": 22.4,
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "gpt-6.1-terra",
@@ -464,7 +476,7 @@
    "recent_frontier_count": 7,
    "featured": true,
    "old_count": 0,
-   "latest": "2026-10-26"
+   "latest": "2026-10-29"
   },
   {
    "id": "metr_time_horizons_external",
@@ -5157,6 +5169,16 @@
      "old": false
     },
     {
+     "model": "mistral-large-4-0-oss",
+     "score": 46.3,
+     "org": "Mistral AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-29",
+     "old": false
+    },
+    {
      "model": "inkling-small",
      "score": 46.3,
      "org": "Thinking Machines",
@@ -5617,7 +5639,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-26",
+   "latest": "2026-10-29",
    "old_count": 4,
    "frontier_models": [
     "gpt-6-astra",
@@ -5794,6 +5816,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-09",
+     "old": false
+    },
+    {
+     "model": "mistral-large-4-0-oss",
+     "score": 99.4,
+     "org": "Mistral AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-29",
      "old": false
     },
     {
@@ -8147,7 +8179,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-26",
+   "latest": "2026-10-29",
    "old_count": 42,
    "frontier_models": [
     "gpt-6-astra",
@@ -12485,6 +12517,16 @@
      "old": false
     },
     {
+     "model": "mistral-large-4-0-oss",
+     "score": 90.2,
+     "org": "Mistral AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-29",
+     "old": false
+    },
+    {
      "model": "glm-5.3-flash",
      "score": 90.2,
      "org": "Z.ai (Zhipu AI)",
@@ -14775,7 +14817,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-26",
+   "latest": "2026-10-29",
    "old_count": 60,
    "frontier_models": [
     "gpt-6-astra",
@@ -16103,6 +16145,16 @@
      "old": false
     },
     {
+     "model": "mistral-large-4-0-oss",
+     "score": 22.4,
+     "org": "Mistral AI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-29",
+     "old": false
+    },
+    {
      "model": "gpt-5-mini-2025-08-07",
      "score": 21.6,
      "org": "OpenAI",
@@ -16263,7 +16315,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-26",
+   "latest": "2026-10-29",
    "old_count": 3,
    "frontier_models": [
     "gpt-6-astra",
