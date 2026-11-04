@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-11-03 09:10 UTC",
+ "updated_at": "2026-11-04 08:46 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 73,
+ "count": 74,
  "stations": [
+  {
+   "name": "API 智纽",
+   "url": "https://ai.apizn.com/sign-up",
+   "kind": "付费站 / 双11活动 / 0.01 不降智 GPT",
+   "summary": "付费站，注册不送（用户提供）。双 11 活动：0.01 倍、100% 不降智、95% 缓存命中、1 秒首字的 GPT，该分组现在就开着（用户提供），持续到 11 月 11 日 23:59。",
+   "signup": "无（用户提供）",
+   "checkin": "无",
+   "models": "46 个模型。活动分组【GPT】Team5X号池：0.01 倍（站方标注每日 21 点 0.009 福利倍率）、100% 不降智、95% 缓存、1 秒首字（用户提供），含 gpt-6-sol / 6.1-sol / 6-astra / 6-luna、gpt-5.6-luna / sol / terra、gpt-5.5、gpt-image-2 系列。其余：官KEY企业 0.24、Team5X企业 0.18、CC满血满智 1.35、Gemini 反重力 0.5、Grok Heavy 0.2、Deepseek 官方 1、GPT 生图 0.1",
+   "entry": "邮箱注册（需邮箱验证与 Turnstile）、GitHub 或 Linux DO（走邀请链接）；注册不送。",
+   "caveat": "付费站，注册不送（用户提供）。活动限个人开发使用、禁止外接，限 10 RPM 3 并发（站方公告）。公告写的是 11 月 3 日起每晚只供应 1 小时，但用户反馈该分组现在就开着、不限于晚上，实际开放时段以站内为准；活动持续至 11 月 11 日 23:59，过期即恢复原价。1 秒首字为用户提供，以实际调用为准。站方标注的不降智与 95% 缓存命中率为活动口径，以实际调用为准。",
+   "updated": "2026-11-03",
+   "status": "open",
+   "type": "paid"
+  },
   {
    "name": "ZOO API",
    "url": "https://zooapi.gfkfqtcx.com/sign-up",

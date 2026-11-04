@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-03 09:10 UTC",
- "cutoff": "2024-11-03",
+ "updated_at": "2026-11-04 08:46 UTC",
+ "cutoff": "2024-11-04",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -192,11 +192,21 @@
      "recent_frontier": true
     },
     {
+     "model": "doubao-seed-evolving",
+     "org": "ByteDance",
+     "released": "2026-11-02",
+     "n": 3,
+     "AIME": 99.2,
+     "GPQA": 93.1,
+     "SimpleQA": 41.9,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
      "model": "mistral-large-4-0-oss",
      "org": "Mistral AI",
      "released": "2026-10-29",
-     "n": 4,
-     "FMath": 46.3,
+     "n": 3,
      "AIME": 99.4,
      "GPQA": 90.2,
      "SimpleQA": 22.4,
@@ -441,17 +451,6 @@
      "SimpleQA": 52.9,
      "old": false,
      "recent_frontier": false
-    },
-    {
-     "model": "muse-spark-1-2",
-     "org": "Meta AI",
-     "released": "2026-08-05",
-     "n": 3,
-     "DeepSWE": 54.9,
-     "WebDev": 1534.4,
-     "SimpleQA": 60.3,
-     "old": false,
-     "recent_frontier": false
     }
    ],
    "frontier_models": [
@@ -476,7 +475,7 @@
    "recent_frontier_count": 7,
    "featured": true,
    "old_count": 0,
-   "latest": "2026-10-29"
+   "latest": "2026-11-02"
   },
   {
    "id": "metr_time_horizons_external",
@@ -5169,16 +5168,6 @@
      "old": false
     },
     {
-     "model": "mistral-large-4-0-oss",
-     "score": 46.3,
-     "org": "Mistral AI",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-10-29",
-     "old": false
-    },
-    {
      "model": "inkling-small",
      "score": 46.3,
      "org": "Thinking Machines",
@@ -5639,7 +5628,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-29",
+   "latest": "2026-10-26",
    "old_count": 4,
    "frontier_models": [
     "gpt-6-astra",
@@ -5859,6 +5848,16 @@
      "old": false
     },
     {
+     "model": "doubao-seed-evolving",
+     "score": 99.2,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-02",
+     "old": false
+    },
+    {
      "model": "muse-spark-1.3",
      "score": 99.2,
      "org": "Meta AI",
@@ -6049,6 +6048,16 @@
      "old": false
     },
     {
+     "model": "doubao-seed-2.1-turbo-260628",
+     "score": 96.1,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-06-23",
+     "old": false
+    },
+    {
      "model": "kimi-k2.6",
      "score": 96.1,
      "org": "Moonshot",
@@ -6066,6 +6075,16 @@
      "pass4": null,
      "cost": null,
      "released": "2025-12-11",
+     "old": false
+    },
+    {
+     "model": "doubao-seed-2.1-pro-260628",
+     "score": 95.6,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-06-23",
      "old": false
     },
     {
@@ -6156,6 +6175,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-21",
+     "old": false
+    },
+    {
+     "model": "doubao-seed-2.0-pro-260215",
+     "score": 93.9,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-14",
      "old": false
     },
     {
@@ -6256,6 +6285,16 @@
      "pass4": null,
      "cost": null,
      "released": "2025-11-18",
+     "old": false
+    },
+    {
+     "model": "doubao-seed-2.0-lite-260428",
+     "score": 91.1,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-28",
      "old": false
     },
     {
@@ -6816,6 +6855,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-02-24",
+     "old": false
+    },
+    {
+     "model": "seed-1.6",
+     "score": 69.4,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-06-11",
      "old": false
     },
     {
@@ -8179,7 +8228,7 @@
      "old": true
     }
    ],
-   "latest": "2026-10-29",
+   "latest": "2026-11-02",
    "old_count": 42,
    "frontier_models": [
     "gpt-6-astra",
@@ -12297,6 +12346,16 @@
      "old": false
     },
     {
+     "model": "doubao-seed-evolving",
+     "score": 93.1,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-02",
+     "old": false
+    },
+    {
      "model": "kimi-k3",
      "score": 93.1,
      "org": "Moonshot",
@@ -12577,6 +12636,16 @@
      "old": false
     },
     {
+     "model": "doubao-seed-2.1-turbo-260628",
+     "score": 89.6,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-06-23",
+     "old": false
+    },
+    {
      "model": "claude-haiku-5-5",
      "score": 89.6,
      "org": "Anthropic",
@@ -12594,6 +12663,16 @@
      "pass4": null,
      "cost": null,
      "released": "2025-12-17",
+     "old": false
+    },
+    {
+     "model": "doubao-seed-2.1-pro-260628",
+     "score": 89.3,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-06-23",
      "old": false
     },
     {
@@ -12674,6 +12753,26 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-15",
+     "old": false
+    },
+    {
+     "model": "doubao-seed-2.0-pro-260215",
+     "score": 88.2,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-14",
+     "old": false
+    },
+    {
+     "model": "doubao-seed-2.0-lite-260428",
+     "score": 88.1,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-28",
      "old": false
     },
     {
@@ -13224,6 +13323,16 @@
      "pass4": null,
      "cost": null,
      "released": "2025-05-22",
+     "old": false
+    },
+    {
+     "model": "seed-1.6",
+     "score": 77.6,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-06-11",
      "old": false
     },
     {
@@ -14817,7 +14926,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-29",
+   "latest": "2026-11-02",
    "old_count": 60,
    "frontier_models": [
     "gpt-6-astra",
@@ -15855,6 +15964,16 @@
      "old": false
     },
     {
+     "model": "doubao-seed-2.1-pro-260628",
+     "score": 44.7,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-06-23",
+     "old": false
+    },
+    {
      "model": "qwen3.6-plus",
      "score": 44.1,
      "org": "Alibaba",
@@ -15892,6 +16011,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-10-17",
+     "old": false
+    },
+    {
+     "model": "doubao-seed-evolving",
+     "score": 41.9,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-02",
      "old": false
     },
     {
@@ -15952,6 +16081,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-15",
+     "old": false
+    },
+    {
+     "model": "doubao-seed-2.0-pro-260215",
+     "score": 39.4,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-02-14",
      "old": false
     },
     {
@@ -16065,6 +16204,16 @@
      "old": false
     },
     {
+     "model": "doubao-seed-2.0-lite-260428",
+     "score": 31.5,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-04-28",
+     "old": false
+    },
+    {
      "model": "gpt-4.1-2025-04-14",
      "score": 31.1,
      "org": "OpenAI",
@@ -16092,6 +16241,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-02-17",
+     "old": false
+    },
+    {
+     "model": "doubao-seed-2.1-turbo-260628",
+     "score": 29.7,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-06-23",
      "old": false
     },
     {
@@ -16205,6 +16364,16 @@
      "old": false
     },
     {
+     "model": "seed-1.6",
+     "score": 17.4,
+     "org": "ByteDance",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2025-06-11",
+     "old": false
+    },
+    {
      "model": "qwen3.6-flash",
      "score": 15.9,
      "org": "Alibaba",
@@ -16315,7 +16484,7 @@
      "old": false
     }
    ],
-   "latest": "2026-10-29",
+   "latest": "2026-11-02",
    "old_count": 3,
    "frontier_models": [
     "gpt-6-astra",
