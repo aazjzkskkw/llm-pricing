@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-06 09:01 UTC",
+ "updated_at": "2026-11-07 08:30 UTC",
  "credit": "https://ytzzjx.github.io/",
  "count": 77,
  "stations": [
@@ -235,7 +235,7 @@
    "signup": "15 额度（用户提供）",
    "checkin": "10（用户提供）",
    "models": "101 个模型：Claude（fable-5 / opus 4.5-4.6 / sonnet 4-5~5-5）/ GPT（6-astra、6-sol、5.6-sol、gpt-image-2 系列）/ Gemini（3.6、3.8-flash、4-argon-low）/ DeepSeek V4 / GLM 5.3 / Grok 4.6 / Kimi / Qwen 等",
-   "entry": "QQ 邮箱注册，需邮箱验证（走邀请链接）；国内可以直连（用户提供）。",
+   "entry": "QQ 邮箱注册，需邮箱验证；国内可以直连（用户提供）。",
    "caveat": "**封号很严，请注意自己的 IP；国内可以直连**（用户提供）。同 IP 多账号会被封（住宅 IP 只留最早的一个，机房/代理 IP 全封，每 15 分钟执行）；被邀请人触发风控还会清零邀请人的 5 白蜡。注册赠送与签到金额为用户提供，以站内实际显示为准。额度以自定义货币 🕯 显示。",
    "updated": "2026-10-21",
    "status": "open",

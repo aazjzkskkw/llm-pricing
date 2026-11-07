@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-06 09:01 UTC",
- "cutoff": "2024-11-06",
+ "updated_at": "2026-11-07 08:30 UTC",
+ "cutoff": "2024-11-07",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -222,6 +222,18 @@
      "AIME": 100.0,
      "GPQA": 94.3,
      "SimpleQA": 57.3,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
+     "model": "kimi-k3.1-pro-together",
+     "org": "Moonshot",
+     "released": "2026-10-23",
+     "n": 4,
+     "FMath": 78.2,
+     "AIME": 100.0,
+     "GPQA": 94.2,
+     "SimpleQA": 62.2,
      "old": false,
      "recent_frontier": false
     },
@@ -4818,6 +4830,16 @@
      "old": false
     },
     {
+     "model": "kimi-k3.1-pro-together",
+     "score": 78.2,
+     "org": "Moonshot",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-23",
+     "old": false
+    },
+    {
      "model": "claude-haiku-5-5",
      "score": 75.1,
      "org": "Anthropic",
@@ -5667,6 +5689,16 @@
     }
    ],
    "rows": [
+    {
+     "model": "kimi-k3.1-pro-together",
+     "score": 100.0,
+     "org": "Moonshot",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-23",
+     "old": false
+    },
     {
      "model": "gpt-6.1-terra",
      "score": 100.0,
@@ -12246,6 +12278,16 @@
      "old": false
     },
     {
+     "model": "kimi-k3.1-pro-together",
+     "score": 94.2,
+     "org": "Moonshot",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-23",
+     "old": false
+    },
+    {
      "model": "gemini-3.6-flash",
      "score": 94.1,
      "org": "Google DeepMind",
@@ -15691,6 +15733,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-04-23",
+     "old": false
+    },
+    {
+     "model": "kimi-k3.1-pro-together",
+     "score": 62.2,
+     "org": "Moonshot",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-23",
      "old": false
     },
     {
