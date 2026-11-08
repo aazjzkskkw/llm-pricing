@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-11-07 08:30 UTC",
+ "updated_at": "2026-11-08 08:43 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 77,
+ "count": 78,
  "stations": [
+  {
+   "name": "EazyData API",
+   "url": "https://eazydata.org/sign-up",
+   "kind": "公益站 / 注册送 50 / 132 个模型",
+   "summary": "公益站，注册送 50（用户提供），可用 gemini-3.8-flash 与 deepseek-v4.1-flash-1017（用户提供）。公开价目 132 个模型，default 1 倍、vip 0.9、svip 0.8，额度按美元显示。",
+   "signup": "50（用户提供）",
+   "checkin": "无（用户提供）",
+   "models": "用户点名：gemini-3.8-flash 0.375 倍、deepseek-v4.1-flash-1017 0.5 倍，default / vip / svip 三组均可用；广场共 132 个模型，分组 default 1 倍、vip 0.9、svip 0.8",
+   "entry": "邮箱注册，需邮箱验证，有点选验证码（走邀请链接）。",
+   "caveat": "**有提示词注入，不要在隐私和安全的场所使用**（用户提供）。注册赠送 50、可用模型与无签到为用户提供，以站内实际发放和模型广场为准。倍率为站内公开价目，可能随时调整。",
+   "updated": "2026-11-08",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "万家灯火",
    "url": "https://wjapi.vip/register",
@@ -287,12 +301,12 @@
    "name": "慧慧云",
    "url": "https://api.huihuiyun.top/register",
    "kind": "公益站 / 有免费分组 / 注册送 1",
-   "summary": "公益站，注册送 1，有免费分组（用户提供）。免费分组实测可调 4 个模型：auto（随机路由高级模型）、grok-4.7、grok-composer-2.5-fast、sensenova-6.8-flash-lite。无签到。",
+   "summary": "公益站，注册送 1，有免费分组（用户提供）。免费分组实测可调 4 个模型：auto（随机路由高级模型）、grok-4.7、grok-composer-2.5-fast、sensenova-6.8-flash-lite。无签到。注册开放到 11 月 11 日（用户提供）。",
    "signup": "1（用户提供）",
    "checkin": "无",
    "models": "免费分组 4 个：auto（随机路由高级模型）、grok-4.7、grok-composer-2.5-fast、sensenova-6.8-flash-lite；付费分组另有 Gemini、Claude 与 DeepSeek 系列",
-   "entry": "通过邀请链接注册，注册送 1。",
-   "caveat": "注册赠送与无签到为用户提供。免费分组的可用模型为实测结果，站方可能随时调整；付费分组倍率与模型以站内模型广场为准。",
+   "entry": "通过邀请链接注册，注册开放到 11 月 11 日（用户提供），注册送 1。",
+   "caveat": "注册赠送与无签到为用户提供。注册开放到 11 月 11 日（用户提供），过期以站内实际注册状态为准。免费分组的可用模型为实测结果，站方可能随时调整；付费分组倍率与模型以站内模型广场为准。",
    "updated": "2026-10-17",
    "status": "open",
    "type": "charity"
