@@ -1,7 +1,7 @@
 {
- "updated_at": "2026-11-08 08:43 UTC",
+ "updated_at": "2026-11-09 09:22 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 78,
+ "count": 80,
  "stations": [
   {
    "name": "EazyData API",
@@ -12,7 +12,7 @@
    "checkin": "无（用户提供）",
    "models": "用户点名：gemini-3.8-flash 0.375 倍、deepseek-v4.1-flash-1017 0.5 倍，default / vip / svip 三组均可用；广场共 132 个模型，分组 default 1 倍、vip 0.9、svip 0.8",
    "entry": "邮箱注册，需邮箱验证，有点选验证码（走邀请链接）。",
-   "caveat": "**有提示词注入，不要在隐私和安全的场所使用**（用户提供）。注册赠送 50、可用模型与无签到为用户提供，以站内实际发放和模型广场为准。倍率为站内公开价目，可能随时调整。",
+   "caveat": "**有模型破甲提示词注入，不要在隐私和安全的场所使用**（用户提供）。注册赠送 50、可用模型与无签到为用户提供，以站内实际发放和模型广场为准。倍率为站内公开价目，可能随时调整。",
    "updated": "2026-11-08",
    "status": "open",
    "type": "charity"
@@ -301,12 +301,12 @@
    "name": "慧慧云",
    "url": "https://api.huihuiyun.top/register",
    "kind": "公益站 / 有免费分组 / 注册送 1",
-   "summary": "公益站，注册送 1，有免费分组（用户提供）。免费分组实测可调 4 个模型：auto（随机路由高级模型）、grok-4.7、grok-composer-2.5-fast、sensenova-6.8-flash-lite。无签到。注册开放到 11 月 11 日（用户提供）。",
+   "summary": "公益站，注册送 1，有免费分组（用户提供）。免费分组实测可调 4 个模型：auto（随机路由高级模型）、grok-4.7、grok-composer-2.5-fast、sensenova-6.8-flash-lite。有签到，随机得 0.4~1 额度（用户提供）。注册开放到 11 月 11 日（用户提供）。",
    "signup": "1（用户提供）",
-   "checkin": "无",
+   "checkin": "随机 0.4~1 额度（用户提供）",
    "models": "免费分组 4 个：auto（随机路由高级模型）、grok-4.7、grok-composer-2.5-fast、sensenova-6.8-flash-lite；付费分组另有 Gemini、Claude 与 DeepSeek 系列",
    "entry": "通过邀请链接注册，注册开放到 11 月 11 日（用户提供），注册送 1。",
-   "caveat": "注册赠送与无签到为用户提供。注册开放到 11 月 11 日（用户提供），过期以站内实际注册状态为准。免费分组的可用模型为实测结果，站方可能随时调整；付费分组倍率与模型以站内模型广场为准。",
+   "caveat": "注册赠送与签到（随机 0.4~1 额度）为用户提供。注册开放到 11 月 11 日（用户提供），过期以站内实际注册状态为准。免费分组的可用模型为实测结果，站方可能随时调整；付费分组倍率与模型以站内模型广场为准。",
    "updated": "2026-10-17",
    "status": "open",
    "type": "charity"
@@ -898,6 +898,34 @@
    "updated": "2026-08-14",
    "status": "open",
    "type": "paid"
+  },
+  {
+   "name": "银杏",
+   "url": "https://svip.katioai.com/sign-up",
+   "kind": "公益站 / 注册送 11 块 / 邀请送 1",
+   "summary": "公益站，注册送 5 块，进群 1047911746 私聊群主再送 5，邀请送 1，合计新用户注册送 11 块（均为用户提供）。公开价目 31 个模型，分组倍率 0.25-0.8，额度按美元显示。",
+   "signup": "注册送 5 块，进群私聊群主再送 5，邀请送 1，合计 11 块（用户提供）",
+   "checkin": "待确认",
+   "models": "31 个模型，分组倍率 kiro pro 0.25、codex 0.3、deepseek 0.3、GLM / codex pro / adobe 0.4、gemini ant 0.6、gemini ultra 0.8；含 Claude opus 5-5、gpt-6.1-sol / terra、gemini-3.8-flash / 4-argon、deepseek-v4.1-flash-1017、glm-5.3-flash 与生图",
+   "entry": "邮箱注册，需邮箱验证（走邀请链接）；进群 1047911746 私聊群主再送 5。",
+   "caveat": "注册赠送与邀请奖励为用户提供，以站内和群内实际发放为准；进群 1047911746 私聊群主才有额外的 5 块。签到未核实，待确认。分组倍率为站内公开价目，可能随时调整。",
+   "updated": "2026-11-09",
+   "status": "watch",
+   "type": "charity"
+  },
+  {
+   "name": "ZIFEIYU API",
+   "url": "https://ai.112102.xyz/sign-up",
+   "kind": "公益站 / Linux DO 登录 / 打游戏赚钱 / 按次计费",
+   "summary": "公益站，Linux DO 登录注册，打游戏赚钱，一天一把，刚刚赚了 12（用户提供）。无签到。按次计费：gemini-3.8-flash 0.5/次、minimax-m3.1-flash 0.1/次、glm-5.3-flash 0.5/次（均为用户提供）；额度按美元显示。",
+   "signup": "待确认",
+   "checkin": "无（用户提供）",
+   "models": "按次计费：gemini-3.8-flash 0.5/次、minimax-m3.1-flash 0.1/次、glm-5.3-flash 0.5/次（均为用户提供）；其余模型未公开，待确认",
+   "entry": "Linux DO 登录注册（走邀请链接）；邮箱与密码注册均关闭。",
+   "caveat": "打游戏赚钱一天一把、刚刚赚了 12、无签到与三个模型的按次价均为用户提供，赚取规则、实际到账与价格以站内为准。完整模型清单与倍率未公开，pricing 与 models 接口需登录，待确认。",
+   "updated": "2026-11-08",
+   "status": "watch",
+   "type": "charity"
   },
   {
    "name": "Dubhe Free API",
