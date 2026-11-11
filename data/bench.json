@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-10 09:26 UTC",
- "cutoff": "2024-11-10",
+ "updated_at": "2026-11-11 08:59 UTC",
+ "cutoff": "2024-11-11",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -190,21 +190,6 @@
      "recent_frontier": true
     },
     {
-     "model": "Grok 4.6",
-     "org": "xAI",
-     "released": "2026-08-12",
-     "n": 7,
-     "DeepSWE": 67.5,
-     "WebDev": 1617.6,
-     "FMath": 66.0,
-     "AIME": 99.2,
-     "ARC-2": 67.1,
-     "GPQA": 94.0,
-     "SimpleQA": 49.3,
-     "old": false,
-     "recent_frontier": true
-    },
-    {
      "model": "doubao-seed-evolving",
      "org": "ByteDance",
      "released": "2026-11-02",
@@ -223,6 +208,19 @@
      "AIME": 99.4,
      "GPQA": 90.2,
      "SimpleQA": 22.4,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
+     "model": "Gemini 4 Carbon",
+     "org": "Google DeepMind",
+     "released": "2026-10-28",
+     "n": 5,
+     "FMath": 90.5,
+     "AIME": 100.0,
+     "ARC-2": 94.2,
+     "GPQA": 96.5,
+     "SimpleQA": 77.7,
      "old": false,
      "recent_frontier": false
     },
@@ -484,11 +482,10 @@
     "Claude Opus 5.5",
     "GPT-6 Astra",
     "Gemini 3.8 Flash",
-    "Grok 4.6",
     "qwen3.8-27b",
     "qwen3.8-max-0902"
    ],
-   "frontier_count": 8,
+   "frontier_count": 7,
    "recent_frontier_models": [
     "Claude Fable 5.2",
     "Claude Opus 5.5",
@@ -496,10 +493,9 @@
     "Gemini 3.8 Flash",
     "Claude Fable 5.1",
     "qwen3.8-max-0902",
-    "qwen3.8-27b",
-    "Grok 4.6"
+    "qwen3.8-27b"
    ],
-   "recent_frontier_count": 8,
+   "recent_frontier_count": 7,
    "featured": true,
    "old_count": 0,
    "latest": "2026-11-09"
@@ -4695,6 +4691,16 @@
      "old": false
     },
     {
+     "model": "gemini-4-carbon",
+     "score": 90.5,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-28",
+     "old": false
+    },
+    {
      "model": "claude-fable-5-1",
      "score": 90.2,
      "org": "Anthropic",
@@ -5722,6 +5728,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-10-23",
+     "old": false
+    },
+    {
+     "model": "gemini-4-carbon",
+     "score": 100.0,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-28",
      "old": false
     },
     {
@@ -8355,6 +8371,16 @@
      "old": false
     },
     {
+     "model": "Gemini 4 Carbon",
+     "score": 94.2,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-28",
+     "old": false
+    },
+    {
      "model": "Claude Fable 5.2",
      "score": 93.8,
      "org": "Anthropic",
@@ -9842,6 +9868,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-11-09",
+     "old": false
+    },
+    {
+     "model": "Gemini 4 Carbon",
+     "score": 98.5,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-28",
      "old": false
     },
     {
@@ -12256,6 +12292,16 @@
     }
    ],
    "rows": [
+    {
+     "model": "gemini-4-carbon",
+     "score": 96.5,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-28",
+     "old": false
+    },
     {
      "model": "gemini-4-argon",
      "score": 96.4,
@@ -15695,6 +15741,16 @@
      "old": false
     },
     {
+     "model": "gemini-4-carbon",
+     "score": 77.7,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-28",
+     "old": false
+    },
+    {
      "model": "gemini-4-argon",
      "score": 76.0,
      "org": "Google DeepMind",
@@ -16675,6 +16731,16 @@
    ],
    "rows": [
     {
+     "model": "Claude Fable 5.2 (Max, Default Fallback)",
+     "score": 67.7,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-09",
+     "old": false
+    },
+    {
      "model": "Claude Opus 5.5 (Max, Default Fallback)",
      "score": 66.9,
      "org": "Anthropic",
@@ -16682,6 +16748,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-22",
+     "old": false
+    },
+    {
+     "model": "Claude Fable 5.2 (Xhigh, Default Fallback)",
+     "score": 65.6,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-09",
      "old": false
     },
     {
@@ -16815,6 +16891,16 @@
      "old": false
     },
     {
+     "model": "Claude Fable 5.2 (Medium, Default Fallback)",
+     "score": 59.7,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-09",
+     "old": false
+    },
+    {
      "model": "Kimi K3",
      "score": 59.5,
      "org": "Moonshot",
@@ -16822,6 +16908,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-07-16",
+     "old": false
+    },
+    {
+     "model": "Claude Fable 5.2 (High, Default Fallback)",
+     "score": 59.5,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-09",
      "old": false
     },
     {
@@ -16922,6 +17018,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-21",
+     "old": false
+    },
+    {
+     "model": "Claude Fable 5.2 (Low, Default Fallback)",
+     "score": 57.8,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-09",
      "old": false
     },
     {
@@ -18435,7 +18541,7 @@
      "old": false
     }
    ],
-   "latest": "2026-11-05",
+   "latest": "2026-11-09",
    "old_count": 2,
    "frontier_models": [
     "Claude Fable 5 (Max, Opus 4.8 Fallback)",
@@ -18444,6 +18550,11 @@
     "Claude Fable 5.1 (Max, Default Fallback)",
     "Claude Fable 5.1 (Medium, Default Fallback)",
     "Claude Fable 5.1 (Xhigh, Default Fallback)",
+    "Claude Fable 5.2 (High, Default Fallback)",
+    "Claude Fable 5.2 (Low, Default Fallback)",
+    "Claude Fable 5.2 (Max, Default Fallback)",
+    "Claude Fable 5.2 (Medium, Default Fallback)",
+    "Claude Fable 5.2 (Xhigh, Default Fallback)",
     "Claude Opus 5 (Adaptive Reasoning, High Effort)",
     "Claude Opus 5 (Adaptive Reasoning, Low Effort)",
     "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
@@ -18467,20 +18578,25 @@
     "Qwen3.8 27B (Non-reasoning)",
     "Qwen3.8 Max (0902)"
    ],
-   "frontier_count": 28,
+   "frontier_count": 33,
    "recent_frontier_models": [
+    "Claude Fable 5.2 (Max, Default Fallback)",
     "Claude Opus 5.5 (Max, Default Fallback)",
+    "Claude Fable 5.2 (Xhigh, Default Fallback)",
     "Claude Opus 5.5 (Xhigh, Default Fallback)",
     "Claude Fable 5.1 (Max, Default Fallback)",
     "Claude Fable 5 (Max, Opus 4.8 Fallback)",
     "Claude Fable 5.1 (Xhigh, Default Fallback)",
     "Kimi K3.1 Pro",
     "Claude Opus 5.5 (High, Default Fallback)",
+    "Claude Fable 5.2 (Medium, Default Fallback)",
     "Kimi K3",
+    "Claude Fable 5.2 (High, Default Fallback)",
     "Claude Opus 5.5 (Medium, Default Fallback)",
     "Claude Fable 5.1 (High, Default Fallback)",
     "Claude Opus 5.5 (Low, Default Fallback)",
     "GPT-5.6 Sol",
+    "Claude Fable 5.2 (Low, Default Fallback)",
     "Claude Fable 5.1 (Low, Default Fallback)",
     "Gemini 3.8 Flash",
     "Grok 4.6",
@@ -18498,7 +18614,7 @@
     "Qwen3.8 27B",
     "Qwen3.8 27B (Non-reasoning)"
    ],
-   "recent_frontier_count": 28,
+   "recent_frontier_count": 33,
    "featured": true
   },
   {
