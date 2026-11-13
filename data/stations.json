@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-11-12 09:28 UTC",
+ "updated_at": "2026-11-13 09:14 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 80,
+ "count": 82,
  "stations": [
+  {
+   "name": "FreeGG",
+   "url": "https://freegg.app/sign-up",
+   "kind": "公益站 / GitHub 注册 / 只有 gpt-6.1-sol / 注册送 50",
+   "summary": "公益站，GitHub 注册（推测一年以上），只有 gpt-6.1-sol，注册送 50，每天签到 20（均为用户提供）。额度按美元显示。",
+   "signup": "50（用户提供）",
+   "checkin": "每天 20（用户提供）",
+   "models": "只有 gpt-6.1-sol：动态计费，输入 $1/1M、输出 $1/1M（用户提供）",
+   "entry": "GitHub 登录注册（走邀请链接）；邮箱与密码注册均关闭，有 Turnstile 验证。",
+   "caveat": "注册赠送、签到金额、可用模型与 GitHub 账号年限要求均为用户提供，以站内实际显示为准。模型广场与价格接口需登录，未公开。",
+   "updated": "2026-11-12",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "EazyData API",
    "url": "https://eazydata.org/sign-up",
@@ -898,6 +912,20 @@
    "updated": "2026-08-14",
    "status": "open",
    "type": "paid"
+  },
+  {
+   "name": "星驰API公益站",
+   "url": "https://xingchiapi.com/register",
+   "kind": "公益站 / 加群送 1000 元兑换码 / 邀请上不封顶",
+   "summary": "公益站，先注册站再加 TG 群。首次加群送 1000 元兑换码；每邀请一位好友进群再私聊机器人可再领一次，上不封顶；发送 /start 也能再领一次（均为用户提供）。现有 gpt-6.1-sol，0.5 倍率（用户提供）。",
+   "signup": "首次加 TG 群私聊机器人领 1000 元兑换码（用户提供）",
+   "checkin": "待确认",
+   "models": "现有 gpt-6.1-sol，0.5 倍率（用户提供）；模型广场未公开",
+   "entry": "邮箱注册，无需邮箱验证，有 Turnstile 验证（走邀请链接）；先注册站，再加 TG 群领兑换码。",
+   "caveat": "兑换码与邀请规则、gpt-6.1-sol 倍率均为用户提供，以站内和 TG 群实际发放为准。TG 机器人会有点卡（用户提供），领兑换码时多些耐心。模型广场未公开，模型清单与价格待确认。",
+   "updated": "2026-11-12",
+   "status": "watch",
+   "type": "charity"
   },
   {
    "name": "银杏",
