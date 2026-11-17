@@ -1,8 +1,22 @@
 {
- "updated_at": "2026-11-16 09:10 UTC",
+ "updated_at": "2026-11-17 10:21 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 84,
+ "count": 86,
  "stations": [
+  {
+   "name": "少十元",
+   "url": "https://shaoshiyuan.xyz/sign-up",
+   "kind": "公益站 / 注册送 8888 额度 / 进群绑定后登录 / 签到 6666-8888",
+   "summary": "公益站，注册送 8888 额度，签到 6666-8888 额度。注册后必须进 QQ 群 365617773 艾特机器人发「绑定 用户名」，绑定成功后才能登录站点（站方公告）。公开价目 37 个模型，全部按次计费，default 与 vip 两组均 1 倍。",
+   "signup": "8888 额度（站方公告，用户提供同口径）",
+   "checkin": "6666-8888 额度（站方公告；用户提供口径 8000 多）",
+   "models": "37 个模型全部按次计费，default 与 vip 两组均 1 倍；按次价 5-3000 额度（模型名 [N] 前缀），含 gemini-3.8-flash、gemini-4-argon / carbon / hydrogen、gpt-6-astra / 6.1-sol、deepseek-v4-pro、glm-5.3、kimi-k3、hy4、grok-4.7 等；可用性看站内「模型状态」",
+   "entry": "邮箱注册，需设置密码，无需邮箱验证（走邀请链接）；注册后必须进 QQ 群 365617773 艾特机器人发「绑定 用户名」，绑定成功后才能登录站点。",
+   "caveat": "注册后必须进 QQ 群 365617773 完成绑定才能登录（站方公告）。注册赠送、签到金额与邀请奖励以站内和群内实际发放为准；邀请奖要求被邀请人完成 QQ 绑定并登录后才发放。站方公告：目前还在调整测试，稳定性可能会有点差，实在不行先等等或者先用其他模型。按次价为站内公开价目（模型名 [N] 前缀），可能随时调整；两组倍率均为 1。",
+   "updated": "2026-11-17",
+   "status": "open",
+   "type": "charity"
+  },
   {
    "name": "FreeGG",
    "url": "https://freegg.app/sign-up",
@@ -1080,6 +1094,20 @@
    "updated": "2026-08-14",
    "status": "watch",
    "type": "paid"
+  },
+  {
+   "name": "Moto API",
+   "url": "https://motoapi.com/sign-up",
+   "kind": "公益站 / 鸡蛋 / 进群送 1 刀 / GPT 0.01 倍",
+   "summary": "公益站，按鸡蛋对待。进群 1135947685 发 ID 送 1 刀，拉 1 人送 1 刀（均为用户提供）。GPT 目前倍率 0.01x，DeepSeek 免费（用户提供）。额度按美元显示。",
+   "signup": "进群发 ID 送 1 刀，拉 1 人送 1 刀（用户提供）",
+   "checkin": "待确认",
+   "models": "GPT 目前倍率 0.01x，DeepSeek 免费（均为用户提供）；模型广场未公开",
+   "entry": "邮箱注册，需邮箱验证，有 Turnstile 验证（走邀请链接）；进群 1135947685 发 ID 领 1 刀。",
+   "caveat": "按鸡蛋对待：只薅进群和拉新送的免费额度，付费体验没验证过，充值请谨慎。赠送金额、拉新奖励与 GPT / DeepSeek 价格均为用户提供，以站内和群内实际发放为准；GPT 0.01 倍为「目前」口径，可能随时调整。",
+   "updated": "2026-11-16",
+   "status": "avoid",
+   "type": "charity"
   },
   {
    "name": "Axo AI",
