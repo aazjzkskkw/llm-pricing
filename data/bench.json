@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-17 10:21 UTC",
- "cutoff": "2024-11-17",
+ "updated_at": "2026-11-18 09:52 UTC",
+ "cutoff": "2024-11-18",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -178,6 +178,18 @@
      "SimpleQA": 47.3,
      "old": false,
      "recent_frontier": true
+    },
+    {
+     "model": "gpt-6.2-astra",
+     "org": "OpenAI",
+     "released": "2026-11-17",
+     "n": 4,
+     "FMath": 92.6,
+     "AIME": 100.0,
+     "GPQA": 96.8,
+     "SimpleQA": 78.5,
+     "old": false,
+     "recent_frontier": false
     },
     {
      "model": "Gemini 4 Carbon",
@@ -443,7 +455,7 @@
    "recent_frontier_count": 6,
    "featured": true,
    "old_count": 0,
-   "latest": "2026-11-10"
+   "latest": "2026-11-17"
   },
   {
    "id": "metr_time_horizons_external",
@@ -4616,6 +4628,16 @@
      "old": false
     },
     {
+     "model": "gpt-6.2-astra",
+     "score": 92.6,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-17",
+     "old": false
+    },
+    {
      "model": "claude-opus-5-5",
      "score": 91.2,
      "org": "Anthropic",
@@ -5626,7 +5648,7 @@
      "old": true
     }
    ],
-   "latest": "2026-11-10",
+   "latest": "2026-11-17",
    "old_count": 4,
    "frontier_models": [
     "gpt-6-astra",
@@ -5683,6 +5705,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-11-10",
+     "old": false
+    },
+    {
+     "model": "gpt-6.2-astra",
+     "score": 100.0,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-17",
      "old": false
     },
     {
@@ -8256,7 +8288,7 @@
      "old": true
     }
    ],
-   "latest": "2026-11-10",
+   "latest": "2026-11-17",
    "old_count": 42,
    "frontier_models": [
     "gpt-6-astra",
@@ -11736,6 +11768,16 @@
      "old": false
     },
     {
+     "model": "claude-haiku-5-5",
+     "score": 0.6,
+     "org": "Anthropic",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-10-07",
+     "old": false
+    },
+    {
      "model": "claude-opus-4-20250514_12K",
      "score": 0.6,
      "org": "Anthropic",
@@ -12465,6 +12507,16 @@
     }
    ],
    "rows": [
+    {
+     "model": "gpt-6.2-astra",
+     "score": 96.8,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-17",
+     "old": false
+    },
     {
      "model": "gemini-4-carbon",
      "score": 96.5,
@@ -15306,7 +15358,7 @@
      "old": false
     }
    ],
-   "latest": "2026-11-10",
+   "latest": "2026-11-17",
    "old_count": 60,
    "frontier_models": [
     "gpt-6-astra",
@@ -15941,6 +15993,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-11-09",
+     "old": false
+    },
+    {
+     "model": "gpt-6.2-astra",
+     "score": 78.5,
+     "org": "OpenAI",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-17",
      "old": false
     },
     {
@@ -16894,7 +16956,7 @@
      "old": false
     }
    ],
-   "latest": "2026-11-10",
+   "latest": "2026-11-17",
    "old_count": 3,
    "frontier_models": [
     "gpt-6-astra",
@@ -17624,6 +17686,16 @@
      "old": false
     },
     {
+     "model": "DeepSeek V4 Pro 0813",
+     "score": 51.7,
+     "org": "DeepSeek",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-08-13",
+     "old": false
+    },
+    {
      "model": "GLM-5.3-Flash",
      "score": 51.6,
      "org": "Z.ai (Zhipu AI)",
@@ -17671,16 +17743,6 @@
      "pass4": null,
      "cost": null,
      "released": "2026-06-16",
-     "old": false
-    },
-    {
-     "model": "DeepSeek V4 Pro 0813",
-     "score": 51.0,
-     "org": "DeepSeek",
-     "agent": null,
-     "pass4": null,
-     "cost": null,
-     "released": "2026-08-13",
      "old": false
     },
     {
@@ -19315,7 +19377,7 @@
      "fact": 90.7,
      "answer": 94.4,
      "words": 70.9,
-     "released": "2025-09-11",
+     "released": null,
      "old": false
     },
     {
