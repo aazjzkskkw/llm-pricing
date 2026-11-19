@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-18 09:52 UTC",
- "cutoff": "2024-11-18",
+ "updated_at": "2026-11-19 09:59 UTC",
+ "cutoff": "2024-11-19",
  "credit": "Epoch AI, 'AI Benchmarking Hub', epoch.ai/benchmarks, CC-BY 4.0",
  "boards": [
   {
@@ -188,6 +188,18 @@
      "AIME": 100.0,
      "GPQA": 96.8,
      "SimpleQA": 78.5,
+     "old": false,
+     "recent_frontier": false
+    },
+    {
+     "model": "gemini-4-hydrogen",
+     "org": "Google DeepMind",
+     "released": "2026-11-12",
+     "n": 4,
+     "FMath": 88.1,
+     "AIME": 100.0,
+     "GPQA": 96.8,
+     "SimpleQA": 70.9,
      "old": false,
      "recent_frontier": false
     },
@@ -417,20 +429,6 @@
      "WebDev": 1651.9,
      "FMath": 74.4,
      "AIME": 99.2,
-     "old": false,
-     "recent_frontier": false
-    },
-    {
-     "model": "glm-5-3-flash",
-     "org": "Z.ai (Zhipu AI)",
-     "released": "2026-08-20",
-     "n": 6,
-     "DeepSWE": 63.4,
-     "WebDev": 1607.1,
-     "FMath": 55.8,
-     "AIME": 93.9,
-     "ARC-2": 65.8,
-     "GPQA": 90.2,
      "old": false,
      "recent_frontier": false
     }
@@ -4708,6 +4706,16 @@
      "old": false
     },
     {
+     "model": "gemini-4-hydrogen",
+     "score": 88.1,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-12",
+     "old": false
+    },
+    {
      "model": "gpt-5.5-pro",
      "score": 87.7,
      "org": "OpenAI",
@@ -5687,6 +5695,16 @@
     }
    ],
    "rows": [
+    {
+     "model": "gemini-4-hydrogen",
+     "score": 100.0,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-12",
+     "old": false
+    },
     {
      "model": "kimi-k3.1-pro-together",
      "score": 100.0,
@@ -7825,7 +7843,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-11-18",
-     "old": false
+     "old": true
     },
     {
      "model": "gemma-3-4b-it",
@@ -8289,7 +8307,7 @@
     }
    ],
    "latest": "2026-11-17",
-   "old_count": 42,
+   "old_count": 43,
    "frontier_models": [
     "gpt-6-astra",
     "qwen3.8-max",
@@ -12508,6 +12526,16 @@
    ],
    "rows": [
     {
+     "model": "gemini-4-hydrogen",
+     "score": 96.8,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-12",
+     "old": false
+    },
+    {
      "model": "gpt-6.2-astra",
      "score": 96.8,
      "org": "OpenAI",
@@ -14505,7 +14533,7 @@
      "pass4": null,
      "cost": null,
      "released": "2024-11-18",
-     "old": false
+     "old": true
     },
     {
      "model": "Llama-3.1-405B-Instruct",
@@ -15359,7 +15387,7 @@
     }
    ],
    "latest": "2026-11-17",
-   "old_count": 60,
+   "old_count": 61,
    "frontier_models": [
     "gpt-6-astra",
     "qwen3.8-max",
@@ -16063,6 +16091,16 @@
      "pass4": null,
      "cost": null,
      "released": "2026-09-22",
+     "old": false
+    },
+    {
+     "model": "gemini-4-hydrogen",
+     "score": 70.9,
+     "org": "Google DeepMind",
+     "agent": null,
+     "pass4": null,
+     "cost": null,
+     "released": "2026-11-12",
      "old": false
     },
     {
