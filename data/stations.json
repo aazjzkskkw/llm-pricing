@@ -1,7 +1,7 @@
 {
- "updated_at": "2026-11-19 09:59 UTC",
+ "updated_at": "2026-11-20 09:48 UTC",
  "credit": "https://ytzzjx.github.io/",
- "count": 86,
+ "count": 89,
  "stations": [
   {
    "name": "少十元",
@@ -928,6 +928,20 @@
    "type": "paid"
   },
   {
+   "name": "MyAPI公益",
+   "url": "http://free.myaiapi.site:8080/register",
+   "kind": "公益站 / 注册送 100 / 进群绑定 / 10 倍不降智",
+   "summary": "公益站，注册送 100（用户提供）。进 QQ 群 714847682 绑定；分组 10 倍不降智、1 倍降智（均为用户提供）。群内可每天签到（用户提供）。额度按美元显示。",
+   "signup": "100（用户提供）",
+   "checkin": "群内每天可签到，金额待确认（用户提供）",
+   "models": "分组 10 倍不降智、1 倍降智（均为用户提供）；模型广场未公开，清单待确认",
+   "entry": "邮箱注册，需邮箱验证（走邀请链接）；进群 714847682 绑定。",
+   "caveat": "注册赠送、分组倍率与签到均为用户提供，以站内和群内实际为准。接入地址仅 HTTP（http://free.myaiapi.site:8080/v1），调用时注意。模型广场未公开，模型清单待确认。",
+   "updated": "2026-11-19",
+   "status": "watch",
+   "type": "charity"
+  },
+  {
    "name": "Huan api",
    "url": "https://api.novalyte.cn/sign-up",
    "kind": "公益站 / 注册送 40 / 签到 0.7 / 202 个模型",
@@ -1094,6 +1108,34 @@
    "updated": "2026-08-14",
    "status": "watch",
    "type": "paid"
+  },
+  {
+   "name": "芋头饭 API",
+   "url": "https://api.yutou.fun/sign-up",
+   "kind": "公益站 / 鸡蛋 / 注册送 150 / gemini-4-hydrogen-c 4 元一次",
+   "summary": "公益站，按鸡蛋对待，注册送 150，无签到（均为用户提供）。[自营]gemini-4-hydrogen-c 4 元一次（用户提供）。公开价目 54 个模型，default 与 vip 两组均 1 倍，额度按美元显示。",
+   "signup": "150（用户提供）",
+   "checkin": "无（用户提供）",
+   "models": "[自营]gemini-4-hydrogen-c 4 元一次（用户提供）；广场共 54 个模型，default 与 vip 两组均 1 倍，含 Claude 与 Gemini 多个前缀分组",
+   "entry": "邮箱注册，需邮箱验证（走邀请链接）。",
+   "caveat": "按鸡蛋对待：只薅注册送的免费额度，付费体验没验证过，充值请谨慎。注册赠送、无签到与模型价格均为用户提供，以站内实际显示为准。倍率为站内公开价目，可能随时调整。",
+   "updated": "2026-11-20",
+   "status": "avoid",
+   "type": "charity"
+  },
+  {
+   "name": "kevo",
+   "url": "https://ai.xiaowumin.top/sign-up",
+   "kind": "公益站 / 鸡蛋 / 注册送 5 / GPT 最低 0.05",
+   "summary": "公益站，按鸡蛋对待，注册送 5，无签到（均为用户提供）。GPT 倍率最低 0.05（用户提供；站方公告称 GPT 特惠不降智分组 0.055x）。仅面向中国大陆以外地区用户（站方公告）。",
+   "signup": "5（用户提供；站方公告称注册送 $1 试用、进 QQ 群 835662486 绑定再得 5 刀）",
+   "checkin": "无（用户提供）",
+   "models": "GPT 倍率最低 0.05（用户提供；站方公告称特惠不降智分组 0.055x）；gpt 6.2 已上架、价格同官方；模型广场需登录，清单未公开",
+   "entry": "邮箱注册，需邮箱验证，有 Turnstile 验证，支持 GitHub 登录（走邀请链接）；进 QQ 群 835662486 绑定再得 5 刀。",
+   "caveat": "按鸡蛋对待：只薅注册和进群送的免费额度，付费体验没验证过，充值请谨慎。注册赠送、无签到与 GPT 倍率均为用户提供，以站内和群内实际发放为准；站方公告口径为注册送 $1、进群绑定得 5 刀、GPT 特惠不降智分组 0.055x。站方称仅面向中国大陆以外地区用户，不向中国大陆境内提供服务。",
+   "updated": "2026-11-20",
+   "status": "avoid",
+   "type": "charity"
   },
   {
    "name": "Moto API",
